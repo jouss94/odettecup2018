@@ -1,0 +1,267 @@
+.rougedefault {
+    background: rgb(212, 38, 38);
+    /* background: brown; */
+}
+
+.blackougedefault {
+  background: brown;
+}
+
+.blackougewhite {
+  background: white;
+}
+
+.demo-card-event.mdl-card {
+    width: 415px;
+    height: 400px;
+    background: rgb(212, 38, 38);
+  }
+  .demo-card-event > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .demo-card-event > .mdl-card__title {
+    align-items: flex-start;
+    padding: 10px 10px;
+  }
+  .demo-card-event > .mdl-card__title > h4 {
+    margin-top: 0;
+  }
+  .demo-card-event > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+  .demo-card-event > .mdl-card__actions > .material-icons {
+    padding-right: 10px;
+  }
+  .demo-card-event > .mdl-card__title,
+  .demo-card-event > .mdl-card__actions,
+  .demo-card-event > .mdl-card__actions > .mdl-button {
+    color: #fff;
+  }
+
+
+  .classement-card-event.mdl-card {
+    width: 200px;
+    height: 400px;
+  }
+  .classement-general {
+    /* background: #fbe835; */
+    background: #e9d621;
+        /* background: #b83e3e; */
+}
+
+  .classement-equipe {
+    /* background: #2947ca; */
+    background: #2240c6;
+    /* background: #b83e3e; */
+
+  }
+
+  .classement-femme {
+    background: #f51461;
+    /* background: #fb62ba; */
+    /* background: #b83e3e; */
+  }
+
+  .classement-montagne {
+    /* background: #ff5f1a; */
+    background: #3bae1a;
+    /* background: #b83e3e; */
+  }
+
+
+  .classement-card-event > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .classement-card-event > .mdl-card__title {
+    align-items: flex-start;
+    padding: 4px 4px;
+  }
+  .classement-card-event > .mdl-card__title > h4 {
+    margin-top: 0;
+  }
+  .classement-card-event > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+  .classement-card-event > .mdl-card__actions > .material-icons {
+    padding-right: 10px;
+  }
+  .classement-card-event > .mdl-card__title,
+  .classement-card-event > .mdl-card__actions,
+  .classement-card-event > .mdl-card__actions > .mdl-button {
+    color: #000;
+  }
+
+
+  .information-card-event.mdl-card {
+    width: 415px;
+    min-height: 88px;
+    height: 88px;
+    background: rgb(212, 38, 38);
+  }
+
+  .information-card-event > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .information-card-event > .mdl-card__title {
+    align-items: flex-start;
+    padding: 10px 10px;
+  }
+  .information-card-event > .mdl-card__title > h4 {
+    margin-top: 0;
+  }
+  .information-card-event > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+  .information-card-event > .mdl-card__actions > .material-icons {
+    padding-right: 10px;
+  }
+  .information-card-event > .mdl-card__title,
+  .information-card-event > .mdl-card__actions,
+  .information-card-event > .mdl-card__actions > .mdl-button {
+    color: #fff;
+  }
+
+  .classementperso-card-event.mdl-card {
+    margin: auto;
+    width: 160px;
+    min-height: 88px;
+    height: 88px;
+    margin-top: 20px;
+  }
+
+  .classementperso-card-event > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .classementperso-card-event > .mdl-card__title {
+    align-items: flex-start;
+    padding: 10px 10px;
+  }
+  .classementperso-card-event > .mdl-card__title > h4 {
+    margin-top: 0;
+  }
+  .classementperso-card-event > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+  .classementperso-card-event > .mdl-card__actions > .material-icons {
+    padding-right: 10px;
+  }
+  .classementperso-card-event > .mdl-card__title,
+  .classementperso-card-event > .mdl-card__actions,
+  .classementperso-card-event > .mdl-card__actions > .mdl-button {
+    color: rgb(0, 0, 0);
+  }
+
+  .chips-body {
+    background: rgba(0, 0, 0, 0.28);
+    color: #fff;
+  }
+
+  .chips-red {
+    background: #f51414 !important;
+  }
+
+  .chips-green {
+    background: #3bae1a !important;
+  }
+
+  .chips-red-body:active {
+    background: #f51414 !important;
+  }
+
+  .chips-green-body:active {
+    background: #3bae1a !important;
+  }
+  
+
+  .displaymatch-card-event.mdl-card {
+    margin: auto;
+    width: 600px;
+    min-height: 550px;
+    height: 650px;
+    margin-top: 20px;
+  }
+
+  .displaymatch-card-event > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .displaymatch-card-event > .mdl-card__title {
+    align-items: flex-start;
+    padding: 10px 10px;
+  }
+  .displaymatch-card-event > .mdl-card__title > h4 {
+    margin-top: 0;
+  }
+  .displaymatch-card-event > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+  .displaymatch-card-event > .mdl-card__actions > .material-icons {
+    padding-right: 10px;
+  }
+  .displaymatch-card-event > .mdl-card__title,
+  .displaymatch-card-event > .mdl-card__actions,
+  .displaymatch-card-event > .mdl-card__actions > .mdl-button {
+    color: #FFF;
+  }  
+  
+
+  .height300 {
+    height: 342px !important;
+    min-height: 272px !important;
+    }
+
+.heightbonusform {
+    height: 500px !important;
+    min-height: 500px !important;
+}
+
+#RetourProfil {
+  color: rgb(212, 38, 38);
+  background: #FFF;  
+}
+
+#RetourAcceuil {
+  color: rgb(212, 38, 38);
+  background: #FFF;  
+}
+
+
+.match-card-event.mdl-card {
+  width: 480px;
+  height: 500px;
+  background: rgb(212, 38, 38);
+  margin: auto;
+  margin-top: 40px;
+}
+.match-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.match-card-event > .mdl-card__title {
+  align-items: flex-start;
+  padding: 10px 10px;
+}
+.match-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.match-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.match-card-event > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.match-card-event > .mdl-card__title,
+.match-card-event > .mdl-card__actions,
+.match-card-event > .mdl-card__actions > .mdl-button {
+  color: #fff;
+}

@@ -1,0 +1,76 @@
+table.bandeau {
+    width: 100%;
+    height: 40px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.41);
+    position: fixed;
+    z-index: 999;
+}
+
+table.bandeauacceuil {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+td#bandeauAcceuil {
+    width: 5%;
+    text-align: center;
+    background-image: url("../images/icon/home_24x24.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+}
+
+td#bandeauAcceuil:hover {
+    width: 5%;
+    text-align: center;
+    background-image: url("../images/icon/home_24x24_white.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    color: white;
+    cursor: pointer;
+}
+
+
+td#bandeauNom {
+    font-size: 20px;
+        width: 65%;
+    text-align: center;
+    font-weight: bold;
+}
+
+td#bandeauProfil {
+    width: 13%;
+    text-align: center;
+    background-image: url("../images/icon/user_9x12.png");
+    background-repeat:no-repeat;
+    background-position:20 center;
+    color: black;
+}
+
+td#bandeauProfil:hover {
+    width: 13%;
+    text-align: center;
+    background-image: url("../images/icon/user_9x12_white.png");
+    background-repeat:no-repeat;
+    background-position:20 center;
+    color: white;
+    cursor: pointer;
+}
+
+
+td#bandeauDeconnect {
+    width: 17%;
+    text-align: center;
+    background-image: url("../images/icon/x_11x11.png");
+    background-repeat:no-repeat;
+    background-position:10 center;
+}
+
+td#bandeauDeconnect:hover {
+    width: 17%;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    background-image: url("../images/icon/x_11x11_white.png");
+    background-repeat:no-repeat;
+    background-position:10 center;
+}

@@ -1,0 +1,35 @@
+
+classement : 
+<i class="material-icons">poll</i>
+<i class="material-icons">format_list_numbered</i>
+<i class="material-icons">list</i>
+<i class="material-icons">class</i>
+
+reglement : 
+<i class="material-icons">assignment</i>
+<i class="material-icons">gavel</i>
+<i class="material-icons">chrome_reader_mode</i>
+
+joueurs :
+<i class="material-icons">account_box</i>
+<i class="material-icons">account_circle</i>
+<i class="material-icons">assignment_ind</i>
+<i class="material-icons">perm_identity</i>
+<i class="material-icons">people</i>
+
+<i class="material-icons">person</i>
+<i class="material-icons">supervisor_account</i>
+
+acceuil :
+<i class="material-icons">home</i>
+<i class="material-icons">apps</i>
+
+deconnection :
+<i class="material-icons">power_settings_new</i>
+<i class="material-icons">clear</i>
+
+calendrier :
+Garde
+
+fleche : 
+Navigation
