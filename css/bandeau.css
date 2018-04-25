@@ -13,18 +13,11 @@ table.bandeauacceuil {
 
 td#bandeauAcceuil {
     width: 5%;
-    text-align: center;
-    background-image: url("../images/icon/home_24x24.png");
-    background-repeat:no-repeat;
-    background-position:center center;
-}
+    text-align: center;}
 
 td#bandeauAcceuil:hover {
     width: 5%;
     text-align: center;
-    background-image: url("../images/icon/home_24x24_white.png");
-    background-repeat:no-repeat;
-    background-position:center center;
     color: white;
     cursor: pointer;
 }

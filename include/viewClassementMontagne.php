@@ -17,19 +17,19 @@
 
 	echo '
 <thead>
-  <tr>
-     <th>Rang</th>
-     <th style="padding-top: 10px;padding-bottom: 10px;">Surnom</th>
-     <th class="titleSmallTexte">Ponos</th>
-     <th class="titleSmallTexte">Perfect</th>
-     <th class="titleSmallTexte">Correct+</th>
-     <th class="titleSmallTexte">Correct</th>
-     <th class="titleSmallTexte">Inverse</th>
-     <th class="titleSmallTexte">Echec</th>
-     <th class="titleSmallTexte">Bonus</th>
-     <th class="titleSmallTexte"> Points</th>
-  </tr>
-   </thead>';
+<tr style="height: 40px;">
+<th class="titleSmallTexte">Rang</th>
+<th >Surnom</th>
+<th class="titleSmallTexte">Ponos</th>
+<th class="titleSmallTexte">Perfect</th>
+<th class="titleSmallTexte">Correct+</th>
+<th class="titleSmallTexte">Correct</th>
+<th class="titleSmallTexte">Inverse</th>
+<th class="titleSmallTexte">Echec</th>
+<th class="titleSmallTexte">Bonus</th>
+<th class="titleSmallTexte"> Points</th>
+</tr>
+</thead>';
 	$nbtotal = mysqli_num_rows($result);
 
 	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
@@ -59,8 +59,14 @@
 				$classTR = "classTRCorrectHomeClassement";
 			//if ($nbtotal < $i + 3)
 			//	$classTR = "classTREchecHomeClassement";
+			if ($i % 2 == 0) {
+				echo '	<tr class="backgroundTab2Vert">';
+			}
+			else {
+				echo '	<tr class="backgroundTab1Vert">';
+			}
 
-echo '	<tr class="', $classTR,'" >
+			echo '	
 				<td class="ClassementRang">',
 					$rang,
 				'</td>

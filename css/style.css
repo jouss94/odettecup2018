@@ -71,7 +71,7 @@ body {
 }
 
 .ClassementSurnom {
-    width: 30%;
+    width: 200px;
     text-align: left;
     padding-left: 40px;
     padding-top: 10px;
@@ -82,41 +82,48 @@ body {
 
 .ClassementBonus {
     text-align: center;
-    width: 7%;
+    width: 65px;
+    /* width: 7%; */
 }
 
 .ClassementEchec {
-    width: 7%;
+    width: 65px;
+    /* width: 7%; */
     text-align: center;
 }
 
 .ClassementInverse {
-    width: 7%;
+    width: 65px;
+    /* width: 7%; */
     text-align: center;
 }
 
 .ClassementCorrect {
-    width: 8%;
+    width: 65px;
+    /* width: 8%; */
     text-align: center;
 }
 
 .ClassementCorrectp {
-    width: 8%;
+    width: 65px;
+    /* width: 8%; */
     text-align: center;
 }
 
 .ClassementNbPerf {
-    width: 8%;
+    width: 65px;
+    /* width: 8%; */
     text-align: center;
 }
 
 .ClassementNbPronos {
-    width: 9%;
+    width: 65px;
+    /* width: 9%; */
     text-align: center;
 }
 
 .ClassementRang {
-    width: 9%;
+    width: 50px;
     text-align: center;
         font-size: 22px;
 }
@@ -125,26 +132,27 @@ body {
     font-size: 10px;
 }
 
+.titleSmallerTexte {
+    font-size: 8px;
+}
+
 table.sortable {
     width: 100%;
     border-collapse: collapse;
-    border: solid 1px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 table.sortable thead {
-    background-color:#000;
-    color:#FFF;
+    color:#000;
+    background-color:#FFF;
     font-weight: bold;
     cursor: default;
 
 }
 
-table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
-    content: " \25B4\25BE" 
-}
 
 .allListeClassement {
-    width: 800px;
+    width: 850px;
     display: block;
     margin: auto;
     margin-top: 30px;
@@ -367,32 +375,62 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 }
 
 .backgroundTab1Jaune {
-    background: #ffffff70;
+    background: #f3e883;
 }
 .backgroundTab2Jaune {
     background: #fff900;
 }
 
+
 .backgroundTab1Bleu {
-    background: #ffffff70;
+    background: #8394df;
 }
 .backgroundTab2Bleu {
-    background: #2768ff99;
+    background: #2768ff;
 }
+
 .backgroundTab1Rose {
-    background: #ffffff70;
+    background: #f97ba6;
 }
 .backgroundTab2Rose {
     background: #ff8bd58a;;
 }
 
+
 .backgroundTab1Vert {
-    background: #ffffff70;
+    background: #91d27f;
 }
 .backgroundTab2Vert {
     background: #3ccb24;
 }
 
+.tab button.active.tablinksgeneral {
+    background: #fff900;
+}
+
+.tab button.tablinksgeneral:hover {
+    border-bottom: solid 2px #fff900;
+}
+
+.tab button.active.tablinksequipe {
+    background: #2768ff;
+}
+.tab button.tablinksequipe:hover {
+    border-bottom: solid 2px #2768ff;
+}
+.tab button.active.tablinksfemme {
+    background: #ff8bd5;
+}
+.tab button.tablinksfemme:hover {
+    border-bottom: solid 2px #ff8bd5;
+}
+
+.tab button.active.tablinksmontagne {
+    background: #3ccb24;
+}
+.tab button.tablinksmontagne:hover {
+    border-bottom: solid 2px #3ccb24;
+}
 
 .trNeutre {
     color: rgba(255, 255, 255, 0.14);
@@ -455,14 +493,14 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 .homeEquipeGauche {
     width: 110px;
     text-align: left;
-    padding-left: 4px;
+    padding-left: 6px;
     font-size: 16px;
 }
 
 .homeEquipeDroite {
     width: 110px;
     text-align: right;
-    padding-right: 4px;
+    padding-right: 6px;
     font-size: 16px;
 }
 .homePoint {
@@ -618,12 +656,7 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 }
 
 .perfectTitre {
-    background: grey;
-    background: -webkit-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(5, 255, 0) 100%);
-    background: -o-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(5, 255, 0) 100%);
-    background: -moz-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(5, 255, 0) 100%);
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(5, 255, 0) 100%);
-    background-attachment: fixed;
+    color: rgb(2, 121, 0);
 }
 
 .perfectInverse {
@@ -666,7 +699,7 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
 .sousTitre {
     margin-left: 40px;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: bold;
     padding: 5px;
     padding-left: 20px;
 }
@@ -1239,7 +1272,7 @@ img.logoEquipeSmall {
 
 .cadreTableauMatch {
     height:580px;
-    overflow-y: scroll;     
+    overflow-y: auto;     
 }
 
 .titreTableau {
@@ -1267,7 +1300,7 @@ table.TableMatch {
 
 .profilPronosFulll  {
     width: 100%;
-    height: 1050px;
+    height: 1100px;
     text-align: left;
     font-size: x-large;
     background: #FFF;

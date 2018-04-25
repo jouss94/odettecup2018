@@ -155,21 +155,7 @@ function addProfil($con)
 
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
-		<table class="bandeau">
-			<tr>
-				<td id="bandeauAcceuil">
-				</td>
-				<td id="bandeauNom">
-					<?php echo $pseudo ?> - <span class="titre">Modification</span>
-				</td>
-				<td id="bandeauProfil">
-					Profil
-				</td>
-				<td id="bandeauDeconnect">
-					Déconnexion
-				</td>
-			</tr>
-		</table>
+		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">
 

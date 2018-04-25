@@ -27,40 +27,9 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
-		<table class="bandeau">
-			<tr>
-				<td id="bandeauAcceuil">
-				</td>
-				<td id="bandeauNom">
-					<?php echo $pseudo ?> - <span class="titre">Calendrier</span>
-				</td>
-				<td id="bandeauProfil">
-					Profil
-				</td>
-				<td id="bandeauDeconnect">
-					Déconnexion
-				</td>
-			</tr>
-		</table>
+		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in">
-
-
-<!--
-				<div class="bandeauDiv">
-						<div class="inline" id="bandeauAcceuil">
-							<img src="images/icon/home_24x24.png" class="imageAcceuil" />
-						</div>
-						<div class="inline" id="bandeauNom">
-							Nom
-						</div>
-						<div class="inline" id="bandeauProfil">
-							Odette Cup 2016
-						</div>
-						<div class="inline" id="bandeauDeconnect">
-							<input type="button" id="deconnect" name="deconnect" value="Déconnexion" class="loginbutton" >
-						</div>
-				</div>-->
 
 				<div style="width:100%;height:690px;">
 
