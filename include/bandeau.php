@@ -4,7 +4,7 @@
             <i class="material-icons">home</i>
         </td>
         <td id="bandeauNom">
-            <?php echo $pseudo ?> - <span class="titre">Accueil</span>
+            <?php echo $pseudo ?>
         </td>
         <td id="bandeauProfil">
             Profil

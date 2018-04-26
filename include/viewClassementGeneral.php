@@ -49,17 +49,6 @@
 		$bonus = $row["bonus"];
 		$total = $row["total"];
 
-		$classTR = "classTRInverseHomeClassement";
-			if ($i == 1)
-				$classTR = "classTRPerfectHomeClassement";
-			else if ($i == 2 || $i == 3)
-				$classTR = "classTRCorrectPlusHomeClassement";
-			else if ($i == 4)
-				$classTR = "classTRCorrectHomeClassement";
-			//if ($nbtotal < $i + 3)
-			//	$classTR = "classTREchecHomeClassement";
-
-			/// 	<tr class="', $classTR,'" style="border-bottom: solid 1px #FFF;">
 			if ($i % 2 == 0) {
 				echo '	<tr class="backgroundTab2Jaune">';
 			}

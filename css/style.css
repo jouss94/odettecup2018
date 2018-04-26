@@ -14,55 +14,6 @@ body {
     font-family: Segoe;
 }
 
-
-.classTRPerfectHomeClassement {
-    background: grey;
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.08) 20%,rgb(5, 255, 0) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0.08) 20%,rgb(5, 255, 0) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.08) 20%,rgb(5, 255, 0) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.08) 20%,rgb(5, 255, 0) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background-attachment: fixed;
-}
-
-
-.classTRInverseHomeClassement {
-    background: grey;
-
-
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255,0.08) 10px,rgb(255, 255, 255) 0%,rgba(255, 255, 255,0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255,0.08) 10px,rgb(255, 255, 255) 0%,rgba(255, 255, 255,0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255,0.08) 10px,rgb(255, 255, 255) 0%,rgba(255, 255, 255,0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255,0.08) 10px,rgb(255, 255, 255) 0%,rgba(255, 255, 255,0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background-attachment: fixed;
-}
-
-.classTRCorrectHomeClassement {
-    background: grey;
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.08) 10px,rgb(158, 255, 0) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0.08) 10px,rgb(158, 255, 0) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.08) 10px,rgb(158, 255, 0) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.08) 10px,rgb(158, 255, 0) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background-attachment: fixed;}
-
-.classTRCorrectPlusHomeClassement {
-   background: grey;
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.08) 10px,rgb(0, 107, 17) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0.08) 10px,rgb(0, 107, 17) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.08) 10px,rgb(0, 107, 17) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.08) 10px,rgb(0, 107, 17) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background-attachment: fixed;
- }
-
-.classTREchecHomeClassement {
-    background: #A05151;
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.08) 10px,rgba(255, 0, 0, 0.91) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0.08) 10px,rgba(255, 0, 0, 0.91) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.08) 10px,rgba(255, 0, 0, 0.91) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background: linear-gradient(to right, rgb(255, 255, 255) 10px,rgba(255, 0, 0, 0.91) 0%,rgba(255, 255, 255, 0.08) 50%,rgba(255, 255, 255, 0.42) 100%);
-    background-attachment: fixed;
-}
-
-
 .ClassementPoints {
     text-align: center;
     width: 7%;
@@ -168,54 +119,6 @@ table.sortable thead {
 .surnomClassementDiv:hover {
     color: #FFF;
     cursor: pointer;
-}
-
-
-.classTRPerfectHomeClass {
-    background: grey;
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(5, 255, 0) 93%,rgba(255, 255, 255, 0.08) 20%,rgb(5, 255, 0) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(5, 255, 0) 93%,rgba(255, 255, 255, 0.08) 20%,rgb(5, 255, 0) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(5, 255, 0) 93%,rgba(255, 255, 255, 0.08) 20%,rgb(5, 255, 0) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(5, 255, 0) 93%,rgba(255, 255, 255, 0.08) 20%,rgb(5, 255, 0) 100%);
-    background-attachment: fixed;
-}
-
-
-.classTRInverseHomeClass {
-    background: grey;
-
-
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255,0.08) 62%,rgb(255, 255, 255) 93%,rgba(255, 255, 255,0.08) 20%,rgb(255, 255, 255) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255,0.08) 62%,rgb(255, 255, 255) 93%,rgba(255, 255, 255,0.08) 20%,rgb(255, 255, 255) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255,0.08) 62%,rgb(255, 255, 255) 93%,rgba(255, 255, 255,0.08) 20%,rgb(255, 255, 255) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255,0.08) 62%,rgb(255, 255, 255) 93%,rgba(255, 255, 255,0.08) 20%,rgb(255, 255, 255) 100%);
-    background-attachment: fixed;
-}
-
-.classTRCorrectHomeClass {
-    background: grey;
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(158, 255, 0) 93%,rgba(255, 255, 255, 0.08) 20%,rgb(158, 255, 0) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(158, 255, 0) 93%,rgba(255, 255, 255, 0.08) 20%,rgb(158, 255, 0) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(158, 255, 0) 93%,rgba(255, 255, 255, 0.08) 20%,rgb(158, 255, 0) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(158, 255, 0) 93%,rgba(255, 255, 255, 0.08) 20%,rgb(158, 255, 0) 100%);
-    background-attachment: fixed;}
-
-.classTRCorrectPlusHomeClass {
-   background: grey;
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(0, 107, 17) 93%,rgba(255, 255, 255, 0.08) 20%,rgb(0, 107, 17) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(0, 107, 17) 93%,rgba(255, 255, 255, 0.08) 20%,rgb(0, 107, 17) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(0, 107, 17) 93%,rgba(255, 255, 255, 0.08) 20%,rgb(0, 107, 17) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(0, 107, 17) 93%,rgba(255, 255, 255, 0.08) 20%,rgb(0, 107, 17) 100%);
-    background-attachment: fixed;
- }
-
-.classTREchecHomeClass {
-    background: #A05151;
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(255, 0, 0) 93%,rgba(255, 0, 0, 0.91) 20%,rgba(255, 0, 0, 0.91) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(255, 0, 0) 93%,rgba(255, 0, 0, 0.91) 20%,rgba(255, 0, 0, 0.91) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(255, 0, 0) 93%,rgba(255, 0, 0, 0.91) 20%,rgba(255, 0, 0, 0.91) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.08) 62%,rgb(255, 0, 0) 93%,rgba(255, 0, 0, 0.91) 20%,rgba(255, 0, 0, 0.91) 100%);
-    background-attachment: fixed;
 }
 
 .homeClassementPoint {
@@ -620,12 +523,7 @@ table.sortable thead {
 }
 
 .titreBonus {
-    background: grey;
-    background: -webkit-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(255, 255, 255, 0.12) 60%,rgba(255, 255, 255, 0.12) 20%,rgb(255, 255, 255) 100%);
-    background: -o-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(255, 255, 255, 0.12) 60%,rgba(255, 255, 255, 0.12) 20%,rgb(255, 255, 255) 100%);
-    background: -moz-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(255, 255, 255, 0.12) 60%,rgba(255, 255, 255, 0.12) 20%,rgb(255, 255, 255) 100%);
-    background: linear-gradient(to left, rgba(0, 0, 0, 0) 20%,rgba(0, 0, 0, 0.12) 60%,rgba(0, 0, 0, 0.12) 20%,rgb(0, 0, 0) 100%);
-    background-attachment: fixed;
+
 }
 
 .ulperso {
@@ -660,39 +558,19 @@ table.sortable thead {
 }
 
 .perfectInverse {
-    background: grey;
-    background: -webkit-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(255, 255, 255, 0.12) 60%,rgba(255, 255, 255, 0.12) 20%,rgb(255, 255, 255) 100%);
-    background: -o-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(255, 255, 255, 0.12) 60%,rgba(255, 255, 255, 0.12) 20%,rgb(255, 255, 255) 100%);
-    background: -moz-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(255, 255, 255, 0.12) 60%,rgba(255, 255, 255, 0.12) 20%,rgb(255, 255, 255) 100%);
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(255, 255, 255, 0.12) 60%,rgba(255, 255, 255, 0.12) 20%,rgb(255, 255, 255) 100%);
-    background-attachment: fixed;
+    color: rgb(255, 255, 255);
 }
 
 .perfectCorrect {
-    background: grey;
-    background: -webkit-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(158, 255, 0) 100%);
-    background: -o-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(158, 255, 0) 100%);
-    background: -moz-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(158, 255, 0) 100%);
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(158, 255, 0) 100%);
-    background-attachment: fixed;
+    color : rgb(158, 255, 0);
 }
 
 .perfectCorrectPlus {
-   background: grey;
-    background: -webkit-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(0, 255, 8, 0.12) 60%,rgba(50, 255, 0, 0.12) 20%,rgb(0, 107, 17) 100%);
-    background: -o-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(0, 255, 8, 0.12) 60%,rgba(50, 255, 0, 0.12) 20%,rgb(0, 107, 17) 100%);
-    background: -moz-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(0, 255, 8, 0.12) 60%,rgba(50, 255, 0, 0.12) 20%,rgb(0, 107, 17) 100%);
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(0, 255, 8, 0.12) 60%,rgba(50, 255, 0, 0.12) 20%,rgb(0, 107, 17) 100%);
-    background-attachment: fixed;
+    color: rgb(15, 209, 48);
  }
 
 .perfectEchec {
-    background: grey;
-    background: -webkit-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(229, 108, 108, 0.12) 60%,rgba(229, 108, 108, 0.12) 20%,rgb(255, 0, 0) 100%);
-    background: -o-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(229, 108, 108, 0.12) 60%,rgba(229, 108, 108, 0.12) 20%,rgb(255, 0, 0) 100%);
-    background: -moz-linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(229, 108, 108, 0.12) 60%,rgba(229, 108, 108, 0.12) 20%,rgb(255, 0, 0) 100%);
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 20%,rgba(229, 108, 108, 0.12) 60%,rgba(229, 108, 108, 0.12) 20%,rgb(255, 0, 0) 100%);
-    background-attachment: fixed;
+    color: rgba(0, 0, 0, 0.91);
 }
 
 
@@ -707,7 +585,7 @@ table.sortable thead {
 .reglementDiv {
     text-align: left;
     margin: 50px;
-    border: solid 1px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     background: rgba(255, 255, 255, 0.45);
     padding: 20px;
 }
@@ -1058,56 +936,6 @@ table.sortable thead {
     color: #FFF;
  }
 
-
-.classTRPerfect {
-    background: grey;
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(5, 255, 0) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(5, 255, 0) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(5, 255, 0) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(5, 255, 0) 100%);
-    background-attachment: fixed;
-}
-
-
-.classTRInverse {
-    background: grey;
-
-
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(255, 255, 255, 0.12) 60%,rgba(255, 255, 255, 0.12) 20%,rgb(255, 255, 255) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(255, 255, 255, 0.12) 60%,rgba(255, 255, 255, 0.12) 20%,rgb(255, 255, 255) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(255, 255, 255, 0.12) 60%,rgba(255, 255, 255, 0.12) 20%,rgb(255, 255, 255) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(255, 255, 255, 0.12) 60%,rgba(255, 255, 255, 0.12) 20%,rgb(255, 255, 255) 100%);
-    background-attachment: fixed;
-}
-
-.classTRCorrect {
-    background: grey;
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(158, 255, 0) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(158, 255, 0) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(158, 255, 0) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(115, 229, 108, 0.12) 60%,rgba(108, 229, 112, 0.12) 20%,rgb(158, 255, 0) 100%);
-    background-attachment: fixed;
-}
-
-.classTRCorrectPlus {
-   background: grey;
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(0, 255, 8, 0.12) 60%,rgba(50, 255, 0, 0.12) 20%,rgb(0, 107, 17) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(0, 255, 8, 0.12) 60%,rgba(50, 255, 0, 0.12) 20%,rgb(0, 107, 17) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(0, 255, 8, 0.12) 60%,rgba(50, 255, 0, 0.12) 20%,rgb(0, 107, 17) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(0, 255, 8, 0.12) 60%,rgba(50, 255, 0, 0.12) 20%,rgb(0, 107, 17) 100%);
-    background-attachment: fixed;
- }
-
-.classTREchec {
-    background: grey;
-    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(229, 108, 108, 0.12) 60%,rgba(229, 108, 108, 0.12) 20%,rgb(255, 0, 0) 100%);
-    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(229, 108, 108, 0.12) 60%,rgba(229, 108, 108, 0.12) 20%,rgb(255, 0, 0) 100%);
-    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(229, 108, 108, 0.12) 60%,rgba(229, 108, 108, 0.12) 20%,rgb(255, 0, 0) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%,rgba(229, 108, 108, 0.12) 60%,rgba(229, 108, 108, 0.12) 20%,rgb(255, 0, 0) 100%);
-    background-attachment: fixed;
-}
-
-
 .InversePronos {
     font-size: 12px;
     font-weight: bold;
@@ -1177,16 +1005,18 @@ table.sortable thead {
     padding-top: 3px;
     display: block;
     text-align: center;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     font-size: 17px;
     color: #FFF;
     font-weight: bold;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 img.logoEquipeBig {
     width: 70px;
     margin: 5px;
-    border: solid 2px #000;
+    /* border: solid 2px #000; */
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 img.logoEquipe {
@@ -1357,18 +1187,11 @@ span.titre {
 }
 
 .transparence {
-position: fixed; 
-position: fixed;
-top: 0;
-left: 0;
-min-width: 100%;
-/* min-height: 100%; */
-/* background: rgba(255, 255, 255, 0.24); */
-/* z-index: -1; */
-/* background-image: -webkit-radial-gradient(top center,circle farthest-corner,#2c6a93,#000a34); */
-/* opacity: .2; */
-/* height: 100%; */
-/* right: 0px; */
+    position: fixed; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
 }
 
 .transparence2 {

@@ -8,7 +8,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
 	<head>
-		<title>Liste des joueurs</title>
+		<title>Calendrier</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="icon" type="image/png" href="images/icon-france.png" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">

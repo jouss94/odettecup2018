@@ -139,7 +139,7 @@
 		echo '<tr>';
 			echo '<td class="ParamSousTitre">
 				14 points </br>
-				Trouvez le vainqueur du tournoi EURO 2016 
+				Trouvez le vainqueur du tournoi RUSSIE 2018 
 
 			</td>';
 		echo '</tr>';
@@ -154,7 +154,7 @@
 		echo '<tr>';
 			echo '<td class="ParamSousTitre">
 				10 points [tout-pil\'] 7 points [approchant] </br>
-				Trouvez la minute du premier but du tournoi EURO 2016.
+				Trouvez la minute du premier but du tournoi RUSSIE 2018.
 			</td>';
 		echo '</tr>';
 
@@ -168,7 +168,7 @@
 		echo '<tr>';
 			echo '<td class="ParamSousTitre">
 				10 points [tout-pil\'] 7 points [approchant] </br>
-				Trouvez la minute du dernier but du tournoi EURO 2016.
+				Trouvez la minute du dernier but du tournoi RUSSIE 2018.
 			</td>';
 		echo '</tr>';
 
@@ -182,7 +182,7 @@
 		echo '<tr>';
 			echo '<td class="ParamSousTitre">
 				14 points [tout-pil\'] 7 points [approchant] </br>
-				Trouvez le nombre de buts total du tournoi EURO 2016.
+				Trouvez le nombre de buts total du tournoi RUSSIE 2018.
 			</td>';
 		echo '</tr>';
 
@@ -196,7 +196,7 @@
 		echo '<tr>';
 			echo '<td class="ParamSousTitre">
 				7 points </br>
-				Trouvez le meilleur buteur du tournoi EURO 2016.
+				Trouvez le meilleur buteur du tournoi RUSSIE 2018.
 			</td>';
 		echo '</tr>';
 

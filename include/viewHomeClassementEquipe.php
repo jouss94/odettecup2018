@@ -28,18 +28,6 @@
 		$id_equipe = $row["id"];
 		$points = $row["points"];
 
-
-		$classTR = "classTRInverseHomeClass";
-			if ($i == 1)
-				$classTR = "classTRPerfectHomeClass";
-			else if ($i == 2 || $i == 3)
-				$classTR = "classTRCorrectPlusHomeClass";
-			else if ($i == 4)
-				$classTR = "classTRCorrectHomeClass";
-			//if ($nbtotal < $i + 3)
-			//	$classTR = "classTREchecHomeClass";
-			//classTREchecHomeClass
-
 		if ($i% 2 == 0) {
 			echo '	<tr class="backgroundTab1Bleu">';
 		}

@@ -27,20 +27,7 @@
 		$surnom = utf8_encode_function($row["surnom"]);
 		$id_joueur = $row["id_joueur"];
 		$points = $row["points"];
-
-
-		$classTR = "classTRInverseHomeClass";
-			if ($i == 1)
-				$classTR = "classTRPerfectHomeClass";
-			else if ($i == 2 || $i == 3)
-				$classTR = "classTRCorrectPlusHomeClass";
-			else if ($i == 4)
-				$classTR = "classTRCorrectHomeClass";
-			//if ($nbtotal < $i + 3)
-			//	$classTR = "classTREchecHomeClass";
-			//classTREchecHomeClass
-
-	// echo '	<tr class="', $classTR,'" >';
+	
 	if ($i% 2 == 0) {
 		echo '	<tr class="backgroundTab1Jaune">';
 	}

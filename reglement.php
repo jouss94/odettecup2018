@@ -88,22 +88,22 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 					<div class="sousTitre titreBonus">Equipe vainqueur</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >14 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le vainqueur du tournoi EURO 2016.</li>
+						<li class="pointRegle regleDetail" >Trouvez le vainqueur du tournoi RUSSIE 2018.</li>
 					</ul>
-					<div class="sousTitre titreBonus">Meilleure attaque</div>
+					<!-- <div class="sousTitre titreBonus">Meilleure attaque</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez la meilleure attaque du tournoi EURO 2016.</li>
+						<li class="pointRegle regleDetail" >Trouvez la meilleure attaque du tournoi RUSSIE 2018.</li>
 					</ul>
 					<div class="sousTitre titreBonus">Meilleure défense</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez la meilleure défense du tournoi EURO 2016.</li>
-					</ul>
+						<li class="pointRegle regleDetail" >Trouvez la meilleure défense du tournoi RUSSIE 2018.</li>
+					</ul> -->
 					<div class="sousTitre titreBonus">Minute du premier but</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >10 points [tout-pil'] 7 points [approchant] </li>
-						<li class="pointRegle regleDetail" >Trouvez la minute du premier but du tournoi EURO 2016.</li>
+						<li class="pointRegle regleDetail" >Trouvez la minute du premier but du tournoi RUSSIE 2018.</li>
 						<li class="pointRegle regleDetail" >[Tout-pil'] : trouvez la minute exacte.</li>
 						<li class="pointRegle regleDetail" >[Approchant] : La minute se trouve dans les <strong>2</strong> minutes de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
@@ -115,7 +115,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 					<div class="sousTitre titreBonus">Minute du dernier but</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >10 points [tout-pil'] 7 points [approchant] </li>
-						<li class="pointRegle regleDetail" >Trouvez la minute du dernier but du tournoi EURO 2016.</li>
+						<li class="pointRegle regleDetail" >Trouvez la minute du dernier but du tournoi RUSSIE 2018.</li>
 						<li class="pointRegle regleDetail" >[Tout-pil'] : trouvez la minute exacte.</li>
 						<li class="pointRegle regleDetail" >[Approchant] : La minute se trouve dans les <strong>2</strong> minutes de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
@@ -125,7 +125,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 					<div class="sousTitre titreBonus">Nombre total de buts</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >14 points [tout-pil'] 7 points [approchant] </li>
-						<li class="pointRegle regleDetail" >Trouvez le nombre de buts total du tournoi EURO 2016.</li>
+						<li class="pointRegle regleDetail" >Trouvez le nombre de buts total du tournoi RUSSIE 2018.</li>
 						<li class="pointRegle regleDetail" >[Tout-pil'] : trouvez le nombre exact de buts.</li>
 						<li class="pointRegle regleDetail" >[Approchant] : Le nombre de buts se trouve dans les <strong>3</strong> buts de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
@@ -134,42 +134,43 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 					<div class="sousTitre titreBonus">Meilleur buteur</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le meilleur buteur du tournoi EURO 2016.</li>
+						<li class="pointRegle regleDetail" >Trouvez le meilleur buteur du tournoi RUSSIE 2018.</li>
 					</ul>
 
-					<div class="sousTitre titreBonus">Meilleur passeur</div>
+					<!-- <div class="sousTitre titreBonus">Meilleur passeur</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le meilleur passeur du tournoi EURO 2016.</li>
+						<li class="pointRegle regleDetail" >Trouvez le meilleur passeur du tournoi RUSSIE 2018.</li>
 					</ul>
 
 					<div class="sousTitre titreBonus">Nombre buts du meilleur buteur</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le nombre de buts du meilleur buteur du tournoi EURO 2016.</li>
+						<li class="pointRegle regleDetail" >Trouvez le nombre de buts du meilleur buteur du tournoi RUSSIE 2018.</li>
 					</ul>
 					<div class="sousTitre titreBonus">Premier buteur français</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le premier buteur français du tournoi EURO 2016.</li>
+						<li class="pointRegle regleDetail" >Trouvez le premier buteur français du tournoi RUSSIE 2018.</li>
 					</ul>
 					<div class="sousTitre titreBonus">Nombre de buts de la France</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le nombre de buts de la France lors du tournoi EURO 2016.</li>
-					</ul>
+						<li class="pointRegle regleDetail" >Trouvez le nombre de buts de la France lors du tournoi RUSSIE 2018.</li>
+					</ul> -->
 					<div class="sousTitre titreBonus">Bonus : Finale</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >14 points ou 8 points ou 6 points ou 2 points ou 0 point</li>
 						<li class="pointRegle regleDetail" >Le nombre de points gagnés sur la finale est doublé.</li>
-					</ul>
+					</ul> 
 
 			</p>
 
 		<h3>Dates :</h3>
 				<ul class="ulperso">
-						<li class="pointRegle" >1er Mai 2016 : ouverture aux inscriptions.</li>
-						<li class="pointRegle" >1er Juin 2016 : fermeture des inscriptions et des pronostics. Ouverture de tous les pronostics à tout le monde.</li>
+						<li class="pointRegle" >1er Mai 2018 : ouverture aux inscriptions.</li>
+						<li class="pointRegle" >1er Juin 2018 : fermeture des inscriptions et des pronostics. Ouverture de tous les pronostics à tout le monde.</li>
+						<li class="pointRegle" >10 juin 2018 : Tirage au sort des équipes.</li>
 						<li class="pointRegle" >Matches de phase finale : pour les 8émes, quarts, demies et finale, tous les pronostics seront à rentrer en ligne.</li>
 					</ul>
 
