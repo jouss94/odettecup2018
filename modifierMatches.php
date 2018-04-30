@@ -46,10 +46,7 @@ if ($id != $idProfil)
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in">
-
-
-
-				<div style="width:100%;height:2700px">
+				<div style="width:100%;height:2800px">
 					<?php include("include/viewModifierMatch.php");?> 					
 				</div>
 

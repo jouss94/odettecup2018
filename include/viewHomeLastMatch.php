@@ -36,6 +36,7 @@
 		$id_match = $row["id"];
 		$pronos_home = $row["prono_home"];
 		$pronos_away = $row["prono_away"];
+		$montagne = $row["montagne"];
 
 		$point = $row["point"];
 		$classTR = "classTRNeutre";
@@ -52,6 +53,13 @@
 
 		$date_array = date_parse($row["date"]);
 // echo '	<tr class="', $classTR, '">';
+
+		$classPancarte = "";
+		if ($row["montagne"] == 1)
+		{
+			$classPancarte = "pancarteMontagne";
+		}
+
 
 		if ($i++ % 2 == 0) {
 			echo '	<tr class="backgroundTab2">';
@@ -75,13 +83,13 @@
 		echo '<td class="homeEquipeDroite">';
 		echo $home_name;	
 		echo '</td>';
-		echo '<td class="homeEquipeEquipe">';
+		echo '<td class="homeEquipeEquipe"><span class="pancarteBig ',$classPancarte,'">';
 		echo $row["prono_home"];
-		echo '</td>';
+		echo '</span></td>';
 		echo '<td class="homeEquipeMilieu"> - </td>';
-		echo '<td class="homeEquipeEquipe">';
+		echo '<td class="homeEquipeEquipe"><span class="pancarteBig ',$classPancarte,'">';
 		echo $row["prono_away"];
-		echo '</td>';
+		echo '</span></td>';
 		echo '<td class="homeEquipeGauche">';
 		echo $away_name;	
 		echo '</td>';

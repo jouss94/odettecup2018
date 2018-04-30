@@ -41,33 +41,35 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<div class="allAcceuil">
 						<table class="tableAcceuil">
 							<tr >
-								<td class="tableAcceuilResultat">
-									<div class="demo-card-event mdl-card mdl-shadow--2dp">
-										<div class="mdl-card__title mdl-card--expand">
-											<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
-												<?php include("include/viewHomeLastMatch.php");?>
+								<td>
+									<div class="tableAcceuilResultat">
+										<div class="demo-card-event mdl-card mdl-shadow--2dp">
+											<div class="mdl-card__title mdl-card--expand">
+												<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+													<?php include("include/viewHomeLastMatch.php");?>
+												</div>
+											</div>
+											<div class="mdl-card__actions mdl-card--border">
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php" >
+													Derniers matches
+												</a>
+												<div class="mdl-layout-spacer"></div>
+												<i class="material-icons">event</i>
 											</div>
 										</div>
-										<div class="mdl-card__actions mdl-card--border">
-											<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php" >
-												Derniers matches
-											</a>
-											<div class="mdl-layout-spacer"></div>
-											<i class="material-icons">event</i>
-										</div>
-									</div>
-									<div class="demo-card-event mdl-card mdl-shadow--2dp">
-										<div class="mdl-card__title mdl-card--expand">
-											<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
-											<?php include("include/viewHomeNextMatch.php");?>
+										<div class="demo-card-event mdl-card mdl-shadow--2dp">
+											<div class="mdl-card__title mdl-card--expand">
+												<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+												<?php include("include/viewHomeNextMatch.php");?>
+												</div>
 											</div>
-										</div>
-										<div class="mdl-card__actions mdl-card--border">
-											<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php" >
-												Prochains matches
-											</a>
-											<div class="mdl-layout-spacer"></div>
-											<i class="material-icons">event</i>
+											<div class="mdl-card__actions mdl-card--border">
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php" >
+													Prochains matches
+												</a>
+												<div class="mdl-layout-spacer"></div>
+												<i class="material-icons">event</i>
+											</div>
 										</div>
 									</div>
 								</td>
@@ -75,97 +77,100 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						</table>
 						<table class="tableAcceuil">
 							<tr>
-								<td class="tableAcceuilClassement">
-									<div class="classement-card-event mdl-card classement-general mdl-shadow--2dp">
-											<div class="mdl-card__title mdl-card--expand">
-												<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
-													<?php include("include/viewHomeClassementGeneral.php");?>
+								<td >
+									<div class="tableAcceuilClassement">
+										<div class="classement-card-event mdl-card classement-general mdl-shadow--2dp">
+												<div class="mdl-card__title mdl-card--expand">
+													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
+														<?php include("include/viewHomeClassementGeneral.php");?>
+													</div>
+												</div>
+												<div class="mdl-card__actions mdl-card--border">
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=General" >
+														Général
+													</a>
+													<div class="mdl-layout-spacer"></div>
+													<i class="material-icons">poll</i>
 												</div>
 											</div>
-											<div class="mdl-card__actions mdl-card--border">
-												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=General" >
-													Général
-												</a>
-												<div class="mdl-layout-spacer"></div>
-												<i class="material-icons">poll</i>
-											</div>
-										</div>
-										<div class="classement-card-event mdl-card classement-equipe mdl-shadow--2dp">
-											<div class="mdl-card__title mdl-card--expand">
-												<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
-													<?php include("include/viewHomeClassementEquipe.php");?>
+											<div class="classement-card-event mdl-card classement-equipe mdl-shadow--2dp">
+												<div class="mdl-card__title mdl-card--expand">
+													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
+														<?php include("include/viewHomeClassementEquipe.php");?>
+													</div>
+												</div>
+												<div class="mdl-card__actions mdl-card--border">
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Equipe" >
+														Equipe
+													</a>
+													<div class="mdl-layout-spacer"></div>
+													<i class="material-icons">poll</i>
 												</div>
 											</div>
-											<div class="mdl-card__actions mdl-card--border">
-												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Equipe" >
-													Equipe
-												</a>
-												<div class="mdl-layout-spacer"></div>
-												<i class="material-icons">poll</i>
-											</div>
-										</div>
-										<div class="classement-card-event mdl-card classement-femme mdl-shadow--2dp">
-											<div class="mdl-card__title mdl-card--expand">
-												<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
-													<?php include("include/viewHomeClassementFemme.php");?>
+											<div class="classement-card-event mdl-card classement-femme mdl-shadow--2dp">
+												<div class="mdl-card__title mdl-card--expand">
+													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
+														<?php include("include/viewHomeClassementFemme.php");?>
+													</div>
+												</div>
+												<div class="mdl-card__actions mdl-card--border">
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Femme" >
+														Femme
+													</a>
+													<div class="mdl-layout-spacer"></div>
+													<i class="material-icons">poll</i>
 												</div>
 											</div>
-											<div class="mdl-card__actions mdl-card--border">
-												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Femme" >
-													Femme
-												</a>
-												<div class="mdl-layout-spacer"></div>
-												<i class="material-icons">poll</i>
-											</div>
-										</div>
-										<div class="classement-card-event mdl-card classement-montagne mdl-shadow--2dp">
-											<div class="mdl-card__title mdl-card--expand">
-												<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
-													<?php include("include/viewHomeClassementMontagne.php");?>
+											<div class="classement-card-event mdl-card classement-montagne mdl-shadow--2dp">
+												<div class="mdl-card__title mdl-card--expand">
+													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
+														<?php include("include/viewHomeClassementMontagne.php");?>
+													</div>
+												</div>
+												<div class="mdl-card__actions mdl-card--border">
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Montagne" >
+														Montagne
+													</a>
+													<div class="mdl-layout-spacer"></div>
+													<i class="material-icons">poll</i>
 												</div>
 											</div>
-											<div class="mdl-card__actions mdl-card--border">
-												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Montagne" >
-													Montagne
-												</a>
-												<div class="mdl-layout-spacer"></div>
-												<i class="material-icons">poll</i>
 											</div>
-										</div>
 								</td>
 							</tr>
 						</table>
 						<table class="tableAcceuil">
 							<tr>
-								<td class="tableAcceuilBas">
-										<div class="information-card-event mdl-card mdl-shadow--2dp">
-											<div class="mdl-card__title mdl-card--expand">
-												<span class="TitreTableauBas">
-													Liste des Joueurs
-												</span>
+								<td>
+									<div class="tableAcceuilBas">
+											<div class="information-card-event mdl-card mdl-shadow--2dp">
+												<div class="mdl-card__title mdl-card--expand">
+													<span class="TitreTableauBas">
+														Liste des Joueurs
+													</span>
+													</div>
+												<div class="mdl-card__actions mdl-card--border">
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="listeJoueur.php" >
+														Voir la liste des joueurs
+													</a>
+													<div class="mdl-layout-spacer"></div>
+													<i class="material-icons">supervisor_account</i>
 												</div>
-											<div class="mdl-card__actions mdl-card--border">
-												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="listeJoueur.php" >
-													Voir la liste des joueurs
-												</a>
-												<div class="mdl-layout-spacer"></div>
-												<i class="material-icons">supervisor_account</i>
 											</div>
-										</div>
-										<div class="information-card-event mdl-card mdl-shadow--2dp">
-											<div class="mdl-card__title mdl-card--expand">
-												<span class="TitreTableauBas">
-													Règlement
-												</span>
+											<div class="information-card-event mdl-card mdl-shadow--2dp">
+												<div class="mdl-card__title mdl-card--expand">
+													<span class="TitreTableauBas">
+														Règlement
+													</span>
+													</div>
+												<div class="mdl-card__actions mdl-card--border">
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="reglement.php" >
+														Voir le Règlement de la compétition
+													</a>
+													<div class="mdl-layout-spacer"></div>
+													<i class="material-icons">gavel</i>
 												</div>
-											<div class="mdl-card__actions mdl-card--border">
-												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="reglement.php" >
-													Voir le Règlement de la compétition
-												</a>
-												<div class="mdl-layout-spacer"></div>
-												<i class="material-icons">gavel</i>
-											</div>
-										</div>
+									</div>
 								</td>
 							</tr>
 						</table>

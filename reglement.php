@@ -47,6 +47,33 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<div class="reglementDiv">
 
 								<p>
+				<h3>Règles sur chaque classement :</h3>
+				<div class="sousTitre jauneTitre">General (Maillot Jaune)</div>
+					<ul class="ulperso">
+						<li class="pointRegle reglePoint" >Le classement comme vous l'avez toujours connu</li>
+						<li class="pointRegle regleDetail" >Tous les matches et tous les bonus sont comptabilisés.</li>
+						<li class="pointRegle regleExemple" ><span class="regleExempleCorp">Les 3 premiers remportent des lots</span></li>
+					</ul>
+				<div class="sousTitre bleuTitre">Equipe (Maillot Bleu)</div>
+					<ul class="ulperso">
+						<li class="pointRegle reglePoint" >Seuls les équipes sont représentées dans ce classement</li>
+						<li class="pointRegle regleDetail" >Tous les matches et tous les bonus sont comptabilisés en additionnant les points des joueurs des équipes.</li>
+						<li class="pointRegle regleExemple" ><span class="regleExempleCorp">La première équipe remporte des lots</span></li>
+					</ul>
+				<div class="sousTitre roseTitre">Femme (Maillot Rose)</div>
+					<ul class="ulperso">
+						<li class="pointRegle reglePoint" >Seuls les femmes sont représentées dans ce classement</li>
+						<li class="pointRegle regleDetail" >Tous les matches et tous les bonus sont comptabilisés.</li>
+						<li class="pointRegle regleExemple" ><span class="regleExempleCorp">La première femme remporte un lot</span></li>
+					</ul>
+				<div class="sousTitre vertTitre">Montagne (Maillot Vert)</div>
+					<ul class="ulperso">
+						<li class="pointRegle reglePoint" >Seuls les matches les plus difficiles sont comptabilisés dans ce classment</li>
+						<li class="pointRegle regleDetail" >Les matches annotés "Match de montagne" sont comptabilisés. Pas de bonus.</li>
+						<li class="pointRegle regleExemple" ><span class="regleExempleCorp">La premier remporte un lot</span></li>
+					</ul>
+
+
 				<h3>Règles sur chaque match :</h3>
 				<div class="sousTitre perfectTitre">Perfect</div>
 					<ul class="ulperso">

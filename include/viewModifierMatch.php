@@ -126,6 +126,7 @@
 		$id_match = $row["id"];
 		$pronos_home = $row["prono_home"];
 		$pronos_away = $row["prono_away"];
+		$montagne = $row["montagne"];
 
 		if ($oldgroup != $group)
 		{
@@ -148,6 +149,16 @@
 			$lastID = $id_match;
 
 		$oldgroup = $group;
+
+
+		if ($montagne == 1)
+		{
+			echo '<tr>
+				<td colspan="7" class="tdmontagne">
+				&darr; Match de montagne &darr;
+				</td>
+			</tr>';
+		}
 
 		echo '<tr>';
 		echo '

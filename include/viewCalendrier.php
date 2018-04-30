@@ -42,6 +42,13 @@
 		$date_array = date_parse($row["date"]);
 		$score_home = $row["score_home"];
 		$score_away = $row["score_away"];
+
+		$classPancarte = "";
+		if ($row["montagne"] == 1)
+		{
+			$classPancarte = "pancarteMontagne";
+		}
+
 	
 	echo '
 			<tr >
@@ -63,14 +70,14 @@
 											'</td>
 											<td style="width: 5%;">'; 
 												if ($played == 1)
-													echo '<span class="pancarte">',  $score_home,'</span>';
+													echo '<span class="pancarte ',$classPancarte,'">',  $score_home,'</span>';
 
 											echo '</td>
 											<td style="width: 2%;"> - ', 
 											'</td>
 											<td style="width: 5%;">'; 
 												if ($played == 1)
-													echo '<span class="pancarte">',  $score_away,'</span>';
+													echo '<span class="pancarte ',$classPancarte,'">',  $score_away,'</span>';
 
 											echo '</td>
 											<td style="width: 24%;text-align: left;padding-left: 25px;">', 

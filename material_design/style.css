@@ -98,8 +98,8 @@
 
   .information-card-event.mdl-card {
     width: 415px;
-    min-height: 88px;
-    height: 88px;
+    min-height: 100px;
+    height: 100px;
     background: rgb(212, 38, 38);
   }
 
@@ -130,8 +130,8 @@
   .classementperso-card-event.mdl-card {
     margin: auto;
     width: 160px;
-    min-height: 88px;
-    height: 88px;
+    min-height: 100px;
+    height: 100px;
     margin-top: 20px;
   }
 
@@ -184,8 +184,8 @@
   .displaymatch-card-event.mdl-card {
     margin: auto;
     width: 600px;
-    min-height: 550px;
-    height: 650px;
+    min-height: 655px;
+    height: 655px;
     margin-top: 20px;
   }
 
@@ -215,8 +215,8 @@
   
 
   .height300 {
-    height: 342px !important;
-    min-height: 272px !important;
+    height: 356px !important;
+    min-height: 356px !important;
     }
 
 .heightbonusform {

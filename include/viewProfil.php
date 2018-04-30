@@ -392,6 +392,12 @@
 				{
 						$classTR = "classTRNeutre";
 				}	
+
+				$classPancarte = "";
+				if ($row["montagne"] == 1)
+				{
+					$classPancarte = "pancarteMontagne";
+				}
 		
 		
 				$find = true;
@@ -419,7 +425,7 @@
 					echo '</td>';
 		
 					echo '<td style="width:20px">';
-					echo '<span class="pancarte"> ';
+					echo '<span class="pancarte ',$classPancarte,'"> ';
 						echo $row["prono_home"];
 					echo '</span> ';
 					echo '</td>';
@@ -428,7 +434,7 @@
 					echo '</td>';
 		
 					echo '<td style="width:20px">';
-					echo '<span class="pancarte"> ';
+					echo '<span class="pancarte ',$classPancarte,'"> ';
 						echo $row["prono_away"];
 					echo '</span> ';
 					echo '</td>';

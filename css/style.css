@@ -226,7 +226,7 @@ table.sortable thead {
 
 .tableCalendrierL1 {
     text-align: center;
-    background: #ffffff9c;
+    background: rgba(255, 255, 255, 0.611764705882353)
 }
 
 .tableCalendrierL3 {
@@ -270,11 +270,11 @@ table.sortable thead {
 }
 
 .backgroundTab1 {
-    background: #b9b9b954;
+    background:rgba(185, 185, 185, 0.32941176470588235);
 }
 
 .backgroundTab2 {
-    background: #ffffff54;
+    background: rgba(255, 255, 255, 0.32941176470588235);
 }
 
 .backgroundTab1Jaune {
@@ -296,7 +296,7 @@ table.sortable thead {
     background: #f97ba6;
 }
 .backgroundTab2Rose {
-    background: #ff8bd58a;;
+    background: rgba(255, 139, 213, 0.5411764705882353);
 }
 
 
@@ -551,6 +551,37 @@ table.sortable thead {
 .pointRegle {
     margin-left: 90px;
     padding-top: 5px;
+}
+
+.tab button.active.tablinksgeneral {
+    background: #fff900;
+}
+
+
+.tab button.active.tablinksequipe {
+    background: #2768ff;
+}
+.tab button.active.tablinksfemme {
+    background: #ff8bd5;
+}
+
+.tab button.tablinksmontagne:hover {
+    border-bottom: solid 2px #3ccb24;
+}
+
+
+.jauneTitre {
+    color: #fff900;
+}
+.roseTitre {
+    color: #ff8bd5;
+}
+.bleuTitre {
+    color: #2768ff;
+}
+
+.vertTitre {
+    color: #3ccb24;
 }
 
 .perfectTitre {
@@ -1012,6 +1043,17 @@ table.sortable thead {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
+.pancarteBig {
+    background: rgba(0, 0, 0, 0.68);
+    padding: 3px;
+    display: block;
+    text-align: center;
+    font-size: 17px;
+    color: #FFF;
+    font-weight: bold;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
 img.logoEquipeBig {
     width: 70px;
     margin: 5px;
@@ -1022,11 +1064,13 @@ img.logoEquipeBig {
 img.logoEquipe {
     width: 34px;
     margin: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 img.logoEquipeSmall {
     width: 30px;
     margin: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 
@@ -1147,7 +1191,7 @@ table.TableMatch {
 
 .profilPronosBig  {
     width: 800px;
-    height: 2700px;
+    height: 2800px;
     text-align: left;
     font-size: x-large;
     background: #FFF;
@@ -1168,7 +1212,7 @@ table.TableMatch {
     width: 200px;
     text-align: center;
     font-size: 20px;
-    height: 100%;
+    height: 1200px;
     background: rgb(48, 49, 129);
 }
 
@@ -1457,4 +1501,28 @@ div#add_err {
 #demand {
     background: rgb(43, 17, 160);
     width: 180px;
+}
+
+.material-icons.profilicon {
+    font-size: 20px;
+}
+
+.pancarteMontagne {
+    background: #009a46
+}
+
+.tdmontagne {
+    color : #009a46;
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.matchmontagne {
+    padding: 10px 20px;
+    margin: 0 200px;
+    background: #009a46;
+    font-size: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    color: #FFF;
 }

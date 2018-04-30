@@ -44,10 +44,19 @@
 		$date_array = $row["date"];
 		$score_home = $row["score_home"];
 		$score_away = $row["score_away"];
+		$montagne = $row["montagne"];
+
 
 		echo '
 
-				<h2> Groupe ',$group,'</h2>
+				<h2> Groupe ',$group,'</h2>';
+		
+		if ($row["montagne"] == 1)
+		{
+			echo '<div class="matchmontagne">Match de montage</div>';
+		}		
+
+		echo '
 		<table style="margin:auto;width: 100%;border-collapse: collapse;    margin-top: 55px;">
 			<tr>
 					<td style="margin: auto;text-align: right;padding-right: 40px;">
