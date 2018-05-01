@@ -29,7 +29,7 @@
 		$result = mysqli_query($con, $qry);
 	$find = false;
 
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{
 		$group = $row["groupe"];
 		$home_logo = utf8_encode_function($row["home_logo"]);
@@ -148,9 +148,9 @@ echo '
     width: 100%;color:#FFF;">';
 
 	$i = 0;
-	// $row = mysqli_fetch_array($result, MYSQL_ASSOC);
+	// $row = mysqli_fetch_array($result );
 	// while ($i < 50) 
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC))
+	while ($row = mysqli_fetch_array($result ))
 	{
 		$find = true;
 		$group = $row["groupe"];

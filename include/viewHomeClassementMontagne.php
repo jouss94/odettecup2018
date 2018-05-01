@@ -19,7 +19,7 @@
 	$find = false;
 	$i = 0;
 	$nbtotal = mysqli_num_rows($result);
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{
 		$i++;
 		$find = true;
@@ -55,7 +55,7 @@ echo '	</tr>';
 echo '</table>';
 
 	if (!$find)
-	echo 'Pas encore de matches joués.';
+	echo 'Pas encore de joueur dans ce classement.';
 	echo '';
 
 ?>

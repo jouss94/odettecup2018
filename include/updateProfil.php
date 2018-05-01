@@ -13,7 +13,7 @@
 	$qry = "SELECT * FROM joueurs WHERE id_joueur=".$id.";";
 	$result = mysqli_query($con, $qry);
 	$find = false;
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{
 		$modif_profil = intval($row["modif_profil"]);
 		$modif_match = intval($row["modif_match"]);

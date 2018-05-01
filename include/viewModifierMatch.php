@@ -19,7 +19,7 @@
 	WHERE id_joueur='".$idProfil."';";
 	$result = mysqli_query($con, $qry);
 	$find = false;
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{	
 		$find = true;
 		echo '<div class="profilInformationSurnom">';
@@ -116,7 +116,7 @@
 	$first = true;
 	$firstID = 0;
 	$lastID = 0;
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{
 		$group = $row["groupe"];
 		$home_logo = utf8_encode_function($row["home_logo"]);

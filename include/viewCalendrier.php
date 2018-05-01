@@ -26,7 +26,7 @@
 		<table class="tableListe" >';
 
 
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{
 
 		$group = $row["groupe"];

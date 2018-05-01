@@ -17,7 +17,7 @@
 		<table class="tableListe" style="background:#FFF;" >';
 
 
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{
 
 		$image = utf8_encode_function($row["image"]);

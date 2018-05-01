@@ -9,7 +9,7 @@
 
 	$qry = "SELECT * FROM joueurs;";
 	$result = mysqli_query($con, $qry);
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{
 		$id_joueur = intval($row["id_joueur"]);
 	
@@ -30,7 +30,7 @@
 
 		$bonusFinal = 0;
 
-		while ($row2 = mysqli_fetch_array($result2, MYSQL_ASSOC)) 
+		while ($row2 = mysqli_fetch_array($result2 )) 
 		{
 			$id_match = intval($row2["id_match"]);
 			$pronos_home = intval($row2["prono_home"]);
@@ -111,7 +111,7 @@
 		$ptsNombreButFrance = 0;
 		// + autre
 
-		while ($rowBonus = mysqli_fetch_array($resultBonus, MYSQL_ASSOC)) 
+		while ($rowBonus = mysqli_fetch_array($resultBonus )) 
 		{
 
 			$firstButeurFrance = $rowBonus["first_france"];
@@ -188,7 +188,7 @@
 	$i = 1;
 	$oldPoint = -1;
 	$oldRang = 0;
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{
 		$id_joueur = $row["id_joueur"];
 		if ($row["points"] == $oldPoint)

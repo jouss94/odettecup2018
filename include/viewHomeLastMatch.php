@@ -25,7 +25,7 @@
 	$result = mysqli_query($con, $qry);
 	$find = false;
 	$i = 0;
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{
 		$find = true;
 		$group = $row["groupe"];

@@ -19,7 +19,7 @@
 	WHERE id_joueur='".$idProfil."';";
 	$result = mysqli_query($con, $qry);
 	$find = false;
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{	
 		$find = true;
 		echo '<div class="profilInformationSurnom">';
@@ -87,7 +87,7 @@
 	 	$best_scorer = "";
 		$qryBonus = "SELECT * FROM pronostics_bonus WHERE id_membre='".$idProfil."';";
 		$resultBonus = mysqli_query($con, $qryBonus);
-		while ($rowBonus = mysqli_fetch_array($resultBonus, MYSQL_ASSOC)) 
+		while ($rowBonus = mysqli_fetch_array($resultBonus )) 
 		{	
 		 	$team_winner_id = $rowBonus["team_winner_id"];
 		 	$min_first = $rowBonus["min_first"];
@@ -124,7 +124,7 @@
 			echo '<td rowspan="2" class="tdMatch tdMatchRight">';
 				echo '
 					    <select name="equipeWin" id="equipeWin" style="width:150px;">';
-						while ($row = mysqli_fetch_array($equipes, MYSQL_ASSOC)) 
+						while ($row = mysqli_fetch_array($equipes )) 
 						{	
 							$value = $row["id_equipe"];
 							$name = utf8_encode_function($row["name"]);

@@ -21,7 +21,7 @@
 
 	$qry = "SELECT * FROM etat;";
 	$result = mysqli_query($con, $qry);
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{
 		if ($row["attribut"] == "PRONOS_BONUS")
 			$modifBonus = $row["value"];
@@ -52,7 +52,7 @@
 	WHERE id_joueur='".$idProfil."';";
 	$result = mysqli_query($con, $qry);
 	$find = false;
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{	
 		$find = true;
 		echo '<div class="profilInformationSurnom">';
@@ -371,7 +371,7 @@
 			$find = false;
 			$i = 0;
 
-			while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+			while ($row = mysqli_fetch_array($result )) 
 			{	
 				$classTR = "";
 				if ($row["played"] == 1)
@@ -536,7 +536,7 @@ $qryBonus = "SELECT *, equipe_winner.name as equipe_w
 $resultBonus = mysqli_query($con, $qryBonus);
 $findBonus = false;
 
-while ($rowBonus = mysqli_fetch_array($resultBonus, MYSQL_ASSOC)) 
+while ($rowBonus = mysqli_fetch_array($resultBonus )) 
 {	
 $findBonus = true;
  $team_winner_id = utf8_encode_function($rowBonus["equipe_w"]);

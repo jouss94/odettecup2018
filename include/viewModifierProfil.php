@@ -17,7 +17,7 @@
 	$qry = "SELECT * FROM joueurs WHERE id_joueur='".$idProfil."';";
 	$result = mysqli_query($con, $qry);
 	$find = false;
-	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+	while ($row = mysqli_fetch_array($result )) 
 	{	
 		$find = true;
 		$surnom = utf8_encode_function($row["surnom"]);
