@@ -26,4 +26,6 @@ else {
 	echo 'false';
 }
 
+
+return 1;
 ?>

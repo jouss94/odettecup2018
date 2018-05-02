@@ -23,7 +23,7 @@ $(function() {
 									var data = yesOrNo.split(";");
 									// $(this).next().stop().style.display = "block";;fisrtColumnProfilModifier
 
-									if ( data[0] != 'yes' ) {
+									if ( data[0].indexOf('yes') < 0 ) {
 											for (var index =0; index < 5; index++) 
 											{
 												element = document.getElementById(data[1] + "error" + index);

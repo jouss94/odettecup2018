@@ -20,8 +20,8 @@ $(function() {
 									var data = yesOrNo.split(";");
 									// $(this).next().stop().style.display = "block";;
 									console.log(data);
-									if ( data[0] != 'yes' ) {
-											if (data[0] == "confirm")
+									if ( data[0].indexOf('yes') < 0) {
+											if (data[0].indexOf('confirm') >= 0)
 											{
 													confirm = document.getElementById("confirmationProfil").value;
 													mdp = document.getElementById("mpdProfil").value;

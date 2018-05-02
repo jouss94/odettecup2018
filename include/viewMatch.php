@@ -53,7 +53,7 @@
 		
 		if ($row["montagne"] == 1)
 		{
-			echo '<div class="matchmontagne">Match de montage</div>';
+			echo '<div class="matchmontagne">Match de montagne</div>';
 		}		
 
 		echo '

@@ -8,12 +8,13 @@ $(document).ready(function(){
 		   type: "POST",
 		   url: "login.php",
 			data: "name="+username+"&pwd="+password,
-		   success: function(html){    
+		   success: function(html){ 
 			// $("#add_err").css('display', 'inline', 'important');
 			//  $("#add_err").html("<span>" + html + "</span>");
-			if(html=='true')    {
-			 //$("#add_err").html("right username or password");
-			 window.location="acceuil.php";
+			if(html.indexOf('true') >= 0)    {
+				console.log("OK"); 
+				//$("#add_err").html("right username or password");
+				window.location="acceuil.php";
 			}
 			else    {
 			$("#add_load").css('display', 'none', 'important');

@@ -34,7 +34,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">
-				<div style="width:100%;height:2950px;">
+				<div style="width:100%;height:3040px;">
 
 					<span class="listeJoueurTitre">Règlement</span>
 	
@@ -84,7 +84,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 				<div class="sousTitre perfectCorrectPlus">Correct +</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >4 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le vainqueur du match et le score d'une des 2 équipes.</li>
+						<li class="pointRegle regleDetail" >Trouvez le vainqueur du match et le nombre de but de l'une des deux équipes.</li>
 						<li class="pointRegle regleExemple" >Exemple : <span class="regleExempleCorp">Pronostic 2-1 - Score 2-0 : + 4 points</span></li>
 						<div style="margin-left: 161px;"><span class="regleExempleCorp">Pronostic 2-1 - Score 3-1 : + 4 points</span></div>
 					</ul>
@@ -134,7 +134,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<li class="pointRegle regleDetail" >[Tout-pil'] : trouvez la minute exacte.</li>
 						<li class="pointRegle regleDetail" >[Approchant] : La minute se trouve dans les <strong>2</strong> minutes de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
-						<li class="pointRegle regleDetail" >Minutage officiel donné par l'UEFA.</li>
+						<li class="pointRegle regleDetail" >Minutage officiel donné par la FIFA.</li>
 					</ul>
 
 
@@ -146,7 +146,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<li class="pointRegle regleDetail" >[Tout-pil'] : trouvez la minute exacte.</li>
 						<li class="pointRegle regleDetail" >[Approchant] : La minute se trouve dans les <strong>2</strong> minutes de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
-						<li class="pointRegle regleDetail" >Minutage officiel donné par l'UEFA.</li>
+						<li class="pointRegle regleDetail" >Minutage officiel donné par la FIFA.</li>
 					</ul>
 
 					<div class="sousTitre titreBonus">Nombre total de buts</div>
@@ -187,8 +187,8 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 					</ul> -->
 					<div class="sousTitre titreBonus">Bonus : Finale</div>
 					<ul class="ulperso">
-						<li class="pointRegle reglePoint" >14 points ou 8 points ou 6 points ou 2 points ou 0 point</li>
-						<li class="pointRegle regleDetail" >Le nombre de points gagnés sur la finale est doublé.</li>
+						<li class="pointRegle reglePoint" >14 points ou 8 points ou 6 points ou 2 points</li>
+						<li class="pointRegle regleDetail" >Le nombre de points gagnés sur le match de la finale est doublé.</li>
 					</ul> 
 
 			</p>

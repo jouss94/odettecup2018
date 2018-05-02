@@ -35,7 +35,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<div class="padding20">
 			<div class="loginform-in">
 
-				<div style="width:100%;height:1030px;background:white">
+				<div style="width:100%;height:1100px;background:white">
 						<?php include("include/updateProfil.php");?>
 
 						<div class="allAcceuil">

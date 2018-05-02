@@ -22,7 +22,7 @@
 	while ($row = mysqli_fetch_array($result )) 
 	{	
 		$find = true;
-		echo '<div class="profilInformationSurnom">';
+		echo '<div class="profilInformationSurnomBig">';
 		echo '<span style="padding-top: 15px;display: block;color: #FFF;FONT-WEIGHT: bold;">';
 		echo utf8_encode_function($row["surnom"]);
 		echo '</span>';
