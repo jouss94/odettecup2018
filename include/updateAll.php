@@ -19,6 +19,7 @@
 				Left JOIN matches ON pronostics.id_match = matches.id_match
 				WHERE joueurs.id_joueur = $id_joueur AND matches.played = 1;";
 		$result2 = mysqli_query($con, $qry2);
+
 		$nb_perf = 0;
 		$nb_correctPlus = 0;
 		$nb_correct = 0;
@@ -27,6 +28,14 @@
 		$total = 0;
 		$points = 0;
 		$bonus = 0;
+
+		$nb_perf_montagne = 0;
+		$nb_correctPlus_montagne = 0;
+		$nb_correct_montagne = 0;
+		$nb_inverse_montagne = 0;
+		$nb_echec_montagne = 0;
+		$total_montagne = 0;
+		$points_montagne = 0;
 
 		$bonusFinal = 0;
 
@@ -113,59 +122,44 @@
 
 		while ($rowBonus = mysqli_fetch_array($resultBonus )) 
 		{
+			// regles a implémenter
 
-			$firstButeurFrance = $rowBonus["first_france"];
-			if (strpos($firstButeurFrance, 'Giroud') !== false)
-				$ptsFirstButeurFrance = 7;
-
-			$teamAttaque = $rowBonus["best_attack_id"];
-			if ($teamAttaque == 2)
-				$ptsTeamAttaque = 7;
-
-			$teamDefence = $rowBonus["best_defence_id"];
-			if ($teamDefence == 18 || $teamDefence == 11)
-				$ptsTeamDefence = 7;
-
-			$totalBut = $rowBonus["total_but"];
-			if ($totalBut == 108)
-				$ptsTotalBut = 14;
-			
-			$buteur = $rowBonus["best_scorer"];
-			if (strpos($buteur, 'Griezmann') !== false)
-				$ptsButeur = 7;
-
-			$nombreButButeur = $rowBonus["nb_best_scorer"];
-			if ($nombreButButeur == 6)
-				$ptsNombreButButeur = 7;
 
 			$bonus = $ptsFirstMin + $ptsFirstButeurFrance + $ptsTeamWinner + $ptsTeamAttaque + $ptsTeamDefence + $ptsLastMin + $ptsTotalBut +
 					 $ptsButeur + $ptsPasseur + $ptsNombreButButeur + $ptsNombreButFrance + $bonusFinal; // + + +
 		}
 
 		$points += $bonus;
-		$updateBonus = "UPDATE pronostics_bonus 
-					SET
-						 min_first_point   = $ptsFirstMin, 
-						 first_france_point   = $ptsFirstButeurFrance,
-						 team_winner_id_point = $ptsTeamWinner,
-						 best_attack_id_point = $ptsTeamAttaque,
-						 best_defence_id_point = $ptsTeamDefence,
-						 min_last_point = $ptsLastMin,
-						 total_but_point = $ptsTotalBut,
-						 best_scorer_point = $ptsButeur,
-						 best_passeur_point = $ptsPasseur,
-						 nb_best_scorer_point = $ptsNombreButButeur,
-						 nb_but_france_point = $ptsNombreButFrance
-
-					WHERE id_membre = $id_joueur";
-		$resultBonus = mysqli_query($con, $updateBonus);
-		if (!$resultBonus) {
-			echo 'ERROR REQUETE : ', $updateBonus, '</br>';
-		}
+		// $updateBonus = "UPDATE pronostics_bonus 
+		// 			SET
+		// 				 min_first_point   = $ptsFirstMin, 
+		// 				 team_winner_id_point = $ptsTeamWinner,
+		// 				 min_last_point = $ptsLastMin,
+		// 				 total_but_point = $ptsTotalBut
+		// 			WHERE id_membre = $id_joueur";
+		// $resultBonus = mysqli_query($con, $updateBonus);
+		// if (!$resultBonus) {
+		// 	echo 'ERROR REQUETE : ', $updateBonus, '</br>';
+		// }
 
 
 
-		$updatejoueur = "UPDATE joueurs 
+		// $updatejoueur = "UPDATE joueurs 
+		// 			SET
+		// 				 points   = $points, 
+		// 				 nb_perf   = $nb_perf,
+		// 				 nb_correct_plus   = $nb_correctPlus,
+		// 				 nb_correct   = $nb_correct,
+		// 				 nb_inverse   = $nb_inverse,
+		// 				 nb_echec   = $nb_echec,
+		// 				 bonus = $bonus
+		// 			WHERE id_joueur = $id_joueur";
+		// $result4 = mysqli_query($con, $updatejoueur);
+		// if (!$result4) {
+		// 	echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+		// }
+
+		$updatejoueur = "UPDATE classements 
 					SET
 						 points   = $points, 
 						 nb_perf   = $nb_perf,
@@ -174,11 +168,45 @@
 						 nb_inverse   = $nb_inverse,
 						 nb_echec   = $nb_echec,
 						 bonus = $bonus
-					WHERE id_joueur = $id_joueur";
+					WHERE owner_id = $id_joueur AND type = 'general'";
 		$result4 = mysqli_query($con, $updatejoueur);
 		if (!$result4) {
 			echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
 		}
+
+		$updatejoueur = "UPDATE classements 
+					SET
+						 points   = $points_montagne, 
+						 nb_perf   = $nb_perf_montagne,
+						 nb_correct_plus   = $nb_correctPlus_montagne,
+						 nb_correct   = $nb_correct_montagne,
+						 nb_inverse   = $nb_inverse_montagne,
+						 nb_echec   = $nb_echec_montagne
+					WHERE owner_id = $id_joueur AND type = 'montagne'";
+		$result4 = mysqli_query($con, $updatejoueur);
+		if (!$result4) {
+			echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+		}
+
+
+		if (intval($row["female"]) == 1)
+		{
+			$updatejoueur = "UPDATE classements 
+			SET
+				 points   = $points, 
+				 nb_perf   = $nb_perf,
+				 nb_correct_plus   = $nb_correctPlus,
+				 nb_correct   = $nb_correct,
+				 nb_inverse   = $nb_inverse,
+				 nb_echec   = $nb_echec,
+				 bonus = $bonus
+			WHERE owner_id = $id_joueur AND type = 'femme'";
+			$result4 = mysqli_query($con, $updatejoueur);
+			if (!$result4) {
+				echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+			}
+		}
+
 	}
 
 
