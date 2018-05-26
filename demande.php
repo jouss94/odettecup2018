@@ -97,7 +97,7 @@ session_start();
 						<td style="text-align:right;">
 	    					<label for="payement" style="padding-right: 35px;">Mode de payement</label>
 							<div>
-								<label for="payement" style="padding-right: 35px;font-weight: lighter;font-size: 12px;">Frais d'inscription : 20€</label>					
+								<label for="payement" style="padding-right: 35px;font-weight: lighter;font-size: 12px;">Frais d'inscription : 50€</label>					
 							</div>
 						</td>
 					<td>

@@ -18,10 +18,6 @@
 
 <div id="General" class="tabcontent">',include "viewClassementGeneral.php",'</div>
 
-<div id="Equipe" class="tabcontent">',include("viewClassementEquipe.php"),'</div>
-
-<div id="Femme" class="tabcontent">',include("viewClassementFemme.php"),'</div>
-
 <div id="Montagne" class="tabcontent">',include("viewClassementMontagne.php"),'</div>
 
 <script>

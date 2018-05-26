@@ -87,7 +87,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 												</div>
 												<div class="mdl-card__actions mdl-card--border">
 													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=General" >
-														Général
+														Classement Général
 													</a>
 													<div class="mdl-layout-spacer"></div>
 													<i class="material-icons">poll</i>
@@ -101,7 +101,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 												</div>
 												<div class="mdl-card__actions mdl-card--border">
 													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Montagne" >
-														Montagne
+														Classement Montagne
 													</a>
 													<div class="mdl-layout-spacer"></div>
 													<i class="material-icons">poll</i>
