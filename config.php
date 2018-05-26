@@ -3,15 +3,15 @@ $host= 'cl1-sql20';
 $host1= 'mysql.hostinger.fr';
 $hostWamp= 'localhost';
 
-$dbname= 'xcx58271';
+$dbname= 'rkt77471';
 $dbname1= 'u469049543_02020';
-$dbnameWamp= 'russia2018';
+$dbnameWamp= 'pronosrussie2018';
 
-$user= 'xcx58271';
+$user= 'rkt77471';
 $user1= 'u469049543_02020';
 $userWamp= 'root';
 
-$pass= 'xmJDHUBSMPQD';
+$pass= 'p0HBldRQNzU8';
 $pass1= '02020db';
 $passWamp= '';
 

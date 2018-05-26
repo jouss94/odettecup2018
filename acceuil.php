@@ -93,34 +93,6 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 													<i class="material-icons">poll</i>
 												</div>
 											</div>
-											<div class="classement-card-event mdl-card classement-equipe mdl-shadow--2dp">
-												<div class="mdl-card__title mdl-card--expand">
-													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
-														<?php include("include/viewHomeClassementEquipe.php");?>
-													</div>
-												</div>
-												<div class="mdl-card__actions mdl-card--border">
-													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Equipe" >
-														Equipe
-													</a>
-													<div class="mdl-layout-spacer"></div>
-													<i class="material-icons">poll</i>
-												</div>
-											</div>
-											<div class="classement-card-event mdl-card classement-femme mdl-shadow--2dp">
-												<div class="mdl-card__title mdl-card--expand">
-													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
-														<?php include("include/viewHomeClassementFemme.php");?>
-													</div>
-												</div>
-												<div class="mdl-card__actions mdl-card--border">
-													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Femme" >
-														Femme
-													</a>
-													<div class="mdl-layout-spacer"></div>
-													<i class="material-icons">poll</i>
-												</div>
-											</div>
 											<div class="classement-card-event mdl-card classement-montagne mdl-shadow--2dp">
 												<div class="mdl-card__title mdl-card--expand">
 													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">

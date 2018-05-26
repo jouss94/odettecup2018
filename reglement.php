@@ -52,19 +52,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >Le classement comme vous l'avez toujours connu</li>
 						<li class="pointRegle regleDetail" >Tous les matches et tous les bonus sont comptabilisés.</li>
-						<li class="pointRegle regleExemple" ><span class="regleExempleCorp">Les 3 premiers remportent des lots</span></li>
-					</ul>
-				<div class="sousTitre bleuTitre">Equipe (Maillot Bleu)</div>
-					<ul class="ulperso">
-						<li class="pointRegle reglePoint" >Seuls les équipes sont représentées dans ce classement</li>
-						<li class="pointRegle regleDetail" >Tous les matches et tous les bonus sont comptabilisés en additionnant les points des joueurs des équipes.</li>
-						<li class="pointRegle regleExemple" ><span class="regleExempleCorp">La première équipe remporte des lots</span></li>
-					</ul>
-				<div class="sousTitre roseTitre">Femme (Maillot Rose)</div>
-					<ul class="ulperso">
-						<li class="pointRegle reglePoint" >Seuls les femmes sont représentées dans ce classement</li>
-						<li class="pointRegle regleDetail" >Tous les matches et tous les bonus sont comptabilisés.</li>
-						<li class="pointRegle regleExemple" ><span class="regleExempleCorp">La première femme remporte un lot</span></li>
+						<li class="pointRegle regleExemple" ><span class="regleExempleCorp">Les 2 ou 3 premiers remportent des lots</span></li>
 					</ul>
 				<div class="sousTitre vertTitre">Montagne (Maillot Vert)</div>
 					<ul class="ulperso">
@@ -195,16 +183,15 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
 		<h3>Dates :</h3>
 				<ul class="ulperso">
-						<li class="pointRegle" >1er Mai 2018 : ouverture aux inscriptions.</li>
-						<li class="pointRegle" >1er Juin 2018 : fermeture des inscriptions et des pronostics. Ouverture de tous les pronostics à tout le monde.</li>
-						<li class="pointRegle" >10 juin 2018 : Tirage au sort des équipes.</li>
+						<li class="pointRegle" >27 Mai 2018 : ouverture aux inscriptions.</li>
+						<li class="pointRegle" >10 Juin 2018 : fermeture des inscriptions et des pronostics. Ouverture de tous les pronostics à tout le monde.</li>
 						<li class="pointRegle" >Matches de phase finale : pour les 8émes, quarts, demies et finale, tous les pronostics seront à rentrer en ligne.</li>
 					</ul>
 
 
 		<h3>Engagement dans le concours :</h3>
 			<p>
-				<span class="pointRegle">20€ par joueur à payer avant le 1er juin par virement, chèque ou espèce.</span>			
+				<span class="pointRegle">50€ par joueur.</span>			
 			</p>
 
 		<h3>Tableau des gains :</h3>

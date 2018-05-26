@@ -13,8 +13,6 @@
 	echo '
 		<div class="tab">
   <button id="tabsGeneral" class="tablinks tablinksgeneral" onclick="openClassement(event, \'General\')">General</button>
-  <button id="tabsEquipe" class="tablinks tablinksequipe" onclick="openClassement(event, \'Equipe\')">Equipe</button>
-  <button id="tabsFemme" class="tablinks tablinksfemme" onclick="openClassement(event, \'Femme\')">Femme</button>
   <button id="tabsMontagne" class="tablinks tablinksmontagne" onclick="openClassement(event, \'Montagne\')">Montagne</button>
 </div>
 

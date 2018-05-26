@@ -1,11 +1,11 @@
-SET @prenom = 'Solene';
-SET @nom = 'Teisseire';
-SET @surnom = 'la loute';
-SET @email = 'Soso@gmail.com';
-SET @password = 'admin';
-SET @telephone = '0760851992';
-SET @female = 1;
-SET @description = 'Soso';
+SET @prenom = 'Julien';
+SET @nom = 'Jousseau';
+SET @surnom = 'Joussao';
+SET @email = 'julien.jousseau@hotmail.fr';
+SET @password = 'WPEMD9ZP';
+SET @telephone = '0699244942';
+SET @female = 0;
+SET @description = "Il est temps de passer aux choses sérieuses...";
 
 
 INSERT INTO `joueurs` (`prenom`, `nom`, `surnom`, `email`, `password`, `telephone`, `female`, `description`) 

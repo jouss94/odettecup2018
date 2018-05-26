@@ -1191,7 +1191,7 @@ table.TableMatch {
 
 .profilPronosBig  {
     width: 800px;
-    height: 2800px;
+    height: 3000px;
     text-align: left;
     font-size: x-large;
     background: #FFF;
@@ -1220,7 +1220,7 @@ table.TableMatch {
     width: 200px;
     text-align: center;
     font-size: 20px;
-    height: 2800px;
+    height: 3000px;
     background: rgb(48, 49, 129);
 }
 
