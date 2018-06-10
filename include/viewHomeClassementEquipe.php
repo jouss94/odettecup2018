@@ -14,7 +14,7 @@
 
 	$qry = "SELECT * from coequipiers 
 	LEFT JOIN classements ON classements.owner_id = coequipiers.id AND type = 'equipe'  
-	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC;";
+	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC, nom ASC;";
 	$result = mysqli_query($con, $qry);
 	$find = false;
 	$i = 0;
