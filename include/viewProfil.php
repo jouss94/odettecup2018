@@ -84,6 +84,7 @@
 		echo '<div class="profilInformationCivil">', utf8_encode_function($row["prenom"]), '</div>';
 		echo '<div class="profilInformationCivil">', utf8_encode_function($row["joueursnom"]), '</div>';
 		echo '<div class="profilInformationCivil">', utf8_encode_function($row["email"]), '</div>';
+		echo '<div class="profilInformationCivil">Tel : ', utf8_encode_function($row["telephone"]), '</div>';
 		echo '<div class="profilInformationEmail">', utf8_encode_function($row["description"]), '</div>';
 		
 		
