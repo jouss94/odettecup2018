@@ -37,6 +37,7 @@
 
 		$i++;
 		$find = true;
+		$id = $row["id"];
 		$rang = $row["rang"];
 		$nom = utf8_encode_function($row["nom"]);
 		$points = $row["points"];
@@ -59,9 +60,11 @@ echo '
 				<td class="ClassementRang">',
 					$rang,
 				'</td>
-				<td class="ClassementSurnom">',
-					$nom,
-				'</td>
+				<td class="ClassementSurnom">
+					<div id="lienSurnom', $id,'" style="" class="surnomClassementDiv clickEquipe">',
+						$nom,
+					'</div>
+				</td>
 				<td class="ClassementNbPronos">',
 					$total,
 				'</td>

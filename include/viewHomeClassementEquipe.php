@@ -40,7 +40,7 @@
 			echo '</div>';
 		echo '</td>';
 		echo '<td class="homeClassementSurnom">';
-			echo '<div id="lienSurnom', $id_equipe,'" class="surnomClassementDiv">';
+			echo '<div id="lienSurnom', $id_equipe,'" class="surnomClassementDiv clickEquipe">';
 			echo $nom;	
 			echo '</div>';
 		echo '</td>';

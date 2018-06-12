@@ -40,6 +40,7 @@
 		montagne.points as montagnepoints,
 		equipe.rang as equiperang,
 		equipe.points as equipepoints,
+		joueurs.equipe AS joueursequipe,
 		coequipiers.nom as nomequipe
 		
 	 FROM joueurs 
@@ -61,10 +62,11 @@
 		echo '</span>';
 		if ($row["nomequipe"] != null && $row["nomequipe"] != "")
 		{
-			echo '<div class="labelnomequipe">';
-			echo utf8_encode_function($row["nomequipe"]);
+			echo '<div class="labelnomequipe">
+			<a class="labelequipe" href="equipes.php?id=',$row["joueursequipe"],'" >
+			',  utf8_encode_function($row["nomequipe"]), '
+			</a>';
 			echo '</div>';
-
 		}
 
 		echo '<div class="profilInformationImageDiv"> 

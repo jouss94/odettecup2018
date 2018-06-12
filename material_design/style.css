@@ -265,3 +265,66 @@
 .match-card-event > .mdl-card__actions > .mdl-button {
   color: #fff;
 }
+
+
+.joueur-card-event.mdl-card {
+  width: 250px;
+  height: 300px;    
+  background: #2947ca;
+}
+.joueur-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.joueur-card-event > .mdl-card__title {
+  align-items: flex-start;
+  padding: 10px 10px;
+}
+.joueur-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.joueur-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.joueur-card-event > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.joueur-card-event > .mdl-card__title,
+.joueur-card-event > .mdl-card__actions,
+.joueur-card-event > .mdl-card__actions > .mdl-button {
+  color: #fff;
+}
+
+
+
+.classementequipe-card-event.mdl-card {
+  MARGIN: 20PX;
+  width: 490px;
+  height: 80px;
+  MIN-HEIGHT: 80PX;
+  background: #2947ca;
+}
+.classementequipe-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.classementequipe-card-event > .mdl-card__title {
+  align-items: flex-start;
+  padding: 10px 10px;
+}
+.classementequipe-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.classementequipe-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.classementequipe-card-event > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.classementequipe-card-event > .mdl-card__title,
+.classementequipe-card-event > .mdl-card__actions,
+.classementequipe-card-event > .mdl-card__actions > .mdl-button {
+  color: #fff;
+}
