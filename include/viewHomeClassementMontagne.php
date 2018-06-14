@@ -13,7 +13,7 @@
 	
 
 	$qry = "SELECT * from joueurs 
-	LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'general' 
+	LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'montagne' 
 	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC, surnom;";
 	$result = mysqli_query($con, $qry);
 	$find = false;

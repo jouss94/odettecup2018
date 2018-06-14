@@ -40,13 +40,14 @@
 		montagne.points as montagnepoints,
 		equipe.rang as equiperang,
 		equipe.points as equipepoints,
+		joueurs.equipe AS joueursequipe,
 		coequipiers.nom as nomequipe
 		
 	 FROM joueurs 
-	LEFT JOIN classements as general ON general.owner_id = joueurs.id_joueur AND general.type = 'general' 
 	LEFT JOIN classements as femme ON femme.owner_id = joueurs.id_joueur AND femme.type = 'femme' 
 	LEFT JOIN classements as montagne ON montagne.owner_id = joueurs.id_joueur AND montagne.type = 'montagne' 
 	LEFT JOIN classements as equipe ON equipe.owner_id = joueurs.equipe AND equipe.type = 'equipe' 
+	LEFT JOIN classements as general ON general.owner_id = joueurs.id_joueur AND general.type = 'general' 
 	LEFT JOIN coequipiers on coequipiers.id = joueurs.equipe
 
 	WHERE id_joueur='".$idProfil."';";
@@ -61,10 +62,11 @@
 		echo '</span>';
 		if ($row["nomequipe"] != null && $row["nomequipe"] != "")
 		{
-			echo '<div class="labelnomequipe">';
-			echo utf8_encode_function($row["nomequipe"]);
+			echo '<div class="labelnomequipe">
+			<a class="labelequipe" href="equipes.php?id=',$row["joueursequipe"],'" >
+			',  utf8_encode_function($row["nomequipe"]), '
+			</a>';
 			echo '</div>';
-
 		}
 
 		echo '<div class="profilInformationImageDiv"> 
@@ -84,6 +86,7 @@
 		echo '<div class="profilInformationCivil">', utf8_encode_function($row["prenom"]), '</div>';
 		echo '<div class="profilInformationCivil">', utf8_encode_function($row["joueursnom"]), '</div>';
 		echo '<div class="profilInformationCivil">', utf8_encode_function($row["email"]), '</div>';
+		echo '<div class="profilInformationCivil">Tel : ', utf8_encode_function($row["telephone"]), '</div>';
 		echo '<div class="profilInformationEmail">', utf8_encode_function($row["description"]), '</div>';
 		
 		
@@ -511,10 +514,12 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 		echo $team_winner_id;
 		echo '</span> ';
 	echo '</td>';
+	echo '<td class="pointBonus">';
 	if ($team_winner_id_point >= 0)
 	{
-			echo '<td class="pointBonus">+'. $team_winner_id_point  .'</td> ';
+			echo '+'. $team_winner_id_point;
 	}
+	echo '</td>';
 
 echo '</tr>';
 
@@ -537,10 +542,12 @@ echo '<tr class="affPronosLigne backgroundTab2" >';
 		echo $min_first;
 		echo '</span> Minutes';
 	echo '</td>';
+	echo '<td class="pointBonus">';
 	if ($min_first_point >= 0)
 	{
-			echo '<td class="pointBonus">+'. $min_first_point  .'</td> ';
+			echo '+'. $min_first_point;
 	}
+	echo '</td>';
 echo '</tr>';
 
 echo '<tr class="affPronosLigne backgroundTab1" >';
@@ -562,10 +569,12 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 		echo $min_last;
 		echo '</span> Minutes';
 	echo '</td>';
+	echo '<td class="pointBonus">';
 	if ($min_last_point >= 0)
 	{
-			echo '<td class="pointBonus">+'. $min_last_point  .'</td> ';
+			echo '+'. $min_last_point;
 	}
+	echo '</td>';
 echo '</tr>';
 
 echo '<tr class="affPronosLigne backgroundTab2" >';
@@ -587,10 +596,12 @@ echo '<tr class="affPronosLigne backgroundTab2" >';
 		echo $total_but;
 		echo '</span> Buts';
 	echo '</td>';
+	echo '<td class="pointBonus">';
 	if ($total_but_point >= 0)
 	{
-			echo '<td class="pointBonus">+'. $total_but_point  .'</td> ';
+			echo '+'. $total_but_point;
 	}
+	echo '</td>';
 echo '</tr>';
 
 echo '<tr class="affPronosLigne backgroundTab1" >';
@@ -612,10 +623,12 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 		echo $best_scorer;
 		echo '</span> ';
 	echo '</td>';
+	echo '<td class="pointBonus">';
 	if ($best_scorer_point >= 0)
 	{
-			echo '<td class="pointBonus">+'. $best_scorer_point  .'</td> ';
+			echo '+'. $best_scorer_point;
 	}
+	echo '</td>';
 echo '</tr>';
 
 echo '</table>';

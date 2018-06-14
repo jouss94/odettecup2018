@@ -1,18 +1,11 @@
-SET @prenom = 'Manil';
-SET @nom = 'Benkhelifa';
-SET @surnom = 'Francis';
-SET @email = 'manilbenkhelifa@icloud.com';
-SET @password = '89VE53';
-SET @telephone = '0601100195';
+SET @prenom = 'Dalia';
+SET @nom = 'Aflalaye';
+SET @surnom = 'Daliou';
+SET @email = 'Dalia.aflalaye@live.fr';
+SET @password = '87TV31';
+SET @telephone = '0649852445';
 SET @female = 0;
-SET @description = "L'importance est de participer , 
-Mais l'ISF arrive a grand pas..
-Vous plumez je dois.
-Pour cette première participation soyez prêt 
-Le promu vous fera déchanter 
-Sarko la finance te dit merci d?avance 
-#ISFontour 
-";
+SET @description = "";
 
 
 INSERT INTO `joueurs` (`prenom`, `nom`, `surnom`, `email`, `password`, `telephone`, `female`, `description`) 

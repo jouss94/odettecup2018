@@ -6,7 +6,7 @@
 
 	$qry = "SELECT *, (nb_perf+nb_correct_plus+nb_correct+nb_inverse+nb_echec)  as total from coequipiers 
 	LEFT JOIN classements ON classements.owner_id = coequipiers.id AND type = 'equipe'  
-	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC;";
+	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC, nom ASC;";
 	$result = mysqli_query($con, $qry);
 	$find = false;
 	$i = 0;
@@ -37,6 +37,7 @@
 
 		$i++;
 		$find = true;
+		$id = $row["id"];
 		$rang = $row["rang"];
 		$nom = utf8_encode_function($row["nom"]);
 		$points = $row["points"];
@@ -59,9 +60,11 @@ echo '
 				<td class="ClassementRang">',
 					$rang,
 				'</td>
-				<td class="ClassementSurnom">',
-					$nom,
-				'</td>
+				<td class="ClassementSurnom">
+					<div id="lienSurnom', $id,'" style="" class="surnomClassementDiv clickEquipe">',
+						$nom,
+					'</div>
+				</td>
 				<td class="ClassementNbPronos">',
 					$total,
 				'</td>

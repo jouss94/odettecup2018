@@ -142,7 +142,7 @@ echo '
 <div class="match-card-event mdl-card mdl-shadow--2dp">
 <div class="mdl-card__title mdl-card--expand">
 
-<div style="height: 430px;overflow-y: auto;width:100%">
+<div style="width:100%">
 <table style="
     border-collapse: collapse;
     width: 100%;color:#FFF;">';

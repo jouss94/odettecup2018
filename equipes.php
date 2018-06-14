@@ -8,7 +8,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
 	<head>
-		<title>Liste des joueurs</title>
+		<title>Equipes</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="icon" type="image/png" href="images/icon-france.png" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -19,11 +19,13 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<script src="javascript/login.js"></script>
 		<script src="javascript/bandeau.js"></script>
 		<script src="javascript/acceuil.js"></script>
-		<script src="javascript/listeJoueur.js"></script>
+		<script src="javascript/equipe.js"></script>
+
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
 		<script src="./material_design/material.js"></script>
+
 	</head>
 	
 	<?php include("init.php");?>
@@ -33,18 +35,18 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
-			<div class="loginform-in blackougedefault">
+			<div class="blackougedefault"  style="text-align:center">
 
-				<div style="width:100%;height:1200px;">
+				<div style="width:100%;height:800px;">
 
-					<span class="listeJoueurTitre">Liste des joueurs</span>
+					<span class="listeJoueurTitre"></span>
 	
+						<?php include("include/viewEquipes.php");?>
 					<span class="RetourSpan">
-					<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">
+						<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">
 							Retour
 						</button>
 					</span>
-						<?php include("include/viewListeJoueurs.php");?>
 
 				</div>
 

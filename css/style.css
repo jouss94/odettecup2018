@@ -113,7 +113,7 @@ table.sortable thead {
 
 .surnomClassementDiv {
     cursor: pointer;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .surnomClassementDiv:hover {
@@ -213,13 +213,13 @@ table.sortable thead {
 }
 
 .allMatch {
-    height: 880px;
+    height: 980px;
     width: 700px;
     PADDING-TOP: 20px;
     display: block;
     margin: auto;
     margin-top: 30px;
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.56);
     z-index: 1;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
@@ -499,8 +499,13 @@ table.sortable thead {
     color: #FFF;
 }
 
+.cadreTableauAcceuilNoHeight {
+    width: 100%;
+    overflow-y: auto;
+    color: #FFF;
+}
+
 .cadreTableauAcceuilClassement {
-    height: 338px;
     width: 100%;
     overflow-y: auto;
     color: #0A001D;
@@ -696,13 +701,11 @@ table.sortable thead {
 }
 
 .allListe {
-    height: 650px;
     width: 800px;
         border: solid 1px;
     display: block;
     margin: auto;
     margin-top: 30px;
-    overflow-y: scroll;
         background: rgba(255, 255, 255, 0.45);}
 
 .listeJoueurTitre {
@@ -1533,4 +1536,64 @@ div#add_err {
     font-size: 20px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     color: #FFF;
+}
+
+
+.viewEquipe {
+    padding: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+   background: rgba(255, 255, 255, 0.45);
+    margin: 0px 50px 20px;
+}
+
+.equipeContainer {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.equipeTitre {
+    font-size: 30px;
+    padding: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.small-version {
+        margin-top: 0px !important;
+        margin: auto !important;
+        width: 160px !important;
+        min-height: 50px !important;
+        height: 50px !important;
+}
+
+.middle-version {
+    margin-top: 0px !important;
+    margin: auto !important;
+    width: 160px !important;
+    min-height: 50px !important;
+    height: 50px !important;
+}
+
+.TitreTableauBasBig {
+    text-align: left;
+    MARGIN: auto;
+    /* padding-left: 20px; */
+    font-size: 46px;
+    /* padding-bottom: 5px; */
+    /* padding-top: 5px; */
+    font-weight: bold;
+}
+
+.TitreSmallClassementBig {
+    margin: auto;
+    font-size: 43px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.labelequipe {
+    color: #FFFFFF;
+    text-decoration: none;
 }

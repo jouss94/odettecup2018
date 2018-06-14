@@ -224,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `matches` (
 -- Déchargement des données de la table `matches`
 --
 
-INSERT INTO `matches` (`id_match`, `id_team_home`, `id_team_away`, `score_home`, `score_away`, `date`, `stadium`, `diff`, `played`, `modif`, `groupe`, `phased`, `montagne`) VALUES
+>INSERT INTO `matches` (`id_match`, `id_team_home`, `id_team_away`, `score_home`, `score_away`, `date`, `stadium`, `diff`, `played`, `modif`, `groupe`, `phased`, `montagne`) VALUES
 (1, 1, 2, 1, 1, '2018-06-14 17:00:00', 'Stade Loujniki', 'BeIn - TF1', 0, 1, 'A', 0, 0),
 (2, 3, 4, 0, 0, '2018-06-15 14:00:00', 'Iekaterinbourg Arena', 'BeIn', 0, 1, 'A', 0, 0),
 (3, 5, 6, 0, 0, '2018-06-15 17:00:00', 'Stade de Saint-Pétersbourg', 'BeIn', 0, 1, 'B', 0, 0),
