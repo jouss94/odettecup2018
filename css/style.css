@@ -113,7 +113,7 @@ table.sortable thead {
 
 .surnomClassementDiv {
     cursor: pointer;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .surnomClassementDiv:hover {
@@ -494,6 +494,12 @@ table.sortable thead {
 
 .cadreTableauAcceuil {
     height: 330px;
+    width: 100%;
+    overflow-y: auto;
+    color: #FFF;
+}
+
+.cadreTableauAcceuilNoHeight {
     width: 100%;
     overflow-y: auto;
     color: #FFF;

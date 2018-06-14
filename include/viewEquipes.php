@@ -48,7 +48,7 @@
 		echo '
 		<div class="joueur-card-event mdl-card mdl-shadow--2dp">
 			<div class="mdl-card__title mdl-card--expand">
-				<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+				<div class="cadreTableauAcceuilNoHeight cadreTableauAcceuilBg">
 					
 					<div class="profilInformationImageDiv"> 
 

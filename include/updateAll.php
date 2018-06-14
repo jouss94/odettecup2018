@@ -141,23 +141,23 @@
 		while ($rowBonus = mysqli_fetch_array($resultBonus )) 
 		{
 			// regles a implémenter
-
+			if (intval($rowBonus["min_first"]) == 12)
+			{
+				$ptsFirstMin = 10;
+			}
 
 			$bonus = $ptsFirstMin + $ptsTeamWinner + $ptsLastMin + $ptsTotalBut + $ptsButeur + $bonusFinal; // + + +
 		}
 
 		$points += $bonus;
-		// $updateBonus = "UPDATE pronostics_bonus 
-		// 			SET
-		// 				 min_first_point   = $ptsFirstMin, 
-		// 				 team_winner_id_point = $ptsTeamWinner,
-		// 				 min_last_point = $ptsLastMin,
-		// 				 total_but_point = $ptsTotalBut
-		// 			WHERE id_membre = $id_joueur";
-		// $resultBonus = mysqli_query($con, $updateBonus);
-		// if (!$resultBonus) {
-		// 	echo 'ERROR REQUETE : ', $updateBonus, '</br>';
-		// }
+		$updateBonus = "UPDATE pronostics_bonus 
+					SET
+						 min_first_point   = $ptsFirstMin
+					WHERE id_membre = $id_joueur";
+		$resultBonus = mysqli_query($con, $updateBonus);
+		if (!$resultBonus) {
+			echo 'ERROR REQUETE : ', $updateBonus, '</br>';
+		}
 
 
 
