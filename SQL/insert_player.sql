@@ -1,11 +1,18 @@
-SET @prenom = 'Julien';
-SET @nom = 'Jousseau';
-SET @surnom = 'Joussao';
-SET @email = 'julien.jousseau@hotmail.fr';
-SET @password = 'WPEMD9ZP';
-SET @telephone = '0699244942';
+SET @prenom = 'Manil';
+SET @nom = 'Benkhelifa';
+SET @surnom = 'Francis';
+SET @email = 'manilbenkhelifa@icloud.com';
+SET @password = '89VE53';
+SET @telephone = '0601100195';
 SET @female = 0;
-SET @description = "Il est temps de passer aux choses sérieuses...";
+SET @description = "L'importance est de participer , 
+Mais l'ISF arrive a grand pas..
+Vous plumez je dois.
+Pour cette première participation soyez prêt 
+Le promu vous fera déchanter 
+Sarko la finance te dit merci d?avance 
+#ISFontour 
+";
 
 
 INSERT INTO `joueurs` (`prenom`, `nom`, `surnom`, `email`, `password`, `telephone`, `female`, `description`) 
@@ -24,6 +31,3 @@ VALUES (@TypeGeneral, @ID);
 
 INSERT INTO `classements`(`type`, `owner_id`) 
 VALUES (@TypeMontagne, @ID);
-
-INSERT INTO `classements`(`type`, `owner_id`) 
-VALUES (@TypeFemme, @ID);
