@@ -1,9 +1,9 @@
-SET @prenom = 'Charline';
-SET @nom = 'Bastide';
-SET @surnom = 'Chacha';
-SET @email = 'charline.bastide@hotmail.com';
-SET @password = '89TU14';
-SET @telephone = '0226983767';
+SET @prenom = 'Amandine';
+SET @nom = 'Pavageau';
+SET @surnom = 'Didine';
+SET @email = 'amandine.pavageau@yahoo.fr';
+SET @password = '90TV42';
+SET @telephone = '0670272846';
 SET @female = 1;
 SET @description = "";
 

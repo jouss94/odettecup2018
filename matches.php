@@ -37,7 +37,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">
 
-				<div style="width:100%;height:1100px;">
+				<div style="width:100%;    padding-bottom: 50px;">
 
 					<span class="listeJoueurTitre">Détails match</span>
 	

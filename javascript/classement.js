@@ -15,6 +15,8 @@ $(document).ready(function(){
 	});
 });
 
+var mappingColor = { tabsGeneral:"#fff900", tabsEquipe:"#fff900", tabsFemme:"#fff900", tabsMontagne:"#fff900" };
+
 function openClassement(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -27,4 +29,11 @@ function openClassement(evt, cityName) {
     }
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
+
+    var typeclassement = cityName.substring(-3);
+    var color = document.getElementById('color' + typeclassement).innerText;
+    var max = parseInt(document.getElementById('max' + typeclassement).innerText);     
+    var step = parseInt(document.getElementById('step' + typeclassement).innerText);     
+
+    reloadGraph(color, typeclassement, max, step);
 }

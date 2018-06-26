@@ -127,6 +127,38 @@
     color: #fff;
   }
 
+
+  .statistics-card-event.mdl-card {
+    width: 840px;
+    min-height: 100px;
+    height: 100px;
+    background: rgb(212, 38, 38);
+  }
+
+  .statistics-card-event > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .statistics-card-event > .mdl-card__title {
+    align-items: flex-start;
+    padding: 10px 10px;
+  }
+  .statistics-card-event > .mdl-card__title > h4 {
+    margin-top: 0;
+  }
+  .statistics-card-event > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+  .statistics-card-event > .mdl-card__actions > .material-icons {
+    padding-right: 10px;
+  }
+  .statistics-card-event > .mdl-card__title,
+  .statistics-card-event > .mdl-card__actions,
+  .statistics-card-event > .mdl-card__actions > .mdl-button {
+    color: #fff;
+  }
+
   .classementperso-card-event.mdl-card {
     margin: auto;
     width: 160px;
