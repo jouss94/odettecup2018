@@ -20,8 +20,10 @@
 	
 	$today = date(mysqli_fetch_array($result)[0]);
 
+	
+	$today = date('Y/m/d', strtotime($today. ' + 1 days'));
 	echo $today;
-
+	echo ' // ';
 	echo $dateCurrent;
 
 while ($dateCurrent <= $today)
