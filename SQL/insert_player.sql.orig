@@ -1,29 +1,21 @@
 <<<<<<< HEAD
-SET @prenom = 'Manil';
-SET @nom = 'Benkhelifa';
-SET @surnom = 'Francis';
-SET @email = 'manilbenkhelifa@icloud.com';
-SET @password = '89VE53';
-SET @telephone = '0601100195';
+SET @prenom = 'Dalia';
+SET @nom = 'Aflalaye';
+SET @surnom = 'Daliou';
+SET @email = 'Dalia.aflalaye@live.fr';
+SET @password = '87TV31';
+SET @telephone = '0649852445';
 SET @female = 0;
-SET @description = "L'importance est de participer , 
-Mais l'ISF arrive a grand pas..
-Vous plumez je dois.
-Pour cette première participation soyez prêt 
-Le promu vous fera déchanter 
-Sarko la finance te dit merci d?avance 
-#ISFontour 
-";
 =======
-SET @prenom = 'Charline';
-SET @nom = 'Bastide';
-SET @surnom = 'Chacha';
-SET @email = 'charline.bastide@hotmail.com';
-SET @password = '89TU14';
-SET @telephone = '0226983767';
+SET @prenom = 'Amandine';
+SET @nom = 'Pavageau';
+SET @surnom = 'Didine';
+SET @email = 'amandine.pavageau@yahoo.fr';
+SET @password = '90TV42';
+SET @telephone = '0670272846';
 SET @female = 1;
-SET @description = "";
 >>>>>>> origin/master
+SET @description = "";
 
 
 INSERT INTO `joueurs` (`prenom`, `nom`, `surnom`, `email`, `password`, `telephone`, `female`, `description`) 
@@ -42,40 +34,3 @@ VALUES (@TypeGeneral, @ID);
 
 INSERT INTO `classements`(`type`, `owner_id`) 
 VALUES (@TypeMontagne, @ID);
-<<<<<<< HEAD
-=======
-
-INSERT INTO `classements`(`type`, `owner_id`) 
-VALUES (@TypeFemme, @ID);
-
-
-f.jousseau@gmail.com
-Christopher.lorain@hotmail.fr
-tjousseau@gmail.com
-titish77@hotmail.com
-julien.jousseau@hotmail.fr
-Solene.teisseire@icloud.com
-Varadero77@hotmail.fr
-grisbleu99@yahoo.fr
-Dam-papillon@live.fr
-jean-marc.jousseau@arteliagroup.com
-soignolles@sapo.pt
-christine.jousseau@orange.fr
-Camiillecaramelle@live.fr
-Francette.lorain@gmail.com
-pat.lesverts@gmail.com
-girondin77@hotmail.com
-Aurelien.jousseau@gmail.com
-ch.jousseau@gmail.com
-joussor.romain@gmail.com
-raphael.jousseau@outlook.fr
-mjousseau@gmail.com
-Michael.courtaux@gmail.com
-joussor.romain@gmail.com
-joussor.romain@gmail.com
-joussor.romain@gmail.com
-Camille77170@hotmail.com
-jojo-dipla@live.fr
-alexandre.jousseau@hotmail.com
-charline.bastide@hotmail.com
->>>>>>> origin/master

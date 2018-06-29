@@ -70,20 +70,24 @@
 		echo '<td class="homeEquipeDroite2">';
 		echo $home_name;	
 		echo '</td>';
+		echo '<td class="homeEquipeEquipe">';
 		if ( $row["prono_home"] != null)
 		{
-			echo '<td class="homeEquipeEquipe"><span class="pancarteBig ',$classPancarte,'">';
+			echo '<span class="pancarteBig ',$classPancarte,'">';
 			echo $row["prono_home"];
-			echo '</span></td>';
+			echo '</span>';
 		}
+		echo '</td>';
 
 		echo '<td class="homeEquipeMilieu2"> - </td>';
+		echo '<td class="homeEquipeEquipe">';
 		if ( $row["prono_away"] != null)
 		{
-			echo '<td class="homeEquipeEquipe"><span class="pancarteBig ',$classPancarte,'">';
+			echo '<span class="pancarteBig ',$classPancarte,'">';
 			echo $row["prono_away"];
-			echo '</span></td>';
+			echo '</span>';
 		}
+		echo '</td>';
 		echo '<td class="homeEquipeGauche2">';
 		echo $away_name;	
 		echo '</td>';

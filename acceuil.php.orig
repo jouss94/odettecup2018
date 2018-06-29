@@ -1,0 +1,180 @@
+<?php
+session_start();
+
+$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
+$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
+$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+	<head>
+		<title>Accueil</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="icon" type="image/png" href="images/icon-france.png" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+		<script src="javascript/jquery-2.2.3.min.js"></script>
+		<script src="javascript/jquery-ui.min.js"></script>
+		<script src="javascript/login.js"></script>
+		<script src="javascript/bandeau.js"></script>
+		<script src="javascript/acceuil.js"></script>
+
+		<link rel="stylesheet" href="./material_design/material.css">
+		<link rel="stylesheet" href="./material_design/style.css">
+		<link rel="stylesheet" href="./material_design/font.css">
+		<script src="./material_design/material.js"></script>
+	</head>
+	
+	<?php include("init.php");?>
+	<?php include("background.php");?>
+
+	<body>
+		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+		<?php include("include/bandeau.php");?>
+		<div class="padding20">
+			<div class="loginform-in">
+
+<<<<<<< HEAD
+				<div style="width:100%;height:1200px;background:white">
+=======
+				<div style="width:100%;padding-bottom: 20px;background:white">
+>>>>>>> origin/master
+						<?php include("include/updateProfil.php");?>
+
+						<div class="allAcceuil">
+						<table class="tableAcceuil">
+							<tr >
+								<td>
+									<div class="tableAcceuilResultat">
+										<div class="demo-card-event mdl-card mdl-shadow--2dp">
+											<div class="mdl-card__title mdl-card--expand">
+												<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+													<?php include("include/viewHomeLastMatch.php");?>
+												</div>
+											</div>
+											<div class="mdl-card__actions mdl-card--border">
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php" >
+													Derniers matches
+												</a>
+												<div class="mdl-layout-spacer"></div>
+												<i class="material-icons">event</i>
+											</div>
+										</div>
+										<div class="demo-card-event mdl-card mdl-shadow--2dp">
+											<div class="mdl-card__title mdl-card--expand">
+												<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+												<?php include("include/viewHomeNextMatch.php");?>
+												</div>
+											</div>
+											<div class="mdl-card__actions mdl-card--border">
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php" >
+													Prochains matches
+												</a>
+												<div class="mdl-layout-spacer"></div>
+												<i class="material-icons">event</i>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<table class="tableAcceuil">
+							<tr>
+								<td >
+									<div class="tableAcceuilClassement">
+										<div class="classement-card-event mdl-card classement-general mdl-shadow--2dp">
+												<div class="mdl-card__title mdl-card--expand">
+													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
+														<?php include("include/viewHomeClassementGeneral.php");?>
+													</div>
+												</div>
+												<div class="mdl-card__actions mdl-card--border">
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=General" >
+														Classement Général
+													</a>
+													<div class="mdl-layout-spacer"></div>
+													<i class="material-icons">poll</i>
+												</div>
+											</div>
+											<div class="classement-card-event mdl-card classement-montagne mdl-shadow--2dp">
+												<div class="mdl-card__title mdl-card--expand">
+													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
+														<?php include("include/viewHomeClassementMontagne.php");?>
+													</div>
+												</div>
+												<div class="mdl-card__actions mdl-card--border">
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Montagne" >
+														Classement Montagne
+													</a>
+													<div class="mdl-layout-spacer"></div>
+													<i class="material-icons">poll</i>
+												</div>
+											</div>
+											</div>
+								</td>
+							</tr>
+						</table>
+						<table class="tableAcceuil">
+							<tr>
+								<td>
+									<div class="tableAcceuilBas">
+											<div class="statistics-card-event mdl-card mdl-shadow--2dp">
+												<div class="mdl-card__title mdl-card--expand">
+													<span class="TitreTableauBas">
+														Statistiques
+													</span>
+													</div>
+												<div class="mdl-card__actions mdl-card--border">
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="statistics.php?ranking=General" >
+														Voir les statisiques et historiques de la compétition.
+													</a>
+													<div class="mdl-layout-spacer"></div>
+													<i class="material-icons">supervisor_account</i>
+												</div>
+											</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<table class="tableAcceuil">
+							<tr>
+								<td>
+									<div class="tableAcceuilBas">
+											<div class="information-card-event mdl-card mdl-shadow--2dp">
+												<div class="mdl-card__title mdl-card--expand">
+													<span class="TitreTableauBas">
+														Liste des Joueurs
+													</span>
+													</div>
+												<div class="mdl-card__actions mdl-card--border">
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="listeJoueur.php" >
+														Voir la liste des joueurs
+													</a>
+													<div class="mdl-layout-spacer"></div>
+													<i class="material-icons">supervisor_account</i>
+												</div>
+											</div>
+											<div class="information-card-event mdl-card mdl-shadow--2dp">
+												<div class="mdl-card__title mdl-card--expand">
+													<span class="TitreTableauBas">
+														Règlement
+													</span>
+													</div>
+												<div class="mdl-card__actions mdl-card--border">
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="reglement.php" >
+														Voir le Règlement de la compétition
+													</a>
+													<div class="mdl-layout-spacer"></div>
+													<i class="material-icons">gavel</i>
+												</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+						</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

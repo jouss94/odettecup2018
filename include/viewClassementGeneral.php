@@ -12,7 +12,7 @@
 	$i = 0;
 
 	echo '
-		<div class="allListeClassement">
+	<div class="allListeClassement">
 		<table class="sortable" >';
 
 	echo '

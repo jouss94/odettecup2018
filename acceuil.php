@@ -35,7 +35,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<div class="padding20">
 			<div class="loginform-in">
 
-				<div style="width:100%;height:1200px;background:white">
+				<div style="width:100%;padding-bottom: 20px;background:white">
 						<?php include("include/updateProfil.php");?>
 
 						<div class="allAcceuil">
@@ -108,6 +108,28 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 												</div>
 											</div>
 											</div>
+								</td>
+							</tr>
+						</table>
+						<table class="tableAcceuil">
+							<tr>
+								<td>
+									<div class="tableAcceuilBas">
+											<div class="statistics-card-event mdl-card mdl-shadow--2dp">
+												<div class="mdl-card__title mdl-card--expand">
+													<span class="TitreTableauBas">
+														Statistiques
+													</span>
+													</div>
+												<div class="mdl-card__actions mdl-card--border">
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="statistics.php?ranking=General" >
+														Voir les statisiques et historiques de la compétition.
+													</a>
+													<div class="mdl-layout-spacer"></div>
+													<i class="material-icons">supervisor_account</i>
+												</div>
+											</div>
+									</div>
 								</td>
 							</tr>
 						</table>

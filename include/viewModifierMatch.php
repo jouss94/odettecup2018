@@ -138,7 +138,7 @@
 			else
 				echo '</table>';
 
-			echo '<span class="profilPronosSousTitre">Groupe ', $group, '</span>';
+			echo '<span class="profilPronosSousTitre">8ème de final</span>';
 
 			echo '<table class="tableauPronosForm">';
 

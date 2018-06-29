@@ -1,0 +1,1610 @@
+@font-face {
+    font-family: Segoe;
+    src: url('fonts/segoeui.ttf');
+}
+
+body {
+    color: black;
+    background-color: #595963;
+    background-image: url(../images/bg-russia-2018.jpg);    
+    background-repeat: repeat;
+    background-size: 500px;
+    min-height: 500px;
+    margin: 0px;
+    font-family: Segoe;
+}
+
+.ClassementPoints {
+    text-align: center;
+    width: 7%;
+        font-weight: bold;
+    font-size: 20px;
+}
+
+.ClassementSurnom {
+    width: 200px;
+    text-align: left;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ClassementBonus {
+    text-align: center;
+    width: 65px;
+    /* width: 7%; */
+}
+
+.ClassementEchec {
+    width: 65px;
+    /* width: 7%; */
+    text-align: center;
+}
+
+.ClassementInverse {
+    width: 65px;
+    /* width: 7%; */
+    text-align: center;
+}
+
+.ClassementCorrect {
+    width: 65px;
+    /* width: 8%; */
+    text-align: center;
+}
+
+.ClassementCorrectp {
+    width: 65px;
+    /* width: 8%; */
+    text-align: center;
+}
+
+.ClassementNbPerf {
+    width: 65px;
+    /* width: 8%; */
+    text-align: center;
+}
+
+.ClassementNbPronos {
+    width: 65px;
+    /* width: 9%; */
+    text-align: center;
+}
+
+.ClassementRang {
+    width: 50px;
+    text-align: center;
+        font-size: 22px;
+}
+
+.titleSmallTexte {
+    font-size: 10px;
+}
+
+.titleSmallerTexte {
+    font-size: 8px;
+}
+
+table.sortable {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+table.sortable thead {
+    color:#000;
+    background-color:#FFF;
+    font-weight: bold;
+    cursor: default;
+
+}
+
+
+.allListeClassement {
+    width: 850px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    height: 600px;
+    overflow-y: auto;
+}
+
+.surnomClassementDiv {
+    cursor: pointer;
+    word-break: break-word;
+}
+
+.surnomClassementDiv:hover {
+    color: #FFF;
+    cursor: pointer;
+}
+
+.homeClassementPoint {
+    text-align: center;
+    font-size: 18px;
+}
+
+.homeClassementSurnom {
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.homeClassementRang {
+    padding-left: 5px;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+}
+
+.homeEquipeMilieuMatch {
+    text-align: center;
+        width: 10px;
+}
+
+.homePointMatch {
+    text-align: center;
+}
+
+.pronosMatch {
+    text-align: center;
+        width: 10px;
+}
+
+.homeEquipeDroiteMatch {
+    width: 70px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.homeEquipeGaucheMatch {
+    width: 70px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.surnomMatch {
+    width: 120px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.rangMatch {
+    width: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+.cadreTableauJoueurMatch {
+    height: 450px;
+    overflow-y: scroll;
+    color: #0A001D;
+    font-weight: bold;
+}
+
+.TitreTableauJoueurMatchs {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 16px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-weight: bold;    
+    color: #FFF;
+}
+
+.tableauJoueurMatchs {
+    /* margin: 15px; */
+    /* background: rgb(0, 0, 0); */
+    /* color: #FFF; */
+    margin: auto;
+    /* width: 95%; */
+    margin-top: 50px;
+    margin-bottom: 14px;
+    /* border-radius: 10px; */
+    border-collapse: collapse;
+    width: 500px;
+    /* height: 455px; */
+    border: solid 1px black;
+}
+
+.allMatch {
+<<<<<<< HEAD
+    height: 980px;
+=======
+>>>>>>> origin/master
+    width: 700px;
+    PADDING: 20px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.56);
+    z-index: 1;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.tableCalendrierL1 {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.611764705882353)
+}
+
+.tableCalendrierL3 {
+    height: 25px;
+    font-size: 12px;
+        text-align: center;
+}
+
+.tableCalendrierL2 {
+    height: 25px;
+    font-size: 12px;
+        text-align: center;
+}
+
+.allListeCalendrier {
+    width: 650px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.allPronosJoueurs {
+    width: 500px;
+    border: solid 1px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.45); 
+}
+
+.tableCalendrierGroup {
+    width: 60px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    background: rgba(228, 228, 228, 0.26);
+    border-bottom: 1px solid rgb(206, 138, 138);
+}
+
+.backgroundTab1 {
+    background:rgba(185, 185, 185, 0.32941176470588235);
+}
+
+.backgroundTab2 {
+    background: rgba(255, 255, 255, 0.32941176470588235);
+}
+
+.backgroundTab1Jaune {
+    background: #f3e883;
+}
+.backgroundTab2Jaune {
+    background: #fff900;
+}
+
+
+.backgroundTab1Bleu {
+    background: #8394df;
+}
+.backgroundTab2Bleu {
+    background: #2768ff;
+}
+
+.backgroundTab1Rose {
+    background: #f97ba6;
+}
+.backgroundTab2Rose {
+    background: rgba(255, 139, 213, 0.5411764705882353);
+}
+
+
+.backgroundTab1Vert {
+    background: #91d27f;
+}
+.backgroundTab2Vert {
+    background: #3ccb24;
+}
+
+.tab button.active.tablinksgeneral {
+    background: #fff900;
+}
+
+.tab button.tablinksgeneral:hover {
+    border-bottom: solid 2px #fff900;
+}
+
+.tab button.active.tablinksequipe {
+    background: #2768ff;
+}
+.tab button.tablinksequipe:hover {
+    border-bottom: solid 2px #2768ff;
+}
+.tab button.active.tablinksfemme {
+    background: #ff00a3;
+}
+.tab button.tablinksfemme:hover {
+    border-bottom: solid 2px #ff00a3;
+}
+
+.tab button.active.tablinksmontagne {
+    background: #3ccb24;
+}
+.tab button.tablinksmontagne:hover {
+    border-bottom: solid 2px #3ccb24;
+}
+
+.tab button.active.tablinksjoueur {
+    background: #2768ff;
+}
+.tab button.tablinksjoueur:hover {
+    border-bottom: solid 2px #2768ff;
+}
+
+
+.trNeutre {
+    color: rgba(255, 255, 255, 0.14);
+    font-weight: bold;
+}
+
+.classTRPerfectHome {
+    color: rgb(2, 121, 0);
+    font-weight: bold;
+}
+
+
+.classTRInverseHome {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.classTRCorrectHome {
+    color : rgb(158, 255, 0);
+    font-weight: bold;
+}
+
+.classTRCorrectPlusHome {
+    color: rgb(15, 209, 48);
+    font-weight: bold;
+ }
+
+.classTREchecHome {
+    color: rgba(0, 0, 0, 0.91);
+    font-weight: bold;
+}
+
+.homeEquipeEquipe {
+    text-align: center;
+}
+
+.homeEquipeMilieu {
+    text-align: center;
+}
+
+
+.homeEquipeMilieu2 {
+    text-align: center;
+}
+
+.homeEquipeGauche2 {
+    text-align: left;
+    padding-left: 8px;
+    font-size: 16x;
+    width: 110px;
+}
+
+.homeEquipeDroite2 {
+    text-align: right;
+    padding-right: 8px;
+    font-size: 16px;
+    width: 110px;
+}
+
+.homeEquipeGauche {
+    width: 110px;
+    text-align: left;
+    padding-left: 6px;
+    font-size: 16px;
+}
+
+.homeEquipeDroite {
+    width: 110px;
+    text-align: right;
+    padding-right: 6px;
+    font-size: 16px;
+}
+.homePoint {
+    font-size: 17px;
+    padding-right: 5px;
+    text-align: center;
+}
+
+.homeSmallDate {
+    padding-left: 2px;
+    font-size: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.black 
+{
+    background: rgb(0, 0, 0);
+}
+
+.cadreTableauAcceuilBg {
+    
+}
+
+.cadreTableauAcceuilBas {
+    padding-top: 25px;
+    height: 50px;
+    color: #0A001D;
+    font-weight: bold;
+}
+
+.detailTitreAcceuil:hover 
+{
+    text-align: right;
+    cursor: pointer;
+    color: #8496A1;
+}
+
+.detailTitreAcceuil {
+    text-align: right;
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.style {
+    display: block;
+    padding: 0px;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+}
+
+.sousTitreTableauHaut {
+    display: block;
+    padding: 0px;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    text-align: center;
+    font-style: italic;
+}
+
+.TitreTableauHaut {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 16px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-weight: bold;
+    /* display: block; */
+}
+
+.tableauHaut {
+    color: #FFF;
+    margin: auto;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    border-collapse: collapse;
+    width: 400PX;
+}
+
+.tableauClassement {
+    color: #FFF;
+    margin: auto;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    border-collapse: collapse;
+    width: 200PX;    
+}
+
+.cadreTableauAcceuil {
+    height: 330px;
+    width: 100%;
+    overflow-y: auto;
+    color: #FFF;
+}
+
+.cadreTableauAcceuilNoHeight {
+    width: 100%;
+    overflow-y: auto;
+    color: #FFF;
+}
+
+.cadreTableauAcceuilClassement {
+    width: 100%;
+    overflow-y: auto;
+    color: #0A001D;
+    font-weight: bold;
+}
+
+.titreTableau3 {
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.TableAcceuil3 {
+    margin: auto;
+    border: solid 1px;
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.titreBonus {
+
+}
+
+.ulperso {
+    margin-top: -3px;
+}
+
+.regleDetail {
+    font-weight: normal;
+}
+
+.regleExempleCorp {
+    font-style: italic;
+    font-weight: normal;
+}
+
+.regleExemple {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.reglePoint {
+    font-weight: 600;
+}
+
+.pointRegle {
+    margin-left: 90px;
+    padding-top: 5px;
+}
+
+.tab button.active.tablinksgeneral {
+    background: #fff900;
+}
+
+
+.tab button.active.tablinksequipe {
+    background: #2768ff;
+}
+.tab button.active.tablinksfemme {
+    background: #ff00a3;
+}
+
+.tab button.tablinksmontagne:hover {
+    border-bottom: solid 2px #3ccb24;
+}
+
+
+.jauneTitre {
+    color: #fff900;
+}
+.roseTitre {
+    color: #ff00a3;
+}
+.bleuTitre {
+    color: #2768ff;
+}
+
+.vertTitre {
+    color: #3ccb24;
+}
+
+.perfectTitre {
+    color: rgb(2, 121, 0);
+}
+
+.perfectInverse {
+    color: rgb(255, 255, 255);
+}
+
+.perfectCorrect {
+    color : rgb(158, 255, 0);
+}
+
+.perfectCorrectPlus {
+    color: rgb(15, 209, 48);
+ }
+
+.perfectEchec {
+    color: rgba(0, 0, 0, 0.91);
+}
+
+
+.sousTitre {
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    padding-left: 20px;
+}
+
+.reglementDiv {
+    text-align: left;
+    margin: 50px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.45);
+    padding: 20px;
+}
+
+.tableListeSecond {
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.imageListe {
+    display: inline;
+    height: 45px;
+    width: 45px;
+    margin: 15px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    border: solid 1px;
+}
+
+.pancarteListeJoueur {
+    background: rgb(32, 13, 176);
+    margin-left: 79px;
+    margin-right: 126px;
+    padding: 5px;
+    /* border-radius: 20px; */
+    font-size: 19px;
+    color: white;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.tableListeFour {
+    width: 18%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tableListeFour:hover {
+    width: 18%;
+    text-align: center;
+    color: rgb(197, 0, 0);
+    cursor: pointer;
+}
+
+.tableListeDetail {
+    width: 18%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tableListeDetail:hover {
+    width: 18%;
+    text-align: center;
+    color: #FFF;
+    cursor: pointer;
+}
+
+
+.tableListeThird {
+    width: 35%;
+    text-align: center;
+    font-size: 17px;
+}
+
+.tableListeSecond {
+    width: 35%;
+    text-align: center;
+}
+
+.tableListeFirst {
+    width: 12%;
+    text-align: center;
+}
+
+.tableListe {
+    margin: auto;
+    width: 100%;
+        border-collapse: collapse;
+}
+
+.allListe {
+    width: 800px;
+        border: solid 1px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+        background: rgba(255, 255, 255, 0.45);}
+
+.listeJoueurTitre {
+    display: block;
+    padding-top: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.detailTitreListeJoueurs:hover {
+    text-align: right;
+    font-weight: bold;
+    color: #FFF;
+       cursor: pointer;
+}
+
+
+.detailTitreListeJoueurs {
+    text-align: right;
+    font-weight: bold;
+       cursor: pointer;
+}
+
+
+.sousTitreListeJoueurs {
+    text-align: center;
+    font-style: italic;
+}
+
+
+.TitreListeJoueurs {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    /* display: block; */
+}
+
+.TitreTableauBas {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 16px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-weight: bold;
+    /* display: block; */
+}
+
+.sousTitreTableauBas {
+    display: block;
+    padding: 0px;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    text-align: center;
+    font-style: italic;
+}
+
+.listeJoueurs {
+    color: #FFF;
+    margin: auto;
+    width: 400px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    border-collapse: collapse;
+}
+
+.tableAcceuilBas {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tableAcceuilResultat {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tableAcceuilClassement{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.tableAcceuil {
+    font-weight: bold;
+    color: #000000;
+    margin: auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: 845px;
+    padding-bottom: 8px;
+}
+
+.detailTitreUpdateRedSpan:hover {
+    color: #FFF;
+   cursor: pointer;
+}
+
+
+.detailTitreUpdateRedSpan {
+    font-size: 12px;
+   cursor: pointer;
+}
+
+.sousTitreUpdateRed {
+    font-size: 14px;
+    width: 680px;
+}
+
+.titreUpdateRed {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.etatProfilRed {
+    color: #521616;
+    padding: 5px 21px;
+    margin: auto;
+    margin-bottom: 20px;
+    background: rgba(232, 52, 52, 0.51);
+    width: 800px;
+}
+
+.etatProfilGreen {
+    color: #165224;
+    padding: 5px 21px;
+    margin: auto;
+    margin-bottom: 20px;
+    background: rgba(106, 241, 104, 0.51);
+    width: 800px;
+}
+
+
+.secondColumProfil {
+    width: 25%;
+}
+
+.petitPoint {
+    font-size: 8px;
+}
+
+.firstColumnProfilPadding {
+    width: 70%;
+    padding-left: 25px;
+}
+
+.tableDetails {
+    background: rgba(0, 0, 0, 0.28);
+    margin: auto;
+    margin-top: 35px;
+    color: #FFF;
+    width: 80%;
+    padding: 6px;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+.pancarteScoreDiv {
+    background: rgba(0, 0, 0, 0.61);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+    padding: 11px;
+    border-radius: 20px;
+    font-size: 28px;
+    color: white;
+}
+
+.pancarteScorePts {
+    font-size: 10px;
+}
+
+.redCircle {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 0, 0, 0.58);
+    display: block;
+    margin-top: 5px;
+}
+
+.greenCircle {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background:rgba(37, 255, 0, 0.58);
+    display: block;
+    margin-top: 5px;
+}
+
+.profilInformationEmail {
+    padding: 8px 5px 5px 5px;
+    font-size: 15px;
+    color: #fff;
+    margin: 18px;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.28);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+.profilInformationCivil {
+    padding-top: 5px;
+    font-size: 15px;
+    color: #FFF;
+    word-break: break-all;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.pointBonus {
+    font-size: 18px;
+    padding-right: 30px;
+    font-weight: bold;
+}
+
+.pancarteBonusEchec {
+    background: rgba(197, 41, 41, 0.68);
+        text-align: center;
+    border-radius: 5px;
+    font-size: 17px;
+    color: #FFF;
+    font-weight: bold;
+    padding: 5px;
+}
+
+
+.pancarteBonusCorrect {
+    background: rgba(56, 150, 76, 0.68);
+    text-align: center;
+    border-radius: 5px;
+    font-size: 17px;
+    color: #FFF;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.tdBonusLeft {
+    text-align: right;
+    padding-right: 20px;
+    font-size: 18px;
+    padding: 18px;
+}
+
+#ModifierProfil {
+    color: rgb(212, 38, 38);
+    background: #FFF;
+ }
+
+ #ModifierMatch {
+    background: rgb(212, 38, 38);
+    color: #FFF;
+ }
+ #modifierBonus {
+    background: rgb(212, 38, 38);
+    color: #FFF;
+ }
+
+.InversePronos {
+    font-size: 12px;
+    font-weight: bold;
+        text-align: center;
+}
+
+.CorrectPronos {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.CorrectPlusPronos {
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+}
+
+.PerfectPronos {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.PasJouePronos {
+    font-size: 9px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.EchecPronos {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pancarteAuto {
+    background: rgba(0, 0, 0, 0.68);
+    text-align: center;
+    border-radius: 5px;
+    font-size: 17px;
+    color: #FFF;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.BigTitreRight {
+    font-size: 45px;
+    font-weight: bold;
+    width: 45%;
+    text-align: right;
+    padding-right: 25px;
+}
+
+
+.BigTitreLeft {
+    font-size: 45px;
+    font-weight: bold;
+    width: 45%;
+    text-align: left;
+    padding-left: 25px;
+}
+
+.pancarte {
+    background: rgba(0, 0, 0, 0.68);
+    padding-bottom: 3px;
+    padding-top: 3px;
+    display: block;
+    text-align: center;
+    /* border-radius: 5px; */
+    font-size: 17px;
+    color: #FFF;
+    font-weight: bold;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.pancarteBig {
+    background: rgba(0, 0, 0, 0.68);
+    padding: 3px;
+    display: block;
+    text-align: center;
+    font-size: 17px;
+    color: #FFF;
+    font-weight: bold;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+img.logoEquipeBig {
+    width: 70px;
+    margin: 5px;
+    /* border: solid 2px #000; */
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+img.logoEquipe {
+    width: 34px;
+    margin: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+img.logoEquipeSmall {
+    width: 30px;
+    margin: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+.tdMatchLeft {
+    padding-right: 20px;
+    text-align: right;
+    font-size: 18px;
+}
+
+
+.tdMatchRight {
+    padding-left: 20px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.affPronosTableau {
+    width: 100%;
+    border-collapse: collapse;
+    color: #FFF;
+}
+
+.emptyTableau {
+    display: inherit;
+    padding-top: 36px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.profilPronosSousTitre {
+    display: block;
+    margin-top: 40px;
+    margin-left: 145px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.cadreTableau {
+}
+
+.profilPronosTitre {
+    display: block;
+    margin-top: 20px;
+    margin-left: 50px;
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(212, 38, 38);
+}
+
+.buttonRigth {
+    text-align: center;
+    font-weight: 500;
+    background: rgba(39, 212, 38, 0.31);
+    border-bottom: solid 1px #207314;
+    cursor: pointer;
+}
+
+
+.buttonRigth:hover {
+    text-align: center;
+    font-weight: 500;
+    background: #27D426;
+    border-bottom: solid 1px #207314;
+    cursor: pointer;
+}
+
+
+.cadreTableauBonus {
+    width: 100%;
+    height: 100%;
+}
+
+.cadreTableauMatch {
+    height:580px;
+    overflow-y: auto;     
+}
+
+.titreTableau {
+    padding-left: 30px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+table.TableMatch {
+    margin: auto;
+    border: solid 1px;
+    width: 600px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.profilPronos  {
+    width: 800px;
+    height: 1300px;
+    text-align: left;
+    font-size: x-large;
+    background: #FFF;
+}
+
+.profilPronosFulll  {
+    width: 100%;
+    height: 1100px;
+    text-align: left;
+    font-size: x-large;
+    background: #FFF;
+}
+
+
+.profilPronosSmall  {
+    width: 800px;
+    height: 1066px;
+    text-align: left;
+    font-size: x-large;
+    background: #FFF;
+}
+
+.profilPronosBig  {
+    width: 800px;
+    height: 3000px;
+    text-align: left;
+    font-size: x-large;
+    background: #FFF;
+}
+
+.floaleft {
+    float: left;
+}
+
+.profilInformationImage {
+    display: inline;
+    width: 150px;
+    margin: 15px;
+    border: solid;
+}
+
+.profilInformationSurnom {
+    width: 200px;
+    text-align: center;
+    font-size: 20px;
+    height: 1300px;
+    background: rgb(48, 49, 129);
+}
+
+.profilInformationSurnomBig {
+    width: 200px;
+    text-align: center;
+    font-size: 20px;
+    height: 3000px;
+    background: rgb(48, 49, 129);
+}
+
+span.titre {
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.inline
+{
+    display: inline;
+}
+
+.padding20 {
+    padding: 40px;
+}
+
+.transparence {
+    position: fixed; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+}
+
+.transparence2 {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    /* background: rgba(255, 255, 255, 0.24); */
+    z-index: -1;
+    background-color: #000000;
+    opacity: .2;
+    height: 100%;
+    right: 0px;
+}
+
+.transparence3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    background-image: radial-gradient(circle closest-corner at top center,#680000,rgba(101,190,236,0));
+    opacity: .5;
+}
+
+.linkBack {
+    text-decoration: none;
+    font-size: 20px;
+        cursor: pointer;
+            color: #000000;
+}
+
+
+.linkBack:hover {
+    text-decoration: none;
+    font-size: 20px;
+    color: #14489C;
+        cursor: pointer;
+}
+
+.RetourSpan {
+    margin-left: 650px;
+    font-size: 25px;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.RetourSpanButton {
+    margin-left: 650px;
+    font-size: 25px;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.Retour {
+    margin-left: 116px;
+    margin-top: -25px;
+    text-align: left;
+    font-size: 20px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.Retoudiv {
+    margin-left: 116px;
+    margin-bottom: 50px;
+    text-align: left;
+    font-size: 20px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+#RetourButtonBlanc {
+    color: rgb(212, 38, 38);
+    background: #FFF;
+}
+
+#RetourButtonRouge {
+    background: rgb(212, 38, 38);
+    color: #FFF;
+}
+
+#buttonValidationSubmit {
+    background: rgb(39, 212, 38);
+    color: #FFF;    
+}
+
+.buttons {
+    margin: 20px;
+}
+
+textarea#description {
+    margin-top: 7px;
+    padding: 9px;
+}
+
+
+.RetourSpan:hover {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+
+span.ui-button-text {
+    margin-left: -10px;
+}
+
+#buttonValidationReset {
+    margin-left: 10px;
+
+        background: rgb(212, 38, 38);
+        color: #FFF;
+
+}
+
+
+.inputLogin {
+    margin: 5px;
+}
+
+div#add_err {
+    border: solid 1px #AF0202;
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    background: rgba(177, 11, 11, 0.46);
+    color: #fff;
+}
+
+.loginform-in {
+    text-align: center;
+    /* height: 367px; */
+    margin: auto;
+    padding: 0;
+    width: 1000px;
+}
+
+.loginform-in-acceuil {
+    background: rgba(255, 255, 255, 0.26);
+}
+
+.loginform-in fieldset {
+    border: 0px #787880 solid;
+    margin: 20px auto;
+    padding: 10px;
+    width: 90%;
+}
+
+.loginbutton {
+    background: -moz-linear-gradient(center top , #F1F1F1, #E0E0E0) repeat scroll 0 0 transparent;
+    border: 1px solid #A7A7A7;
+    border-radius: 3px 3px 3px 3px;
+    color: #444444;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: normal;
+    height: 25px;
+    letter-spacing: 1px;
+    width: 180px;
+}
+
+.loginbutton:hover {
+    background: -moz-linear-gradient(center top , #F1F1F1, #E0E0E0) repeat scroll 0 0 transparent;
+    border: 1px solid #000000;
+    border-radius: 3px 3px 3px 3px;
+    color: #444444;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: normal;
+    height: 25px;
+    letter-spacing: 1px;
+    width: 180px;
+}
+
+
+
+.demandbutton {
+    background: rgba(214, 61, 61, 0.65);
+    background: -moz-linear-gradient(center top , #F1F1F1, #E0E0E0) repeat scroll 0 0 transparent;
+    border: 1px solid rgb(171, 68, 68);
+    border-radius: 2px 2px 2px 2px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: normal;
+    height: 25px;
+    letter-spacing: 1px;
+    width: 180px;
+    font-weight: bold;
+}
+  
+.demandbutton:hover {
+    background: rgba(214, 61, 61, 0.65);
+    background: -moz-linear-gradient(center top , #F1F1F1, #E0E0E0) repeat scroll 0 0 transparent;
+    border: 1px solid #000000;
+    border-radius: 2px 2px 2px 2px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: normal;
+    height: 25px;
+    letter-spacing: 1px;
+    width: 180px;
+    font-weight: bold;
+}
+    
+
+.loginform-in fieldset label {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 0 0;
+    width: 100px;
+}
+
+.loginform-in fieldset input[type="text"], input[type="password"], fieldset select {
+    border: 0px;
+    /* border-radius: 2px 2px 2px 2px; */
+    /* float: left; */
+    height: 32px;
+    padding: 1px 1px 1px 10px;
+    width: 180px;
+    outline: none;
+}
+
+.full-table-collapse-white {
+    border-collapse: collapse;
+    width: 100%;
+    color: #FFF;
+    font-weight: normal;
+}
+
+.statusprofil {
+    padding-bottom: 20px;
+}
+
+.TitreSmallClassement {
+    margin: auto;
+    font-size: 16px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.labelnomequipe {
+    padding: 3px;
+    font-size: 10px;
+    color: #fff;
+    margin: auto;
+    background: #d42626;
+    margin: 5px 21px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+#login {
+    background: rgb(212, 38, 38);
+    width: 180px;
+}
+
+#demand {
+    background: rgb(43, 17, 160);
+    width: 180px;
+}
+
+.material-icons.profilicon {
+    font-size: 20px;
+}
+
+.pancarteMontagne {
+    background: #009a46
+}
+
+.tdmontagne {
+    color : #009a46;
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.matchmontagne {
+    padding: 10px 20px;
+    margin: 0 200px;
+    background: #009a46;
+    font-size: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    color: #FFF;
+}
+
+
+.viewEquipe {
+    padding: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+   background: rgba(255, 255, 255, 0.45);
+    margin: 0px 50px 20px;
+}
+
+.equipeContainer {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.equipeTitre {
+    font-size: 30px;
+    padding: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.small-version {
+        margin-top: 0px !important;
+        margin: auto !important;
+        width: 160px !important;
+        min-height: 50px !important;
+        height: 50px !important;
+}
+
+.middle-version {
+    margin-top: 0px !important;
+    margin: auto !important;
+    width: 160px !important;
+    min-height: 50px !important;
+    height: 50px !important;
+}
+
+.TitreTableauBasBig {
+    text-align: left;
+    MARGIN: auto;
+    /* padding-left: 20px; */
+    font-size: 46px;
+    /* padding-bottom: 5px; */
+    /* padding-top: 5px; */
+    font-weight: bold;
+}
+
+.TitreSmallClassementBig {
+    margin: auto;
+    font-size: 43px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.labelequipe {
+    color: #FFFFFF;
+    text-decoration: none;
+}

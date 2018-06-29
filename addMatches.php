@@ -28,10 +28,7 @@ function addMatches($con)
 	$lastID = intval($_POST[ 'lastid' ]);
 	$qry = "";
 
-	$idFirstMatch = 1;
-	$idLastMatch = 48;
-	
-	$qry = " DELETE FROM pronostics WHERE id_membre = $id and id_match >= $idFirstMatch AND id_match <= $idLastMatch;";
+	$qry = " DELETE FROM pronostics WHERE id_membre = $id and id_match >= $firstID AND id_match <= $lastID;";
 	$result = mysqli_query($con, $qry);
 		if (!$result) {
 			$return = false;
