@@ -14,67 +14,60 @@
 		echo '<div class="profilInformation floaleft">';
 
 
-	$qry = "SELECT *, joueurs.nom as joueursnom, coequipiers.nom as nomequipe FROM joueurs 
-	LEFT JOIN coequipiers on coequipiers.id = joueurs.equipe
+	$qry = "SELECT *, joueurs.nom as joueursnom FROM joueurs 
 	WHERE id_joueur='".$idProfil."';";
 	$result = mysqli_query($con, $qry);
 	$find = false;
-	while ($row = mysqli_fetch_array($result )) 
-	{	
-		$find = true;
-		echo '<div class="profilInformationSurnom">';
-		echo '<span style="padding-top: 15px;display: block;color: #FFF;FONT-WEIGHT: bold;">';
-		echo utf8_encode_function($row["surnom"]);
-		echo '</span>';
-		if ($row["nomequipe"] != null && $row["nomequipe"] != "")
-		{
-			echo '<div class="labelnomequipe">';
-			echo utf8_encode_function($row["nomequipe"]);
+	if ( $result) {
+		while ($row = mysqli_fetch_array($result )) 
+		{	
+			$find = true;
+			echo '<div class="profilInformationSurnom">';
+			echo '<span style="padding-top: 15px;display: block;color: #FFF;FONT-WEIGHT: bold;">';
+			echo utf8_encode_function($row["surnom"]);
+			echo '</span>';
+
+			echo '<div class="profilInformationImageDiv"> 
+
+					<img src="', utf8_encode_function($row["image"]), '" style="margin: 15px;" class="profilInformationImage mdl-button--raised"/>
+
+				</div>';
+			if ($idProfil == $id)
+			{
+				echo '<div> 
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="ModifierProfil">
+						Modifier Profil 
+					</button>
+				</div>';
+			}
+
+			echo '<div class="profilInformationCivil">', utf8_encode_function($row["prenom"]), '</div>';
+			echo '<div class="profilInformationCivil">', utf8_encode_function($row["joueursnom"]), '</div>';
+			echo '<div class="profilInformationCivil">', utf8_encode_function($row["email"]), '</div>';
+			echo '<div class="profilInformationEmail">', utf8_encode_function($row["description"]), '</div>';
+			
+			
+			$chipsProfil = 'chips-red';
+			if (intval($row["modif_profil"]) == 1 && intval($row["modif_match"]) == 1 && intval($row["modif_bonus"]) == 1)
+			$chipsProfil = 'chips-green';
+			
+			$chipsPayement = 'chips-red';
+			if (intval($row["payed"]) == 1) $chipsPayement = 'chips-green';
+
+
+			echo '
+			<span class="mdl-chip mdl-chip--contact chips-body ', $chipsProfil, '-body">
+				<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white ', $chipsProfil, '"></span>
+				<span class="mdl-chip__text ">Profil à jour</span>
+			</span>
+			<span class="mdl-chip mdl-chip--contact chips-body ', $chipsPayement, '-body"">
+				<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white ', $chipsPayement, '"></span>
+				<span class="mdl-chip__text ">Paiment</span>
+			</span>';
+
 			echo '</div>';
-
 		}
-
-		echo '<div class="profilInformationImageDiv"> 
-
-				<img src="', utf8_encode_function($row["image"]), '" style="margin: 15px;" class="profilInformationImage mdl-button--raised"/>
-
-			</div>';
-		if ($idProfil == $id)
-		{
-			echo '<div> 
-				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="ModifierProfil">
-					Modifier Profil 
-				</button>
-			</div>';
-		}
-
-		echo '<div class="profilInformationCivil">', utf8_encode_function($row["prenom"]), '</div>';
-		echo '<div class="profilInformationCivil">', utf8_encode_function($row["joueursnom"]), '</div>';
-		echo '<div class="profilInformationCivil">', utf8_encode_function($row["email"]), '</div>';
-		echo '<div class="profilInformationEmail">', utf8_encode_function($row["description"]), '</div>';
-		
-		
-		$chipsProfil = 'chips-red';
-		if (intval($row["modif_profil"]) == 1 && intval($row["modif_match"]) == 1 && intval($row["modif_bonus"]) == 1)
-		$chipsProfil = 'chips-green';
-		
-		$chipsPayement = 'chips-red';
-		if (intval($row["payed"]) == 1) $chipsPayement = 'chips-green';
-
-
-		echo '
-		<span class="mdl-chip mdl-chip--contact chips-body ', $chipsProfil, '-body">
-			<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white ', $chipsProfil, '"></span>
-			<span class="mdl-chip__text ">Profil à jour</span>
-		</span>
-		<span class="mdl-chip mdl-chip--contact chips-body ', $chipsPayement, '-body"">
-			<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white ', $chipsPayement, '"></span>
-			<span class="mdl-chip__text ">Paiment</span>
-		</span>';
-
-		echo '</div>';
 	}
-
 	echo '</div>';
 
 	if ($find)

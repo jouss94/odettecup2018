@@ -27,7 +27,7 @@ session_start();
 		<div class="padding20">
 		<div class="loginform-in loginform-in-acceuil">
 		<fieldset>	
-			<img src="images/Logo-index-odette-cup-2018-2.png" style="width: 650px;margin: 15px;"/>
+			<img src="images/UEFA_Euro_2020_logo.png" style="width: 350px;margin: 20px;"/>
 		
 		<div class="err" id="add_err"></div>
 		<div class="load" id="add_load"></div>

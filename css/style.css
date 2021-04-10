@@ -3,15 +3,25 @@
     src: url('fonts/segoeui.ttf');
 }
 
+@font-face {
+    font-family: Roboto;
+    src: url('fonts/Roboto-Regular.ttf');
+}
+
+
 body {
     color: black;
     background-color: #595963;
-    background-image: url(../images/bg-russia-2018.jpg);    
-    background-repeat: repeat;
-    background-size: 500px;
-    min-height: 500px;
+    background-image: url(../images/footer.webp);    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     margin: 0px;
-    font-family: Segoe;
+    font-family: Roboto;
+}
+
+table {
+    font-family: 'Roboto';
 }
 
 .ClassementPoints {
@@ -265,7 +275,7 @@ table.sortable thead {
     font-size: 20px;
     font-weight: 400;
     background: rgba(228, 228, 228, 0.26);
-    border-bottom: 1px solid rgb(206, 138, 138);
+    border-bottom: 1px solid #fff;
 }
 
 .backgroundTab1 {
@@ -649,7 +659,7 @@ table.sortable thead {
 }
 
 .pancarteListeJoueur {
-    background: rgb(32, 13, 176);
+    background: #018498;
     margin-left: 79px;
     margin-right: 126px;
     padding: 5px;
@@ -840,7 +850,7 @@ table.sortable thead {
     padding: 5px 21px;
     margin: auto;
     margin-bottom: 20px;
-    background: rgba(232, 52, 52, 0.51);
+    background: #ffffff30;
     width: 800px;
 }
 
@@ -967,17 +977,17 @@ table.sortable thead {
 }
 
 #ModifierProfil {
-    color: rgb(212, 38, 38);
+    color: #018498;
     background: #FFF;
  }
 
  #ModifierMatch {
-    background: rgb(212, 38, 38);
-    color: #FFF;
+    background: #ffffff;
+    color: #018498;
  }
  #modifierBonus {
-    background: rgb(212, 38, 38);
-    color: #FFF;
+    background: #ffffff;
+    color: #018498;
  }
 
 .InversePronos {
@@ -1071,19 +1081,16 @@ img.logoEquipeBig {
     width: 70px;
     margin: 5px;
     /* border: solid 2px #000; */
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 img.logoEquipe {
     width: 34px;
     margin: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 img.logoEquipeSmall {
     width: 30px;
     margin: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 
@@ -1127,11 +1134,11 @@ img.logoEquipeSmall {
 
 .profilPronosTitre {
     display: block;
-    margin-top: 20px;
-    margin-left: 50px;
     font-size: 28px;
     font-weight: bold;
-    color: rgb(212, 38, 38);
+    color: #fff;    
+    padding: 20px;
+    background: #ffffff38;
 }
 
 .buttonRigth {
@@ -1182,7 +1189,7 @@ table.TableMatch {
     height: 1300px;
     text-align: left;
     font-size: x-large;
-    background: #FFF;
+    background: #ffffff61;
 }
 
 .profilPronosFulll  {
@@ -1190,7 +1197,6 @@ table.TableMatch {
     height: 1100px;
     text-align: left;
     font-size: x-large;
-    background: #FFF;
 }
 
 
@@ -1199,7 +1205,7 @@ table.TableMatch {
     height: 1066px;
     text-align: left;
     font-size: x-large;
-    background: #FFF;
+    background: #ffffff30;
 }
 
 .profilPronosBig  {
@@ -1207,7 +1213,6 @@ table.TableMatch {
     height: 3000px;
     text-align: left;
     font-size: x-large;
-    background: #FFF;
 }
 
 .floaleft {
@@ -1226,7 +1231,7 @@ table.TableMatch {
     text-align: center;
     font-size: 20px;
     height: 1300px;
-    background: rgb(48, 49, 129);
+    background: #209aad;
 }
 
 .profilInformationSurnomBig {
@@ -1234,7 +1239,7 @@ table.TableMatch {
     text-align: center;
     font-size: 20px;
     height: 3000px;
-    background: rgb(48, 49, 129);
+    background: #209aad;
 }
 
 span.titre {
@@ -1300,11 +1305,13 @@ span.titre {
 }
 
 .RetourSpan {
+    margin-top: -48px;
     margin-left: 650px;
     font-size: 25px;
     color: #FFF;
     cursor: pointer;
     font-weight: bold;
+    position: absolute;
 }
 
 .RetourSpanButton {
@@ -1334,17 +1341,17 @@ span.titre {
 }
 
 #RetourButtonBlanc {
-    color: rgb(212, 38, 38);
+    color: #000;
     background: #FFF;
 }
 
 #RetourButtonRouge {
-    background: rgb(212, 38, 38);
-    color: #FFF;
+    background: #ffffff;
+    color: #018498;
 }
 
 #buttonValidationSubmit {
-    background: rgb(39, 212, 38);
+    background: rgb(22 115 22);
     color: #FFF;    
 }
 
@@ -1371,8 +1378,8 @@ span.ui-button-text {
 #buttonValidationReset {
     margin-left: 10px;
 
-        background: rgb(212, 38, 38);
-        color: #FFF;
+    background: #ffffff;
+    color: #018498;
 
 }
 
@@ -1396,6 +1403,7 @@ div#add_err {
     margin: auto;
     padding: 0;
     width: 1000px;
+    background: #ffffff61;
 }
 
 .loginform-in-acceuil {
@@ -1515,12 +1523,12 @@ div#add_err {
 }
 
 #login {
-    background: rgb(212, 38, 38);
+    background: rgb(149 194 61);
     width: 180px;
 }
 
 #demand {
-    background: rgb(43, 17, 160);
+    background: rgb(249 178 51);
     width: 180px;
 }
 

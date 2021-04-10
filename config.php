@@ -5,7 +5,7 @@ $hostWamp= 'localhost';
 
 $dbname= 'xcx58271';
 $dbname1= 'u469049543_02020';
-$dbnameWamp= 'russie2019';
+$dbnameWamp= 'euro2021';
 
 $user= 'xcx58271';
 $user1= 'u469049543_02020';

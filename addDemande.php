@@ -70,7 +70,7 @@ function addDemande($con)
 
 		<div class="padding20">
 		<div class="loginform-in blackougedefault" style="height:400px">
-		<img src="images/coupe-du-monde-russie-2018-bandeau.png" style="width: 500px;"/>
+		<img src="images/UEFA_Euro_2020_logo.png" style="width: 110px;margin: 6px;"/>
 		<div class="Retoudiv">
 			<button class="Retour mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourProfil">
 								Retour

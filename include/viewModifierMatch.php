@@ -14,8 +14,7 @@
 		echo '<div class="profilInformation floaleft">';
 
 
-	$qry = "SELECT *, joueurs.nom as joueursnom, coequipiers.nom as nomequipe FROM joueurs 
-	LEFT JOIN coequipiers on coequipiers.id = joueurs.equipe
+	$qry = "SELECT *, joueurs.nom as joueursnom FROM joueurs 
 	WHERE id_joueur='".$idProfil."';";
 	$result = mysqli_query($con, $qry);
 	$find = false;
@@ -26,13 +25,6 @@
 		echo '<span style="padding-top: 15px;display: block;color: #FFF;FONT-WEIGHT: bold;">';
 		echo utf8_encode_function($row["surnom"]);
 		echo '</span>';
-		if ($row["nomequipe"] != null && $row["nomequipe"] != "")
-		{
-			echo '<div class="labelnomequipe">';
-			echo utf8_encode_function($row["nomequipe"]);
-			echo '</div>';
-
-		}
 
 		echo '<div class="profilInformationImageDiv"> 
 
@@ -138,7 +130,7 @@
 			else
 				echo '</table>';
 
-			echo '<span class="profilPronosSousTitre">8ème de final</span>';
+			echo '<span class="profilPronosSousTitre"> Groupe ', $group ,'</span>';
 
 			echo '<table class="tableauPronosForm">';
 

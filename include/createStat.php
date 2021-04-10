@@ -293,10 +293,9 @@ while ($dateCurrent <= $today)
 		}
 	}
 
-		$qry = "SELECT sum(classements.points) as total, coequipiers.nom, coequipiers.id
+		$qry = "SELECT sum(classements.points) as total
 	FROM `joueurs` 
 	LEFT JOIN `historic_rang` classements ON `classements`.`id_owner` = `joueurs`.`id_joueur` AND `classements`.`type` = 'general' AND classements.date = '$dateCurrent'
-	LEFT JOIN coequipiers ON coequipiers.id = joueurs.equipe
 	GROUP BY `equipe`
 	ORDER BY total DESC";
 

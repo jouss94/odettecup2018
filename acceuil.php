@@ -35,7 +35,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<div class="padding20">
 			<div class="loginform-in">
 
-				<div style="width:100%;padding-bottom: 20px;background:white">
+				<div style="width:100%;padding-bottom: 20px">
 						<?php include("include/updateProfil.php");?>
 
 						<div class="allAcceuil">
@@ -78,7 +78,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<table class="tableAcceuil">
 							<tr>
 								<td >
-									<div class="tableAcceuilClassement">
+									<!-- <div class="tableAcceuilClassement"> 
 										<div class="classement-card-event mdl-card classement-general mdl-shadow--2dp">
 												<div class="mdl-card__title mdl-card--expand">
 													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
@@ -136,6 +136,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 												</div>
 											</div>
 											</div>
+								-->
 								</td>
 							</tr>
 						</table>

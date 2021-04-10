@@ -5,6 +5,8 @@ table.bandeau {
     background: rgba(255, 255, 255, 0.41);
     position: fixed;
     z-index: 999;
+    color: white;
+    border-bottom: 1px solid #000;
 }
 
 table.bandeauacceuil {
@@ -18,31 +20,32 @@ td#bandeauAcceuil {
 td#bandeauAcceuil:hover {
     width: 5%;
     text-align: center;
-    color: white;
+    color: #000;
     cursor: pointer;
 }
 
 
 td#bandeauNom {
     font-size: 20px;
-        width: 65%;
+    width: 65%;
     text-align: center;
     font-weight: bold;
+    cursor: context-menu;
 }
 
 td#bandeauProfil {
     width: 13%;
     text-align: center;
-    background-image: url("../images/icon/user_9x12.png");
+    background-image: url("../images/icon/user_9x12_white.png");
     background-repeat:no-repeat;
     background-position:20 center;
-    color: black;
+    color: white;
 }
 
 td#bandeauProfil:hover {
     width: 13%;
     text-align: center;
-    background-image: url("../images/icon/user_9x12_white.png");
+    background-image: url("../images/icon/user_9x12.png");
     background-repeat:no-repeat;
     background-position:20 center;
     color: white;
@@ -53,7 +56,7 @@ td#bandeauProfil:hover {
 td#bandeauDeconnect {
     width: 17%;
     text-align: center;
-    background-image: url("../images/icon/x_11x11.png");
+    background-image: url("../images/icon/x_11x11_white.png");
     background-repeat:no-repeat;
     background-position:10 center;
 }
@@ -63,7 +66,7 @@ td#bandeauDeconnect:hover {
     text-align: center;
     color: white;
     cursor: pointer;
-    background-image: url("../images/icon/x_11x11_white.png");
+    background-image: url("../images/icon/x_11x11.png");
     background-repeat:no-repeat;
     background-position:10 center;
 }

@@ -1,10 +1,10 @@
 .rougedefault {
-    background: rgb(212, 38, 38);
+    background: #018498;
     /* background: brown; */
 }
 
 .blackougedefault {
-  background: brown;
+  background: #6bb3bd;
 }
 
 .blackougewhite {
@@ -14,7 +14,7 @@
 .demo-card-event.mdl-card {
     width: 415px;
     height: 400px;
-    background: rgb(212, 38, 38);
+    background: #018498;
   }
   .demo-card-event > .mdl-card__actions {
     border-color: rgba(255, 255, 255, 0.2);
@@ -100,7 +100,7 @@
     width: 415px;
     min-height: 100px;
     height: 100px;
-    background: rgb(212, 38, 38);
+    background: #018498;
   }
 
   .information-card-event > .mdl-card__actions {
@@ -132,7 +132,7 @@
     width: 840px;
     min-height: 100px;
     height: 100px;
-    background: rgb(212, 38, 38);
+    background: #018498;
   }
 
   .statistics-card-event > .mdl-card__actions {
@@ -257,20 +257,20 @@
 }
 
 #RetourProfil {
-  color: rgb(212, 38, 38);
-  background: #FFF;  
+  background: #ffffff;
+  color: #018498; 
 }
 
 #RetourAcceuil {
-  color: rgb(212, 38, 38);
-  background: #FFF;  
+  background: #ffffff;
+  color: #018498;
 }
 
 
 .match-card-event.mdl-card {
   width: 480px;
   height: 500px;
-  background: rgb(212, 38, 38);
+  background: rgb(1 132 152);
   margin: auto;
   margin-top: 40px;
 }
