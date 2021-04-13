@@ -29,10 +29,10 @@
 		$points = $row["points"];
 	
 	if ($i% 2 == 0) {
-		echo '	<tr class="backgroundTab1Jaune">';
+		echo '	<tr class="backgroundTab1">';
 	}
 	else {
-		echo '	<tr class="backgroundTab2Jaune">';
+		echo '	<tr class="backgroundTab2">';
 	}
 	echo '<td class="homeClassementRang">';
 			echo '<div>';

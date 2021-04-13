@@ -70,7 +70,7 @@ function buildConfig(classement, color) {
             xAxes: [{
                 type: 'time',
                 gridLines: {
-                    color: "#9c9c9c"
+                    color: "#FFF"
                 },
                 display: true,
                 time: {
@@ -100,7 +100,7 @@ function buildConfig(classement, color) {
             }],
             yAxes: [{
                 gridLines: {
-                    color: "#9c9c9c"
+                    color: "#FFF"
                 },
                 display: true,
                 scaleLabel: {

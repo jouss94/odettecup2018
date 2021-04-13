@@ -20,7 +20,6 @@ function changeEtat($con)
 
 function addBonus($con)
 {
-
 	$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
@@ -39,15 +38,19 @@ function addBonus($con)
 
 	$return = false;
 	$team_winner_id = intval($_POST[ 'equipeWin' ]);
-	$min_first = intval($_POST[ 'MinPronosFirst' ]);
-	$min_last = intval($_POST[ 'MinPronosLast' ]);
+	// $min_first = intval($_POST[ 'MinPronosFirst' ]);
+	// $min_last = intval($_POST[ 'MinPronosLast' ]);
 	$total_but = intval($_POST[ 'totalBut' ]);
-	$best_scorer = addslashes(utf8_decode_function ($_POST[ 'InputTextBestScorer' ]));
+	// $best_scorer = addslashes(utf8_decode_function ($_POST[ 'InputTextBestScorer' ]));
 
-	$qry = " INSERT INTO pronostics_bonus (id_membre, team_winner_id,
-											min_first, min_last, total_but, best_scorer) 
-										VALUES ($id, $team_winner_id,
-												$min_first, $min_last, $total_but, '$best_scorer');";
+	$qry = " INSERT INTO pronostics_bonus (id_membre
+											, team_winner_id
+											, total_but
+										) 
+										VALUES ($id, 
+												$team_winner_id,
+												$total_but
+											);";
 	$result = mysqli_query($con, $qry);
 	if (!$result) {
 		$return = false;

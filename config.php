@@ -1,29 +1,20 @@
 <?php
-$host= 'cl1-sql20';
-$host1= 'mysql.hostinger.fr';
-$hostWamp= 'localhost';
 
-$dbname= 'xcx58271';
-$dbname1= 'u469049543_02020';
-$dbnameWamp= 'euro2021';
+$isProd = false;
 
-$user= 'xcx58271';
-$user1= 'u469049543_02020';
-$userWamp= 'root';
+$host = $isProd ? 'sql-server.k8s-s8bubroc': 'localhost';
+$dbname = $isProd ? 'euro2020' : 'euro2021';
+$user= $isProd ? 'jousseau' : 'root';
+$pass = $isProd ? 'admineuro2020' : '';
 
-$pass= 'xmJDHUBSMPQD';
-$pass1= '02020db';
-$passWamp= '';
-
-// $con = mysqli_connect($host,$user,$pass) or die(mysqli_error());
-$con = mysqli_connect($hostWamp,$userWamp,$passWamp) or die(mysqli_error());
+$con = mysqli_connect($host,$user,$pass) or die(mysqli_error());
 
 if (!$con) {
     echo "Unable to connect to DB: " . mysqli_error();
     exit;
 }
 
-if (!mysqli_select_db($con, $dbnameWamp)) {
+if (!mysqli_select_db($con, $dbname)) {
     echo "Unable to select mydbname: " . mysqli_error();
     exit;
 }

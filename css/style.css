@@ -121,6 +121,14 @@ table.sortable thead {
     overflow-y: auto;
 }
 
+.uniqueClassement {
+    padding: 10px;
+}
+
+.uniqueStatistics {
+    background: #00000085;
+}
+
 .surnomClassementDiv {
     cursor: pointer;
     word-break: break-word;
@@ -133,7 +141,8 @@ table.sortable thead {
 
 .homeClassementPoint {
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
+    color: #FFF;
 }
 
 .homeClassementSurnom {
@@ -146,8 +155,8 @@ table.sortable thead {
 
 .homeClassementRang {
     padding-left: 5px;
-    color: #000;
-    font-size: 12px;
+    color: #FFF;
+    font-size: 14px;
     text-align: center;
 }
 
@@ -279,7 +288,7 @@ table.sortable thead {
 }
 
 .backgroundTab1 {
-    background:rgba(185, 185, 185, 0.32941176470588235);
+    background:#ffffff7a;
 }
 
 .backgroundTab2 {
@@ -358,18 +367,18 @@ table.sortable thead {
 }
 
 .classTRPerfectHome {
-    color: rgb(2, 121, 0);
+    color: #1792c1;
     font-weight: bold;
 }
 
 
 .classTRInverseHome {
-    color: rgb(255, 255, 255);
+    color: #757575;
     font-weight: bold;
 }
 
 .classTRCorrectHome {
-    color : rgb(158, 255, 0);
+    color : #1ea228;
     font-weight: bold;
 }
 
@@ -439,10 +448,6 @@ table.sortable thead {
 .black 
 {
     background: rgb(0, 0, 0);
-}
-
-.cadreTableauAcceuilBg {
-    
 }
 
 .cadreTableauAcceuilBas {
@@ -545,10 +550,6 @@ table.sortable thead {
     border-collapse: collapse;
 }
 
-.titreBonus {
-
-}
-
 .ulperso {
     margin-top: -3px;
 }
@@ -602,21 +603,22 @@ table.sortable thead {
 .bleuTitre {
     color: #2768ff;
 }
-
 .vertTitre {
     color: #3ccb24;
 }
 
+
+
 .perfectTitre {
-    color: rgb(2, 121, 0);
+    color: #1792c1;
 }
 
 .perfectInverse {
-    color: rgb(255, 255, 255);
+    color: #757575;
 }
 
 .perfectCorrect {
-    color : rgb(158, 255, 0);
+    color : #1ea228;
 }
 
 .perfectCorrectPlus {
@@ -678,7 +680,7 @@ table.sortable thead {
 .tableListeFour:hover {
     width: 18%;
     text-align: center;
-    color: rgb(197, 0, 0);
+    color: #008192;
     cursor: pointer;
 }
 
@@ -869,7 +871,8 @@ table.sortable thead {
 }
 
 .petitPoint {
-    font-size: 8px;
+    font-size: 14px;
+    padding-left: 4px;
 }
 
 .firstColumnProfilPadding {
@@ -878,14 +881,15 @@ table.sortable thead {
 }
 
 .tableDetails {
-    background: rgba(0, 0, 0, 0.28);
+    /* background: rgba(0, 0, 0, 0.28); */
     margin: auto;
     margin-top: 35px;
     color: #FFF;
     width: 80%;
     padding: 6px;
     border-radius: 2px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    background: #ffffff26;
+    /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */
 }
 
 
@@ -928,8 +932,9 @@ table.sortable thead {
     color: #fff;
     margin: 18px;
     font-size: 14px;
-    background: rgba(0, 0, 0, 0.28);
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    background: #ffffff26;
+    /* background: rgba(0, 0, 0, 0.28);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */
 }
 
 
@@ -1127,9 +1132,6 @@ img.logoEquipeSmall {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
-}
-
-.cadreTableau {
 }
 
 .profilPronosTitre {

@@ -27,10 +27,12 @@ function openClassement(evt, cityName) {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+    
+    // document.getElementById(cityName).style.display = "block";
+    // evt.currentTarget.className += " active";
 
-    var typeclassement = cityName.substring(-3);
+    var typeclassement = cityName;
+    console.log(cityName);
     var color = document.getElementById('color' + typeclassement).innerText;
     var max = parseInt(document.getElementById('max' + typeclassement).innerText);     
     var step = parseInt(document.getElementById('step' + typeclassement).innerText);     

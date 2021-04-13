@@ -34,7 +34,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">
-				<div style="width:100%;height:3040px;">
+				<div style="padding: 1px 0;">
 
 					<span class="listeJoueurTitre">Règlement</span>
 	
@@ -47,7 +47,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<div class="reglementDiv">
 
 								<p>
-				<h3>Règles sur chaque classement :</h3>
+				<!-- <h3>Règles sur chaque classement</h3>
 				<div class="sousTitre jauneTitre">General (Maillot Jaune)</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >Le classement comme vous l'avez toujours connu</li>
@@ -71,23 +71,23 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<li class="pointRegle reglePoint" >Seuls les matches les plus difficiles sont comptabilisés dans ce classment</li>
 						<li class="pointRegle regleDetail" >Les matches annotés "Match de montagne" sont comptabilisés. Pas de bonus.</li>
 						<li class="pointRegle regleExemple" ><span class="regleExempleCorp">La premier remporte un lot</span></li>
-					</ul>
+					</ul> -->
 
 
-				<h3>Règles sur chaque match :</h3>
+				<h3>Règles sur chaque match</h3>
 				<div class="sousTitre perfectTitre">Perfect</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
 						<li class="pointRegle regleDetail" >Trouvez le score exact du match.</li>
 						<li class="pointRegle regleExemple" >Exemple : <span class="regleExempleCorp">Pronostic 2-1 - Score 2-1 : + 7 points</span></li>
 					</ul>
-				<div class="sousTitre perfectCorrectPlus">Correct +</div>
+				<!-- <div class="sousTitre perfectCorrectPlus">Correct +</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >4 points</li>
 						<li class="pointRegle regleDetail" >Trouvez le vainqueur du match et le nombre de but de l'une des deux équipes.</li>
 						<li class="pointRegle regleExemple" >Exemple : <span class="regleExempleCorp">Pronostic 2-1 - Score 2-0 : + 4 points</span></li>
 						<div style="margin-left: 161px;"><span class="regleExempleCorp">Pronostic 2-1 - Score 3-1 : + 4 points</span></div>
-					</ul>
+					</ul> -->
 
 				<div class="sousTitre perfectCorrect">Correct</div>
 					<ul class="ulperso">
@@ -111,11 +111,11 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<div style="margin-left: 161px;"><span class="regleExempleCorp">Pronostic 0-1 - Score 0-0 : + 0 point</span></div>
 					</ul>
 
-				<h3>Règles bonus :</h3>
+				<h3>Règles bonus</h3>
 					<div class="sousTitre titreBonus">Equipe vainqueur</div>
 					<ul class="ulperso">
-						<li class="pointRegle reglePoint" >14 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le vainqueur du tournoi RUSSIE 2018.</li>
+						<li class="pointRegle reglePoint" >10 points</li>
+						<li class="pointRegle regleDetail" >Trouvez le vainqueur du tournoi Euro 2020.</li>
 					</ul>
 					<!-- <div class="sousTitre titreBonus">Meilleure attaque</div>
 					<ul class="ulperso">
@@ -127,7 +127,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<li class="pointRegle reglePoint" >7 points</li>
 						<li class="pointRegle regleDetail" >Trouvez la meilleure défense du tournoi RUSSIE 2018.</li>
 					</ul> -->
-					<div class="sousTitre titreBonus">Minute du premier but</div>
+					<!-- <div class="sousTitre titreBonus">Minute du premier but</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >10 points [tout-pil'] 7 points [approchant] </li>
 						<li class="pointRegle regleDetail" >Trouvez la minute du premier but du tournoi RUSSIE 2018.</li>
@@ -135,11 +135,8 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<li class="pointRegle regleDetail" >[Approchant] : La minute se trouve dans les <strong>2</strong> minutes de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
 						<li class="pointRegle regleDetail" >Minutage officiel donné par la FIFA.</li>
-					</ul>
-
-
-
-					<div class="sousTitre titreBonus">Minute du dernier but</div>
+					</ul> -->
+					<!-- <div class="sousTitre titreBonus">Minute du dernier but</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >10 points [tout-pil'] 7 points [approchant] </li>
 						<li class="pointRegle regleDetail" >Trouvez la minute du dernier but du tournoi RUSSIE 2018.</li>
@@ -147,22 +144,21 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<li class="pointRegle regleDetail" >[Approchant] : La minute se trouve dans les <strong>2</strong> minutes de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
 						<li class="pointRegle regleDetail" >Minutage officiel donné par la FIFA.</li>
-					</ul>
-
+					</ul> -->
 					<div class="sousTitre titreBonus">Nombre total de buts</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >14 points [tout-pil'] 7 points [approchant] </li>
-						<li class="pointRegle regleDetail" >Trouvez le nombre de buts total du tournoi RUSSIE 2018.</li>
+						<li class="pointRegle regleDetail" >Trouvez le nombre de buts total du tournoi Euro 2020.</li>
 						<li class="pointRegle regleDetail" >[Tout-pil'] : trouvez le nombre exact de buts.</li>
 						<li class="pointRegle regleDetail" >[Approchant] : Le nombre de buts se trouve dans les <strong>3</strong> buts de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
 					</ul>
 
-					<div class="sousTitre titreBonus">Meilleur buteur</div>
+					<!-- <div class="sousTitre titreBonus">Meilleur buteur</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
 						<li class="pointRegle regleDetail" >Trouvez le meilleur buteur du tournoi RUSSIE 2018.</li>
-					</ul>
+					</ul> -->
 
 					<!-- <div class="sousTitre titreBonus">Meilleur passeur</div>
 					<ul class="ulperso">
@@ -185,50 +181,48 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<li class="pointRegle reglePoint" >7 points</li>
 						<li class="pointRegle regleDetail" >Trouvez le nombre de buts de la France lors du tournoi RUSSIE 2018.</li>
 					</ul> -->
-					<div class="sousTitre titreBonus">Bonus : Finale</div>
+					<!-- <div class="sousTitre titreBonus">Bonus : Finale</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >14 points ou 8 points ou 6 points ou 2 points</li>
 						<li class="pointRegle regleDetail" >Le nombre de points gagnés sur le match de la finale est doublé.</li>
-					</ul> 
+					</ul>  -->
 
 			</p>
 
-		<h3>Dates :</h3>
+		<h3>Dates</h3>
 				<ul class="ulperso">
-						<li class="pointRegle" >1er Mai 2018 : ouverture aux inscriptions.</li>
-						<li class="pointRegle" >1er Juin 2018 : fermeture des inscriptions et des pronostics. Ouverture de tous les pronostics à tout le monde.</li>
-						<li class="pointRegle" >10 juin 2018 : Tirage au sort des équipes.</li>
+						<li class="pointRegle" >1er Mai 2021 : ouverture aux inscriptions.</li>
+						<li class="pointRegle" >1er Juin 2021 : fermeture des inscriptions et des pronostics. Ouverture de tous les pronostics à tout le monde.</li>
 						<li class="pointRegle" >Matches de phase finale : pour les 8émes, quarts, demies et finale, tous les pronostics seront à rentrer en ligne.</li>
 					</ul>
 
 
-		<h3>Engagement dans le concours :</h3>
+		<h3>Engagement dans le concours</h3>
 			<p>
 				<span class="pointRegle">20€ par joueur à payer avant le 1er juin par virement, chèque ou espèce.</span>			
 			</p>
 
-		<h3>Tableau des gains :</h3>
+		<h3>Tableau des gains</h3>
 			<p>
-				<span class="pointRegle">Le tableau des gains sera calculé selon le nombre de participants.</span>
-				<!--Total des gains 345 € (21 adultes x 15 € = 315 € + 3 mineurs x 10 = 30 €)</br></br>
-				Répartitions :</br>
-				1er   = 65 % </br>
-				2ème  = 25 % </br>
-				3ème  = 10 % </br>
-				4ème  = remboursé (rembourssé comme un adulte soit 15€)</br></br>
-
-				Lot restant 330 €</br>
+				<span class="pointRegle">Le tableau des gains sera calculé selon le nombre de participants avec la base de calcule suivantes.</span>
+				<!--Total des gains 345 € (21 adultes x 15 € = 315 € + 3 mineurs x 10 = 30 €)</br></br>--->
+				<ul class="ulperso">
+					<li class="pointRegle" >1er   = 65 % 
+					<li class="pointRegle" >2ème  = 25 % 
+					<li class="pointRegle" >3ème  = 10 % 
+					<li class="pointRegle" >4ème  = remboursé
+				</ul>
+				<!-- Lot restant 330 €</br>
 
 				1er  = 214,50 €</br>
 				2em  = 82,50 €</br>
-				3em  = 33 €</br>
-			-->
+				3em  = 33 €</br> -->
 			</p>
 
 			<!--
 			<h2>Quelques règles pour le site :</h2>
 			<p>
-				<h3>Plusieurs rubrique vous sont proposées :</h3>
+				<h3>Plusieurs rubrique vous sont proposées</h3>
 			<ul>
 				<li>La Rubrique <strong>News</strong> servira à communiquer avec l'ensemble des pronostiqueurs que vous êtes.<br/>
 				On y retrouvera toutes les nouveautés du site, et pour vous prévenir de toute mise à jour
@@ -242,7 +236,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 			</p>
 
 			<p>
-				<h3>La connexion au profil :</h3>
+				<h3>La connexion au profil</h3>
 
 				En haut de chaque page vous retrouvez une nouvelle fonctionnalité de connexion.<br/>
 				Le but est de se connecter avant de pouvoir poster des messages dans la rubriques de Lâchez-Vous<br/>
@@ -252,7 +246,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 			</p>
 
 			<p>
-				<h3>Lâchez-Vous :</h3>
+				<h3>Lâchez-Vous</h3>
 
 				<h4>Cette nouvelle fonctionnalité vous propose 4 auditoires différents :</h4>
 				<ul>

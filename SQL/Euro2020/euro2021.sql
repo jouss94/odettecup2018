@@ -132,10 +132,11 @@ INSERT INTO `equipes` (`id_equipe`, `name`, `group`, `image`, `logo`) VALUES
 
 DROP TABLE IF EXISTS `etat`;
 CREATE TABLE IF NOT EXISTS `etat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `attribut` varchar(25) COLLATE utf8_general_ci NOT NULL,
-  `value` int(1) NOT NULL
-) ;
-
+  `value` int(1) NOT NULL,
+   PRIMARY KEY (`id`)
+)  AUTO_INCREMENT=0 DEFAULT  COLLATE=utf8_general_ci;
 --
 -- Déchargement des données de la table `etat`
 --
@@ -286,19 +287,30 @@ DROP TABLE IF EXISTS `pronostics_bonus`;
 CREATE TABLE IF NOT EXISTS `pronostics_bonus` (
   `id_membre` int(11) NOT NULL,
   `team_winner_id` int(11) NOT NULL,
-  `team_winner_id_point` int(4) NOT NULL DEFAULT '-1',
-  `min_first` int(11) NOT NULL,
-  `min_first_point` int(4) NOT NULL DEFAULT '-1',
-  `min_last` int(11) NOT NULL,
-  `min_last_point` int(4) NOT NULL DEFAULT '-1',
-  `total_but` int(11) NOT NULL,
-  `total_but_point` int(4) NOT NULL DEFAULT '-1',
-  `best_scorer` varchar(255) COLLATE utf8_general_ci NOT NULL,
-  `best_scorer_point` int(4) NOT NULL DEFAULT '-1',
-  `modif` int(11) NOT NULL DEFAULT '1',
+  `team_winner_id_point` int(4) NULL DEFAULT '-1',
+  `min_first` int(11) NULL,
+  `min_first_point` int(4) NULL DEFAULT '-1',
+  `min_last` int(11) NULL,
+  `min_last_point` int(4) NULL DEFAULT '-1',
+  `total_but` int(11) NULL,
+  `total_but_point` int(4) NULL DEFAULT '-1',
+  `best_scorer` varchar(255) COLLATE utf8_general_ci NULL,
+  `best_scorer_point` int(4) NULL DEFAULT '-1',
+  `modif` int(11) NULL DEFAULT '1',
   UNIQUE KEY `id_membre` (`id_membre`)
 ) ENGINE=MyISAM DEFAULT  COLLATE=utf8_general_ci;
 COMMIT;
+
+DROP TABLE IF EXISTS `historic_rang`;
+CREATE TABLE IF NOT EXISTS `historic_rang` (
+  `type` varchar(50) COLLATE utf8_general_ci NOT NULL,
+  `id_owner` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `rang` int(11) NOT NULL,
+  `points` int(11) NOT NULL,
+  PRIMARY KEY (`type`,`id_owner`,`date`)
+) ENGINE=MyISAM DEFAULT COLLATE=utf8_general_ci;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

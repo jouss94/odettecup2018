@@ -864,7 +864,7 @@ h2 {
 
 h3 {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-size: 34px;
+  font-size: 25px;
   font-weight: 400;
   line-height: 40px;
   margin-top: 24px;
@@ -3981,6 +3981,7 @@ input.mdl-button[type="submit"] {
     -webkit-mask-image: -webkit-radial-gradient(circle, white, black); }
 
 .mdl-button__ripple-container {
+  background: #ffffff26;
   display: block;
   height: 100%;
   left: 0px;

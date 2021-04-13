@@ -115,7 +115,7 @@ function addMatches($con)
 			{
 
 				echo "<div class='valideDemand' id='add_valideDemand'><img src='images/check.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Votre demande a été enregistrée.
-			</br></br> Merci pour cette enregistrement, vous pouvez toujours modifier vos pronostics jusqu'au 29 Juin à 00:00 dans la rubrique Profil</div>";
+			</br></br> Merci pour cette enregistrement, vous pouvez toujours modifier vos pronostics jusqu'au 1er Juin dans la rubrique Profil</div>";
 				changeEtat($con);
 			}
 			else

@@ -50,10 +50,10 @@
 		$total = $row["total"];
 
 			if ($i % 2 == 0) {
-				echo '	<tr class="backgroundTab2Jaune">';
+				echo '	<tr class="backgroundTab2">';
 			}
 			else {
-				echo '	<tr class="backgroundTab1Jaune">';
+				echo '	<tr class="backgroundTab1">';
 			}
 
 

@@ -132,38 +132,38 @@
 		echo '<tr>';
 			echo '<td class="ParamSousTitre">
 				14 points </br>
-				Trouvez le vainqueur du tournoi RUSSIE 2018 
+				Trouvez le vainqueur du tournoi Euro 2020 
 
 			</td>';
 		echo '</tr>';
 
-		echo '<tr>';
-			echo '<td class="ParamTitre">Minute du premier but</td>';
+		// echo '<tr>';
+		// 	echo '<td class="ParamTitre">Minute du premier but</td>';
 
-			echo '<td rowspan="2" class="tdMatch tdMatchRight">';
-				echo '<input id="MinPronosFirst" class="serverside-validation" name="MinPronosFirst" type="text" value="'; if ($min_first !== null) echo $min_first; echo '"  size="8" /> Minutes';
-			echo '</td>';
-		echo '</tr>';
-		echo '<tr>';
-			echo '<td class="ParamSousTitre">
-				10 points [tout-pil\'] 7 points [approchant] </br>
-				Trouvez la minute du premier but du tournoi RUSSIE 2018.
-			</td>';
-		echo '</tr>';
+		// 	echo '<td rowspan="2" class="tdMatch tdMatchRight">';
+		// 		echo '<input id="MinPronosFirst" class="serverside-validation" name="MinPronosFirst" type="text" value="'; if ($min_first !== null) echo $min_first; echo '"  size="8" /> Minutes';
+		// 	echo '</td>';
+		// echo '</tr>';
+		// echo '<tr>';
+		// 	echo '<td class="ParamSousTitre">
+		// 		10 points [tout-pil\'] 7 points [approchant] </br>
+		// 		Trouvez la minute du premier but du tournoi RUSSIE 2018.
+		// 	</td>';
+		// echo '</tr>';
 
-		echo '<tr>';
-			echo '<td class="ParamTitre">Minute du dernier but</td>';
+		// echo '<tr>';
+		// 	echo '<td class="ParamTitre">Minute du dernier but</td>';
 
-			echo '<td rowspan="2" class="tdMatch tdMatchRight">';
-				echo '<input id="MinPronosLast" class="serverside-validation" name="MinPronosLast" type="text" value="'; if ($min_last !== null) echo $min_last; echo '"  size="8" /> Minutes';
-			echo '</td>';
-		echo '</tr>';
-		echo '<tr>';
-			echo '<td class="ParamSousTitre">
-				10 points [tout-pil\'] 7 points [approchant] </br>
-				Trouvez la minute du dernier but du tournoi RUSSIE 2018.
-			</td>';
-		echo '</tr>';
+		// 	echo '<td rowspan="2" class="tdMatch tdMatchRight">';
+		// 		echo '<input id="MinPronosLast" class="serverside-validation" name="MinPronosLast" type="text" value="'; if ($min_last !== null) echo $min_last; echo '"  size="8" /> Minutes';
+		// 	echo '</td>';
+		// echo '</tr>';
+		// echo '<tr>';
+		// 	echo '<td class="ParamSousTitre">
+		// 		10 points [tout-pil\'] 7 points [approchant] </br>
+		// 		Trouvez la minute du dernier but du tournoi RUSSIE 2018.
+		// 	</td>';
+		// echo '</tr>';
 
 		echo '<tr>';
 			echo '<td class="ParamTitre">Nombre total de buts</td>';
@@ -175,23 +175,23 @@
 		echo '<tr>';
 			echo '<td class="ParamSousTitre">
 				14 points [tout-pil\'] 7 points [approchant] </br>
-				Trouvez le nombre de buts total du tournoi RUSSIE 2018.
+				Trouvez le nombre de buts total du tournoi Euro 2020.
 			</td>';
 		echo '</tr>';
 
-		echo '<tr>';
-			echo '<td class="ParamTitre">Meilleur buteur</td>';
+		// echo '<tr>';
+		// 	echo '<td class="ParamTitre">Meilleur buteur</td>';
 
-			echo '<td rowspan="2" class="tdMatch tdMatchRight">';
-				echo '<input id="InputTextBestScorer" class="serverside-validation" name="InputTextBestScorer" type="text" value="'; if ($best_scorer !== null) echo $best_scorer; echo '"  size="8" /> ';
-			echo '</td>';
-		echo '</tr>';
-		echo '<tr>';
-			echo '<td class="ParamSousTitre">
-				7 points </br>
-				Trouvez le meilleur buteur du tournoi RUSSIE 2018.
-			</td>';
-		echo '</tr>';
+		// 	echo '<td rowspan="2" class="tdMatch tdMatchRight">';
+		// 		echo '<input id="InputTextBestScorer" class="serverside-validation" name="InputTextBestScorer" type="text" value="'; if ($best_scorer !== null) echo $best_scorer; echo '"  size="8" /> ';
+		// 	echo '</td>';
+		// echo '</tr>';
+		// echo '<tr>';
+		// 	echo '<td class="ParamSousTitre">
+		// 		7 points </br>
+		// 		Trouvez le meilleur buteur du tournoi RUSSIE 2018.
+		// 	</td>';
+		// echo '</tr>';
 
 
 	echo '</table>';

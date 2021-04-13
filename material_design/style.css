@@ -13,7 +13,7 @@
 
 .demo-card-event.mdl-card {
     width: 415px;
-    height: 400px;
+    height: 405px;
     background: #018498;
   }
   .demo-card-event > .mdl-card__actions {
@@ -42,12 +42,12 @@
 
 
   .classement-card-event.mdl-card {
-    width: 200px;
-    height: 400px;
+    width: 100%;
+    height: 412px;
   }
   .classement-general {
     /* background: #fbe835; */
-    background: #e9d621;
+    background: #018498;
         /* background: #b83e3e; */
 }
 
@@ -76,7 +76,7 @@
   }
   .classement-card-event > .mdl-card__title {
     align-items: flex-start;
-    padding: 4px 4px;
+    padding: 10px 10px;
   }
   .classement-card-event > .mdl-card__title > h4 {
     margin-top: 0;
@@ -92,7 +92,7 @@
   .classement-card-event > .mdl-card__title,
   .classement-card-event > .mdl-card__actions,
   .classement-card-event > .mdl-card__actions > .mdl-button {
-    color: #000;
+    color: #FFF;
   }
 
 
@@ -188,11 +188,11 @@
   .classementperso-card-event > .mdl-card__title,
   .classementperso-card-event > .mdl-card__actions,
   .classementperso-card-event > .mdl-card__actions > .mdl-button {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
   }
 
   .chips-body {
-    background: rgba(0, 0, 0, 0.28);
+    background: #ffffff26;
     color: #fff;
   }
 
@@ -246,10 +246,15 @@
   }  
   
 
-  .height300 {
-    height: 356px !important;
-    min-height: 356px !important;
-    }
+.height300 {
+  height: 356px !important;
+  min-height: 356px !important;
+}
+
+.height150 {
+  height: 190px !important;
+  min-height: 190px !important;
+}    
 
 .heightbonusform {
     height: 500px !important;

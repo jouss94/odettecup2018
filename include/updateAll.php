@@ -68,19 +68,19 @@
 						|| (($pronos_away - $pronos_home) == 0 && ($score_away - $score_home) == 0) 
 					)
 			{
-				if ($pronos_away == $score_away || $pronos_home == $score_home)
-				{
-					$pointMacht = 4;
-					$nb_correctPlus++;
-					$points += $pointMacht;
-					if ($is_montagne) 
-					{
-						$nb_correctPlus_montagne++;
-					$points_montagne += $pointMacht;						
-					}
-				}
-				else
-				{
+				// if ($pronos_away == $score_away || $pronos_home == $score_home)
+				// {
+				// 	$pointMacht = 4;
+				// 	$nb_correctPlus++;
+				// 	$points += $pointMacht;
+				// 	if ($is_montagne) 
+				// 	{
+				// 		$nb_correctPlus_montagne++;
+				// 	$points_montagne += $pointMacht;						
+				// 	}
+				// }
+				// else
+				// {
 					$pointMacht = 3;
 					$nb_correct++;
 					$points += $pointMacht;					
@@ -90,7 +90,7 @@
 					$points_montagne += $pointMacht;					
 						
 					}
-				}
+				// }
 			}
 			else if ($score_home == $pronos_away && $pronos_home == $score_away)
 			{
@@ -124,6 +124,7 @@
 		}
 
 		// BONUUUUUUUUS
+
 		// Bonus first Min = all 0
 		$qryBonus = "SELECT * 
 				FROM pronostics_bonus
@@ -161,20 +162,7 @@
 
 
 
-		// $updatejoueur = "UPDATE joueurs 
-		// 			SET
-		// 				 points   = $points, 
-		// 				 nb_perf   = $nb_perf,
-		// 				 nb_correct_plus   = $nb_correctPlus,
-		// 				 nb_correct   = $nb_correct,
-		// 				 nb_inverse   = $nb_inverse,
-		// 				 nb_echec   = $nb_echec,
-		// 				 bonus = $bonus
-		// 			WHERE id_joueur = $id_joueur";
-		// $result4 = mysqli_query($con, $updatejoueur);
-		// if (!$result4) {
-		// 	echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
-		// }
+
 
 		$updatejoueur = "UPDATE classements 
 					SET
@@ -191,38 +179,38 @@
 			echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
 		}
 
-		$updatejoueur = "UPDATE classements 
-					SET
-						 points   = $points_montagne, 
-						 nb_perf   = $nb_perf_montagne,
-						 nb_correct_plus   = $nb_correctPlus_montagne,
-						 nb_correct   = $nb_correct_montagne,
-						 nb_inverse   = $nb_inverse_montagne,
-						 nb_echec   = $nb_echec_montagne
-					WHERE owner_id = $id_joueur AND type = 'montagne'";
-		$result4 = mysqli_query($con, $updatejoueur);
-		if (!$result4) {
-			echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
-		}
+		// $updatejoueur = "UPDATE classements 
+		// 			SET
+		// 				 points   = $points_montagne, 
+		// 				 nb_perf   = $nb_perf_montagne,
+		// 				 nb_correct_plus   = $nb_correctPlus_montagne,
+		// 				 nb_correct   = $nb_correct_montagne,
+		// 				 nb_inverse   = $nb_inverse_montagne,
+		// 				 nb_echec   = $nb_echec_montagne
+		// 			WHERE owner_id = $id_joueur AND type = 'montagne'";
+		// $result4 = mysqli_query($con, $updatejoueur);
+		// if (!$result4) {
+		// 	echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+		// }
 
 
-		if (intval($row["female"]) == 1)
-		{
-			$updatejoueur = "UPDATE classements 
-			SET
-				 points   = $points, 
-				 nb_perf   = $nb_perf,
-				 nb_correct_plus   = $nb_correctPlus,
-				 nb_correct   = $nb_correct,
-				 nb_inverse   = $nb_inverse,
-				 nb_echec   = $nb_echec,
-				 bonus = $bonus
-			WHERE owner_id = $id_joueur AND type = 'femme'";
-			$result4 = mysqli_query($con, $updatejoueur);
-			if (!$result4) {
-				echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
-			}
-		}
+		// if (intval($row["female"]) == 1)
+		// {
+		// 	$updatejoueur = "UPDATE classements 
+		// 	SET
+		// 		 points   = $points, 
+		// 		 nb_perf   = $nb_perf,
+		// 		 nb_correct_plus   = $nb_correctPlus,
+		// 		 nb_correct   = $nb_correct,
+		// 		 nb_inverse   = $nb_inverse,
+		// 		 nb_echec   = $nb_echec,
+		// 		 bonus = $bonus
+		// 	WHERE owner_id = $id_joueur AND type = 'femme'";
+		// 	$result4 = mysqli_query($con, $updatejoueur);
+		// 	if (!$result4) {
+		// 		echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+		// 	}
+		// }
 
 	}
 
@@ -261,131 +249,131 @@
 		}
 	}
 
-	$qry = "SELECT * from joueurs 
-			LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'montagne' 
-			ORDER BY points DESC, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC, surnom;";
-	$result = mysqli_query($con, $qry);
-	$i = 1;
-	$oldPoint = -1;
-	$oldRang = 0;
-	while ($row = mysqli_fetch_array($result )) 
-	{
-		$id_joueur = $row["id_joueur"];
-		if ($row["points"] == $oldPoint)
-		{
-			$rang = $oldRang;
-		}
-		else
-		{
-			$oldRang = $i;
-			$rang = $i;
-		}
+	// $qry = "SELECT * from joueurs 
+	// 		LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'montagne' 
+	// 		ORDER BY points DESC, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC, surnom;";
+	// $result = mysqli_query($con, $qry);
+	// $i = 1;
+	// $oldPoint = -1;
+	// $oldRang = 0;
+	// while ($row = mysqli_fetch_array($result )) 
+	// {
+	// 	$id_joueur = $row["id_joueur"];
+	// 	if ($row["points"] == $oldPoint)
+	// 	{
+	// 		$rang = $oldRang;
+	// 	}
+	// 	else
+	// 	{
+	// 		$oldRang = $i;
+	// 		$rang = $i;
+	// 	}
 
-		$i++;
-		$oldPoint = $row["points"];
-		$updatejoueur = "UPDATE classements 
-					SET
-					rang = $rang
-					WHERE owner_id = $id_joueur AND type = 'montagne'";
+	// 	$i++;
+	// 	$oldPoint = $row["points"];
+	// 	$updatejoueur = "UPDATE classements 
+	// 				SET
+	// 				rang = $rang
+	// 				WHERE owner_id = $id_joueur AND type = 'montagne'";
 
-		$result4 = mysqli_query($con, $updatejoueur);
-		if (!$result4) {
-			echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
-		}
-	}
+	// 	$result4 = mysqli_query($con, $updatejoueur);
+	// 	if (!$result4) {
+	// 		echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+	// 	}
+	// }
 
 
-	$qry = "SELECT * from joueurs 
-			LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'femme' 
-			ORDER BY points DESC, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC, surnom;";
-	$result = mysqli_query($con, $qry);
-	$i = 1;
-	$oldPoint = -1;
-	$oldRang = 0;
-	while ($row = mysqli_fetch_array($result )) 
-	{
-		$id_joueur = $row["id_joueur"];
-		if ($row["points"] == $oldPoint)
-		{
-			$rang = $oldRang;
-		}
-		else
-		{
-			$oldRang = $i;
-			$rang = $i;
-		}
+	// $qry = "SELECT * from joueurs 
+	// 		LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'femme' 
+	// 		ORDER BY points DESC, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC, surnom;";
+	// $result = mysqli_query($con, $qry);
+	// $i = 1;
+	// $oldPoint = -1;
+	// $oldRang = 0;
+	// while ($row = mysqli_fetch_array($result )) 
+	// {
+	// 	$id_joueur = $row["id_joueur"];
+	// 	if ($row["points"] == $oldPoint)
+	// 	{
+	// 		$rang = $oldRang;
+	// 	}
+	// 	else
+	// 	{
+	// 		$oldRang = $i;
+	// 		$rang = $i;
+	// 	}
 
-		$i++;
-		$oldPoint = $row["points"];
-		$updatejoueur = "UPDATE classements 
-					SET
-					rang = $rang
-					WHERE owner_id = $id_joueur AND type = 'femme'";
+	// 	$i++;
+	// 	$oldPoint = $row["points"];
+	// 	$updatejoueur = "UPDATE classements 
+	// 				SET
+	// 				rang = $rang
+	// 				WHERE owner_id = $id_joueur AND type = 'femme'";
 
-		$result4 = mysqli_query($con, $updatejoueur);
-		if (!$result4) {
-			echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
-		}
-	}
+	// 	$result4 = mysqli_query($con, $updatejoueur);
+	// 	if (!$result4) {
+	// 		echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+	// 	}
+	// }
 
-		$qry = "SELECT sum(classements.points) as total, coequipiers.nom, coequipiers.id
-		,SUM(classements.nb_perf) as nb_perf
-		,SUM(classements.nb_correct_plus) as nb_correct_plus
-		,SUM(classements.nb_correct) as nb_correct
-		,SUM(classements.nb_inverse) as nb_inverse
-		,SUM(classements.nb_echec) as nb_echec
-		,SUM(classements.bonus) as bonus
-	FROM `joueurs` 
-	LEFT JOIN `classements` ON `classements`.`owner_id` = `joueurs`.`id_joueur` AND `classements`.`type` = 'general'
-	LEFT JOIN coequipiers ON coequipiers.id = joueurs.equipe
-	GROUP BY `equipe`
-	ORDER BY total DESC";
+	// $qry = "SELECT sum(classements.points) as total, coequipiers.nom, coequipiers.id
+	// 	,SUM(classements.nb_perf) as nb_perf
+	// 	,SUM(classements.nb_correct_plus) as nb_correct_plus
+	// 	,SUM(classements.nb_correct) as nb_correct
+	// 	,SUM(classements.nb_inverse) as nb_inverse
+	// 	,SUM(classements.nb_echec) as nb_echec
+	// 	,SUM(classements.bonus) as bonus
+	// FROM `joueurs` 
+	// LEFT JOIN `classements` ON `classements`.`owner_id` = `joueurs`.`id_joueur` AND `classements`.`type` = 'general'
+	// LEFT JOIN coequipiers ON coequipiers.id = joueurs.equipe
+	// GROUP BY `equipe`
+	// ORDER BY total DESC";
 
-	$result = mysqli_query($con, $qry);
-	$i = 1;
-	$oldPoint = -1;
-	$oldRang = 0;
-	while ($row = mysqli_fetch_array($result )) 
-	{
-		$id = $row["id"];
-		if ($row["total"] == $oldPoint)
-		{
-			$rang = $oldRang;
-		}
-		else
-		{
-			$oldRang = $i;
-			$rang = $i;
-		}
-		$points_equipe = $row["total"];
+	// $result = mysqli_query($con, $qry);
+	// $i = 1;
+	// $oldPoint = -1;
+	// $oldRang = 0;
+	// while ($row = mysqli_fetch_array($result )) 
+	// {
+	// 	$id = $row["id"];
+	// 	if ($row["total"] == $oldPoint)
+	// 	{
+	// 		$rang = $oldRang;
+	// 	}
+	// 	else
+	// 	{
+	// 		$oldRang = $i;
+	// 		$rang = $i;
+	// 	}
+	// 	$points_equipe = $row["total"];
 
-		$nb_perf_equipe = intval($row["nb_perf"]);
-		$nb_correct_plus_equipe = intval($row["nb_correct_plus"]);
-		$nb_correct_equipe = intval($row["nb_correct"]);
-		$nb_inverse_equipe = intval($row["nb_inverse"]);
-		$nb_echec_equipe = intval($row["nb_echec"]);
-		$bonus_equipe = intval($row["bonus"]);
-		$total = $nb_perf_equipe + $nb_correct_plus_equipe + $nb_correct_equipe + $nb_inverse_equipe + $nb_echec_equipe;
+	// 	$nb_perf_equipe = intval($row["nb_perf"]);
+	// 	$nb_correct_plus_equipe = intval($row["nb_correct_plus"]);
+	// 	$nb_correct_equipe = intval($row["nb_correct"]);
+	// 	$nb_inverse_equipe = intval($row["nb_inverse"]);
+	// 	$nb_echec_equipe = intval($row["nb_echec"]);
+	// 	$bonus_equipe = intval($row["bonus"]);
+	// 	$total = $nb_perf_equipe + $nb_correct_plus_equipe + $nb_correct_equipe + $nb_inverse_equipe + $nb_echec_equipe;
 		
-		$i++;
-		$oldPoint = $row["total"];
-		$updatejoueur = "UPDATE classements 
-					SET
-					points = $points_equipe,
-					rang = $rang,
-					bonus = $bonus_equipe,
-					nb_perf = $nb_perf_equipe,
-					nb_correct = $nb_correct_equipe,
-					nb_correct_plus = $nb_correct_plus_equipe,
-					nb_inverse = $nb_inverse_equipe,
-					nb_echec = $nb_echec_equipe
-					WHERE owner_id = $id AND type = 'equipe'";
+	// 	$i++;
+	// 	$oldPoint = $row["total"];
+	// 	$updatejoueur = "UPDATE classements 
+	// 				SET
+	// 				points = $points_equipe,
+	// 				rang = $rang,
+	// 				bonus = $bonus_equipe,
+	// 				nb_perf = $nb_perf_equipe,
+	// 				nb_correct = $nb_correct_equipe,
+	// 				nb_correct_plus = $nb_correct_plus_equipe,
+	// 				nb_inverse = $nb_inverse_equipe,
+	// 				nb_echec = $nb_echec_equipe
+	// 				WHERE owner_id = $id AND type = 'equipe'";
 
-		$result4 = mysqli_query($con, $updatejoueur);
-		if (!$result4) {
-			echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
-		}
-	}
+	// 	$result4 = mysqli_query($con, $updatejoueur);
+	// 	if (!$result4) {
+	// 		echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+	// 	}
+	// }
 
 
 ?>

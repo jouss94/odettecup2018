@@ -33,19 +33,8 @@
 		*,
 		joueurs.nom as joueursnom,
 		general.rang as generalrang,
-		general.points as generalpoints,
-		femme.rang as femmerang,
-		femme.points as femmepoints,
-		montagne.rang as montagnerang,
-		montagne.points as montagnepoints,
-		equipe.rang as equiperang,
-		equipe.points as equipepoints,
-		joueurs.equipe AS joueursequipe
-		
+		general.points as generalpoints
 	 FROM joueurs 
-	LEFT JOIN classements as femme ON femme.owner_id = joueurs.id_joueur AND femme.type = 'femme' 
-	LEFT JOIN classements as montagne ON montagne.owner_id = joueurs.id_joueur AND montagne.type = 'montagne' 
-	LEFT JOIN classements as equipe ON equipe.owner_id = joueurs.equipe AND equipe.type = 'equipe' 
 	LEFT JOIN classements as general ON general.owner_id = joueurs.id_joueur AND general.type = 'general' 
 
 	WHERE id_joueur='".$idProfil."';";
@@ -88,7 +77,6 @@
 		$chipsPayement = 'chips-red';
 		if (intval($row["payed"]) == 1) $chipsPayement = 'chips-green';
 
-
 		echo '
 		<span class="mdl-chip mdl-chip--contact chips-body ', $chipsProfil, '-body">
 			<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white ', $chipsProfil, '"></span>
@@ -99,36 +87,35 @@
 			<span class="mdl-chip__text ">Paiment</span>
 		</span>';
 
-	}
-	// echo '
-	// <div class="classementperso-card-event mdl-card classement-general mdl-shadow--2dp">
-	// 	<div class="mdl-card__title mdl-card--expand">
-	// 		<span class="TitreSmallClassement">';
-	// 			$rangGenerel = intval($row["generalrang"]);
-	// 			echo $rangGenerel;
-	// 			if ($rangGenerel == 1)
-	// 			{
-	// 				echo ' er';
-	// 			}
-	// 			else {
-	// 				echo ' eme';
-	// 			}
+		echo '
+		<div class="classementperso-card-event mdl-card classement-general mdl-shadow--2dp">
+			<div class="mdl-card__title mdl-card--expand">
+				<span class="TitreSmallClassement">';
+					$rangGenerel = intval($row["generalrang"]);
+					echo $rangGenerel;
+					if ($rangGenerel == 1)
+					{
+						echo ' er';
+					}
+					else {
+						echo ' eme';
+					}
 
-	// 			echo'</span>
-	// 		<span class="TitreTableauBas">';
-	// 		echo intval($row["generalpoints"]);
-	// 		echo ' pts
-	// 		</span>
-	// 		</div>
-	// 	<div class="mdl-card__actions mdl-card--border">
-	// 		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=General" >
-	// 			General
-	// 		</a>
-	// 		<div class="mdl-layout-spacer"></div>
-	// 		<i class="material-icons">poll</i>
-	// 		</div>
-	// </div>
-	// ';
+					echo'</span>
+				<span class="TitreTableauBas">';
+				echo intval($row["generalpoints"]);
+				echo ' pts
+				</span>
+				</div>
+			<div class="mdl-card__actions mdl-card--border">
+				<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=General" >
+					Class.
+				</a>
+				<div class="mdl-layout-spacer"></div>
+				<i class="material-icons">poll</i>
+				</div>
+		</div>
+		';
 
 	// echo '
 	// <div class="classementperso-card-event mdl-card classement-equipe mdl-shadow--2dp">
@@ -225,80 +212,80 @@
 	// ';
 
 
-	echo '<div>';
-	echo '<table class="tableDetails">';
-		echo '<tr >';
-			echo '<td colspan="3" style="font-weight: bold;"> ';
-				echo 'Détails Matches :';
-			echo '</td>';
-		echo '</tr>';
-		echo '<tr >';
-			echo '<td class="firstColumnProfilPadding"> ';
-				echo 'Perfect';
-			echo '</td>';
-			echo '<td class="secondColumProfil"> ';
-				echo intval($row["nb_perf"]);
-			echo '</td>';
-			echo '<td  class="thirdColumnProfil" > ';
-				echo intval($row["nb_perf"]) * 7;
-			echo '<span class="petitPoint">pts</span>';	
-			echo '</td>';
-		echo '</tr>';
-		echo '<tr >';
-			echo '<td class="firstColumnProfilPadding"> ';
-				echo 'Correct+';
-			echo '</td>';
-			echo '<td class="secondColumProfil"> ';
-				echo intval($row["nb_correct_plus"]);
-			echo '</td>';
-			echo '<td  class="thirdColumnProfil" > ';
-				echo intval($row["nb_correct_plus"]) * 4;
-			echo '<span class="petitPoint">pts</span>';	
-			echo '</td>';
-		echo '</tr>';
-		echo '<tr >';
-			echo '<td class="firstColumnProfilPadding"> ';
-				echo 'Correct';
-			echo '</td>';
-			echo '<td class="secondColumProfil"> ';
-				echo intval($row["nb_correct"]);
-			echo '</td>';
-			echo '<td  class="thirdColumnProfil" > ';
-				echo intval($row["nb_correct"]) * 3;
-			echo '<span class="petitPoint">pts</span>';	
-			echo '</td>';
-		echo '</tr>';
-		echo '<tr >';
-			echo '<td class="firstColumnProfilPadding"> ';
-				echo 'Inverse';
-			echo '</td>';
-			echo '<td class="secondColumProfil"> ';
-				echo intval($row["nb_inverse"]);
-			echo '</td>';
-			echo '<td  class="thirdColumnProfil" > ';
-				echo intval($row["nb_inverse"]);
-			echo '<span class="petitPoint">pts</span>';	
-			echo '</td>';
-		echo '</tr>';
-		echo '<tr >';
-			echo '<td class="firstColumnProfilPadding"> ';
-				echo 'Echec';
-			echo '</td>';
-			echo '<td class="secondColumProfil"> ';
-				echo intval($row["nb_echec"]);
-			echo '</td>';
-			echo '<td  class="thirdColumnProfil" > ';
-			echo '</td>';
-		echo '</tr>';
-		echo '<tr >';
-			echo '<td colspan="2" style="font-weight: bold;"> ';
-				echo 'Bonus :';
-			echo '</td>';
-			echo '<td  class="thirdColumnProfil" > ';
-				echo intval($row["bonus"]);
-			echo '<span class="petitPoint">pts</span>';	
-			echo '</td>';
-		echo '</tr>';
+		echo '<div>';
+		echo '<table class="tableDetails">';
+			echo '<tr >';
+				echo '<td colspan="3" style="font-weight: bold;"> ';
+					echo 'Détails Matches :';
+				echo '</td>';
+			echo '</tr>';
+			echo '<tr >';
+				echo '<td class="firstColumnProfilPadding"> ';
+					echo 'Perfect';
+				echo '</td>';
+				echo '<td class="secondColumProfil"> ';
+					echo intval($row["nb_perf"]);
+				echo '</td>';
+				echo '<td  class="thirdColumnProfil" > ';
+					echo intval($row["nb_perf"]) * 7;
+				echo '<span class="petitPoint">pts</span>';	
+				echo '</td>';
+			echo '</tr>';
+			// echo '<tr >';
+			// 	echo '<td class="firstColumnProfilPadding"> ';
+			// 		echo 'Correct+';
+			// 	echo '</td>';
+			// 	echo '<td class="secondColumProfil"> ';
+			// 		echo intval($row["nb_correct_plus"]);
+			// 	echo '</td>';
+			// 	echo '<td  class="thirdColumnProfil" > ';
+			// 		echo intval($row["nb_correct_plus"]) * 4;
+			// 	echo '<span class="petitPoint">pts</span>';	
+			// 	echo '</td>';
+			echo '</tr>';
+			echo '<tr >';
+				echo '<td class="firstColumnProfilPadding"> ';
+					echo 'Correct';
+				echo '</td>';
+				echo '<td class="secondColumProfil"> ';
+					echo intval($row["nb_correct"]);
+				echo '</td>';
+				echo '<td  class="thirdColumnProfil" > ';
+					echo intval($row["nb_correct"]) * 3;
+				echo '<span class="petitPoint">pts</span>';	
+				echo '</td>';
+			echo '</tr>';
+			echo '<tr >';
+				echo '<td class="firstColumnProfilPadding"> ';
+					echo 'Inverse';
+				echo '</td>';
+				echo '<td class="secondColumProfil"> ';
+					echo intval($row["nb_inverse"]);
+				echo '</td>';
+				echo '<td  class="thirdColumnProfil" > ';
+					echo intval($row["nb_inverse"]);
+				echo '<span class="petitPoint">pts</span>';	
+				echo '</td>';
+			echo '</tr>';
+			echo '<tr >';
+				echo '<td class="firstColumnProfilPadding"> ';
+					echo 'Echec';
+				echo '</td>';
+				echo '<td class="secondColumProfil"> ';
+					echo intval($row["nb_echec"]);
+				echo '</td>';
+				echo '<td  class="thirdColumnProfil" > ';
+				echo '</td>';
+			echo '</tr>';
+			echo '<tr >';
+				echo '<td colspan="2" style="font-weight: bold;"> ';
+					echo 'Bonus :';
+				echo '</td>';
+				echo '<td  class="thirdColumnProfil" > ';
+					echo intval($row["bonus"]);
+				echo '<span class="petitPoint">pts</span>';	
+				echo '</td>';
+			echo '</tr>';
 
 
 	echo '</table>';
@@ -309,7 +296,7 @@
 	echo '</div>';
 
 
-
+	}
 
 
 	
@@ -504,7 +491,7 @@ if ($idProfil == $id && $modifBonus == 1)
 }
 
 echo '
-<div class="displaymatch-card-event mdl-card mdl-shadow--2dp rougedefault height300">
+<div class="displaymatch-card-event mdl-card mdl-shadow--2dp rougedefault height150">
 <div class="mdl-card__title mdl-card--expand">';
 
 echo '
@@ -579,59 +566,59 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 
 echo '</tr>';
 
-echo '<tr class="affPronosLigne backgroundTab2" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Minute du premier but</td>';
+// echo '<tr class="affPronosLigne backgroundTab2" >';
+// 	echo '<td style="width:50%" class="tdBonusLeft">Minute du premier but</td>';
 
-	echo '<td style="width:50%">';
-		echo '<span class="';
-		if ($min_first_point >= 0)
-		{
-			if ($min_first_point == 0)
-				echo ' pancarteBonusEchec ';
-			else
-				echo ' pancarteBonusCorrect ';
-		}
-		else
-				echo ' pancarteAuto ';
+// 	echo '<td style="width:50%">';
+// 		echo '<span class="';
+// 		if ($min_first_point >= 0)
+// 		{
+// 			if ($min_first_point == 0)
+// 				echo ' pancarteBonusEchec ';
+// 			else
+// 				echo ' pancarteBonusCorrect ';
+// 		}
+// 		else
+// 				echo ' pancarteAuto ';
 
-		echo ' " > ';
-		echo $min_first;
-		echo '</span> Minutes';
-	echo '</td>';
-	echo '<td class="pointBonus">';
-	if ($min_first_point >= 0)
-	{
-			echo '+'. $min_first_point;
-	}
-	echo '</td>';
-echo '</tr>';
+// 		echo ' " > ';
+// 		echo $min_first;
+// 		echo '</span> Minutes';
+// 	echo '</td>';
+// 	echo '<td class="pointBonus">';
+// 	if ($min_first_point >= 0)
+// 	{
+// 			echo '+'. $min_first_point;
+// 	}
+// 	echo '</td>';
+// echo '</tr>';
 
-echo '<tr class="affPronosLigne backgroundTab1" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Minute dernier but</td>';
+// echo '<tr class="affPronosLigne backgroundTab1" >';
+// 	echo '<td style="width:50%" class="tdBonusLeft">Minute dernier but</td>';
 
-	echo '<td style="width:50%">';
-		echo '<span class="';
-		if ($min_last_point >= 0)
-		{
-			if ($min_last_point == 0)
-				echo ' pancarteBonusEchec ';
-			else
-				echo ' pancarteBonusCorrect ';
-		}
-		else
-				echo ' pancarteAuto ';
+// 	echo '<td style="width:50%">';
+// 		echo '<span class="';
+// 		if ($min_last_point >= 0)
+// 		{
+// 			if ($min_last_point == 0)
+// 				echo ' pancarteBonusEchec ';
+// 			else
+// 				echo ' pancarteBonusCorrect ';
+// 		}
+// 		else
+// 				echo ' pancarteAuto ';
 
-		echo ' " > ';
-		echo $min_last;
-		echo '</span> Minutes';
-	echo '</td>';
-	echo '<td class="pointBonus">';
-	if ($min_last_point >= 0)
-	{
-			echo '+'. $min_last_point;
-	}
-	echo '</td>';
-echo '</tr>';
+// 		echo ' " > ';
+// 		echo $min_last;
+// 		echo '</span> Minutes';
+// 	echo '</td>';
+// 	echo '<td class="pointBonus">';
+// 	if ($min_last_point >= 0)
+// 	{
+// 			echo '+'. $min_last_point;
+// 	}
+// 	echo '</td>';
+// echo '</tr>';
 
 echo '<tr class="affPronosLigne backgroundTab2" >';
 	echo '<td style="width:50%" class="tdBonusLeft">Nombre total de but</td>';
@@ -660,32 +647,32 @@ echo '<tr class="affPronosLigne backgroundTab2" >';
 	echo '</td>';
 echo '</tr>';
 
-echo '<tr class="affPronosLigne backgroundTab1" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Meilleur buteur</td>';
+// echo '<tr class="affPronosLigne backgroundTab1" >';
+// 	echo '<td style="width:50%" class="tdBonusLeft">Meilleur buteur</td>';
 
-	echo '<td style="width:50%">';
-		echo '<span class="';
-		if ($best_scorer_point >= 0)
-		{
-			if ($best_scorer_point == 0)
-				echo ' pancarteBonusEchec ';
-			else
-				echo ' pancarteBonusCorrect ';
-		}
-		else
-				echo ' pancarteAuto ';
+// 	echo '<td style="width:50%">';
+// 		echo '<span class="';
+// 		if ($best_scorer_point >= 0)
+// 		{
+// 			if ($best_scorer_point == 0)
+// 				echo ' pancarteBonusEchec ';
+// 			else
+// 				echo ' pancarteBonusCorrect ';
+// 		}
+// 		else
+// 				echo ' pancarteAuto ';
 
-		echo ' " > ';
-		echo $best_scorer;
-		echo '</span> ';
-	echo '</td>';
-	echo '<td class="pointBonus">';
-	if ($best_scorer_point >= 0)
-	{
-			echo '+'. $best_scorer_point;
-	}
-	echo '</td>';
-echo '</tr>';
+// 		echo ' " > ';
+// 		echo $best_scorer;
+// 		echo '</span> ';
+// 	echo '</td>';
+// 	echo '<td class="pointBonus">';
+// 	if ($best_scorer_point >= 0)
+// 	{
+// 			echo '+'. $best_scorer_point;
+// 	}
+// 	echo '</td>';
+// echo '</tr>';
 
 echo '</table>';
 }

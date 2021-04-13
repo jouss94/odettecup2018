@@ -12,8 +12,10 @@
 
 
 	// $dateCurrent = date('14/06/2018');
-	$dateCurrent = date('2018/06/15');
+	$dateCurrent = date('2021-06-11');
 	$today = date("Y/m/d");
+	$today = date('2021-06-16');
+
 
 	$qry = "SELECT max(DATE_FORMAT(date, '%Y/%m/%d')) as datemax FROM matches WHERE matches.played = 1;";
 	$result = mysqli_query($con, $qry);
@@ -143,31 +145,31 @@ while ($dateCurrent <= $today)
 
 		// BONUUUUUUUUS
 		// Bonus first Min = all 0
-		$qryBonus = "SELECT * 
-				FROM pronostics_bonus
-				Left JOIN joueurs ON pronostics_bonus.id_membre = joueurs.id_joueur
-				WHERE joueurs.id_joueur = $id_joueur;";
-		$resultBonus = mysqli_query($con, $qryBonus);
+		// $qryBonus = "SELECT * 
+		// 		FROM pronostics_bonus
+		// 		Left JOIN joueurs ON pronostics_bonus.id_membre = joueurs.id_joueur
+		// 		WHERE joueurs.id_joueur = $id_joueur;";
+		// $resultBonus = mysqli_query($con, $qryBonus);
 
-		$ptsFirstMin = 0;
-		$ptsTeamWinner = 0;
-		$ptsLastMin = 0;
-		$ptsTotalBut = 0;
-		$ptsButeur = 0;
-		// + autre
+		// $ptsFirstMin = 0;
+		// $ptsTeamWinner = 0;
+		// $ptsLastMin = 0;
+		// $ptsTotalBut = 0;
+		// $ptsButeur = 0;
+		// // + autre
 
-		while ($rowBonus = mysqli_fetch_array($resultBonus )) 
-		{
-			// regles a implémenter
-			if (intval($rowBonus["min_first"]) == 12)
-			{
-				$ptsFirstMin = 10;
-			}
+		// while ($rowBonus = mysqli_fetch_array($resultBonus )) 
+		// {
+		// 	// regles a implémenter
+		// 	if (intval($rowBonus["min_first"]) == 12)
+		// 	{
+		// 		$ptsFirstMin = 10;
+		// 	}
 
-			$bonus = $ptsFirstMin + $ptsTeamWinner + $ptsLastMin + $ptsTotalBut + $ptsButeur + $bonusFinal; // + + +
-		}
+		// 	$bonus = $ptsFirstMin + $ptsTeamWinner + $ptsLastMin + $ptsTotalBut + $ptsButeur + $bonusFinal; // + + +
+		// }
 
-		$points += $bonus;
+		// $points += $bonus;
 
 		$updatejoueur = "INSERT INTO historic_rang  
 					VALUES ('general', $id_joueur, '$dateCurrent', 0, $points)";
@@ -176,29 +178,29 @@ while ($dateCurrent <= $today)
 			echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
 		}
 
-		$updatejoueur = "INSERT INTO historic_rang  
-					VALUES ('montagne', $id_joueur, '$dateCurrent', 0, $points_montagne)";
-		$result4 = mysqli_query($con, $updatejoueur);
-		if (!$result4) {
-			echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
-		}
+		// $updatejoueur = "INSERT INTO historic_rang  
+		// 			VALUES ('montagne', $id_joueur, '$dateCurrent', 0, $points_montagne)";
+		// $result4 = mysqli_query($con, $updatejoueur);
+		// if (!$result4) {
+		// 	echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+		// }
 
 
-		if (intval($row["female"]) == 1)
-		{
-			$updatejoueur = "INSERT INTO historic_rang  
-			VALUES ('femme', $id_joueur, '$dateCurrent', 0, $points)";
-			$result4 = mysqli_query($con, $updatejoueur);
-			if (!$result4) {
-				echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
-			}
-		}
+		// if (intval($row["female"]) == 1)
+		// {
+		// 	$updatejoueur = "INSERT INTO historic_rang  
+		// 	VALUES ('femme', $id_joueur, '$dateCurrent', 0, $points)";
+		// 	$result4 = mysqli_query($con, $updatejoueur);
+		// 	if (!$result4) {
+		// 		echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+		// 	}
+		// }
 
 	}
 	$dateCurrent = date('Y/m/d', strtotime($dateCurrent. ' + 1 days'));
 
 };
-$dateCurrent = date('2018/06/15');
+$dateCurrent = date('2021-06-11');
 while ($dateCurrent <= $today)
 {
 	$qry = "SELECT * from historic_rang WHERE type = 'general' AND date = '$dateCurrent' ORDER BY points DESC";
@@ -232,100 +234,100 @@ while ($dateCurrent <= $today)
 		}
 	}
 
-	$qry = "SELECT * from historic_rang WHERE type = 'montagne' AND date = '$dateCurrent' ORDER BY points DESC";
-	$result = mysqli_query($con, $qry);
-	$i = 1;
-	$oldPoint = -1;
-	$oldRang = 0;
-	while ($row = mysqli_fetch_array($result )) 
-	{
-		$id_joueur = $row["id_owner"];
-		if ($row["points"] == $oldPoint)
-		{
-			$rang = $oldRang;
-		}
-		else
-		{
-			$oldRang = $i;
-			$rang = $i;
-		}
+	// $qry = "SELECT * from historic_rang WHERE type = 'montagne' AND date = '$dateCurrent' ORDER BY points DESC";
+	// $result = mysqli_query($con, $qry);
+	// $i = 1;
+	// $oldPoint = -1;
+	// $oldRang = 0;
+	// while ($row = mysqli_fetch_array($result )) 
+	// {
+	// 	$id_joueur = $row["id_owner"];
+	// 	if ($row["points"] == $oldPoint)
+	// 	{
+	// 		$rang = $oldRang;
+	// 	}
+	// 	else
+	// 	{
+	// 		$oldRang = $i;
+	// 		$rang = $i;
+	// 	}
 
-		$i++;
-		$oldPoint = $row["points"];
-		$updatejoueur = "UPDATE historic_rang 
-					SET
-					rang = $rang
-					WHERE id_owner = $id_joueur AND type = 'montagne' AND date = '$dateCurrent'";
-		$result4 = mysqli_query($con, $updatejoueur);
-		if (!$result4) {
-			echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
-		}
-	}
+	// 	$i++;
+	// 	$oldPoint = $row["points"];
+	// 	$updatejoueur = "UPDATE historic_rang 
+	// 				SET
+	// 				rang = $rang
+	// 				WHERE id_owner = $id_joueur AND type = 'montagne' AND date = '$dateCurrent'";
+	// 	$result4 = mysqli_query($con, $updatejoueur);
+	// 	if (!$result4) {
+	// 		echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+	// 	}
+	// }
 
 
-	$qry = "SELECT * from historic_rang WHERE type = 'femme' AND date = '$dateCurrent' ORDER BY points DESC";
-	$result = mysqli_query($con, $qry);
-	$i = 1;
-	$oldPoint = -1;
-	$oldRang = 0;
-	while ($row = mysqli_fetch_array($result )) 
-	{
-		$id_joueur = $row["id_owner"];
-		if ($row["points"] == $oldPoint)
-		{
-			$rang = $oldRang;
-		}
-		else
-		{
-			$oldRang = $i;
-			$rang = $i;
-		}
+	// $qry = "SELECT * from historic_rang WHERE type = 'femme' AND date = '$dateCurrent' ORDER BY points DESC";
+	// $result = mysqli_query($con, $qry);
+	// $i = 1;
+	// $oldPoint = -1;
+	// $oldRang = 0;
+	// while ($row = mysqli_fetch_array($result )) 
+	// {
+	// 	$id_joueur = $row["id_owner"];
+	// 	if ($row["points"] == $oldPoint)
+	// 	{
+	// 		$rang = $oldRang;
+	// 	}
+	// 	else
+	// 	{
+	// 		$oldRang = $i;
+	// 		$rang = $i;
+	// 	}
 
-		$i++;
-		$oldPoint = $row["points"];
-		$updatejoueur = "UPDATE historic_rang 
-					SET
-					rang = $rang
-					WHERE id_owner = $id_joueur AND type = 'femme' AND date = '$dateCurrent'";
-		$result4 = mysqli_query($con, $updatejoueur);
-		if (!$result4) {
-			echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
-		}
-	}
+	// 	$i++;
+	// 	$oldPoint = $row["points"];
+	// 	$updatejoueur = "UPDATE historic_rang 
+	// 				SET
+	// 				rang = $rang
+	// 				WHERE id_owner = $id_joueur AND type = 'femme' AND date = '$dateCurrent'";
+	// 	$result4 = mysqli_query($con, $updatejoueur);
+	// 	if (!$result4) {
+	// 		echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+	// 	}
+	// }
 
-		$qry = "SELECT sum(classements.points) as total
-	FROM `joueurs` 
-	LEFT JOIN `historic_rang` classements ON `classements`.`id_owner` = `joueurs`.`id_joueur` AND `classements`.`type` = 'general' AND classements.date = '$dateCurrent'
-	GROUP BY `equipe`
-	ORDER BY total DESC";
+	// 	$qry = "SELECT sum(classements.points) as total
+	// FROM `joueurs` 
+	// LEFT JOIN `historic_rang` classements ON `classements`.`id_owner` = `joueurs`.`id_joueur` AND `classements`.`type` = 'general' AND classements.date = '$dateCurrent'
+	// GROUP BY `equipe`
+	// ORDER BY total DESC";
 
-	$result = mysqli_query($con, $qry);
-	$i = 1;
-	$oldPoint = -1;
-	$oldRang = 0;
-	while ($row = mysqli_fetch_array($result )) 
-	{
-		$id = $row["id"];
-		if ($row["total"] == $oldPoint)
-		{
-			$rang = $oldRang;
-		}
-		else
-		{
-			$oldRang = $i;
-			$rang = $i;
-		}
-		$points_equipe = $row["total"];
+	// $result = mysqli_query($con, $qry);
+	// $i = 1;
+	// $oldPoint = -1;
+	// $oldRang = 0;
+	// while ($row = mysqli_fetch_array($result )) 
+	// {
+	// 	$id = $row["id"];
+	// 	if ($row["total"] == $oldPoint)
+	// 	{
+	// 		$rang = $oldRang;
+	// 	}
+	// 	else
+	// 	{
+	// 		$oldRang = $i;
+	// 		$rang = $i;
+	// 	}
+	// 	$points_equipe = $row["total"];
 		
-		$i++;
-		$oldPoint = $row["total"];
-		$updatejoueur = "INSERT INTO historic_rang  
-					VALUES ('equipe', $id, '$dateCurrent', $rang, $points_equipe)";
-		$result4 = mysqli_query($con, $updatejoueur);
-		if (!$result4) {
-			echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
-		}
-	}
+	// 	$i++;
+	// 	$oldPoint = $row["total"];
+	// 	$updatejoueur = "INSERT INTO historic_rang  
+	// 				VALUES ('equipe', $id, '$dateCurrent', $rang, $points_equipe)";
+	// 	$result4 = mysqli_query($con, $updatejoueur);
+	// 	if (!$result4) {
+	// 		echo 'ERROR REQUETE : ', $updatejoueur, '</br>';
+	// 	}
+	// }
 	$dateCurrent = date('Y/m/d', strtotime($dateCurrent. ' + 1 days'));
 }
 
