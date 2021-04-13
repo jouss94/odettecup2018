@@ -34,7 +34,7 @@ if ($id != $idProfil)
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		<script src="./material_design/material.js"></script>
+		
 
 	</head>
 	
@@ -46,7 +46,7 @@ if ($id != $idProfil)
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in">
-				<div style="width:100%;height:3000px">
+				<div style="width:100%;height:3000px;display:flex">
 					<?php include("include/viewModifierMatch.php");?> 					
 				</div>
 

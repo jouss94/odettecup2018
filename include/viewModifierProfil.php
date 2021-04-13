@@ -11,7 +11,7 @@
 	parse_str($_SERVER["QUERY_STRING"], $query);
 	$idProfil = $query['id'];
 
-		echo '<div class="profilInformation floaleft">';
+		echo '<div class="profilInformation floaleft width100">';
 
 
 	$qry = "SELECT * FROM joueurs WHERE id_joueur='".$idProfil."';";

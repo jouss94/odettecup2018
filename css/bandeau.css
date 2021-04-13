@@ -2,11 +2,11 @@ table.bandeau {
     width: 100%;
     height: 40px;
     border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.41);
+    background: #018498;
     position: fixed;
     z-index: 999;
     color: white;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #fff;
 }
 
 table.bandeauacceuil {
@@ -15,7 +15,9 @@ table.bandeauacceuil {
 
 td#bandeauAcceuil {
     width: 5%;
-    text-align: center;}
+    text-align: center;
+    background-color: #ffffff21;
+}
 
 td#bandeauAcceuil:hover {
     width: 5%;
@@ -40,6 +42,7 @@ td#bandeauProfil {
     background-repeat:no-repeat;
     background-position:20 center;
     color: white;
+    background-color: #ffffff21;
 }
 
 td#bandeauProfil:hover {

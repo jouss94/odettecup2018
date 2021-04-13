@@ -16,7 +16,6 @@ session_start();
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
 		<link rel="icon" href="images/favicon.png" />
-		<script src="./material_design/material.js"></script>
 	</head>
 		
 	<?php include("initReverse.php");?>

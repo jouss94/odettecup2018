@@ -30,7 +30,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		<script src="./material_design/material.js"></script>
+		
 
 	</head>
 	
@@ -45,7 +45,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
 
 
-				<div style="width:100%;height:1066px">
+				<div style="width:100%;height:1066px;display:flex">
 					<?php include("include/viewModifierBonus.php");?> 					
 				</div>
 

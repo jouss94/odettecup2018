@@ -115,7 +115,7 @@ table.sortable thead {
     width: 850px;
     display: block;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 10px;
     height: 600px;
     overflow-y: auto;
 }
@@ -731,10 +731,11 @@ table.sortable thead {
 
 .listeJoueurTitre {
     display: block;
-    padding-top: 30px;
+    padding: 30px;
     font-size: 28px;
     font-weight: bold;
-    color: #FFF;
+    color: #000;
+    background: #ffffff4f;
 }
 
 .detailTitreListeJoueurs:hover {
@@ -837,31 +838,34 @@ table.sortable thead {
 }
 
 .sousTitreUpdateRed {
-    font-size: 14px;
-    width: 680px;
+    padding-left: 30px;
+    font-size: 12px;
+    width: 590px;
 }
 
 .titreUpdateRed {
+    color: red;
     font-weight: bold;
     font-size: 14px;
 }
 
 .etatProfilRed {
-    color: #521616;
     padding: 5px 21px;
     margin: auto;
     margin-bottom: 20px;
-    background: #ffffff30;
+    background: #ffffff82;
     width: 800px;
+    border-radius: 0px 0px 20px 20px;
 }
 
 .etatProfilGreen {
-    color: #165224;
+    color: #000000;
     padding: 5px 21px;
     margin: auto;
     margin-bottom: 20px;
     background: rgba(106, 241, 104, 0.51);
     width: 800px;
+    border-radius: 0px 0px 20px 20px;
 }
 
 
@@ -1137,7 +1141,7 @@ img.logoEquipeSmall {
     display: block;
     font-size: 28px;
     font-weight: bold;
-    color: #fff;    
+    color: #000;    
     padding: 20px;
     background: #ffffff38;
 }
@@ -1186,11 +1190,10 @@ table.TableMatch {
 }
 
 .profilPronos  {
-    width: 800px;
+    width: 100%;
     height: 1300px;
     text-align: left;
     font-size: x-large;
-    background: #ffffff61;
 }
 
 .profilPronosFulll  {
@@ -1306,13 +1309,13 @@ span.titre {
 }
 
 .RetourSpan {
-    margin-top: -48px;
-    margin-left: 650px;
     font-size: 25px;
     color: #FFF;
     cursor: pointer;
     font-weight: bold;
-    position: absolute;
+    margin: 10px 20px 0px 20px;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .RetourSpanButton {
@@ -1403,7 +1406,7 @@ div#add_err {
     /* height: 367px; */
     margin: auto;
     padding: 0;
-    width: 1000px;
+    max-width: 1000px;
     background: #ffffff61;
 }
 
@@ -1616,4 +1619,12 @@ div#add_err {
 .labelequipe {
     color: #FFFFFF;
     text-decoration: none;
+}
+
+.width100 {
+    width: 100%;
+}
+
+a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect {
+    background: #ffffff26;
 }
