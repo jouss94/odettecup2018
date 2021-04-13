@@ -11,11 +11,10 @@
 
 body {
     color: black;
-    background-color: #595963;
-    background-image: url(../images/footer.webp);    
+    background-color: #039cb3;
+    background-image: url(../images/footer.webp);
     background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+    background-position: center -50px;
     margin: 0px;
     font-family: Roboto;
 }
@@ -1410,6 +1409,7 @@ div#add_err {
 
 .loginform-in-acceuil {
     background: rgba(255, 255, 255, 0.26);
+    width: auto;
 }
 
 .loginform-in fieldset {

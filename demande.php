@@ -5,7 +5,7 @@ session_start();
 	<head>
 		<title>Demande</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/icon-france.png" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/form.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -29,8 +29,8 @@ session_start();
 
 		<div class="padding20">
 		<div class="loginform-in">
-		<img src="images/UEFA_Euro_2020_logo.png" style="width: 140px;margin: 10px;"/>
-		<h1 style="margin-top: 0;">Formulaire d'inscription</h1>
+		<img src="images/UEFA_Euro_2020_logo_4.png" style="width: 140px;margin: 10px;"/>
+		<h3 style="margin-top: 0;color:#FFF">Formulaire d'inscription</h1>
 		<div class="Retour">
 			<button class="Retour  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonRouge">
 				Retour

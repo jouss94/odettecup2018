@@ -47,7 +47,7 @@ function addDemande($con)
 	<head>
 		<title>Demande</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/icon-france.png" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/form.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 		<script src="javascript/jquery-2.2.3.min.js"></script>
@@ -70,7 +70,7 @@ function addDemande($con)
 
 		<div class="padding20">
 		<div class="loginform-in blackougedefault" style="height:400px">
-		<img src="images/UEFA_Euro_2020_logo.png" style="width: 110px;margin: 6px;"/>
+		<img src="images/UEFA_Euro_2020_logo_4.png" style="width: 110px;margin: 6px;"/>
 		<div class="Retoudiv">
 			<button class="Retour mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourProfil">
 								Retour
