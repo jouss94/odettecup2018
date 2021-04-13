@@ -30,7 +30,7 @@ function checkFile()
 		if (!empty($_FILES['imageProfil']['size']))
 		    {
 		        //On définit les variables :
-		        $maxsize = 900000; //Poid de l'image
+		        $maxsize = 9000000; //Poid de l'image
 		        $maxwidth = 10000; //Largeur de l'image
 		        $maxheight = 10000; //Longueur de l'image
 		        //Liste des extensions valides
@@ -86,7 +86,7 @@ function addProfil($con)
 	$qry = "";
 	
 
-	$return = false;
+	$return = "";
 	$prenomProfil = addslashes(utf8_decode_function ($_POST[ 'prenomProfil' ]));
 	$nomProfil = addslashes(utf8_decode_function ($_POST[ 'nomProfil' ]));
 	$mpdProfil = addslashes(utf8_decode_function ($_POST[ 'mpdProfil' ]));
@@ -98,7 +98,7 @@ function addProfil($con)
 
  	$fileResult = checkFile();
  	if ($fileResult != "")
- 		return false;
+ 		return $fileResult;
 
  	$filename=move_image($_FILES['imageProfil']);
 		                
@@ -116,12 +116,13 @@ function addProfil($con)
 	$result = mysqli_query($con, $qry);
 	if (!$result) {
 		$return = false;
-		return false;
+		return "Error description: " . mysqli_error($con);
 	}
-	else
-		$return = true;
-	return $return;
+	else {
+		$return = "";
+	}
 
+	return $return;
 }
 
 ?>
@@ -165,7 +166,8 @@ function addProfil($con)
 					<div style="width:100%;height:50px"></div>
 
 		<?php
-			if (addProfil($con))
+			$addResult = addProfil($con);
+			if ($addResult == "")
 			{
 
 				echo "<div class='valideDemand' id='add_valideDemand'><img src='images/check.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Votre Profil a été modifié.
@@ -174,7 +176,7 @@ function addProfil($con)
 				changeEtat($con);
 			}
 			else
-				echo "<div class='errorDemand' id='add_errDemand'><img src='images/alert.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Une erreur est survenue.</div>";
+				echo '<div class="errorDemand" id="add_errDemand"><img src="images/alert.png" style="width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;" />Une erreur est survenue : "'.$addResult.'".</div>';
 		?>
 
 					<div style="display: flex;justify-content: space-evenly;">	
