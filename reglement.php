@@ -127,27 +127,27 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<li class="pointRegle reglePoint" >7 points</li>
 						<li class="pointRegle regleDetail" >Trouvez la meilleure défense du tournoi RUSSIE 2018.</li>
 					</ul> -->
-					<!-- <div class="sousTitre titreBonus">Minute du premier but</div>
+					<div class="sousTitre titreBonus">Minute du premier but</div>
 					<ul class="ulperso">
-						<li class="pointRegle reglePoint" >10 points [tout-pil'] 7 points [approchant] </li>
-						<li class="pointRegle regleDetail" >Trouvez la minute du premier but du tournoi RUSSIE 2018.</li>
+						<li class="pointRegle reglePoint" >7 points [tout-pil'] 3 points [approchant] </li>
+						<li class="pointRegle regleDetail" >Trouvez la minute du premier but du tournoi Euro 2020.</li>
 						<li class="pointRegle regleDetail" >[Tout-pil'] : trouvez la minute exacte.</li>
 						<li class="pointRegle regleDetail" >[Approchant] : La minute se trouve dans les <strong>2</strong> minutes de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
-						<li class="pointRegle regleDetail" >Minutage officiel donné par la FIFA.</li>
-					</ul> -->
-					<!-- <div class="sousTitre titreBonus">Minute du dernier but</div>
+						<li class="pointRegle regleDetail" >Minutage officiel donné par l'UEFA.</li>
+					</ul> 
+					<div class="sousTitre titreBonus">Minute du dernier but</div>
 					<ul class="ulperso">
-						<li class="pointRegle reglePoint" >10 points [tout-pil'] 7 points [approchant] </li>
-						<li class="pointRegle regleDetail" >Trouvez la minute du dernier but du tournoi RUSSIE 2018.</li>
+						<li class="pointRegle reglePoint" >7 points [tout-pil'] 3 points [approchant] </li>
+						<li class="pointRegle regleDetail" >Trouvez la minute du dernier but du tournoi Euro 2020.</li>
 						<li class="pointRegle regleDetail" >[Tout-pil'] : trouvez la minute exacte.</li>
 						<li class="pointRegle regleDetail" >[Approchant] : La minute se trouve dans les <strong>2</strong> minutes de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
-						<li class="pointRegle regleDetail" >Minutage officiel donné par la FIFA.</li>
-					</ul> -->
+						<li class="pointRegle regleDetail" >Minutage officiel donné par l'UEFA.</li>
+					</ul>
 					<div class="sousTitre titreBonus">Nombre total de buts</div>
 					<ul class="ulperso">
-						<li class="pointRegle reglePoint" >14 points [tout-pil'] 7 points [approchant] </li>
+						<li class="pointRegle reglePoint" >10 points [tout-pil'] 5 points [approchant] </li>
 						<li class="pointRegle regleDetail" >Trouvez le nombre de buts total du tournoi Euro 2020.</li>
 						<li class="pointRegle regleDetail" >[Tout-pil'] : trouvez le nombre exact de buts.</li>
 						<li class="pointRegle regleDetail" >[Approchant] : Le nombre de buts se trouve dans les <strong>3</strong> buts de battement avant ou après votre pronostic.</li>
@@ -204,7 +204,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
 		<h3>Tableau des gains</h3>
 			<p>
-				<span class="pointRegle">Le tableau des gains sera calculé selon le nombre de participants avec la base de calcule suivantes.</span>
+				<span class="pointRegle">Le tableau des gains sera calculé selon le nombre de participants avec la base de calcul suivantes.</span>
 				<!--Total des gains 345 € (21 adultes x 15 € = 315 € + 3 mineurs x 10 = 30 €)</br></br>--->
 				<ul class="ulperso">
 					<li class="pointRegle" >1er   = 65 % 

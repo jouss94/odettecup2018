@@ -252,7 +252,7 @@
 }
 
 .height150 {
-  height: 190px !important;
+  height: 306px !important;
   min-height: 190px !important;
 }    
 
@@ -364,3 +364,5 @@
 .classementequipe-card-event > .mdl-card__actions > .mdl-button {
   color: #fff;
 }
+
+

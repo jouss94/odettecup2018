@@ -108,7 +108,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 													</div>
 												<div class="mdl-card__actions mdl-card--border">
 													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="statistics.php?ranking=General" >
-														Voir les statisiques et historiques de la compétition.
+														Voir les statistiques et historiques de la compétition.
 													</a>
 													<div class="mdl-layout-spacer"></div>
 													<i class="material-icons">supervisor_account</i>

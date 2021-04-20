@@ -566,59 +566,59 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 
 echo '</tr>';
 
-// echo '<tr class="affPronosLigne backgroundTab2" >';
-// 	echo '<td style="width:50%" class="tdBonusLeft">Minute du premier but</td>';
+echo '<tr class="affPronosLigne backgroundTab2" >';
+	echo '<td style="width:50%" class="tdBonusLeft">Minute du premier but</td>';
 
-// 	echo '<td style="width:50%">';
-// 		echo '<span class="';
-// 		if ($min_first_point >= 0)
-// 		{
-// 			if ($min_first_point == 0)
-// 				echo ' pancarteBonusEchec ';
-// 			else
-// 				echo ' pancarteBonusCorrect ';
-// 		}
-// 		else
-// 				echo ' pancarteAuto ';
+	echo '<td style="width:50%">';
+		echo '<span class="';
+		if ($min_first_point >= 0)
+		{
+			if ($min_first_point == 0)
+				echo ' pancarteBonusEchec ';
+			else
+				echo ' pancarteBonusCorrect ';
+		}
+		else
+				echo ' pancarteAuto ';
 
-// 		echo ' " > ';
-// 		echo $min_first;
-// 		echo '</span> Minutes';
-// 	echo '</td>';
-// 	echo '<td class="pointBonus">';
-// 	if ($min_first_point >= 0)
-// 	{
-// 			echo '+'. $min_first_point;
-// 	}
-// 	echo '</td>';
-// echo '</tr>';
+		echo ' " > ';
+		echo $min_first;
+		echo '</span> Minutes';
+	echo '</td>';
+	echo '<td class="pointBonus">';
+	if ($min_first_point >= 0)
+	{
+			echo '+'. $min_first_point;
+	}
+	echo '</td>';
+echo '</tr>';
 
-// echo '<tr class="affPronosLigne backgroundTab1" >';
-// 	echo '<td style="width:50%" class="tdBonusLeft">Minute dernier but</td>';
+echo '<tr class="affPronosLigne backgroundTab1" >';
+	echo '<td style="width:50%" class="tdBonusLeft">Minute dernier but</td>';
 
-// 	echo '<td style="width:50%">';
-// 		echo '<span class="';
-// 		if ($min_last_point >= 0)
-// 		{
-// 			if ($min_last_point == 0)
-// 				echo ' pancarteBonusEchec ';
-// 			else
-// 				echo ' pancarteBonusCorrect ';
-// 		}
-// 		else
-// 				echo ' pancarteAuto ';
+	echo '<td style="width:50%">';
+		echo '<span class="';
+		if ($min_last_point >= 0)
+		{
+			if ($min_last_point == 0)
+				echo ' pancarteBonusEchec ';
+			else
+				echo ' pancarteBonusCorrect ';
+		}
+		else
+				echo ' pancarteAuto ';
 
-// 		echo ' " > ';
-// 		echo $min_last;
-// 		echo '</span> Minutes';
-// 	echo '</td>';
-// 	echo '<td class="pointBonus">';
-// 	if ($min_last_point >= 0)
-// 	{
-// 			echo '+'. $min_last_point;
-// 	}
-// 	echo '</td>';
-// echo '</tr>';
+		echo ' " > ';
+		echo $min_last;
+		echo '</span> Minutes';
+	echo '</td>';
+	echo '<td class="pointBonus">';
+	if ($min_last_point >= 0)
+	{
+			echo '+'. $min_last_point;
+	}
+	echo '</td>';
+echo '</tr>';
 
 echo '<tr class="affPronosLigne backgroundTab2" >';
 	echo '<td style="width:50%" class="tdBonusLeft">Nombre total de but</td>';

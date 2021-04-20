@@ -1,0 +1,131 @@
+.chat-popup {
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+#header-display {
+    border-radius: 20px 20px 0px 0px;
+
+    background-color: #ffffff99;
+    display: flex;
+    justify-content: center;
+    border: #55adba 3px solid;    
+    border-bottom: 1px solid #e6e6e6;
+    height: 40px;
+}
+
+.small {
+    width: 200px;
+    height: 40px;
+    z-index: 100;
+    position: fixed;
+    bottom: 0px;
+    left: 50px;
+    cursor: pointer;
+}
+
+.normal {
+    width: 250px;
+    z-index: 100;
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    cursor: default;
+}
+
+.big {
+    z-index: 100;
+    position: fixed;
+    top: 60px;
+    bottom: 60px;
+    left: 60px;
+    right: 60px;
+    cursor: default;
+}
+
+
+.header-display-icon {
+    width: 54px;
+    background-image: url("../images/icon/chat_16x16.png");
+    background-repeat:no-repeat;
+    background-position:20 center;
+}
+
+.icon {
+    cursor: pointer;
+    z-index: 101;    
+    width: 20px;
+    height: 40px;
+}
+
+#icon-openbig {
+    position: absolute;
+    right: 40px;
+    background-image: url(../images/icon/fullscreen_12x12.png);
+    background-repeat: no-repeat;
+    background-position: center 17px;
+    display: none;
+}
+
+#icon-closebig {
+    position: absolute;
+    right: 40px;
+    background-image: url(../images/icon/fullscreen_exit_alt_12x12.png);
+    background-repeat: no-repeat;
+    background-position: center 17px;
+    display: none;
+}
+
+
+#icon-close {
+    position: absolute;
+    right: 15px;
+    background-image: url(../images/icon/x_11x11.png);
+    background-repeat: no-repeat;
+    background-position: center 18px;
+    display: none;
+}
+
+/* #icon-close:hover {
+    background-image: url(../images/icon/x_11x11_white.png);
+} */
+
+.icon-show {
+    display: block !important;
+}
+
+
+
+.header-display-text {
+    width: 76px;
+    font-weight: bold;
+    color: #000;
+    margin: auto 0;
+}
+
+#body-display {
+    border-radius: 0px 0px 20px 20px;
+
+    background-color: #ffffff99;
+    display: flex;
+    justify-content: center;
+    border: #55adba 3px solid;
+    border-top: none;
+    height: 100%;
+}
+
+.small-body {
+    display: none !important;
+}
+.normal-body {
+    display: flex;
+}
+.big-body {
+    display: flex;
+}
+
+.body-display-content {
+    width: 100%;
+    height: 550px;
+}

@@ -38,18 +38,22 @@ function addBonus($con)
 
 	$return = false;
 	$team_winner_id = intval($_POST[ 'equipeWin' ]);
-	// $min_first = intval($_POST[ 'MinPronosFirst' ]);
-	// $min_last = intval($_POST[ 'MinPronosLast' ]);
+	$min_first = intval($_POST[ 'MinPronosFirst' ]);
+	$min_last = intval($_POST[ 'MinPronosLast' ]);
 	$total_but = intval($_POST[ 'totalBut' ]);
 	// $best_scorer = addslashes(utf8_decode_function ($_POST[ 'InputTextBestScorer' ]));
 
 	$qry = " INSERT INTO pronostics_bonus (id_membre
 											, team_winner_id
 											, total_but
+											, min_first
+											, min_last
 										) 
 										VALUES ($id, 
 												$team_winner_id,
-												$total_but
+												$total_but,
+												$min_first,
+												$min_last
 											);";
 	$result = mysqli_query($con, $qry);
 	if (!$result) {

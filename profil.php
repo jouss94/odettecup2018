@@ -39,7 +39,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
 
 
-				<div style="width:100%;height:1300px;display:flex">
+				<div style="width:100%;height:1200px;display:flex">
 					<?php include("include/viewProfil.php");?>					
 				</div>
 
