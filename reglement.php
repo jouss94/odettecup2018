@@ -204,7 +204,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
 		<h3>Tableau des gains</h3>
 			<p>
-				<span class="pointRegle">Le tableau des gains sera calculé selon le nombre de participants avec la base de calcul suivantes.</span>
+				<span class="pointRegle">Le tableau des gains sera calculé selon le nombre de participants avec la base de calcul suivante.</span>
 				<!--Total des gains 345 € (21 adultes x 15 € = 315 € + 3 mineurs x 10 = 30 €)</br></br>--->
 				<ul class="ulperso">
 					<li class="pointRegle" >1er   = 65 % 

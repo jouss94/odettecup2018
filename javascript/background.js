@@ -1,5 +1,10 @@
-function changeStat(etat) {
-    console.log(etat);
+var currentEtat = 'small';
+
+function changeStat(etat, checkBig) {
+    if (checkBig && currentEtat == 'big' && etat == 'normal') {
+        return;
+    }
+
     if (etat == 'small') {
         getSmallPageState();
     } else if (etat == 'normal') {
@@ -7,6 +12,8 @@ function changeStat(etat) {
     } else if (etat == 'big') {
         getBigPageState();
     }
+
+    currentEtat = etat;
 }
 
 function getSmallPageState() {

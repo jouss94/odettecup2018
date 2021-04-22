@@ -4,7 +4,7 @@
  * Connexion simple à la base de données via PDO !
  */
 include("constants.php");
-$db = new PDO('mysql:host='.$host.';dbname='.$dbname.';charset=utf8', $user, $pass, [
+$db = new PDO('mysql:host='.$host.';dbname='.$dbname.';charset=utf8mb4', $user, $pass, [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, 
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 ]);
@@ -60,6 +60,7 @@ function postMessage(){
 
   $joueur_id = $_POST['joueur_id'];
   $content = $_POST['content'];
+//   echo $content;
 
   // 2. Créer une requête qui permettra d'insérer ces données
   $query = $db->prepare('INSERT INTO messages SET author_id = :joueur_id, content = :content, created_at = NOW()');
