@@ -660,7 +660,7 @@ table.sortable thead {
 }
 
 .pancarteListeJoueur {
-    background: #018498;
+    /* background: #018498; */
     margin-left: 79px;
     margin-right: 126px;
     padding: 5px;
@@ -1234,7 +1234,7 @@ table.TableMatch {
     width: 200px;
     text-align: center;
     font-size: 20px;
-    background: #209aad;
+    /* background: #209aad; */
 }
 
 .profilInformationSurnomBig {
@@ -1242,7 +1242,7 @@ table.TableMatch {
     text-align: center;
     font-size: 20px;
     height: 3000px;
-    background: #209aad;
+    /* background: #209aad; */
 }
 
 span.titre {

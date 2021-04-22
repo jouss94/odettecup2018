@@ -22,8 +22,7 @@ session_start();
 
 	<body>
 
-		<?php include("background.php");?>
-		
+	
 		<div class="padding20">
 		<div class="loginform-in loginform-in-acceuil">
 		<fieldset>	

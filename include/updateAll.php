@@ -37,8 +37,6 @@
 		$total_montagne = 0;
 		$points_montagne = 0;
 
-		$bonusFinal = 0;
-
 		while ($row2 = mysqli_fetch_array($result2 )) 
 		{
 			$id_match = intval($row2["id_match"]);
@@ -136,18 +134,17 @@
 		$ptsTeamWinner = 0;
 		$ptsLastMin = 0;
 		$ptsTotalBut = 0;
-		$ptsButeur = 0;
 		// + autre
 
 		while ($rowBonus = mysqli_fetch_array($resultBonus )) 
 		{
 			// regles a implémenter
-			if (intval($rowBonus["min_first"]) == 12)
-			{
-				$ptsFirstMin = 10;
-			}
+			// if (intval($rowBonus["min_first"]) == 12)
+			// {
+			// 	$ptsFirstMin = 10;
+			// }
 
-			$bonus = $ptsFirstMin + $ptsTeamWinner + $ptsLastMin + $ptsTotalBut + $ptsButeur + $bonusFinal; // + + +
+			$bonus = $ptsFirstMin + $ptsTeamWinner + $ptsLastMin + $ptsTotalBut; // + + +
 		}
 
 		$points += $bonus;

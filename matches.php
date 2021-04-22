@@ -29,10 +29,10 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 	</head>
 	
 	<?php include("init.php");?>
-	<?php include("background.php");?>
-
+	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">

@@ -32,7 +32,6 @@ function openClassement(evt, cityName) {
     // evt.currentTarget.className += " active";
 
     var typeclassement = cityName;
-    console.log(cityName);
     var color = document.getElementById('color' + typeclassement).innerText;
     var max = parseInt(document.getElementById('max' + typeclassement).innerText);     
     var step = parseInt(document.getElementById('step' + typeclassement).innerText);     

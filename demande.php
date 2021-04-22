@@ -24,7 +24,6 @@ session_start();
 	</head>
 
 	<body>
-		<?php include("background.php");?>
 
 		<div class="padding20">
 		<div class="loginform-in">

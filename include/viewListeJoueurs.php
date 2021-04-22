@@ -34,7 +34,7 @@
 				<td class="tableListeSecond">',
 					$surnom,
 				'</td>
-				<td class="tableListeThird"> <div class="pancarteListeJoueur">',
+				<td class="tableListeThird"> <div class="pancarteListeJoueur" style="background:', $row["color"],'">',
 					$points,
 				'		<span class="petitPoint">pts</span>
 				</div>	</td>

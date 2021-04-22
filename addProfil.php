@@ -93,6 +93,7 @@ function addProfil($con)
 	$description = addslashes(utf8_decode_function ($_POST[ 'description' ]));
 	$emailProfil = addslashes(utf8_decode_function($_POST[ 'emailProfil' ]));
 	$telProfil = addslashes(utf8_decode_function ($_POST[ 'telProfil' ]));
+	$colorProfil = addslashes($_POST[ 'colorProfil' ]);
 	$departementProfil = intval ($_POST[ 'departementProfil' ]);
 
 
@@ -110,8 +111,8 @@ function addProfil($con)
 								if ($filename != "")
 									$qry .= " image = '$filename',";
 								$qry .= " departement = $departementProfil,
-										telephone = '$telProfil'
-
+										telephone = '$telProfil',
+				color = '$colorProfil'
 			WHERE id_joueur = $id";
 	$result = mysqli_query($con, $qry);
 	if (!$result) {
@@ -152,10 +153,10 @@ function addProfil($con)
 	</head>
 	
 	<?php include("init.php");?>
-	<?php include("background.php");?>
-
+	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">

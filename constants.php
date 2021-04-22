@@ -1,10 +1,8 @@
 <?php
-define('VISITEUR',1);
-define('INSCRIT',2);
-define('MODO',3);
-define('ADMIN',4);
+$isProd = false;
 
-define('ERR_IS_CO','Vous êtes déja connecté');
-define('ERR_IS_NOT_CO','Vous ne pouvez pas accéder à cette page si vous n\'êtes pas connecté');
-define('ERR_AUTH_VIEW','Woooooh c\'est interdit ça !');
+$host = $isProd ? 'sql-server.k8s-s8bubroc': 'localhost';
+$dbname = $isProd ? 'euro2020' : 'euro2021';
+$user= $isProd ? 'jousseau' : 'root';
+$pass = $isProd ? 'admineuro2020' : '';
 ?>

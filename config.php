@@ -1,11 +1,6 @@
 <?php
 
-$isProd = false;
-
-$host = $isProd ? 'sql-server.k8s-s8bubroc': 'localhost';
-$dbname = $isProd ? 'euro2020' : 'euro2021';
-$user= $isProd ? 'jousseau' : 'root';
-$pass = $isProd ? 'admineuro2020' : '';
+include("constants.php");
 
 $con = mysqli_connect($host,$user,$pass) or die(mysqli_error());
 

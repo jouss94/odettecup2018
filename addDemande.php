@@ -66,8 +66,6 @@ function addDemande($con)
 	</head>
 
 	<body>
-		<?php include("background.php");?>
-
 		<div class="padding20">
 		<div class="loginform-in blackougedefault" style="height:400px">
 		<img src="images/UEFA_Euro_2020_logo_4.png" style="width: 110px;margin: 6px;"/>

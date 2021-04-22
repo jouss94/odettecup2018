@@ -21,14 +21,14 @@
 	while ($row = mysqli_fetch_array($result )) 
 	{	
 		$find = true;
-		echo '<div class="profilInformationSurnomBig">';
+		echo '<div class="profilInformationSurnomBig" style=" background:linear-gradient(', $row["color"] ,' 0%, #209aad 40%);">';
 		echo '<span style="padding-top: 15px;display: block;color: #FFF;FONT-WEIGHT: bold;">';
 		echo utf8_encode_function($row["surnom"]);
 		echo '</span>';
 
 		echo '<div class="profilInformationImageDiv"> 
 
-				<img src="', utf8_encode_function($row["image"]), '" style="margin: 15px;" class="profilInformationImage mdl-button--raised"/>
+				<img src="', utf8_encode_function($row["image"]), '" style="margin: 15px;border-color: #ffffff;" class="profilInformationImage mdl-button--raised"/>
 
 			</div>';
 		if ($idProfil == $id)
