@@ -99,7 +99,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 								</td>
 							</tr>
 						</table>
-						<table class="tableAcceuil">
+						<!-- <table class="tableAcceuil">
 							<tr>
 								<td>
 									<div class="tableAcceuilBas">
@@ -120,7 +120,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 									</div>
 								</td>
 							</tr>
-						</table>
+						</table> -->
 						<table class="tableAcceuil">
 							<tr>
 								<td>
