@@ -61,7 +61,7 @@
 		</span>
 		<span class="mdl-chip mdl-chip--contact chips-body ', $chipsPayement, '-body"">
 			<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white ', $chipsPayement, '"></span>
-			<span class="mdl-chip__text ">Paiment</span>
+			<span class="mdl-chip__text ">Paiement</span>
 		</span>';
 
 		echo '</div>';

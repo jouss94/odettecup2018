@@ -78,13 +78,13 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 				<div class="sousTitre perfectTitre">Perfect</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le score exact du match.</li>
+						<li class="pointRegle regleDetail" >Trouver le score exact du match.</li>
 						<li class="pointRegle regleExemple" >Exemple : <span class="regleExempleCorp">Pronostic 2-1 - Score 2-1 : + 7 points</span></li>
 					</ul>
 				<!-- <div class="sousTitre perfectCorrectPlus">Correct +</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >4 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le vainqueur du match et le nombre de but de l'une des deux équipes.</li>
+						<li class="pointRegle regleDetail" >Trouver le vainqueur du match et le nombre de but de l'une des deux équipes.</li>
 						<li class="pointRegle regleExemple" >Exemple : <span class="regleExempleCorp">Pronostic 2-1 - Score 2-0 : + 4 points</span></li>
 						<div style="margin-left: 161px;"><span class="regleExempleCorp">Pronostic 2-1 - Score 3-1 : + 4 points</span></div>
 					</ul> -->
@@ -92,14 +92,14 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 				<div class="sousTitre perfectCorrect">Correct</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >3 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le résultat du match.</li>
+						<li class="pointRegle regleDetail" >Trouver le résultat du match.</li>
 						<li class="pointRegle regleExemple" >Exemple : <span class="regleExempleCorp">Pronostic 2-1 - Score 3-0 : + 3 points</span></li>
 						<div style="margin-left: 161px;"><span class="regleExempleCorp">Pronostic 1-1 - Score 0-0 : + 3 points</span></div>
 					</ul>
 				<div class="sousTitre perfectInverse">Inverse</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >1 point</li>
-						<li class="pointRegle regleDetail" >Trouvez le résultat inverse du match.</li>
+						<li class="pointRegle regleDetail" >Trouver le résultat inverse du match.</li>
 						<li class="pointRegle regleExemple" >Exemple : <span class="regleExempleCorp">Pronostic 2-1 - Score 1-2 : + 1 point</span></li>
 					</ul>
 				<div class="sousTitre perfectEchec">Echec</div>
@@ -115,7 +115,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 					<div class="sousTitre titreBonus">Equipe vainqueur</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >10 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le vainqueur du tournoi Euro 2020.</li>
+						<li class="pointRegle regleDetail" >Trouver le vainqueur du tournoi Euro 2020.</li>
 					</ul>
 					<!-- <div class="sousTitre titreBonus">Meilleure attaque</div>
 					<ul class="ulperso">
@@ -130,8 +130,8 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 					<div class="sousTitre titreBonus">Minute du premier but</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points [tout-pil'] 3 points [approchant] </li>
-						<li class="pointRegle regleDetail" >Trouvez la minute du premier but du tournoi Euro 2020.</li>
-						<li class="pointRegle regleDetail" >[Tout-pil'] : trouvez la minute exacte.</li>
+						<li class="pointRegle regleDetail" >Trouver la minute du premier but du tournoi Euro 2020.</li>
+						<li class="pointRegle regleDetail" >[Tout-pil'] : trouver la minute exacte.</li>
 						<li class="pointRegle regleDetail" >[Approchant] : La minute se trouve dans les <strong>2</strong> minutes de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
 						<li class="pointRegle regleDetail" >Minutage officiel donné par l'UEFA.</li>
@@ -139,8 +139,8 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 					<div class="sousTitre titreBonus">Minute du dernier but</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points [tout-pil'] 3 points [approchant] </li>
-						<li class="pointRegle regleDetail" >Trouvez la minute du dernier but du tournoi Euro 2020.</li>
-						<li class="pointRegle regleDetail" >[Tout-pil'] : trouvez la minute exacte.</li>
+						<li class="pointRegle regleDetail" >Trouver la minute du dernier but du tournoi Euro 2020.</li>
+						<li class="pointRegle regleDetail" >[Tout-pil'] : trouver la minute exacte.</li>
 						<li class="pointRegle regleDetail" >[Approchant] : La minute se trouve dans les <strong>2</strong> minutes de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
 						<li class="pointRegle regleDetail" >Minutage officiel donné par l'UEFA.</li>
@@ -148,8 +148,8 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 					<div class="sousTitre titreBonus">Nombre total de buts</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >10 points [tout-pil'] 5 points [approchant] </li>
-						<li class="pointRegle regleDetail" >Trouvez le nombre de buts total du tournoi Euro 2020.</li>
-						<li class="pointRegle regleDetail" >[Tout-pil'] : trouvez le nombre exact de buts.</li>
+						<li class="pointRegle regleDetail" >Trouver le nombre de buts total du tournoi Euro 2020.</li>
+						<li class="pointRegle regleDetail" >[Tout-pil'] : Trouver le nombre exact de buts.</li>
 						<li class="pointRegle regleDetail" >[Approchant] : Le nombre de buts se trouve dans les <strong>3</strong> buts de battement avant ou après votre pronostic.</li>
 						<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
 					</ul>
@@ -157,29 +157,29 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 					<!-- <div class="sousTitre titreBonus">Meilleur buteur</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le meilleur buteur du tournoi RUSSIE 2018.</li>
+						<li class="pointRegle regleDetail" >Trouver le meilleur buteur du tournoi RUSSIE 2018.</li>
 					</ul> -->
 
 					<!-- <div class="sousTitre titreBonus">Meilleur passeur</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le meilleur passeur du tournoi RUSSIE 2018.</li>
+						<li class="pointRegle regleDetail" >Trouver le meilleur passeur du tournoi RUSSIE 2018.</li>
 					</ul>
 
 					<div class="sousTitre titreBonus">Nombre buts du meilleur buteur</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le nombre de buts du meilleur buteur du tournoi RUSSIE 2018.</li>
+						<li class="pointRegle regleDetail" >Trouver le nombre de buts du meilleur buteur du tournoi RUSSIE 2018.</li>
 					</ul>
 					<div class="sousTitre titreBonus">Premier buteur français</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le premier buteur français du tournoi RUSSIE 2018.</li>
+						<li class="pointRegle regleDetail" >Trouver le premier buteur français du tournoi RUSSIE 2018.</li>
 					</ul>
 					<div class="sousTitre titreBonus">Nombre de buts de la France</div>
 					<ul class="ulperso">
 						<li class="pointRegle reglePoint" >7 points</li>
-						<li class="pointRegle regleDetail" >Trouvez le nombre de buts de la France lors du tournoi RUSSIE 2018.</li>
+						<li class="pointRegle regleDetail" >Trouver le nombre de buts de la France lors du tournoi RUSSIE 2018.</li>
 					</ul> -->
 					<!-- <div class="sousTitre titreBonus">Bonus : Finale</div>
 					<ul class="ulperso">

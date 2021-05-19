@@ -172,6 +172,7 @@ CREATE TABLE IF NOT EXISTS `joueurs` (
   `equipe` int(11) DEFAULT NULL,
   `oauth` enum('Yes','No') COLLATE utf8_general_ci NOT NULL DEFAULT 'No',
   `status` enum('active','inactive') COLLATE utf8_general_ci NOT NULL DEFAULT 'active',
+  `color` varchar(100) NOT NULL DEFAULT '#209aad',
   PRIMARY KEY (`id_joueur`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT  COLLATE=utf8_general_ci;
 
@@ -311,6 +312,17 @@ CREATE TABLE IF NOT EXISTS `historic_rang` (
   PRIMARY KEY (`type`,`id_owner`,`date`)
 ) ENGINE=MyISAM DEFAULT COLLATE=utf8_general_ci;
 
+
+DROP TABLE IF EXISTS `messages`;
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `author_id` int(11) NOT NULL,
+  `content` text COLLATE=utf8mb4_unicode_ci,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER DATABASE euro2021 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

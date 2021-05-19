@@ -62,7 +62,7 @@
 			</span>
 			<span class="mdl-chip mdl-chip--contact chips-body ', $chipsPayement, '-body"">
 				<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white ', $chipsPayement, '"></span>
-				<span class="mdl-chip__text ">Paiment</span>
+				<span class="mdl-chip__text ">Paiement</span>
 			</span>';
 
 			echo '</div>';
@@ -132,7 +132,7 @@
 		echo '<tr>';
 			echo '<td class="ParamSousTitre">
 				10 points </br>
-				Trouvez le vainqueur du tournoi Euro 2020 
+				Trouver le vainqueur du tournoi Euro 2020 
 
 			</td>';
 		echo '</tr>';
@@ -175,7 +175,7 @@
 		echo '<tr>';
 			echo '<td class="ParamSousTitre">
 				10 points [tout-pil\'] 5 points [approchant] </br>
-				Trouvez le nombre de buts total du tournoi Euro 2020.
+				Trouver le nombre de buts total du tournoi Euro 2020.
 			</td>';
 		echo '</tr>';
 
@@ -189,7 +189,7 @@
 		// echo '<tr>';
 		// 	echo '<td class="ParamSousTitre">
 		// 		7 points </br>
-		// 		Trouvez le meilleur buteur du tournoi RUSSIE 2018.
+		// 		Trouver le meilleur buteur du tournoi RUSSIE 2018.
 		// 	</td>';
 		// echo '</tr>';
 

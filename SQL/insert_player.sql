@@ -1,10 +1,10 @@
-SET @prenom = 'Amandine';
-SET @nom = 'Pavageau';
-SET @surnom = 'Didine';
-SET @email = 'amandine.pavageau@yahoo.fr';
-SET @password = '90TV42';
-SET @telephone = '0670272846';
-SET @female = 1;
+SET @prenom = 'Olivier';
+SET @nom = 'Courtaux';
+SET @surnom = 'Angus93';
+SET @email = 'grisbleu99@yahoo.fr';
+SET @password = 'VB55FQ';
+SET @telephone = '0612253231';
+SET @female = 0;
 SET @description = "";
 
 
@@ -15,18 +15,9 @@ SET @ID = LAST_INSERT_ID();
 
 SELECT @ID;
 SET @TypeGeneral = 'general';
-SET @TypeMontagne = 'montagne';
-SET @TypeFemme = 'femme';
-SET @TypeEquipe = 'equipe';
 
 INSERT INTO `classements`(`type`, `owner_id`) 
 VALUES (@TypeGeneral, @ID);
-
-INSERT INTO `classements`(`type`, `owner_id`) 
-VALUES (@TypeMontagne, @ID);
-
-INSERT INTO `classements`(`type`, `owner_id`) 
-VALUES (@TypeFemme, @ID);
 
 
 f.jousseau@gmail.com
