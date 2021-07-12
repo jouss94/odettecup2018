@@ -1,11 +1,11 @@
-SET @prenom = 'Olivier';
-SET @nom = 'Courtaux';
-SET @surnom = 'Angus93';
-SET @email = 'grisbleu99@yahoo.fr';
-SET @password = 'VB55FQ';
-SET @telephone = '0612253231';
+SET @prenom = 'Léa';
+SET @nom = 'Le Chapelain';
+SET @surnom = 'Léa';
+SET @email = 'Lealechapelain@yahoo.fr';
+SET @password = 'VB62WK';
+SET @telephone = '0612341117';
 SET @female = 0;
-SET @description = "";
+SET @description = "Boss is back ?";
 
 
 INSERT INTO `joueurs` (`prenom`, `nom`, `surnom`, `email`, `password`, `telephone`, `female`, `description`) 
@@ -20,6 +20,7 @@ INSERT INTO `classements`(`type`, `owner_id`)
 VALUES (@TypeGeneral, @ID);
 
 
+
 f.jousseau@gmail.com
 Christopher.lorain@hotmail.fr
 tjousseau@gmail.com
@@ -32,7 +33,6 @@ Dam-papillon@live.fr
 jean-marc.jousseau@arteliagroup.com
 soignolles@sapo.pt
 christine.jousseau@orange.fr
-Camiillecaramelle@live.fr
 Francette.lorain@gmail.com
 pat.lesverts@gmail.com
 girondin77@hotmail.com
@@ -42,10 +42,6 @@ joussor.romain@gmail.com
 raphael.jousseau@outlook.fr
 mjousseau@gmail.com
 Michael.courtaux@gmail.com
-joussor.romain@gmail.com
-joussor.romain@gmail.com
-joussor.romain@gmail.com
-Camille77170@hotmail.com
 jojo-dipla@live.fr
 alexandre.jousseau@hotmail.com
 charline.bastide@hotmail.com

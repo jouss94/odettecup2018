@@ -317,7 +317,7 @@ DROP TABLE IF EXISTS `messages`;
 CREATE TABLE IF NOT EXISTS `messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `author_id` int(11) NOT NULL,
-  `content` text COLLATE=utf8mb4_unicode_ci,
+  `content` text COLLATE utf8mb4_unicode_ci,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

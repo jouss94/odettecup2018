@@ -191,8 +191,8 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
 		<h3>Dates</h3>
 				<ul class="ulperso">
-						<li class="pointRegle" >1er Mai 2021 : ouverture aux inscriptions.</li>
-						<li class="pointRegle" >1er Juin 2021 : fermeture des inscriptions et des pronostics. Ouverture de tous les pronostics à tout le monde.</li>
+						<li class="pointRegle" >20 Mai 2021 : ouverture aux inscriptions.</li>
+						<li class="pointRegle" >6 Juin 2021 : fermeture des inscriptions et des pronostics. Ouverture de tous les pronostics à tout le monde.</li>
 						<li class="pointRegle" >Matches de phase finale : pour les 8émes, quarts, demies et finale, tous les pronostics seront à rentrer en ligne.</li>
 					</ul>
 
@@ -210,7 +210,6 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 					<li class="pointRegle" >1er   = 65 % 
 					<li class="pointRegle" >2ème  = 25 % 
 					<li class="pointRegle" >3ème  = 10 % 
-					<li class="pointRegle" >4ème  = remboursé
 				</ul>
 				<!-- Lot restant 330 €</br>
 

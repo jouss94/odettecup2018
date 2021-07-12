@@ -138,11 +138,21 @@
 
 		while ($rowBonus = mysqli_fetch_array($resultBonus )) 
 		{
-			// regles a implémenter
-			// if (intval($rowBonus["min_first"]) == 12)
-			// {
-			// 	$ptsFirstMin = 10;
-			// }
+			// regles a implémenter 
+			if (intval($rowBonus["min_first"]) == 51)
+			{
+				$ptsFirstMin = 3;
+			}
+			
+			if (intval($rowBonus["min_last"]) == 68)
+			{
+				$ptsLastMin = 3;
+			}
+
+			if (intval($rowBonus["total_but"]) == 141)
+			{
+				$ptsTotalBut = 5;
+			}
 
 			$bonus = $ptsFirstMin + $ptsTeamWinner + $ptsLastMin + $ptsTotalBut; // + + +
 		}
@@ -150,7 +160,10 @@
 		$points += $bonus;
 		$updateBonus = "UPDATE pronostics_bonus 
 					SET
-						 min_first_point   = $ptsFirstMin
+						 min_first_point   = $ptsFirstMin,
+						 team_winner_id_point = $ptsTeamWinner,
+		 				 min_last_point = $ptsLastMin,
+						 total_but_point = $ptsTotalBut
 					WHERE id_membre = $id_joueur";
 		$resultBonus = mysqli_query($con, $updateBonus);
 		if (!$resultBonus) {

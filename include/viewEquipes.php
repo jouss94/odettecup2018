@@ -52,7 +52,7 @@
 					
 					<div class="profilInformationImageDiv"> 
 
-						<img src="', utf8_encode_function($row["image"]), '" style="margin: 15px;border-color: "', $row["color"] ,'"" class="profilInformationImage mdl-button--raised"/>
+						<img src="', utf8_encode_function($row["image"]), '" style="margin: 15px;" class="profilInformationImage mdl-button--raised"/>
 
 					</div>
 
