@@ -49,7 +49,7 @@
 
 		echo '
 
-				<h2> Groupe ',$group,'</h2>';
+				<h2> ',$group,'</h2>';
 		
 		if ($row["montagne"] == 1)
 		{

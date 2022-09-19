@@ -27,3 +27,11 @@ UPDATE `joueurs` SET `modif_match`=0 ;
 SELECT SUM(score_home + score_away) FROM `matches` WHERE 1;
 --- nombre de match :
 SELECT COUNT(*) FROM `matches` WHERE played = 1;
+
+
+1er Boubou0677 266€
+2eme Alvorada 103€
+3eme Titish 41€
+4eme Rambo 20€
+
+Pour infos les gains sont les suivants : 1er 169€ 2eme 65€ 3eme 26€
