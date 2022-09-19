@@ -10,7 +10,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 	<head>
 		<title>Equipes</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/icon-france.png" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -24,15 +24,15 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		<script src="./material_design/material.js"></script>
+		
 
 	</head>
 	
 	<?php include("init.php");?>
-	<?php include("background.php");?>
-
+	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="blackougedefault"  style="text-align:center">

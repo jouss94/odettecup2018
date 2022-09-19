@@ -1,11 +1,11 @@
-SET @prenom = 'Amandine';
-SET @nom = 'Pavageau';
-SET @surnom = 'Didine';
-SET @email = 'amandine.pavageau@yahoo.fr';
-SET @password = '90TV42';
-SET @telephone = '0670272846';
-SET @female = 1;
-SET @description = "";
+SET @prenom = 'Léa';
+SET @nom = 'Le Chapelain';
+SET @surnom = 'Léa';
+SET @email = 'Lealechapelain@yahoo.fr';
+SET @password = 'VB62WK';
+SET @telephone = '0612341117';
+SET @female = 0;
+SET @description = "Boss is back ?";
 
 
 INSERT INTO `joueurs` (`prenom`, `nom`, `surnom`, `email`, `password`, `telephone`, `female`, `description`) 
@@ -15,18 +15,10 @@ SET @ID = LAST_INSERT_ID();
 
 SELECT @ID;
 SET @TypeGeneral = 'general';
-SET @TypeMontagne = 'montagne';
-SET @TypeFemme = 'femme';
-SET @TypeEquipe = 'equipe';
 
 INSERT INTO `classements`(`type`, `owner_id`) 
 VALUES (@TypeGeneral, @ID);
 
-INSERT INTO `classements`(`type`, `owner_id`) 
-VALUES (@TypeMontagne, @ID);
-
-INSERT INTO `classements`(`type`, `owner_id`) 
-VALUES (@TypeFemme, @ID);
 
 
 f.jousseau@gmail.com
@@ -41,7 +33,6 @@ Dam-papillon@live.fr
 jean-marc.jousseau@arteliagroup.com
 soignolles@sapo.pt
 christine.jousseau@orange.fr
-Camiillecaramelle@live.fr
 Francette.lorain@gmail.com
 pat.lesverts@gmail.com
 girondin77@hotmail.com
@@ -51,10 +42,6 @@ joussor.romain@gmail.com
 raphael.jousseau@outlook.fr
 mjousseau@gmail.com
 Michael.courtaux@gmail.com
-joussor.romain@gmail.com
-joussor.romain@gmail.com
-joussor.romain@gmail.com
-Camille77170@hotmail.com
 jojo-dipla@live.fr
 alexandre.jousseau@hotmail.com
 charline.bastide@hotmail.com

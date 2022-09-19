@@ -17,7 +17,7 @@ if ($id != $idProfil)
 	<head>
 		<title>Modifier matches</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/icon-france.png" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/formMatch.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
@@ -34,19 +34,19 @@ if ($id != $idProfil)
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		<script src="./material_design/material.js"></script>
+		
 
 	</head>
 	
 	<?php include("init.php");?>
-	<?php include("background.php");?>
-
+	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in">
-				<div style="width:100%;height:3000px">
+				<div style="width:100%;height:3000px;display:flex">
 					<?php include("include/viewModifierMatch.php");?> 					
 				</div>
 

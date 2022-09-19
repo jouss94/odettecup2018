@@ -30,7 +30,7 @@ function checkFile()
 		if (!empty($_FILES['imageProfil']['size']))
 		    {
 		        //On définit les variables :
-		        $maxsize = 900000; //Poid de l'image
+		        $maxsize = 9000000; //Poid de l'image
 		        $maxwidth = 10000; //Largeur de l'image
 		        $maxheight = 10000; //Longueur de l'image
 		        //Liste des extensions valides
@@ -86,19 +86,20 @@ function addProfil($con)
 	$qry = "";
 	
 
-	$return = false;
+	$return = "";
 	$prenomProfil = addslashes(utf8_decode_function ($_POST[ 'prenomProfil' ]));
 	$nomProfil = addslashes(utf8_decode_function ($_POST[ 'nomProfil' ]));
 	$mpdProfil = addslashes(utf8_decode_function ($_POST[ 'mpdProfil' ]));
 	$description = addslashes(utf8_decode_function ($_POST[ 'description' ]));
 	$emailProfil = addslashes(utf8_decode_function($_POST[ 'emailProfil' ]));
 	$telProfil = addslashes(utf8_decode_function ($_POST[ 'telProfil' ]));
+	$colorProfil = addslashes($_POST[ 'colorProfil' ]);
 	$departementProfil = intval ($_POST[ 'departementProfil' ]);
 
 
  	$fileResult = checkFile();
  	if ($fileResult != "")
- 		return false;
+ 		return $fileResult;
 
  	$filename=move_image($_FILES['imageProfil']);
 		                
@@ -110,18 +111,19 @@ function addProfil($con)
 								if ($filename != "")
 									$qry .= " image = '$filename',";
 								$qry .= " departement = $departementProfil,
-										telephone = '$telProfil'
-
+										telephone = '$telProfil',
+				color = '$colorProfil'
 			WHERE id_joueur = $id";
 	$result = mysqli_query($con, $qry);
 	if (!$result) {
 		$return = false;
-		return false;
+		return "Error description: " . mysqli_error($con);
 	}
-	else
-		$return = true;
-	return $return;
+	else {
+		$return = "";
+	}
 
+	return $return;
 }
 
 ?>
@@ -130,7 +132,7 @@ function addProfil($con)
 	<head>
 		<title>Modifier bonus</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/icon-france.png" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/formMatch.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
@@ -146,15 +148,15 @@ function addProfil($con)
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		<script src="./material_design/material.js"></script>
+		
 
 	</head>
 	
 	<?php include("init.php");?>
-	<?php include("background.php");?>
-
+	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">
@@ -165,7 +167,8 @@ function addProfil($con)
 					<div style="width:100%;height:50px"></div>
 
 		<?php
-			if (addProfil($con))
+			$addResult = addProfil($con);
+			if ($addResult == "")
 			{
 
 				echo "<div class='valideDemand' id='add_valideDemand'><img src='images/check.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Votre Profil a été modifié.
@@ -174,7 +177,7 @@ function addProfil($con)
 				changeEtat($con);
 			}
 			else
-				echo "<div class='errorDemand' id='add_errDemand'><img src='images/alert.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Une erreur est survenue.</div>";
+				echo '<div class="errorDemand" id="add_errDemand"><img src="images/alert.png" style="width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;" />Une erreur est survenue : "'.$addResult.'".</div>';
 		?>
 
 					<div style="display: flex;justify-content: space-evenly;">	

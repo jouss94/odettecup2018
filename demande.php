@@ -5,7 +5,7 @@ session_start();
 	<head>
 		<title>Demande</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/icon-france.png" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/form.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -20,17 +20,15 @@ session_start();
 				<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		<script src="./material_design/material.js"></script>
 		
 	</head>
 
 	<body>
-		<?php include("background.php");?>
 
 		<div class="padding20">
-		<div class="loginform-in" style="background:white">
-		<img src="images/coupe-du-monde-russie-2018-bandeau.png" style="width: 500px;"/>
-		<h1 style="margin-top: 0;">Formulaire d'inscription</h1>
+		<div class="loginform-in">
+		<img src="images/UEFA_Euro_2020_logo_4.png" style="width: 140px;margin: 10px;"/>
+		<h3 style="margin-top: 0;color:#FFF">Formulaire d'inscription</h1>
 		<div class="Retour">
 			<button class="Retour  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonRouge">
 				Retour

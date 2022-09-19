@@ -44,7 +44,7 @@
 									<span >Vous devez modifier vos informations de profil </span>
 								</td>
 								<td class='detailTitreUpdateRed'>
-									<span class='detailTitreUpdateRedSpan' id='modifProfilDetails'> mettre à jour &rarr; </span>
+									<span class='detailTitreUpdateRedSpan' id='modifProfilDetails'> Clique ici pour mettre à jour &rarr; </span>
 								</td>
 							</tr>
 
@@ -56,7 +56,7 @@
 									<span >Vous devez entrer vos pronostics pour les matches à venir </span>
 								</td>
 								<td class='detailTitreUpdateRed'>
-									<span class='detailTitreUpdateRedSpan' id='modifMatchDetails'> mettre à jour &rarr; </span>
+									<span class='detailTitreUpdateRedSpan' id='modifMatchDetails'> Clique ici pour mettre à jour &rarr; </span>
 								</td>
 							</tr>
 
@@ -69,7 +69,7 @@
 									<span >Vous devez entrer vos pronostics bonus </span>
 								</td>
 								<td class='detailTitreUpdateRed'>
-									<span class='detailTitreUpdateRedSpan' id='modifBonusDetails'> mettre à jour &rarr; </span>
+									<span class='detailTitreUpdateRedSpan' id='modifBonusDetails'> Clique ici pour mettre à jour &rarr; </span>
 								</td>
 							</tr>
 

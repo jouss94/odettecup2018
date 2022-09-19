@@ -10,7 +10,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 	<head>
 		<title>Accueil</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/icon-france.png" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -22,10 +22,10 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 	</head>
 	
 	<?php include("init.php");?>
-	<?php include("background.php");?>
-
+	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in">

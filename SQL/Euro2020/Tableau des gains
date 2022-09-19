@@ -1,0 +1,13 @@
+22 joueurs
+21 joueurs à 20€ = 420€
+1 joueur à 10€ = 10€
+
+430€
+
+4eme 20€
+3e = 410 * 0.1 = 41€
+2e = 410 * 0.25 = 103€
+1e = 410 * 0.65 = 266€
+
+
+UPDATE `matches` SET `modif` = '2' WHERE `matches`.`modif` = 1;

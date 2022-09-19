@@ -1,0 +1,252 @@
+.chat-popup {
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+#header-display {
+    border-radius: 20px 20px 0px 0px;
+
+    background-color: #ffffff99;
+    display: flex;
+    justify-content: center;
+    border: #55adba 3px solid;    
+    border-bottom: 1px solid #e6e6e6;
+    height: 60px;
+}
+
+.small {
+    width: 200px;
+    height: 60px;
+    z-index: 100;
+    position: fixed;
+    bottom: 0px;
+    left: 50px;
+    cursor: pointer;
+}
+
+.normal {    
+    width: 500px;
+    z-index: 100;
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    top: 30%;
+    cursor: default;
+}
+
+.big {
+    z-index: 100;
+    position: fixed;
+    top: 60px;
+    bottom: 60px;
+    left: 60px;
+    right: 60px;
+    cursor: default;
+}
+
+
+.header-display-icon {
+    width: 54px;
+    background-image: url("../images/icon/chat_24x24.png");
+    background-repeat:no-repeat;
+    background-position:20 center;
+}
+
+.icon {
+    cursor: pointer;
+    z-index: 101;    
+    width: 20px;
+    height: 60px;
+    background-size: 20px;
+}
+
+#icon-openbig {
+    position: absolute;
+    right: 60px;
+    background-image: url(../images/icon/fullscreen_24x24.png);
+    background-repeat: no-repeat;
+    background-position: center 20px;
+    display: none;
+}
+
+#icon-closebig {
+    position: absolute;
+    right: 60px;
+    background-image: url(../images/icon/fullscreen_exit_alt_24x24.png);
+    background-repeat: no-repeat;
+    background-position: center 20px;
+    display: none;
+}
+
+
+#icon-close {
+    position: absolute;
+    right: 15px;
+    background-image: url(../images/icon/x_21x21.png);
+    background-repeat: no-repeat;
+    background-position: center 20px;
+    display: none;
+}
+
+/* #icon-close:hover {
+    background-image: url(../images/icon/x_11x11_white.png);
+} */
+
+.icon-show {
+    display: block !important;
+}
+
+
+
+.header-display-text {
+    width: 76px;
+    font-weight: bold;
+    color: #000;
+    margin: auto 0;
+    font-size: 20px;
+}
+
+#body-display {
+    border-radius: 0px 0px 20px 20px;
+
+    background-color: #ffffff99;
+    display: flex;
+    justify-content: center;
+    border: #55adba 3px solid;
+    border-top: none;
+    height: calc(100% - 60px);
+}
+
+.small-body {
+    display: none !important;
+}
+.normal-body {
+    display: flex;
+}
+.big-body {
+    display: flex;
+}
+
+.body-display-content {
+    width: 100%;
+}
+
+
+/**
+ * Faisons du beau, faisons du gracieux. 
+ */
+
+/**
+ * Typographies Google Maggle !
+ */
+ 
+
+ .messages {
+   background-color: #ffffff75;
+   padding: 0.5em;
+   height: 100%;
+   overflow: auto;
+ }
+ 
+ .message {
+   color: #000;
+   padding: 0.3em;
+   display: flex;
+ }
+
+ .owner {
+    flex-direction: row-reverse;
+ }
+ 
+ .date {
+    font-size: 11px;
+ }
+
+ .author {
+    font-size: 11px;
+  }
+  
+ .chat-form {
+    display: flex;
+    margin-top: 1em;
+    justify-content: center;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    margin: auto;
+    padding: 10px;
+ }
+ 
+ 
+ #author {
+   width: 20%;
+ }
+ 
+ #content {
+   width: 60%;
+   border-radius: 20px;
+   border: none;
+   margin-right: 10px;
+   padding: 0 20px;
+ }
+
+ #content:focus {
+    outline: none;
+  }
+ 
+#submit {
+    width: 20%;
+    border: 1px solid #018498;
+    border-radius: 20px;
+    background: #55adba;
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    padding-left: 12px;
+    max-width: 120px;
+}
+
+#submit:focus {
+    outline: none;
+}
+
+#submit:disabled {
+  background: #ccc;
+  border: 1px solid #FFF;
+  cursor: not-allowed;
+}  
+ 
+
+ .message-photo {
+    align-items: center;
+    display: flex;
+    width: 45px;
+    flex-direction: column-reverse;
+ }
+
+ .message-content {
+    padding: 0 10px;
+    width: 65%;
+}
+
+.content {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.message-date {
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.chat {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-inputs {
+    height: 60px;
+}

@@ -76,7 +76,7 @@ function addMatches($con)
 	<head>
 		<title>Modifier matches</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/icon-france.png" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/formMatch.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
@@ -92,15 +92,15 @@ function addMatches($con)
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		<script src="./material_design/material.js"></script>
+		
 
 	</head>
 	
 	<?php include("init.php");?>
-	<?php include("background.php");?>
-
+	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">
@@ -115,7 +115,7 @@ function addMatches($con)
 			{
 
 				echo "<div class='valideDemand' id='add_valideDemand'><img src='images/check.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Votre demande a été enregistrée.
-			</br></br> Merci pour cette enregistrement, vous pouvez toujours modifier vos pronostics jusqu'au 29 Juin à 00:00 dans la rubrique Profil</div>";
+			</br></br> Merci pour cette enregistrement, vous pouvez toujours modifier vos pronostics jusqu'au 1er Juin dans la rubrique Profil</div>";
 				changeEtat($con);
 			}
 			else

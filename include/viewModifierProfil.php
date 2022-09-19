@@ -11,7 +11,7 @@
 	parse_str($_SERVER["QUERY_STRING"], $query);
 	$idProfil = $query['id'];
 
-		echo '<div class="profilInformation floaleft">';
+		echo '<div class="profilInformation floaleft width100">';
 
 
 	$qry = "SELECT * FROM joueurs WHERE id_joueur='".$idProfil."';";
@@ -29,6 +29,7 @@
 		$telephone = utf8_encode_function($row["telephone"]);
 		$password = utf8_encode_function($row["password"]);
 		$description = utf8_encode_function($row["description"]);
+		$color = $row["color"] != null ? $row["color"] : "#7bbfc9";
 
 
 		echo '
@@ -150,6 +151,14 @@
 				echo '</td>';
 				echo '<td class="secondColumnProfilModifier"> ';
 					echo '<input type="file" name="imageProfil" id="imageProfil" />';
+				echo '</td>';
+			echo '</tr>';
+
+			echo '<tr>';
+				echo '<td class="fisrtColumnProfilModifier"> Couleur de votre profil';
+				echo '</td>';
+				echo '<td class="secondColumnProfilModifier"> ';
+					echo '<input type="color" name="colorProfil" id="colorProfil" style="width: 50px;height: 50px;" value="',$color,'" />';
 				echo '</td>';
 			echo '</tr>';
 

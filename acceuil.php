@@ -10,7 +10,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 	<head>
 		<title>Accueil</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/icon-france.png" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -23,19 +23,21 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		<script src="./material_design/material.js"></script>
 	</head>
 	
 	<?php include("init.php");?>
-	<?php include("background.php");?>
+	
 
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+
+		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
+
 		<div class="padding20">
 			<div class="loginform-in">
 
-				<div style="width:100%;padding-bottom: 20px;background:white">
+				<div style="width:100%;padding-bottom: 20px">
 						<?php include("include/updateProfil.php");?>
 
 						<div class="allAcceuil">
@@ -78,7 +80,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 						<table class="tableAcceuil">
 							<tr>
 								<td >
-									<div class="tableAcceuilClassement">
+									<div class="tableAcceuilClassement"> 
 										<div class="classement-card-event mdl-card classement-general mdl-shadow--2dp">
 												<div class="mdl-card__title mdl-card--expand">
 													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
@@ -87,59 +89,17 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 												</div>
 												<div class="mdl-card__actions mdl-card--border">
 													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=General" >
-														Général
+														Classement
 													</a>
 													<div class="mdl-layout-spacer"></div>
 													<i class="material-icons">poll</i>
 												</div>
 											</div>
-											<div class="classement-card-event mdl-card classement-equipe mdl-shadow--2dp">
-												<div class="mdl-card__title mdl-card--expand">
-													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
-														<?php include("include/viewHomeClassementEquipe.php");?>
-													</div>
-												</div>
-												<div class="mdl-card__actions mdl-card--border">
-													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Equipe" >
-														Equipe
-													</a>
-													<div class="mdl-layout-spacer"></div>
-													<i class="material-icons">poll</i>
-												</div>
-											</div>
-											<div class="classement-card-event mdl-card classement-femme mdl-shadow--2dp">
-												<div class="mdl-card__title mdl-card--expand">
-													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
-														<?php include("include/viewHomeClassementFemme.php");?>
-													</div>
-												</div>
-												<div class="mdl-card__actions mdl-card--border">
-													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Femme" >
-														Femme
-													</a>
-													<div class="mdl-layout-spacer"></div>
-													<i class="material-icons">poll</i>
-												</div>
-											</div>
-											<div class="classement-card-event mdl-card classement-montagne mdl-shadow--2dp">
-												<div class="mdl-card__title mdl-card--expand">
-													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
-														<?php include("include/viewHomeClassementMontagne.php");?>
-													</div>
-												</div>
-												<div class="mdl-card__actions mdl-card--border">
-													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Montagne" >
-														Montagne
-													</a>
-													<div class="mdl-layout-spacer"></div>
-													<i class="material-icons">poll</i>
-												</div>
-											</div>
-											</div>
+										</div>
 								</td>
 							</tr>
 						</table>
-						<table class="tableAcceuil">
+						<!-- <table class="tableAcceuil">
 							<tr>
 								<td>
 									<div class="tableAcceuilBas">
@@ -151,7 +111,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 													</div>
 												<div class="mdl-card__actions mdl-card--border">
 													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="statistics.php?ranking=General" >
-														Voir les statisiques et historiques de la compétition.
+														Voir les statistiques et historiques de la compétition.
 													</a>
 													<div class="mdl-layout-spacer"></div>
 													<i class="material-icons">supervisor_account</i>
@@ -160,7 +120,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 									</div>
 								</td>
 							</tr>
-						</table>
+						</table> -->
 						<table class="tableAcceuil">
 							<tr>
 								<td>

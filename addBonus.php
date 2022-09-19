@@ -20,7 +20,6 @@ function changeEtat($con)
 
 function addBonus($con)
 {
-
 	$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
@@ -42,12 +41,20 @@ function addBonus($con)
 	$min_first = intval($_POST[ 'MinPronosFirst' ]);
 	$min_last = intval($_POST[ 'MinPronosLast' ]);
 	$total_but = intval($_POST[ 'totalBut' ]);
-	$best_scorer = addslashes(utf8_decode_function ($_POST[ 'InputTextBestScorer' ]));
+	// $best_scorer = addslashes(utf8_decode_function ($_POST[ 'InputTextBestScorer' ]));
 
-	$qry = " INSERT INTO pronostics_bonus (id_membre, team_winner_id,
-											min_first, min_last, total_but, best_scorer) 
-										VALUES ($id, $team_winner_id,
-												$min_first, $min_last, $total_but, '$best_scorer');";
+	$qry = " INSERT INTO pronostics_bonus (id_membre
+											, team_winner_id
+											, total_but
+											, min_first
+											, min_last
+										) 
+										VALUES ($id, 
+												$team_winner_id,
+												$total_but,
+												$min_first,
+												$min_last
+											);";
 	$result = mysqli_query($con, $qry);
 	if (!$result) {
 		$return = false;
@@ -64,7 +71,7 @@ function addBonus($con)
 	<head>
 		<title>Modifier bonus</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/icon-france.png" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/formMatch.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
@@ -80,14 +87,13 @@ function addBonus($con)
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		<script src="./material_design/material.js"></script>
 	</head>
 	
 	<?php include("init.php");?>
-	<?php include("background.php");?>
-
+	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">

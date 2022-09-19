@@ -22,7 +22,6 @@
 <th >Surnom</th>
 <th class="titleSmallTexte">Ponos</th>
 <th class="titleSmallTexte">Perfect</th>
-<th class="titleSmallTexte">Correct+</th>
 <th class="titleSmallTexte">Correct</th>
 <th class="titleSmallTexte">Inverse</th>
 <th class="titleSmallTexte">Echec</th>
@@ -50,10 +49,10 @@
 		$total = $row["total"];
 
 			if ($i % 2 == 0) {
-				echo '	<tr class="backgroundTab2Jaune">';
+				echo '	<tr class="backgroundTab2">';
 			}
 			else {
-				echo '	<tr class="backgroundTab1Jaune">';
+				echo '	<tr class="backgroundTab1">';
 			}
 
 
@@ -71,9 +70,6 @@
 				'</td>
 				<td class="ClassementNbPerf">',
 					$nb_perf,
-				'</td>
-				<td class="ClassementCorrectp">',
-					$nb_correct_plus,
 				'</td>
 				<td class="ClassementCorrect">',
 					$nb_correct,

@@ -5,7 +5,7 @@ session_start();
 	<head>
 		<title>Accueil</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<link rel="icon" type="image/png" href="images/icon-france.png" />
+		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 		<script src="javascript/jquery-2.2.3.min.js"></script>
@@ -15,19 +15,18 @@ session_start();
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		<script src="./material_design/material.js"></script>
+		<link rel="icon" href="images/favicon.png" />
 	</head>
 		
 	<?php include("initReverse.php");?>
 
 	<body>
 
-		<?php include("background.php");?>
-		
+	
 		<div class="padding20">
 		<div class="loginform-in loginform-in-acceuil">
 		<fieldset>	
-			<img src="images/Logo-index-odette-cup-2018-2.png" style="width: 650px;margin: 15px;"/>
+			<img src="images/UEFA_Euro_2020_logo_4.png" style="width: 350px;margin: 20px;"/>
 		
 		<div class="err" id="add_err"></div>
 		<div class="load" id="add_load"></div>
