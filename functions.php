@@ -8,19 +8,15 @@ function erreur($err='')
 
 function utf8_encode_function($str)
 {
-
     return utf8_encode($str);
     return ($str);
 }
 
 function utf8_decode_function($str)
 {
-
     return utf8_decode($str);
     return ($str);
 }
-
-
 
 function move_avatar($avatar)
 {
@@ -34,16 +30,22 @@ function move_avatar($avatar)
 
 function verif_auth($auth_necessaire)
 {
-$level=(isset($_SESSION['level']))?$_SESSION['level']:1;
-return ($auth_necessaire <= intval($level));
+    $level=(isset($_SESSION['level']))?$_SESSION['level']:1;
+    return ($auth_necessaire <= intval($level));
 }
 
-function sanitize_string($str, $con) {
-	if (get_magic_quotes_gpc()) {
+function sanitize_string($str, $con) 
+{
+	if (get_magic_quotes_gpc()) 
+    {
 		$sanitize = mysqli_real_escape_string($con, stripslashes($str));	 
-	} else {
-		$sanitize = mysqli_real_escape_string($con, $str);	
 	} 
+    else 
+    {
+		$sanitize = mysqli_real_escape_string($con, $str);	
+	}
+
 	return $sanitize;
 }
+
 ?>

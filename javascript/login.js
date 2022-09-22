@@ -16,16 +16,16 @@ $(document).ready(function(){
 				//$("#add_err").html("right username or password");
 				window.location="acceuil.php";
 			}
-			else    {
-			$("#add_load").css('display', 'none', 'important');
-			$("#add_err").css('display', 'block', 'important');
-			 $("#add_err").html("<img src='images/alert.png' style='width: 40px;' /><div>Mauvais nom d'utilisateur ou mot de passe.</div>");
+			else {
+				$("#add_load").css('display', 'none', 'important');
+				$("#add_err").css('display', 'block', 'important');
+				$("#add_err").html("<img src='images/alert.png' style='width: 40px;' /><div>Mauvais nom d'utilisateur ou mot de passe.</div>");
 			}
 		   },
 		   beforeSend:function()
 		   {
-			$("#add_load").css('display', 'block', 'important');
-			$("#add_load").html("<img src='images/ajax-loader.gif' /> <br/>chargement...")
+				$("#add_load").css('display', 'block', 'important');
+				$("#add_load").html("<img src='images/ajax-loader.gif' /> <br/>chargement...")
 		   }
 		  });
 		return false;

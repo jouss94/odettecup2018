@@ -11,7 +11,7 @@ $pWord = sanitize_string($_POST['pwd'], $con);
 $qry = "SELECT id_joueur, surnom, oauth FROM joueurs WHERE surnom='".$uName."' AND password='".$pWord."';";
 $res = mysqli_query($con, $qry);
 $num_row = mysqli_num_rows($res);
-$row=mysqli_fetch_assoc($res);
+$row= mysqli_fetch_assoc($res);
 if( $num_row == 1 ) {
 	echo 'true';
 	$_SESSION['uName'] = $row['surnom'];
