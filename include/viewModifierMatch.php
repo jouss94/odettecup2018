@@ -130,7 +130,7 @@
 			else
 				echo '</table>';
 
-			echo '<span class="profilPronosSousTitre"> ', $group ,'</span>';
+			echo '<span class="profilPronosSousTitre"> Groupe ', $group ,'</span>';
 
 			echo '<table class="tableauPronosForm">';
 

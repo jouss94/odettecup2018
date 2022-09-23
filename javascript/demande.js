@@ -4,15 +4,12 @@ $(document).ready(function () {
 		document.location = 'index.php';
 		return false;
 	});
-	$("#buttonValidationSubmit").click(function () {
-	});
 
 });
 
 $(function () {
 	$('form').validVal({
 		customValidations: {
-
 			'serverside-validation': function (v) {
 				var result = true;
 				$.ajax({
@@ -50,7 +47,4 @@ $(function () {
 	$("#payement").selectmenu({
 		width: 200
 	});
-
-
-
 });

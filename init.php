@@ -11,9 +11,5 @@ if ($id == 0) //On est dans la page de formulaire
 {
 	header('Location: index.php'); 
 }
-else
-{
-
-}
 
 ?>

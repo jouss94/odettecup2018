@@ -11,12 +11,10 @@ function changeEtat($con)
 {
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 
-	$qry = " UPDATE  joueurs SET modif_bonus = 1 
-							WHERE id_joueur = $id";
+	$qry = " UPDATE  joueurs SET modif_bonus = 1 WHERE id_joueur = $id";
+
 	$result = mysqli_query($con, $qry);
-
 }
-
 
 function addBonus($con)
 {
@@ -24,17 +22,16 @@ function addBonus($con)
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
-	$qry = "";
-	
 	$qry = " DELETE FROM pronostics_bonus WHERE id_membre = $id;";
 	$result = mysqli_query($con, $qry);
-		if (!$result) {
-			$return = false;
-			return false;
-		}
-		else
-			$return = true;
-
+	if (!$result) 
+	{
+		$return = false;
+	}
+	else 
+	{
+		$return = true;
+	}
 
 	$return = false;
 	$team_winner_id = intval($_POST[ 'equipeWin' ]);
@@ -43,19 +40,10 @@ function addBonus($con)
 	$total_but = intval($_POST[ 'totalBut' ]);
 	// $best_scorer = addslashes(utf8_decode_function ($_POST[ 'InputTextBestScorer' ]));
 
-	$qry = " INSERT INTO pronostics_bonus (id_membre
-											, team_winner_id
-											, total_but
-											, min_first
-											, min_last
-										) 
-										VALUES ($id, 
-												$team_winner_id,
-												$total_but,
-												$min_first,
-												$min_last
-											);";
+	$qry = " INSERT INTO pronostics_bonus (id_membre, team_winner_id, total_but, min_first, min_last) 
+										VALUES ($id, $team_winner_id, $total_but, $min_first, $min_last);";
 	$result = mysqli_query($con, $qry);
+
 	if (!$result) {
 		$return = false;
 		return false;
@@ -103,18 +91,19 @@ function addBonus($con)
 				<div style="width:100%;height:450px">
 					<div style="width:100%;height:50px"></div>
 
-		<?php
-			if (addBonus($con))
-			{
-
-				echo "<div class='valideDemand' id='add_valideDemand'><img src='images/check.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Votre demande a été enregistrée.
-					</br></br> Merci pour cette enregistrement, vous pouvez toujours modifier vos pronostics jusqu'au 1er Juin dans la rubrique Profil
-					</div>";
-					changeEtat($con);
-			}
-				else
-				echo "<div class='errorDemand' id='add_errDemand'><img src='images/alert.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Une erreur est survenue.</div>";
-		?>
+					<?php
+						if (addBonus($con))
+						{
+							echo "<div class='valideDemand' id='add_valideDemand'><img src='images/check.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Votre demande a été enregistrée.
+								</br></br> Merci pour cette enregistrement, vous pouvez toujours modifier vos pronostics jusqu'au 1er Juin dans la rubrique Profil
+								</div>";
+								changeEtat($con);
+						}
+						else
+						{
+							echo "<div class='errorDemand' id='add_errDemand'><img src='images/alert.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Une erreur est survenue.</div>";
+						}
+					?>
 
 					<div style="display: flex;justify-content: space-evenly;">	
 						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourProfil">
@@ -126,8 +115,7 @@ function addBonus($con)
 						</button>
 					</div>
 				</div>
-
 			</div>
 		</div>
-</body>
+	</body>
 </html>

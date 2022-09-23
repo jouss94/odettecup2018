@@ -30,12 +30,9 @@ if ($id != $idProfil)
 		<script src="javascript/profil.js"></script>
 		<script src="javascript/pronosForm.js"></script>
 		<script src="javascript/jquery.validVal.min.js"></script>
-
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		
-
 	</head>
 	
 	<?php include("init.php");?>
@@ -49,8 +46,7 @@ if ($id != $idProfil)
 				<div style="width:100%;height:3000px;display:flex">
 					<?php include("include/viewModifierMatch.php");?> 					
 				</div>
-
 			</div>
 		</div>
-</body>
+	</body>
 </html>

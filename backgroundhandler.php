@@ -1,5 +1,7 @@
 <?php
 
+/// TODO : CE CODE EST MORT ?!!!
+
 /**
  * Connexion simple à la base de données via PDO !
  */

@@ -25,8 +25,6 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		
-
 	</head>
 	
 	<?php include("init.php");?>
@@ -37,22 +35,16 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">
-
 				<div style="width:100%;height:800px;">
-
-				<span class="listeJoueurTitre">Classement</span>
-
-				<span class="RetourSpan">
+					<span class="listeJoueurTitre">Classement</span>
+					<span class="RetourSpan">
 						<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">
 							Retour
 						</button>
 					</span>
-
-						<?php include("include/viewClassement.php");?>
-
+					<?php include("include/viewClassement.php");?>
 				</div>
-
 			</div>
 		</div>
-</body>
+	</body>
 </html>

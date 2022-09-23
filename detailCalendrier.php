@@ -31,20 +31,16 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<div class="padding20">
 			<div class="loginform-in">
 
-				<div style="width:100%;    padding-bottom: 20px;		">
-
+				<div style="width:100%;padding-bottom: 20px;">
 					<span class="listeJoueurTitre">Calendrier</span>
-	
 					<span class="RetourSpan">
 						<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">
 							Retour
 						</button>
 					</span>
-						<?php include("include/viewCalendrier.php");?>
-
+					<?php include("include/viewCalendrier.php");?>
 				</div>
-
 			</div>
 		</div>
-</body>
+	</body>
 </html>

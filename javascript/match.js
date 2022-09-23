@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+	// TODO : HORRIBLE !!!
 	for (id = 0; id < 100; id++)
 	{
 		element = document.getElementById("detailMatche" + id);
@@ -13,11 +14,9 @@ $(document).ready(function(){
 				 	return false;
 			});
 		}
-
 	}
 
-
-		 $(".RetourSpan").click(function(){
+	$(".RetourSpan").click(function() {
 		 	document.location = 'calendrier.php';
 		 	return false;
 	});

@@ -28,7 +28,6 @@
 		public $id_joueur;
 		public $name;
 		public $hidden;
-
 		public $data;
 
 		public function __construct() {
@@ -61,10 +60,12 @@
 		{
 			$name = $row["nom"];
 			if ($currentName != $name) {
-				if ($first){
+				if ($first)
+				{
 					$first = false;
 				}
-				else {
+				else 
+				{
 					array_push($data,  $myData);
 				}
 
@@ -81,7 +82,6 @@
 		}
 		
 		array_push($data,  $myData);
-
 	}
 	else
 	{
@@ -100,10 +100,12 @@
 		{
 			$name = $row["surnom"];
 			if ($currentName != $name) {
-				if ($first){
+				if ($first)
+				{
 					$first = false;
 				}
-				else {
+				else 
+				{
 					array_push($data,  $myData);
 				}
 
@@ -119,8 +121,7 @@
 			$currentName = $name;
 		}
 		
-		array_push($data,  $myData);
-		
+		array_push($data,  $myData);		
 	}
 
 	echo json_encode($data, JSON_PRETTY_PRINT);

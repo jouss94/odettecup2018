@@ -24,16 +24,9 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<script src="javascript/classement.js"></script>
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
-		<link rel="stylesheet" href="./material_design/font.css">
-		
+		<link rel="stylesheet" href="./material_design/font.css">		
 		<script src="./chartjs/moment.js"></script>
 		<script src="./chartjs/Chart.min.js"></script>
-
-	<script>	
-
-		</script>
-	
-
 	</head>
 	
 	<?php include("init.php");?>
@@ -44,14 +37,10 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">
-
 				<div style="width:100%;">
-
 						<?php include("include/viewStatistics.php");?>
-
 				</div>
-
 			</div>
 		</div>
-</body>
+	</body>
 </html>

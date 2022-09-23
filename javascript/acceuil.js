@@ -1,21 +1,21 @@
 $(document).ready(function(){
-		 $("#deconnect").click(function(){
-		 	document.location = 'deconnect.php';
+	$("#deconnect").click(function() {
+		document.location = 'deconnect.php';
 	});
-		 $("#detailReglement").click(function(){
-		 	document.location = 'reglement.php';
+	$("#detailReglement").click(function() {
+		document.location = 'reglement.php';
 	});
-		 $("#detailListeJoueur").click(function(){
-		 	document.location = 'listeJoueur.php';
+	$("#detailListeJoueur").click(function() {
+		document.location = 'listeJoueur.php';
 	});
-		 $("#detailCalendrier").click(function(){
-		 	document.location = 'calendrier.php';
+	$("#detailCalendrier").click(function() {
+		document.location = 'calendrier.php';
 	});
-		 $("#detailCalendrier2").click(function(){
-		 	document.location = 'calendrier.php';
+	$("#detailCalendrier2").click(function() {
+		document.location = 'calendrier.php';
 	});
 
-	$(".clickClassement").click(function(event){
+	$(".clickClassement").click(function(event) {
 		var classement = event.target.id;
 		if (classement == null || classement == '' || classement == undefined)
 		{
@@ -24,18 +24,17 @@ $(document).ready(function(){
 		document.location = 'classement.php?ranking=' + classement;
 	});
 
-	$(".clickJoueur").click(function(event){
+	$(".clickJoueur").click(function(event) {
 		idLocal = event.target.id;
 		idLocal = idLocal.substring(10);					
 		document.location = 'profil.php?id=' + idLocal;
 		return false;
 	});
 
-	$(".clickEquipe").click(function(event){
+	$(".clickEquipe").click(function(event) {
 		idLocal = event.target.id;
 		idLocal = idLocal.substring(10);					
 		document.location = 'equipes.php?id=' + idLocal;
 		return false;
 	});
-	
 });

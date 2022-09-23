@@ -14,28 +14,28 @@ function changeEtat($con)
 	$qry = " UPDATE  joueurs SET modif_match = 1 
 							WHERE id_joueur = $id";
 	$result = mysqli_query($con, $qry);
-
 }
 
 function addMatches($con)
 {
-
 	$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
 	$firstID = intval($_POST[ 'firstid' ]);
 	$lastID = intval($_POST[ 'lastid' ]);
-	$qry = "";
 
 	$qry = " DELETE FROM pronostics WHERE id_membre = $id and id_match >= $firstID AND id_match <= $lastID;";
 	$result = mysqli_query($con, $qry);
-		if (!$result) {
-			$return = false;
-			return false;
-		}
-		else
-			$return = true;
+	if (!$result) 
+	{
+		$return = false;
+		return false;
+	}
+	else 
+	{
+		$return = true;
+	}
 
 
 	$return = false;

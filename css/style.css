@@ -1094,11 +1094,13 @@ img.logoEquipeBig {
 img.logoEquipe {
     width: 34px;
     margin: 5px;
+    border: 1px solid #ffffff;
 }
 
 img.logoEquipeSmall {
     width: 30px;
     margin: 5px;
+    border: 1px solid #ffffff;
 }
 
 

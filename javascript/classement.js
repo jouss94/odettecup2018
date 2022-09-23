@@ -1,13 +1,12 @@
 $(document).ready(function(){
-	$(".clickJoueur").click(function(event){
+	$(".clickJoueur").click(function(event) {
 		idLocal = event.target.id;
 		idLocal = idLocal.substring(10);					
 		document.location = 'profil.php?id=' + idLocal;
 		return false;
     });
     
-
-    $(".clickEquipe").click(function(event){
+    $(".clickEquipe").click(function(event) {
 		idLocal = event.target.id;
 		idLocal = idLocal.substring(10);					
 		document.location = 'equipes.php?id=' + idLocal;

@@ -36,21 +36,16 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="blackougedefault"  style="text-align:center">
-
 				<div style="width:100%;height:800px;">
-
 					<span class="listeJoueurTitre"></span>
-	
 						<?php include("include/viewEquipes.php");?>
 					<span class="RetourSpan">
 						<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">
 							Retour
 						</button>
 					</span>
-
 				</div>
-
 			</div>
 		</div>
-</body>
+	</body>
 </html>

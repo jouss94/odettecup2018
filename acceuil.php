@@ -29,18 +29,17 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 	
 
 	<body>
-		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+		<div style="display:none" id="idPhp" name='<?php echo $id ?>'></div>
 
 		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 
 		<div class="padding20">
 			<div class="loginform-in">
-
 				<div style="width:100%;padding-bottom: 20px">
-						<?php include("include/updateProfil.php");?>
-
-						<div class="allAcceuil">
+				
+					<?php include("include/updateProfil.php");?>
+					<div class="allAcceuil">
 						<table class="tableAcceuil">
 							<tr >
 								<td>
@@ -82,20 +81,20 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 								<td >
 									<div class="tableAcceuilClassement"> 
 										<div class="classement-card-event mdl-card classement-general mdl-shadow--2dp">
-												<div class="mdl-card__title mdl-card--expand">
-													<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
-														<?php include("include/viewHomeClassementGeneral.php");?>
-													</div>
-												</div>
-												<div class="mdl-card__actions mdl-card--border">
-													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=General" >
-														Classement
-													</a>
-													<div class="mdl-layout-spacer"></div>
-													<i class="material-icons">poll</i>
+											<div class="mdl-card__title mdl-card--expand">
+												<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
+													<?php include("include/viewHomeClassementGeneral.php");?>
 												</div>
 											</div>
+											<div class="mdl-card__actions mdl-card--border">
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=General" >
+													Classement
+												</a>
+												<div class="mdl-layout-spacer"></div>
+												<i class="material-icons">poll</i>
+											</div>
 										</div>
+									</div>
 								</td>
 							</tr>
 						</table>
@@ -125,40 +124,40 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 							<tr>
 								<td>
 									<div class="tableAcceuilBas">
-											<div class="information-card-event mdl-card mdl-shadow--2dp">
-												<div class="mdl-card__title mdl-card--expand">
-													<span class="TitreTableauBas">
-														Liste des Joueurs
-													</span>
-													</div>
-												<div class="mdl-card__actions mdl-card--border">
-													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="listeJoueur.php" >
-														Voir la liste des joueurs
-													</a>
-													<div class="mdl-layout-spacer"></div>
-													<i class="material-icons">supervisor_account</i>
-												</div>
+										<div class="information-card-event mdl-card mdl-shadow--2dp">
+											<div class="mdl-card__title mdl-card--expand">
+												<span class="TitreTableauBas">
+													Liste des Joueurs
+												</span>
 											</div>
-											<div class="information-card-event mdl-card mdl-shadow--2dp">
-												<div class="mdl-card__title mdl-card--expand">
-													<span class="TitreTableauBas">
-														Règlement
-													</span>
-													</div>
-												<div class="mdl-card__actions mdl-card--border">
-													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="reglement.php" >
-														Voir le Règlement de la compétition
-													</a>
-													<div class="mdl-layout-spacer"></div>
-													<i class="material-icons">gavel</i>
-												</div>
+											<div class="mdl-card__actions mdl-card--border">
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="listeJoueur.php" >
+													Voir la liste des joueurs
+												</a>
+												<div class="mdl-layout-spacer"></div>
+												<i class="material-icons">supervisor_account</i>
+											</div>
+										</div>
+										<div class="information-card-event mdl-card mdl-shadow--2dp">
+											<div class="mdl-card__title mdl-card--expand">
+												<span class="TitreTableauBas">
+													Règlement
+												</span>
+											</div>
+											<div class="mdl-card__actions mdl-card--border">
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="reglement.php" >
+													Voir le Règlement de la compétition
+												</a>
+												<div class="mdl-layout-spacer"></div>
+											<i class="material-icons">gavel</i>
+										</div>
 									</div>
 								</td>
 							</tr>
 						</table>
-						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-</body>
+	</body>
 </html>

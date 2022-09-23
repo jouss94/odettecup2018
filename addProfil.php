@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
-$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
-$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+$lvl = (isset($_SESSION['level']))?(int) $_SESSION['level']:1;
+$id = (isset($_SESSION['id']))?(int) $_SESSION['id']:0;
+$pseudo = (isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
 require_once 'config.php';
 
@@ -19,49 +19,51 @@ function move_image($image)
 
     $dossier = 'images/user/';
     $fichier = basename($_FILES['imageProfil']['name']);
-   	if ($fichier == "" )
-   		return "";
+   	if ($fichier == "" ) 
+	{
+		return "";
+	}
     move_uploaded_file($_FILES['imageProfil']['tmp_name'], $dossier . $fichier);
     return $dossier . $fichier;
 }
 
 function checkFile()
 {
-		if (!empty($_FILES['imageProfil']['size']))
-		    {
-		        //On définit les variables :
-		        $maxsize = 9000000; //Poid de l'image
-		        $maxwidth = 10000; //Largeur de l'image
-		        $maxheight = 10000; //Longueur de l'image
-		        //Liste des extensions valides
-		        $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png', 'bmp' );
-		 
-		        if ($_FILES['imageProfil']['error'] > 0)
-		        {
-		        	return "Erreur lors du tranfsert de l'avatar : ";
-		        }
-		        if ($_FILES['imageProfil']['size'] > $maxsize)
-		        {
-			        return "Le fichier est trop gros :
-			        (<strong>".$_FILES['imageProfil']['size']." Octets</strong>
-			        contre <strong>".$maxsize." Octets</strong>)";
-		        }
-		 
-		        $image_sizes = getimagesize($_FILES['imageProfil']['tmp_name']);
-		        if ($image_sizes[0] > $maxwidth OR $image_sizes[1] > $maxheight)
-		        {
-			        return "Image trop large ou trop longue :
-			        (<strong>".$image_sizes[0]."x".$image_sizes[1]."</strong> contre
-			        <strong>".$maxwidth."x".$maxheight."</strong>)";
-		        }
-		 
-		        $extension_upload = strtolower(substr(  strrchr($_FILES['imageProfil']['name'], '.')  ,1));
-		        if (!in_array($extension_upload,$extensions_valides) )
-		        {
-		        		return "Extension de l'avatar incorrecte";
-		        }
-		    }
-		    return "";
+	if (!empty($_FILES['imageProfil']['size']))
+	{
+		//On définit les variables :
+		$maxsize = 9000000; //Poid de l'image
+		$maxwidth = 10000; //Largeur de l'image
+		$maxheight = 10000; //Longueur de l'image
+		//Liste des extensions valides
+		$extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png', 'bmp' );
+	
+		if ($_FILES['imageProfil']['error'] > 0)
+		{
+			return "Erreur lors du tranfsert de l'avatar : ";
+		}
+		if ($_FILES['imageProfil']['size'] > $maxsize)
+		{
+			return "Le fichier est trop gros :
+			(<strong>".$_FILES['imageProfil']['size']." Octets</strong>
+			contre <strong>".$maxsize." Octets</strong>)";
+		}
+	
+		$image_sizes = getimagesize($_FILES['imageProfil']['tmp_name']);
+		if ($image_sizes[0] > $maxwidth OR $image_sizes[1] > $maxheight)
+		{
+			return "Image trop large ou trop longue :
+			(<strong>".$image_sizes[0]."x".$image_sizes[1]."</strong> contre
+			<strong>".$maxwidth."x".$maxheight."</strong>)";
+		}
+	
+		$extension_upload = strtolower(substr(  strrchr($_FILES['imageProfil']['name'], '.')  ,1));
+		if (!in_array($extension_upload,$extensions_valides) )
+		{
+			return "Extension de l'avatar incorrecte";
+		}
+	}
+	return "";
 
 }
 
@@ -72,9 +74,7 @@ function changeEtat($con)
 	$qry = " UPDATE  joueurs SET modif_profil = 1 
 							WHERE id_joueur = $id";
 	$result = mysqli_query($con, $qry);
-
 }
-
 
 function addProfil($con)
 {
@@ -84,7 +84,6 @@ function addProfil($con)
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
 	$qry = "";
-	
 
 	$return = "";
 	$prenomProfil = addslashes(utf8_decode_function ($_POST[ 'prenomProfil' ]));
@@ -96,10 +95,11 @@ function addProfil($con)
 	$colorProfil = addslashes($_POST[ 'colorProfil' ]);
 	$departementProfil = intval ($_POST[ 'departementProfil' ]);
 
-
  	$fileResult = checkFile();
- 	if ($fileResult != "")
- 		return $fileResult;
+ 	if ($fileResult != "") 
+	{
+		return $fileResult;
+	}
 
  	$filename=move_image($_FILES['imageProfil']);
 		                
@@ -148,37 +148,32 @@ function addProfil($con)
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-		
-
 	</head>
 	
 	<?php include("init.php");?>
 	
 	<body>
-		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+		<div style="display:none" id="idPhp" name='<?php echo $id ?>'></div>
 		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">
-
-
-
 				<div style="width:100%;height:450px">
 					<div style="width:100%;height:50px"></div>
 
-		<?php
-			$addResult = addProfil($con);
-			if ($addResult == "")
-			{
+					<?php
+						$addResult = addProfil($con);
+						if ($addResult == "")
+						{
 
-				echo "<div class='valideDemand' id='add_valideDemand'><img src='images/check.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Votre Profil a été modifié.
-					</br></br> Merci pour cette enregistrement, vous pouvez à tout moment modifier votre profil.
-					</div>";
-				changeEtat($con);
-			}
-			else
-				echo '<div class="errorDemand" id="add_errDemand"><img src="images/alert.png" style="width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;" />Une erreur est survenue : "'.$addResult.'".</div>';
-		?>
+							echo "<div class='valideDemand' id='add_valideDemand'><img src='images/check.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Votre Profil a été modifié.
+								</br></br> Merci pour cette enregistrement, vous pouvez à tout moment modifier votre profil.
+								</div>";
+							changeEtat($con);
+						}
+						else
+							echo '<div class="errorDemand" id="add_errDemand"><img src="images/alert.png" style="width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;" />Une erreur est survenue : "'.$addResult.'".</div>';
+					?>
 
 					<div style="display: flex;justify-content: space-evenly;">	
 						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourProfil">
@@ -190,8 +185,7 @@ function addProfil($con)
 						</button>
 					</div>
 				</div>
-
 			</div>
 		</div>
-</body>
+	</body>
 </html>

@@ -30,26 +30,21 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 	<?php include("init.php");?>
 	
 	<body>
-		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
+		<div style="display:none" id="idPhp" name='<?php echo $id ?>'></div>
 		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
-			<div class="loginform-in  blackougedefault">
-
-				<div style="width:100%;    padding-bottom: 30px;">
-
+			<div class="loginform-in blackougedefault">
+				<div style="width:100%;padding-bottom: 30px;">
 					<span class="listeJoueurTitre">Calendrier</span>
-	
 					<span class="RetourSpan">
 						<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">
 							Retour
 						</button>
 					</span>
 						<?php include("include/viewCalendrier.php");?>
-
 				</div>
-
 			</div>
 		</div>
-</body>
+	</body>
 </html>

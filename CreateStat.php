@@ -29,10 +29,11 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in">
-
 				<div style="width:100%;height:200px;">
 					<?php include("include/createStat.php");?>
 						Stat OK
 				</div>
-</body>
+			</div>
+		</div>
+	</body>
 </html>

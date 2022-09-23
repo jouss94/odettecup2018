@@ -38,6 +38,7 @@ function getNormalPageState() {
     document.getElementById("widget").classList.remove("big");
     document.getElementById("widget").classList.remove("small");
     document.getElementById("widget").classList.add("normal");
+
     // body
     document.getElementById("body-display").classList.remove("small-body");
     document.getElementById("body-display").classList.remove("big-body");
@@ -74,51 +75,51 @@ function getBigPageState() {
  * Il nous faut une fonction pour récupérer le JSON des
  * messages et les afficher correctement
  */
- function getMessages(timeoutScroll){
-    // 1. Elle doit créer une requête AJAX pour se connecter au serveur, et notamment au fichier backgroundhandler.php
-    const requeteAjax = new XMLHttpRequest();
-    requeteAjax.open("GET", "backgroundhandler.php");
+function getMessages(timeoutScroll){
+  // 1. Elle doit créer une requête AJAX pour se connecter au serveur, et notamment au fichier backgroundhandler.php
+  const requeteAjax = new XMLHttpRequest();
+  requeteAjax.open("GET", "backgroundhandler.php");
 
-    var userId = document.getElementById("idPhp").getAttribute("name");
-  
-    // 2. Quand elle reçoit les données, il faut qu'elle les traite (en exploitant le JSON) et il faut qu'elle affiche ces données au format HTML
-    requeteAjax.onload = function(){
-      const resultat = JSON.parse(requeteAjax.responseText);
-      const html = resultat.reverse().map(function(message){
-        var classMessage = message.id_joueur == userId ? 'message owner': 'message';
+  var userId = document.getElementById("idPhp").getAttribute("name");
 
-        const monthNames = ["janv.", "févr.", "mars", "avr.", "mai", "juin",
-            "juill.", "août", "sept.", "oct.", "nov.", "déc."
-        ];
-        var day = message.created_at.substring(8, 10) + " " + monthNames[message.created_at.substring(6, 7) - 1];
-        var bgColor = message.color;
-        var color = pickTextColorBasedOnBgColorSimple(message.color, "#FFF", "#000");
-        return `
-          <div class="${classMessage}">
-            <div class="message-photo">
-                <img src=${message.image} style="width: 35px;height: 35px;border-radius: 20px; border: 2px solid ${bgColor};" />
-            </div>
-            <div class="message-content">
-                <div class="author">${message.surnom}</div>
-                <div class="content" style="background-color: ${bgColor};color:${color}">${message.content}</div>
-            </div>
-            <div class="message-date">
-                <span class="date">${message.created_at.substring(11, 16)}</span>
-                <span class="date">${day}</span>
-            </div>
+  // 2. Quand elle reçoit les données, il faut qu'elle les traite (en exploitant le JSON) et il faut qu'elle affiche ces données au format HTML
+  requeteAjax.onload = function(){
+    const resultat = JSON.parse(requeteAjax.responseText);
+    const html = resultat.reverse().map(function(message){
+      var classMessage = message.id_joueur == userId ? 'message owner': 'message';
+
+      const monthNames = ["janv.", "févr.", "mars", "avr.", "mai", "juin",
+          "juill.", "août", "sept.", "oct.", "nov.", "déc."
+      ];
+      var day = message.created_at.substring(8, 10) + " " + monthNames[message.created_at.substring(6, 7) - 1];
+      var bgColor = message.color;
+      var color = pickTextColorBasedOnBgColorSimple(message.color, "#FFF", "#000");
+      return `
+        <div class="${classMessage}">
+          <div class="message-photo">
+              <img src=${message.image} style="width: 35px;height: 35px;border-radius: 20px; border: 2px solid ${bgColor};" />
           </div>
-        `
-      }).join('');
-  
-      const messages = document.querySelector('.messages');
-  
-      messages.innerHTML = html;
-      setTimeout(ResetScroll, timeoutScroll);
-    }
-  
-    // 3. On envoie la requête
-    requeteAjax.send();
+          <div class="message-content">
+              <div class="author">${message.surnom}</div>
+              <div class="content" style="background-color: ${bgColor};color:${color}">${message.content}</div>
+          </div>
+          <div class="message-date">
+              <span class="date">${message.created_at.substring(11, 16)}</span>
+              <span class="date">${day}</span>
+          </div>
+        </div>
+      `
+    }).join('');
+
+    const messages = document.querySelector('.messages');
+
+    messages.innerHTML = html;
+    setTimeout(ResetScroll, timeoutScroll);
   }
+
+  // 3. On envoie la requête
+  requeteAjax.send();
+}
 
 function pickTextColorBasedOnBgColorSimple(bgColor, lightColor, darkColor) {
     var color = (bgColor.charAt(0) === '#') ? bgColor.substring(1, 7) : bgColor;
@@ -134,54 +135,54 @@ function ResetScroll() {
     divForScroll.scrollTop = divForScroll.scrollHeight;
 }
 
-  /**
-   * Il nous faut une fonction pour envoyer le nouveau
-   * message au serveur et rafraichir les messages
-   */
+/**
+ * Il nous faut une fonction pour envoyer le nouveau
+ * message au serveur et rafraichir les messages
+ */  
+function postMessage(event){
+  console.log("postMessage");
+  // 1. Elle doit stoper le submit du formulaire
+  event.preventDefault();
+
+  // 2. Elle doit récupérer les données du formulaire
+  const author = document.querySelector('#joueur_id');
+  const content = document.querySelector('#content');
+  $('#submit').attr('disabled', 'disabled');
   
-  function postMessage(event){
-    console.log("postMessage");
-    // 1. Elle doit stoper le submit du formulaire
-    event.preventDefault();
+  // 3. Elle doit conditionner les données
+  const data = new FormData();
+  data.append('joueur_id', author.value);
+  data.append('content', content.value);
+
+  // 4. Elle doit configurer une requête ajax en POST et envoyer les données
+  const requeteAjax = new XMLHttpRequest();
+  requeteAjax.open('POST', 'backgroundhandler.php?task=write');
   
-    // 2. Elle doit récupérer les données du formulaire
-    const author = document.querySelector('#joueur_id');
-    const content = document.querySelector('#content');
-    $('#submit').attr('disabled', 'disabled');
-    // 3. Elle doit conditionner les données
-    const data = new FormData();
-    data.append('joueur_id', author.value);
-    data.append('content', content.value);
-  
-    // 4. Elle doit configurer une requête ajax en POST et envoyer les données
-    const requeteAjax = new XMLHttpRequest();
-    requeteAjax.open('POST', 'backgroundhandler.php?task=write');
-    
-    requeteAjax.onload = function(){
-      content.value = '';
-      content.focus();
-      getMessages(0);
-    }
-  
-    requeteAjax.send(data);
+  requeteAjax.onload = function(){
+    content.value = '';
+    content.focus();
+    getMessages(0);
   }
+
+  requeteAjax.send(data);
+}
   
 document.querySelector('form').addEventListener('submit', postMessage);
   
 const interval = window.setInterval(getMessages, 20000);
 
 $(document).ready(function() {
-$('#content').on('keyup', function() {
-    let empty = false;
+  $('#content').on('keyup', function() {
+      let empty = false;
 
-    $('#content').each(function() {
-        empty = $(this).val().length == 0;
-    });
+      $('#content').each(function() {
+          empty = $(this).val().length == 0;
+      });
 
-    console.log(empty);
-    if (empty)
-    $('#submit').attr('disabled', 'disabled');
-    else
-    $('#submit').attr('disabled', false);
-});
+      console.log(empty);
+      if (empty)
+      $('#submit').attr('disabled', 'disabled');
+      else
+      $('#submit').attr('disabled', false);
+  });
 });
