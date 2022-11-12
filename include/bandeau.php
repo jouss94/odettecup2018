@@ -6,11 +6,17 @@
         <td id="bandeauNom">
             <?php echo $pseudo ?>
         </td>
-        <td id="bandeauProfil">
-            Profil
+        <td id="bandeauProfil" >
+            <div class="flex">
+                <span class="material-icons">person</span>
+                <span class="bandeauText">Profil</span>
+            </div>
         </td>
         <td id="bandeauDeconnect">
-            Déconnexion
+            <div class="flex">
+                <span class="material-icons">close</span>
+                <span class="bandeauText">Déconnexion</span>
+            </div>
         </td>
     </tr>
 </table>

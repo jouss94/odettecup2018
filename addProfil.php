@@ -1,11 +1,13 @@
 <?php
 session_start();
 
-$lvl = (isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 $id = (isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 $pseudo = (isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
+if ($id == 0) { header('Location: index.php'); }
+
 require_once 'config.php';
+include("functions.php");
 
 function move_image($image)
 {
@@ -79,7 +81,6 @@ function changeEtat($con)
 function addProfil($con)
 {
 
-	$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
@@ -92,8 +93,6 @@ function addProfil($con)
 	$description = addslashes(utf8_decode_function ($_POST[ 'description' ]));
 	$emailProfil = addslashes(utf8_decode_function($_POST[ 'emailProfil' ]));
 	$telProfil = addslashes(utf8_decode_function ($_POST[ 'telProfil' ]));
-	$colorProfil = addslashes($_POST[ 'colorProfil' ]);
-	$departementProfil = intval ($_POST[ 'departementProfil' ]);
 
  	$fileResult = checkFile();
  	if ($fileResult != "") 
@@ -110,9 +109,7 @@ function addProfil($con)
 								description = '$description', ";
 								if ($filename != "")
 									$qry .= " image = '$filename',";
-								$qry .= " departement = $departementProfil,
-										telephone = '$telProfil',
-				color = '$colorProfil'
+								$qry .= " telephone = '$telProfil'
 			WHERE id_joueur = $id";
 	$result = mysqli_query($con, $qry);
 	if (!$result) {
@@ -148,10 +145,7 @@ function addProfil($con)
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-	</head>
-	
-	<?php include("init.php");?>
-	
+	</head>	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'></div>
 		<?php include("background.php");?>

@@ -1,11 +1,16 @@
 <?php
 
-		$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
 	require_once 'config.php';
 	require_once 'functions.php';
+
+	$days = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi','Jeudi','Vendredi', 'Samedi');
+	$months = array(
+		11 => "Novembre",
+		12 => "Décembre",
+	);
 
 	$qry = "SELECT matches.*,
 					matches.id_match as id, 
@@ -25,7 +30,7 @@
 		<div class="allListeCalendrier">
 		<table class="tableListe" >';
 
-
+	$current_date = "";
 	while ($row = mysqli_fetch_array($result )) 
 	{
 
@@ -49,6 +54,28 @@
 			$classPancarte = "pancarteMontagne";
 		}
 
+	$dateDay = substr($date, 0, 10);
+	if ($current_date != $dateDay) {
+
+		echo '
+		</table>
+		</div>
+		<div class="dateCalendar">
+		<span class="dateCalendarText"> '
+			,$days[date('w', strtotime($date))] 
+			,' '
+			,$date_array['day']
+			,' '
+			,$months[$date_array['month']]
+			,' '
+			,$date_array['year']
+		,' </span>
+		</div>
+		
+		<div class="allListeCalendrier">
+		<table class="tableListe" >';
+	}
+	$current_date = $dateDay;
 	
 	echo '
 		<tr>
@@ -60,7 +87,7 @@
 					<tr class="tableCalendrierL1">';
 
 						echo'<td colspan="3" class="tableListeThird"> ',
-								'<table style="border-collapse: collapse;width: 100%;    height: 50px;    text-align: center;font-size: 20px;font-weight: bold;">
+								'<table style="border-collapse: collapse;width: 100%;height: 50px;text-align: center;font-size: 20px;font-weight: bold;">
 									<tr>
 										<td style="width: 20%;">
 											<img class="logoEquipe" src="', $home_logo,'" />
@@ -97,7 +124,7 @@
 								$diff,
 							'</td>
 							<td style="width: 33%;"> ',
-								$date_array['day'], '/0', $date_array['month'], ' ', $date_array['hour'], 'h00',
+								$date_array['day'], '/', $date_array['month'], ' ', $date_array['hour'], 'h00',
 							'</td>
 							<td style="width: 33%;" class="tableListeDetail" id="detailMatche', $id_match ,'">
 								Détails &rarr;
@@ -106,13 +133,11 @@
 					<tr class="tableCalendrierL3 ">';
 
 						echo'
-						<td>
-						</td>
+							<td></td>
 							<td> ',
 								$stade,
 							'</td>
-							<td>
-							</td>
+							<td></td>
 					</tr>
 				</table>
 			</td>

@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 $id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+if ($id == 0) { header('Location: index.php'); }
 
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
@@ -28,9 +28,6 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<script src="./chartjs/moment.js"></script>
 		<script src="./chartjs/Chart.min.js"></script>
 	</head>
-	
-	<?php include("init.php");?>
-	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
 		<?php include("background.php");?>

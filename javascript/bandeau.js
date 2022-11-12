@@ -18,4 +18,7 @@ $(document).ready(function(){
 	$("#modifBonusDetails").click(function() {
 		document.location = 'modifierBonus.php?id=' + document.getElementById("idPhp").getAttribute("name");
 	});
+	$("#modifJokerDetails").click(function() {
+		document.location = 'modifierJoker.php?id=' + document.getElementById("idPhp").getAttribute("name");
+	});
 });

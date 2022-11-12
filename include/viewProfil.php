@@ -1,6 +1,5 @@
 <?php
 
-	$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
@@ -18,24 +17,34 @@
 
 	$modifMatch = false;
 	$modifBonus = false;
+	$modifJoker = false;
 
 	$qry = "SELECT * FROM etat;";
 	$result = mysqli_query($con, $qry);
 	while ($row = mysqli_fetch_array($result )) 
 	{
-		if ($row["attribut"] == "PRONOS_BONUS")
+		if ($row["attribut"] == "PRONOS_BONUS") {
 			$modifBonus = $row["value"];
-		if ($row["attribut"] == "PRONOS")
+		}
+		if ($row["attribut"] == "PRONOS") {
 			$modifMatch = $row["value"];
+		}
+		if ($row["attribut"] == "JOKER") {
+			$modifJoker = $row["value"];
+		}
 	}
 
 	$qry = "SELECT 
 		*,
+		joueurs.image as joueursimage,
 		joueurs.nom as joueursnom,
 		general.rang as generalrang,
-		general.points as generalpoints
+		general.points as generalpoints,
+		joueurs.color as joueursColor,
+		equipe_winner.logo as logo
 	 FROM joueurs 
 	LEFT JOIN classements as general ON general.owner_id = joueurs.id_joueur AND general.type = 'general' 
+	LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe
 
 	WHERE id_joueur='".$idProfil."';";
 	$result = mysqli_query($con, $qry);
@@ -44,14 +53,22 @@
 	while ($row = mysqli_fetch_array($result )) 
 	{	
 		$find = true;
-		echo '<div class="profilInformationSurnom" style=" background:linear-gradient(', $row["color"] ,' 0%, #209aad 40%);">';
-		echo '<span style="padding-top: 15px;display: block;color: #FFF;FONT-WEIGHT: bold;">';
+		echo '<div class="profilInformationSurnom" style=" background:linear-gradient(', $row["joueursColor"] ,' 0%, #9c2950 40%);">';
+
+		echo '<div class="cadreprofilsurnom"> ';
+		echo '<span style="padding-top: 15px;display: block;FONT-WEIGHT: bold;">';
 		echo utf8_encode_function($row["surnom"]);
+		if ($row["logo"] != null) {
+			echo '<img class="logoEquipProfil" src="';
+			echo $row["logo"];	
+			echo '" />';
+		}
 		echo '</span>';
+		echo '</div> ';
 
 		echo '<div class="profilInformationImageDiv"> 
 
-				<img src="', utf8_encode_function($row["image"]), '" style="margin: 15px;border-color: #ffffff;" class="profilInformationImage mdl-button--raised"/>
+				<img src="', utf8_encode_function($row["joueursimage"]), '" class="profilInformationImage mdl-button--raised joueursimage"/>
 
 			</div>';
 		if ($idProfil == $id)
@@ -62,11 +79,12 @@
 				</button>
 			</div>';
 		}
-
+		echo '<div class="cadreprofil"> ';
 		echo '<div class="profilInformationCivil">', utf8_encode_function($row["prenom"]), '</div>';
-		echo '<div class="profilInformationCivil">', utf8_encode_function($row["joueursnom"]), '</div>';
+		// echo '<div class="profilInformationCivil">', utf8_encode_function($row["joueursnom"]), '</div>';
 		echo '<div class="profilInformationCivil">', utf8_encode_function($row["email"]), '</div>';
 		echo '<div class="profilInformationCivil">Tel : ', utf8_encode_function($row["telephone"]), '</div>';
+		echo '</div> ';
 		echo '<div class="profilInformationEmail">', utf8_encode_function($row["description"]), '</div>';
 		
 		
@@ -108,7 +126,7 @@
 				</span>
 				</div>
 			<div class="mdl-card__actions mdl-card--border">
-				<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=General" >
+				<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect classementbutton" href="classement.php?ranking=General" >
 					Class.
 				</a>
 				<div class="mdl-layout-spacer"></div>
@@ -402,11 +420,11 @@
 						echo '<img class="logoEquipe"  style="margin-top: 2px;margin-bottom: 2px;margin-left: 10px;" src="', utf8_encode_function($row["home_logo"]), '" />';
 					echo '</td>';
 					
-					echo '<td style="width:120px" class="tdMatchLeft"> ';
+					echo '<td style="width:110px" class="tdMatchLeft"> ';
 						echo utf8_encode_function($row["home_name"]);
 					echo '</td>';
 		
-					echo '<td style="width:20px">';
+					echo '<td style="width:26px">';
 					echo '<span class="pancarte ',$classPancarte,'"> ';
 						echo $row["prono_home"];
 					echo '</span> ';
@@ -415,13 +433,13 @@
 					echo '<td style="width:20px;text-align: center;">-';
 					echo '</td>';
 		
-					echo '<td style="width:20px">';
+					echo '<td style="width:26px">';
 					echo '<span class="pancarte ',$classPancarte,'"> ';
 						echo $row["prono_away"];
 					echo '</span> ';
 					echo '</td>';
 		
-					echo '<td style="width:120px" class="tdMatchRight">';
+					echo '<td style="width:110px" class="tdMatchRight">';
 						echo utf8_encode_function($row["away_name"]);
 					echo '</td>';
 		
@@ -464,7 +482,7 @@
 			}
 			if ($find == false)
 			{
-				echo '<span class="emptyTableau"> Aucun pronostics enregistrés.</span>';
+				echo '<span class="emptyTableau"> Aucun pronostic</span>';
 			}
 					// Entrez les données
 		
@@ -481,6 +499,220 @@
 		</div>
 </div>';
 
+// if ($idProfil == $id && $modifBonus == 1)
+// {
+// 	echo '<div  style="width:100%;margin:auto;text-align: center;;margin-top:20px"> 
+// 		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="modifierJoker">
+// 			Modifier Joker
+// 		</button>
+// 	</div>';
+// }
+
+// echo '
+// <div class="displaymatch-card-event mdl-card mdl-shadow--2dp rougedefault height150">
+// <div class="mdl-card__title mdl-card--expand">';
+
+// echo '
+// <div class="cadreTableau cadreTableauBonus">
+// ';
+
+
+// $team_winner_id = "";
+// $min_first = "";
+// $min_last = "";
+// $total_but = "";
+// $best_scorer = "";
+
+// $team_winner_id_point = -1;
+// $min_first_point = -1;
+// $min_last_point = -1;
+// $total_but_point = -1;
+// $best_scorer_point = -1;
+
+// $qryBonus = "SELECT *, equipe_winner.name as equipe_w
+// 		FROM pronostics_bonus
+// 		LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = pronostics_bonus.team_winner_id
+// 		WHERE id_membre='".$idProfil."' ;";
+// $resultBonus = mysqli_query($con, $qryBonus);
+// $findBonus = false;
+
+// while ($rowBonus = mysqli_fetch_array($resultBonus )) 
+// {	
+// $findBonus = true;
+//  $team_winner_id = utf8_encode_function($rowBonus["equipe_w"]);
+//  $min_first = $rowBonus["min_first"];
+//  $min_last = $rowBonus["min_last"];
+//  $total_but = $rowBonus["total_but"];
+//  $best_scorer = utf8_encode_function($rowBonus["best_scorer"]);
+
+// $team_winner_id_point = intval ($rowBonus["team_winner_id_point"]);
+//  $min_first_point = intval ($rowBonus["min_first_point"]);
+//  $min_last_point = intval ($rowBonus["min_last_point"]);
+//  $total_but_point = intval ($rowBonus["total_but_point"]);
+//  $best_scorer_point = intval ($rowBonus["best_scorer_point"]);			
+// }
+
+// if ($findBonus == true && ($idProfil == $id || $modifJoker == 0))
+// {
+
+// echo '<table class="affPronosTableau">';
+
+// echo '<tr class="affPronosLigne backgroundTab1" >';
+// 	echo '<td style="width:50%" class="tdBonusLeft">Equipe vainqueur</td>';
+
+// 	echo '<td >';
+// 		echo '<span class="';
+// 		if ($team_winner_id_point >= 0)
+// 		{
+// 			if ($team_winner_id_point == 0)
+// 				echo ' pancarteBonusEchec ';
+// 			else
+// 				echo ' pancarteBonusCorrect ';
+// 		}
+// 		else
+// 				echo ' pancarteAuto ';
+// 		echo ' "  > ';
+// 		echo $team_winner_id;
+// 		echo '</span> ';
+// 	echo '</td>';
+// 	echo '<td class="pointBonus">';
+// 	if ($team_winner_id_point >= 0)
+// 	{
+// 			echo '+'. $team_winner_id_point;
+// 	}
+// 	echo '</td>';
+
+// echo '</tr>';
+
+// echo '<tr class="affPronosLigne backgroundTab2" >';
+// 	echo '<td style="width:50%" class="tdBonusLeft">Minute du premier but</td>';
+
+// 	echo '<td style="width:50%">';
+// 		echo '<span class="';
+// 		if ($min_first_point >= 0)
+// 		{
+// 			if ($min_first_point == 0)
+// 				echo ' pancarteBonusEchec ';
+// 			else
+// 				echo ' pancarteBonusCorrect ';
+// 		}
+// 		else
+// 				echo ' pancarteAuto ';
+
+// 		echo ' " > ';
+// 		echo $min_first;
+// 		echo '</span> Minutes';
+// 	echo '</td>';
+// 	echo '<td class="pointBonus">';
+// 	if ($min_first_point >= 0)
+// 	{
+// 			echo '+'. $min_first_point;
+// 	}
+// 	echo '</td>';
+// echo '</tr>';
+
+// echo '<tr class="affPronosLigne backgroundTab1" >';
+// 	echo '<td style="width:50%" class="tdBonusLeft">Minute dernier but</td>';
+
+// 	echo '<td style="width:50%">';
+// 		echo '<span class="';
+// 		if ($min_last_point >= 0)
+// 		{
+// 			if ($min_last_point == 0)
+// 				echo ' pancarteBonusEchec ';
+// 			else
+// 				echo ' pancarteBonusCorrect ';
+// 		}
+// 		else
+// 				echo ' pancarteAuto ';
+
+// 		echo ' " > ';
+// 		echo $min_last;
+// 		echo '</span> Minutes';
+// 	echo '</td>';
+// 	echo '<td class="pointBonus">';
+// 	if ($min_last_point >= 0)
+// 	{
+// 			echo '+'. $min_last_point;
+// 	}
+// 	echo '</td>';
+// echo '</tr>';
+
+// echo '<tr class="affPronosLigne backgroundTab2" >';
+// 	echo '<td style="width:50%" class="tdBonusLeft">Nombre total de but</td>';
+
+// 	echo '<td style="width:50%">';
+// 		echo '<span class="';
+// 		if ($total_but_point >= 0)
+// 		{
+// 			if ($total_but_point == 0)
+// 				echo ' pancarteBonusEchec ';
+// 			else
+// 				echo ' pancarteBonusCorrect ';
+// 		}
+// 		else
+// 				echo ' pancarteAuto ';
+
+// 		echo ' " > ';
+// 		echo $total_but;
+// 		echo '</span> Buts';
+// 	echo '</td>';
+// 	echo '<td class="pointBonus">';
+// 	if ($total_but_point >= 0)
+// 	{
+// 			echo '+'. $total_but_point;
+// 	}
+// 	echo '</td>';
+// echo '</tr>';
+
+// // echo '<tr class="affPronosLigne backgroundTab1" >';
+// // 	echo '<td style="width:50%" class="tdBonusLeft">Meilleur buteur</td>';
+
+// // 	echo '<td style="width:50%">';
+// // 		echo '<span class="';
+// // 		if ($best_scorer_point >= 0)
+// // 		{
+// // 			if ($best_scorer_point == 0)
+// // 				echo ' pancarteBonusEchec ';
+// // 			else
+// // 				echo ' pancarteBonusCorrect ';
+// // 		}
+// // 		else
+// // 				echo ' pancarteAuto ';
+
+// // 		echo ' " > ';
+// // 		echo $best_scorer;
+// // 		echo '</span> ';
+// // 	echo '</td>';
+// // 	echo '<td class="pointBonus">';
+// // 	if ($best_scorer_point >= 0)
+// // 	{
+// // 			echo '+'. $best_scorer_point;
+// // 	}
+// // 	echo '</td>';
+// // echo '</tr>';
+
+// echo '</table>';
+// }
+// else
+// echo '<span class="emptyTableau"> Aucun joker</span>';
+
+// echo '</div>';
+
+
+
+
+// echo '
+// </div>
+// <div class="mdl-card__actions mdl-card--border">
+// <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+// 	JOKER
+// </a>
+// <div class="mdl-layout-spacer"></div>
+// <i class="material-icons">event</i>
+// </div>
+// </div>';
+
 if ($idProfil == $id && $modifBonus == 1)
 {
 	echo '<div  style="width:100%;margin:auto;text-align: center;;margin-top:20px"> 
@@ -489,6 +721,7 @@ if ($idProfil == $id && $modifBonus == 1)
 		</button>
 	</div>';
 }
+
 
 echo '
 <div class="displaymatch-card-event mdl-card mdl-shadow--2dp rougedefault height150">
@@ -511,9 +744,10 @@ $min_last_point = -1;
 $total_but_point = -1;
 $best_scorer_point = -1;
 
-$qryBonus = "SELECT *, equipe_winner.name as equipe_w
+$qryBonus = "SELECT *, equipe_winner.name as equipe_w, joueurs.surnom as joueur, equipe_winner.logo as logo
 		FROM pronostics_bonus
 		LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = pronostics_bonus.team_winner_id
+		LEFT JOIN joueurs joueurs ON joueurs.id_joueur = pronostics_bonus.player_winner_id
 		WHERE id_membre='".$idProfil."' ;";
 $resultBonus = mysqli_query($con, $qryBonus);
 $findBonus = false;
@@ -522,16 +756,21 @@ while ($rowBonus = mysqli_fetch_array($resultBonus ))
 {	
 $findBonus = true;
  $team_winner_id = utf8_encode_function($rowBonus["equipe_w"]);
+ $player_winner_id = utf8_encode_function($rowBonus["joueur"]);
  $min_first = $rowBonus["min_first"];
  $min_last = $rowBonus["min_last"];
  $total_but = $rowBonus["total_but"];
  $best_scorer = utf8_encode_function($rowBonus["best_scorer"]);
 
-$team_winner_id_point = intval ($rowBonus["team_winner_id_point"]);
+ $team_winner_id_point = intval ($rowBonus["team_winner_id_point"]);
+ $player_winner_point = intval ($rowBonus["player_winner_point"]);
  $min_first_point = intval ($rowBonus["min_first_point"]);
  $min_last_point = intval ($rowBonus["min_last_point"]);
  $total_but_point = intval ($rowBonus["total_but_point"]);
- $best_scorer_point = intval ($rowBonus["best_scorer_point"]);			
+ $best_scorer_point = intval ($rowBonus["best_scorer_point"]);	
+ 
+ 
+ $logo = $rowBonus["logo"];
 }
 
 if ($findBonus == true && ($idProfil == $id || $modifBonus == 0))
@@ -540,13 +779,13 @@ if ($findBonus == true && ($idProfil == $id || $modifBonus == 0))
 echo '<table class="affPronosTableau">';
 
 echo '<tr class="affPronosLigne backgroundTab1" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Equipe vainqueur</td>';
+	echo '<td style="width:50%" class="tdBonusLeft">Equipe favorite</td>';
 
 	echo '<td >';
 		echo '<span class="';
-		if ($team_winner_id_point >= 0)
+		if ($team_winner_id_point != -1)
 		{
-			if ($team_winner_id_point == 0)
+			if ($team_winner_id_point == 0 || $team_winner_id_point == -3)
 				echo ' pancarteBonusEchec ';
 			else
 				echo ' pancarteBonusCorrect ';
@@ -555,7 +794,13 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 				echo ' pancarteAuto ';
 		echo ' "  > ';
 		echo $team_winner_id;
+		
+
+		
 		echo '</span> ';
+		echo '<img class="logoEquipeSmall" src="';
+		echo $logo;	
+		echo '" />';
 	echo '</td>';
 	echo '<td class="pointBonus">';
 	if ($team_winner_id_point >= 0)
@@ -564,60 +809,6 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 	}
 	echo '</td>';
 
-echo '</tr>';
-
-echo '<tr class="affPronosLigne backgroundTab2" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Minute du premier but</td>';
-
-	echo '<td style="width:50%">';
-		echo '<span class="';
-		if ($min_first_point >= 0)
-		{
-			if ($min_first_point == 0)
-				echo ' pancarteBonusEchec ';
-			else
-				echo ' pancarteBonusCorrect ';
-		}
-		else
-				echo ' pancarteAuto ';
-
-		echo ' " > ';
-		echo $min_first;
-		echo '</span> Minutes';
-	echo '</td>';
-	echo '<td class="pointBonus">';
-	if ($min_first_point >= 0)
-	{
-			echo '+'. $min_first_point;
-	}
-	echo '</td>';
-echo '</tr>';
-
-echo '<tr class="affPronosLigne backgroundTab1" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Minute dernier but</td>';
-
-	echo '<td style="width:50%">';
-		echo '<span class="';
-		if ($min_last_point >= 0)
-		{
-			if ($min_last_point == 0)
-				echo ' pancarteBonusEchec ';
-			else
-				echo ' pancarteBonusCorrect ';
-		}
-		else
-				echo ' pancarteAuto ';
-
-		echo ' " > ';
-		echo $min_last;
-		echo '</span> Minutes';
-	echo '</td>';
-	echo '<td class="pointBonus">';
-	if ($min_last_point >= 0)
-	{
-			echo '+'. $min_last_point;
-	}
-	echo '</td>';
 echo '</tr>';
 
 echo '<tr class="affPronosLigne backgroundTab2" >';
@@ -647,37 +838,121 @@ echo '<tr class="affPronosLigne backgroundTab2" >';
 	echo '</td>';
 echo '</tr>';
 
-// echo '<tr class="affPronosLigne backgroundTab1" >';
-// 	echo '<td style="width:50%" class="tdBonusLeft">Meilleur buteur</td>';
+echo '<tr class="affPronosLigne backgroundTab1" >';
+	echo '<td style="width:50%" class="tdBonusLeft">Minute du premier but</td>';
 
-// 	echo '<td style="width:50%">';
-// 		echo '<span class="';
-// 		if ($best_scorer_point >= 0)
-// 		{
-// 			if ($best_scorer_point == 0)
-// 				echo ' pancarteBonusEchec ';
-// 			else
-// 				echo ' pancarteBonusCorrect ';
-// 		}
-// 		else
-// 				echo ' pancarteAuto ';
+	echo '<td style="width:50%">';
+		echo '<span class="';
+		if ($min_first_point >= 0)
+		{
+			if ($min_first_point == 0)
+				echo ' pancarteBonusEchec ';
+			else
+				echo ' pancarteBonusCorrect ';
+		}
+		else
+				echo ' pancarteAuto ';
 
-// 		echo ' " > ';
-// 		echo $best_scorer;
-// 		echo '</span> ';
-// 	echo '</td>';
-// 	echo '<td class="pointBonus">';
-// 	if ($best_scorer_point >= 0)
-// 	{
-// 			echo '+'. $best_scorer_point;
-// 	}
-// 	echo '</td>';
-// echo '</tr>';
+		echo ' " > ';
+		echo $min_first;
+		echo '</span> Minutes';
+	echo '</td>';
+	echo '<td class="pointBonus">';
+	if ($min_first_point >= 0)
+	{
+			echo '+'. $min_first_point;
+	}
+	echo '</td>';
+echo '</tr>';
+
+echo '<tr class="affPronosLigne backgroundTab2" >';
+	echo '<td style="width:50%" class="tdBonusLeft">Minute dernier but</td>';
+
+	echo '<td style="width:50%">';
+		echo '<span class="';
+		if ($min_last_point >= 0)
+		{
+			if ($min_last_point == 0)
+				echo ' pancarteBonusEchec ';
+			else
+				echo ' pancarteBonusCorrect ';
+		}
+		else
+				echo ' pancarteAuto ';
+
+		echo ' " > ';
+		echo $min_last;
+		echo '</span> Minutes';
+	echo '</td>';
+	echo '<td class="pointBonus">';
+	if ($min_last_point >= 0)
+	{
+			echo '+'. $min_last_point;
+	}
+	echo '</td>';
+echo '</tr>';
+
+
+
+echo '<tr class="affPronosLigne backgroundTab1" >';
+	echo '<td style="width:50%" class="tdBonusLeft">Meilleur buteur</td>';
+
+	echo '<td style="width:50%">';
+		echo '<span class="';
+		if ($best_scorer_point >= 0)
+		{
+			if ($best_scorer_point == 0)
+				echo ' pancarteBonusEchec ';
+			else
+				echo ' pancarteBonusCorrect ';
+		}
+		else
+				echo ' pancarteAuto ';
+
+		echo ' " > ';
+		echo $best_scorer;
+		echo '</span> ';
+	echo '</td>';
+	echo '<td class="pointBonus">';
+	if ($best_scorer_point >= 0)
+	{
+			echo '+'. $best_scorer_point;
+	}
+	echo '</td>';
+echo '</tr>';
+
+
+echo '<tr class="affPronosLigne backgroundTab2" >';
+	echo '<td style="width:50%" class="tdBonusLeft">Joueur vaiqueur</td>';
+
+	echo '<td >';
+		echo '<span class="';
+		if ($player_winner_point >= 0)
+		{
+			if ($player_winner_point == 0)
+				echo ' pancarteBonusEchec ';
+			else
+				echo ' pancarteBonusCorrect ';
+		}
+		else
+				echo ' pancarteAuto ';
+		echo ' "  > ';
+		echo $player_winner_id;
+		echo '</span> ';
+	echo '</td>';
+	echo '<td class="pointBonus">';
+	if ($player_winner_point >= 0)
+	{
+			echo '+'. $player_winner_point;
+	}
+	echo '</td>';
+
+echo '</tr>';
 
 echo '</table>';
 }
 else
-echo '<span class="emptyTableau"> Aucun pronostics enregistrés.</span>';
+echo '<span class="emptyTableau"> Aucun bonus</span>';
 
 echo '</div>';
 

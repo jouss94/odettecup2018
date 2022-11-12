@@ -91,13 +91,26 @@ function getMessages(timeoutScroll){
       const monthNames = ["janv.", "févr.", "mars", "avr.", "mai", "juin",
           "juill.", "août", "sept.", "oct.", "nov.", "déc."
       ];
-      var day = message.created_at.substring(8, 10) + " " + monthNames[message.created_at.substring(6, 7) - 1];
+
+      console.log(message.created_at.substring(6, 7));
+
+      var day = message.created_at.substring(8, 10) + " " + monthNames[message.created_at.substring(5, 7) - 1];
       var bgColor = message.color;
       var color = pickTextColorBasedOnBgColorSimple(message.color, "#FFF", "#000");
+
+      var images = "";
+      if (message.logo != null) {
+        images = `<div class="image-cropper">
+        <img src=${message.logo} class="drapeausmall" />
+      </div>`;
+      }
+
       return `
         <div class="${classMessage}">
           <div class="message-photo">
               <img src=${message.image} style="width: 35px;height: 35px;border-radius: 20px; border: 2px solid ${bgColor};" />
+              
+                ${images}
           </div>
           <div class="message-content">
               <div class="author">${message.surnom}</div>

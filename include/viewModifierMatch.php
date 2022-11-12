@@ -1,6 +1,5 @@
 <?php
 
-	$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
@@ -14,35 +13,49 @@
 		echo '<div class="profilInformation floaleft">';
 
 
-	$qry = "SELECT *, joueurs.nom as joueursnom FROM joueurs 
+	$qry = "SELECT *, joueurs.nom as joueursnom,
+	joueurs.image as joueursimage,
+	joueurs.color as joueursColor,
+	equipe_winner.logo as logo
+	 FROM joueurs 
+	
+	LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe
 	WHERE id_joueur='".$idProfil."';";
 	$result = mysqli_query($con, $qry);
 	$find = false;
 	while ($row = mysqli_fetch_array($result )) 
 	{	
 		$find = true;
-		echo '<div class="profilInformationSurnomBig" style=" background:linear-gradient(', $row["color"] ,' 0%, #209aad 40%);">';
-		echo '<span style="padding-top: 15px;display: block;color: #FFF;FONT-WEIGHT: bold;">';
+		echo '<div class="profilInformationSurnomBig" style=" background:linear-gradient(', $row["joueursColor"] ,' 0%, #9c2950 40%);">';
+
+		echo '<div class="cadreprofilsurnom"> ';
+		echo '<span style="padding-top: 15px;display: block;FONT-WEIGHT: bold;">';
 		echo utf8_encode_function($row["surnom"]);
+		if ($row["logo"] != null) {
+			echo '<img class="logoEquipProfil" src="';
+			echo $row["logo"];	
+			echo '" />';
+		}
 		echo '</span>';
+		echo '</div> ';
 
 		echo '<div class="profilInformationImageDiv"> 
 
-				<img src="', utf8_encode_function($row["image"]), '" style="margin: 15px;border-color: #ffffff;" class="profilInformationImage mdl-button--raised"/>
+				<img src="', utf8_encode_function($row["joueursimage"]), '" class="profilInformationImage mdl-button--raised joueursimage"/>
 
 			</div>';
-		if ($idProfil == $id)
-		{
-			echo '<div> 
-				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="ModifierProfil">
-					Modifier Profil 
-				</button>
-			</div>';
-		}
+		// if ($idProfil == $id)
+		// {
+		// 	echo '<div> 
+		// 		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="ModifierProfil">
+		// 			Modifier Profil 
+		// 		</button>
+		// 	</div>';
+		// }
 
-		echo '<div class="profilInformationCivil">', utf8_encode_function($row["prenom"]), '</div>';
-		echo '<div class="profilInformationCivil">', utf8_encode_function($row["joueursnom"]), '</div>';
-		echo '<div class="profilInformationCivil">', utf8_encode_function($row["email"]), '</div>';
+		// echo '<div class="profilInformationCivil">', utf8_encode_function($row["prenom"]), '</div>';
+		// echo '<div class="profilInformationCivil">', utf8_encode_function($row["joueursnom"]), '</div>';
+		// echo '<div class="profilInformationCivil">', utf8_encode_function($row["email"]), '</div>';
 		echo '<div class="profilInformationEmail">', utf8_encode_function($row["description"]), '</div>';
 		
 		

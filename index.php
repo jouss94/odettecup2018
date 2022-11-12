@@ -23,7 +23,7 @@ session_start();
 		<div class="padding20">
 			<div class="loginform-in loginform-in-acceuil">
 				<fieldset>	
-					<img src="images/UEFA_Euro_2020_logo_4.png" style="width: 350px;margin: 20px;"/>
+					<img src="images/logo_general.png" style="width: 350px;margin: 20px;"/>
 				
 					<div class="err" id="add_err"></div>
 					<div class="load" id="add_load"></div>

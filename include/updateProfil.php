@@ -1,5 +1,4 @@
 <?php
-	$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
@@ -14,6 +13,7 @@
 		$modif_profil = intval($row["modif_profil"]);
 		$modif_match = intval($row["modif_match"]);
 		$modif_bonus = intval($row["modif_bonus"]);
+		$modif_joker = intval($row["modif_joker"]);
 
 		if ($modif_bonus == 1 && $modif_match == 1 && $modif_profil == 1)
 		{
@@ -58,6 +58,18 @@
 						</tr>
 						";
 			}
+			// if ($modif_joker == 0) 
+			// {
+			// 	echo "	<tr>
+			// 				<td class='sousTitreUpdateRed'>
+			// 					<span >Vous devez entrer vos jokers </span>
+			// 				</td>
+			// 				<td class='detailTitreUpdateRed'>
+			// 					<span class='detailTitreUpdateRedSpan' id='modifJokerDetails'> Clique ici pour mettre à jour &rarr; </span>
+			// 				</td>
+			// 			</tr>
+			// 			";
+			// }
 			if ($modif_bonus == 0) 
 			{
 				echo "	<tr>
@@ -70,6 +82,7 @@
 						</tr>
 						";
 			}
+
 			
 			echo "</table>
 				</div>";

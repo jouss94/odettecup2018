@@ -159,6 +159,7 @@ CREATE TABLE IF NOT EXISTS `etat` (
 INSERT INTO `etat` (`attribut`, `value`) VALUES
 ('PRONOS_BONUS', 1),
 ('PRONOS', 1);
+('JOKER', 1);
 
 -- --------------------------------------------------------
 

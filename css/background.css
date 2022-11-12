@@ -10,7 +10,7 @@
     background-color: #ffffff99;
     display: flex;
     justify-content: center;
-    border: #55adba 3px solid;    
+    border: #992049 3px solid;    
     border-bottom: 1px solid #e6e6e6;
     height: 60px;
 }
@@ -110,10 +110,10 @@
 #body-display {
     border-radius: 0px 0px 20px 20px;
 
-    background-color: #ffffff99;
+    background-color: #FFFFFF;
     display: flex;
     justify-content: center;
-    border: #55adba 3px solid;
+    border: #992049 3px solid;
     border-top: none;
     height: calc(100% - 60px);
 }
@@ -188,17 +188,19 @@
    border: none;
    margin-right: 10px;
    padding: 0 20px;
+   background: #e5aec0;
  }
 
  #content:focus {
     outline: none;
   }
- 
+
+   
 #submit {
     width: 20%;
-    border: 1px solid #018498;
+    border: 1px solid #ffffff;
     border-radius: 20px;
-    background: #55adba;
+    background: #992049;
     color: #FFF;
     font-weight: bold;
     cursor: pointer;
@@ -223,6 +225,7 @@
     display: flex;
     width: 45px;
     flex-direction: column-reverse;
+    position: relative;
  }
 
  .message-content {

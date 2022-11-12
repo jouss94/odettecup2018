@@ -23,7 +23,7 @@ session_start();
 	<body>
 		<div class="padding20">
 			<div class="loginform-in">
-				<img src="images/UEFA_Euro_2020_logo_4.png" style="width: 140px;margin: 10px;"/>
+				<img src="images/logo_general.png" style="width: 140px;margin: 10px;"/>
 				<h3 style="margin-top: 0;color:#FFF">Formulaire d'inscription</h1>
 				<div class="Retour">
 					<button class="Retour  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonRouge">

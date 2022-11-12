@@ -71,8 +71,8 @@ function addDemande($con)
 
 	<body>
 		<div class="padding20">
-			<div class="loginform-in blackougedefault" style="height:400px">
-				<img src="images/UEFA_Euro_2020_logo_4.png" style="width: 110px;margin: 6px;"/>
+			<div class="loginform-in blackougedefault" style="height:450px">
+				<img src="images/logo_general.png" style="width: 110px;margin: 6px;"/>
 				<div class="Retoudiv">
 					<button class="Retour mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourProfil">
 						Retour

@@ -8,14 +8,14 @@
     src: url('fonts/Roboto-Regular.ttf');
 }
 
-
 body {
     color: black;
-    background-color: #039cb3;
-    background-image: url(../images/footer.webp);
+    /* background: -webkit-gradient(linear, left top, left bottom, from(#e66465), to(#9198e5)) fixed; */
+    background: -webkit-gradient(linear, left top, left bottom, from(#5e0925), to(#af6780)) fixed;
+    /* background-color: #981d46; */
     background-repeat: no-repeat;
-    background-position: center -50px;
     margin: 0px;
+    height: 100%;
     font-family: Roboto;
 }
 
@@ -26,7 +26,8 @@ table {
 .ClassementPoints {
     text-align: center;
     width: 7%;
-        font-weight: bold;
+    font-weight: bold;
+    color: #ffffff;
     font-size: 20px;
 }
 
@@ -86,6 +87,8 @@ table {
     width: 50px;
     text-align: center;
         font-size: 22px;
+        font-weight: bold;
+        color: #ffffff;
 }
 
 .titleSmallTexte {
@@ -131,10 +134,12 @@ table.sortable thead {
 .surnomClassementDiv {
     cursor: pointer;
     word-break: break-word;
+    color: #FFF;
+    cursor: pointer;
 }
 
 .surnomClassementDiv:hover {
-    color: #FFF;
+    color: #000;
     cursor: pointer;
 }
 
@@ -262,7 +267,6 @@ table.sortable thead {
     width: 650px;
     display: block;
     margin: auto;
-    margin-top: 30px;
     
     background: rgba(255, 255, 255, 0.45);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -287,11 +291,11 @@ table.sortable thead {
 }
 
 .backgroundTab1 {
-    background:#ffffff7a;
+    background:#9a224aa3;
 }
 
 .backgroundTab2 {
-    background: rgba(255, 255, 255, 0.32941176470588235);
+    background: #c27e94
 }
 
 .backgroundTab1Jaune {
@@ -366,18 +370,21 @@ table.sortable thead {
 }
 
 .classTRPerfectHome {
-    color: #1792c1;
+    color: #c0f6ff;
+    text-shadow: 2px 0 #0490c7, -2px 0 #0490c7, 0 2px #0490c7, 0 -2px #0490c7, 1px 1px #0490c7, -1px -1px #0490c7, 1px -1px #0490c7, -1px 1px #0490c7;
     font-weight: bold;
 }
 
 
 .classTRInverseHome {
-    color: #757575;
+    color: #cdcdcd;
+    text-shadow: 2px 0 #757575, -2px 0 #757575, 0 2px #757575, 0 -2px #757575, 1px 1px #757575, -1px -1px #757575, 1px -1px #757575, -1px 1px #757575;
     font-weight: bold;
 }
 
 .classTRCorrectHome {
-    color : #1ea228;
+    color: #b1f7c0;
+    text-shadow: 2px 0 #02990d, -2px 0 #02990d, 0 2px #02990d, 0 -2px #02990d, 1px 1px #02990d, -1px -1px #02990d, 1px -1px #02990d, -1px 1px #02990d;
     font-weight: bold;
 }
 
@@ -387,7 +394,8 @@ table.sortable thead {
  }
 
 .classTREchecHome {
-    color: rgba(0, 0, 0, 0.91);
+    color: #ed9d9d;
+    text-shadow: 2px 0 #9f0000, -2px 0 #9f0000, 0 2px #9f0000, 0 -2px #9f0000, 1px 1px #9f0000, -1px -1px #9f0000, 1px -1px #9f0000, -1px 1px #9f0000;
     font-weight: bold;
 }
 
@@ -517,7 +525,6 @@ table.sortable thead {
     height: 330px;
     width: 100%;
     overflow-y: auto;
-    color: #FFF;
 }
 
 .cadreTableauAcceuilNoHeight {
@@ -609,15 +616,22 @@ table.sortable thead {
 
 
 .perfectTitre {
-    color: #1792c1;
+    color: #c0f6ff;
+    text-shadow: 2px 0 #0490c7, -2px 0 #0490c7, 0 2px #0490c7, 0 -2px #0490c7, 1px 1px #0490c7, -1px -1px #0490c7, 1px -1px #0490c7, -1px 1px #0490c7;
+    /* color: #1792c1; */
 }
 
 .perfectInverse {
-    color: #757575;
+    color: #cdcdcd;
+    text-shadow: 2px 0 #757575, -2px 0 #757575, 0 2px #757575, 0 -2px #757575, 1px 1px #757575, -1px -1px #757575, 1px -1px #757575, -1px 1px #757575;
+    /* color: #757575; */
 }
 
 .perfectCorrect {
-    color : #1ea228;
+    
+    color: #b1f7c0;
+    text-shadow: 2px 0 #02990d, -2px 0 #02990d, 0 2px #02990d, 0 -2px #02990d, 1px 1px #02990d, -1px -1px #02990d, 1px -1px #02990d, -1px 1px #02990d;
+    /* color : #1ea228; */
 }
 
 .perfectCorrectPlus {
@@ -625,7 +639,9 @@ table.sortable thead {
  }
 
 .perfectEchec {
-    color: rgba(0, 0, 0, 0.91);
+    color: #ed9d9d;
+    text-shadow: 2px 0 #9f0000, -2px 0 #9f0000, 0 2px #9f0000, 0 -2px #9f0000, 1px 1px #9f0000, -1px -1px #9f0000, 1px -1px #9f0000, -1px 1px #9f0000;
+   /* color: rgba(0, 0, 0, 0.91); */
 }
 
 
@@ -640,9 +656,11 @@ table.sortable thead {
 .reglementDiv {
     text-align: left;
     margin: 50px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    background: rgba(255, 255, 255, 0.45);
-    padding: 20px;
+    background: #72203c70;
+    color: #380817;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    padding: 1px 0px 20px 50px;
 }
 
 .tableListeSecond {
@@ -734,7 +752,7 @@ table.sortable thead {
     padding: 30px;
     font-size: 28px;
     font-weight: bold;
-    color: #000;
+    color: #380817;
     background: #ffffff4f;
 }
 
@@ -859,11 +877,11 @@ table.sortable thead {
 }
 
 .etatProfilGreen {
-    color: #000000;
+    color: #fff;
     padding: 5px 21px;
     margin: auto;
     margin-bottom: 20px;
-    background: rgba(106, 241, 104, 0.51);
+    background: #6af168a1;
     width: 800px;
     border-radius: 0px 0px 20px 20px;
 }
@@ -887,11 +905,12 @@ table.sortable thead {
     /* background: rgba(0, 0, 0, 0.28); */
     margin: auto;
     margin-top: 35px;
-    color: #FFF;
     width: 80%;
     padding: 6px;
-    border-radius: 2px;
-    background: #ffffff26;
+    background: #72203c70;
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
     /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */
 }
 
@@ -932,10 +951,12 @@ table.sortable thead {
 .profilInformationEmail {
     padding: 8px 5px 5px 5px;
     font-size: 15px;
-    color: #fff;
     margin: 18px;
     font-size: 14px;
-    background: #ffffff26;
+    background: #72203c70;
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
     /* background: rgba(0, 0, 0, 0.28);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */
 }
@@ -944,7 +965,6 @@ table.sortable thead {
 .profilInformationCivil {
     padding-top: 5px;
     font-size: 15px;
-    color: #FFF;
     word-break: break-all;
     padding-left: 10px;
     padding-right: 10px;
@@ -985,17 +1005,21 @@ table.sortable thead {
 }
 
 #ModifierProfil {
-    color: #018498;
+    color: #5c001f;
     background: #FFF;
  }
 
  #ModifierMatch {
     background: #ffffff;
-    color: #018498;
+    color: #5c001f;
  }
  #modifierBonus {
     background: #ffffff;
-    color: #018498;
+    color: #5c001f;
+ }
+ #modifierJoker {
+    background: #ffffff;
+    color: #5c001f;
  }
 
 .InversePronos {
@@ -1047,7 +1071,7 @@ table.sortable thead {
 .BigTitreRight {
     font-size: 45px;
     font-weight: bold;
-    width: 45%;
+    width: 42%;
     text-align: right;
     padding-right: 25px;
 }
@@ -1083,24 +1107,26 @@ table.sortable thead {
     color: #FFF;
     font-weight: bold;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    width: 26px;
 }
 
 img.logoEquipeBig {
-    width: 70px;
+    width: 90px;
     margin: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     /* border: solid 2px #000; */
 }
 
 img.logoEquipe {
     width: 34px;
     margin: 5px;
-    border: 1px solid #ffffff;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
 img.logoEquipeSmall {
     width: 30px;
     margin: 5px;
-    border: 1px solid #ffffff;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
 
@@ -1136,6 +1162,10 @@ img.logoEquipeSmall {
     margin-left: 145px;
     font-size: 20px;
     font-weight: bold;
+    
+    text-align: left;
+    
+    color: #380817;
     margin-bottom: 8px;
 }
 
@@ -1143,7 +1173,7 @@ img.logoEquipeSmall {
     display: block;
     font-size: 28px;
     font-weight: bold;
-    color: #000;    
+    color: #FFF;    
     padding: 20px;
     background: #ffffff38;
 }
@@ -1193,7 +1223,6 @@ table.TableMatch {
 
 .profilPronos  {
     width: 100%;
-    text-align: left;
     font-size: x-large;
 }
 
@@ -1207,8 +1236,6 @@ table.TableMatch {
 
 .profilPronosSmall  {
     width: 800px;
-    height: 1066px;
-    text-align: left;
     font-size: x-large;
     background: #ffffff30;
 }
@@ -1216,7 +1243,6 @@ table.TableMatch {
 .profilPronosBig  {
     width: 800px;
     height: 3000px;
-    text-align: left;
     font-size: x-large;
 }
 
@@ -1236,7 +1262,8 @@ table.TableMatch {
     width: 200px;
     text-align: center;
     font-size: 20px;
-    /* background: #209aad; */
+    color: #630f2a;
+
 }
 
 .profilInformationSurnomBig {
@@ -1244,7 +1271,7 @@ table.TableMatch {
     text-align: center;
     font-size: 20px;
     height: 3000px;
-    /* background: #209aad; */
+    color: #630f2a;
 }
 
 span.titre {
@@ -1352,7 +1379,7 @@ span.titre {
 
 #RetourButtonRouge {
     background: #ffffff;
-    color: #018498;
+    color: #5c001f;
 }
 
 #buttonValidationSubmit {
@@ -1384,7 +1411,7 @@ span.ui-button-text {
     margin-left: 10px;
 
     background: #ffffff;
-    color: #018498;
+    color: #5c001f;
 
 }
 
@@ -1627,6 +1654,203 @@ div#add_err {
 }
 
 a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect {
-    background: #ffffff26;
+    background: #e189a794;
 }
 
+.dateCalendar {
+    margin: auto;
+    width: 650px;
+    margin-top: 20px;
+    text-align: start;
+}
+
+span.dateCalendarText {
+    margin: 70px;
+    line-height: 40px;
+    font-size: 19px;
+    font-weight: bold;
+    color: #5a1129;
+}
+
+.resumeJoker {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+
+.jokerBig {
+    width: 120px;
+    padding-top: 20px;
+}
+
+.jokerMedium {
+    width: 50px;
+}
+
+.jokerSmall {
+    width: 38px;
+}
+
+.jokerdiv {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jokertile {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: #72203c70;
+    color: #380817;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+}
+
+.jokertext {
+    padding: 15px;
+}
+
+.jokertextdiv {
+    width: 780px;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.jokerBigText {
+    margin: 20px;
+}
+
+.availableJoker {
+    display: flex;
+    align-items: center;
+}
+
+.dayofStageText{
+    font-size: 18px;
+    font-weight: bold;
+    color: #380817;
+    padding: 10px 10px 10px 20px;
+    background: #701e3978;
+}
+
+.availableJokerText{
+    font-size: 18px;
+    font-weight: bold;
+    color: #380817;
+    padding: 30px 30px 30px 60px;
+}
+
+.availableJokerImg {
+    padding: 15px;
+}
+
+.jokerDisplayMatchs {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    height: 371px;
+    flex-wrap: wrap;
+    background: #701e3978;
+}
+
+.jokerMatch {
+    width: 380px;
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+}
+
+.tiret {
+    padding: 0 6px;
+}
+
+/* IMAGE STYLES */
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+[type=radio] + img {
+cursor: pointer;
+}
+  
+  /* CHECKED STYLES */
+[type=radio]:checked + img {
+    opacity: 1;
+}
+
+.jokerButton {
+    padding: 0 8px;
+    opacity: 0.5;
+}
+
+.paddingtop20 {
+    padding-top: 20px;
+}
+
+.overflow {  
+    height: 200px;  
+  }  
+
+.cadreprofil {
+    background: #72203c70;
+    color: #FFF;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    margin: 18px;
+    padding: 3px 0px 6px 0px;
+}
+
+.cadreprofilsurnom {
+    background: #72203c70;
+    color: #FFF;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    padding: 3px 0px 22px 0px;
+}
+
+.cadreprofilsurnomBig {
+    background: #72203c70;
+    color: #FFF;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    padding: 3px 0px 22px 0px;
+}
+
+
+.logoEquipProfil {
+    width: 23px;
+    margin: 0 10px;
+    border: 1px solid #ffffff;
+}
+
+.backgroundwhite {
+    background: #ffffff91 !important;
+}
+
+.joueursimage {
+    margin: 15px;
+    border-color: #743957;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    border-radius: 10px;
+}
+
+.drapeausmall {
+    display: inline;
+    margin: 0px -3px;
+    height: 100%;
+    width: auto;
+}
+
+.image-cropper {
+    border: 1px solid #FFF;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    right: 0px;
+  }

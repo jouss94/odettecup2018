@@ -1,9 +1,15 @@
 
 -- Stop Pronos Premier tour
 
-UPDATE `matches` SET `modif`=2 WHERE `id_match` >= 37 AND `id_match` <= 44;
+UPDATE `matches` SET `modif`=2 WHERE `id_match` >= 0 AND `id_match` <= 10; -- 48
 
 UPDATE `etat` SET `value`= 0;
+
+UPDATE joueurs  
+LEFT JOIN pronostics_bonus on pronostics_bonus.id_membre = joueurs.id_joueur
+LEFT JOIN equipes on equipes.id_equipe = pronostics_bonus.team_winner_id
+SET equipe = pronostics_bonus.team_winner_id, joueurs.color = equipes.color;
+
 
 ---------------------------------------------------------------------------------------------------------------------------
 

@@ -1,11 +1,30 @@
 <?php
 session_start();
 
-$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 $id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
+parse_str($_SERVER["QUERY_STRING"], $query);
+
+if (isset($query['username'])) {
+	$username = base64_decode($query['username']);
+
+	include('config.php');
+	
+	$qry = "SELECT id_joueur, surnom FROM joueurs WHERE surnom='".$username."';";
+	$res = mysqli_query($con, $qry);
+	$row = mysqli_fetch_assoc($res);
+	
+	$_SESSION['id'] = $row['id_joueur'];
+	$_SESSION['pseudo'] = $row['surnom'];
+	$id = $row['id_joueur'];
+	$pseudo = $row['surnom'];
+}
+
+if ($id == 0) { header('Location: index.php'); }
+
 ?>
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
 	<head>
 		<title>Accueil</title>
@@ -20,14 +39,12 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<script src="javascript/bandeau.js"></script>
 		<script src="javascript/acceuil.js"></script>
 
+		
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
 	</head>
 	
-	<?php include("init.php");?>
-	
-
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'></div>
 
@@ -80,7 +97,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 							<tr>
 								<td >
 									<div class="tableAcceuilClassement"> 
-										<div class="classement-card-event mdl-card classement-general mdl-shadow--2dp">
+										<div class="classement-card-event mdl-card classement-general mdl-shadow--2dp backgroundwhite">
 											<div class="mdl-card__title mdl-card--expand">
 												<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
 													<?php include("include/viewHomeClassementGeneral.php");?>

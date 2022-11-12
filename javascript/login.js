@@ -9,12 +9,13 @@ $(document).ready(function(){
 		   	url: "login.php",
 			data: "name="+username+"&pwd="+password,
 		   	success: function(html) { 
+				console.log("HTML : ", html);
 			// $("#add_err").css('display', 'inline', 'important');
 			//  $("#add_err").html("<span>" + html + "</span>");
 			if (html.indexOf('true') >= 0) {
 				console.log("OK"); 
 				//$("#add_err").html("right username or password");
-				window.location="acceuil.php";
+				window.location="acceuil.php?username=" + btoa(username);
 			}
 			else {
 				$("#add_load").css('display', 'none', 'important');

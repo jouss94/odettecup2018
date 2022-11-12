@@ -27,12 +27,14 @@ $(function() {
 			}
 		}	
 	});
-
-	$( "#equipeWin" ).selectmenu();
-		$( "#buttonValidationReset" ).button({
-				icons: {
-						primary: 'ui-icon-blank', 
-						secondary: ' ui-icon-closethick'
-				}
-			});
+	
+	$( "#buttonValidationReset" ).button({
+		icons: {
+			primary: 'ui-icon-blank', 
+			secondary: ' ui-icon-closethick'
+		}
+	});
+	
+	$( "#equipeWin" ).selectmenu();  
+	$( "#joueurWin" ).selectmenu();
 });

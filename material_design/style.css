@@ -1,10 +1,10 @@
 .rougedefault {
-    background: #018498;
+    background: #ffffff91;
     /* background: brown; */
 }
 
 .blackougedefault {
-  background: #6bb3bd;
+  /* background: #6bb3bd; */
 }
 
 .blackougewhite {
@@ -14,31 +14,31 @@
 .demo-card-event.mdl-card {
     width: 415px;
     height: 405px;
-    background: #018498;
-  }
-  .demo-card-event > .mdl-card__actions {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-  .demo-card-event > .mdl-card__title {
-    align-items: flex-start;
-    padding: 10px 10px;
-  }
-  .demo-card-event > .mdl-card__title > h4 {
-    margin-top: 0;
-  }
-  .demo-card-event > .mdl-card__actions {
-    display: flex;
-    box-sizing:border-box;
-    align-items: center;
-  }
-  .demo-card-event > .mdl-card__actions > .material-icons {
-    padding-right: 10px;
-  }
-  .demo-card-event > .mdl-card__title,
-  .demo-card-event > .mdl-card__actions,
-  .demo-card-event > .mdl-card__actions > .mdl-button {
-    color: #fff;
-  }
+    background: #ffffff91;
+}
+.demo-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.demo-card-event > .mdl-card__title {
+  align-items: flex-start;
+  padding: 10px 10px;
+}
+.demo-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.demo-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.demo-card-event > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.demo-card-event > .mdl-card__title,
+.demo-card-event > .mdl-card__actions,
+.demo-card-event > .mdl-card__actions > .mdl-button {
+  color: #992149;
+}
 
 
   .classement-card-event.mdl-card {
@@ -47,7 +47,7 @@
   }
   .classement-general {
     /* background: #fbe835; */
-    background: #018498;
+    background: #72203c70;
         /* background: #b83e3e; */
 }
 
@@ -92,7 +92,7 @@
   .classement-card-event > .mdl-card__title,
   .classement-card-event > .mdl-card__actions,
   .classement-card-event > .mdl-card__actions > .mdl-button {
-    color: #FFF;
+    color: #992149;
   }
 
 
@@ -100,7 +100,7 @@
     width: 415px;
     min-height: 100px;
     height: 100px;
-    background: #018498;
+    background: #ffffff91;
   }
 
   .information-card-event > .mdl-card__actions {
@@ -124,7 +124,7 @@
   .information-card-event > .mdl-card__title,
   .information-card-event > .mdl-card__actions,
   .information-card-event > .mdl-card__actions > .mdl-button {
-    color: #fff;
+    color: #992149;
   }
 
 
@@ -242,7 +242,7 @@
   .displaymatch-card-event > .mdl-card__title,
   .displaymatch-card-event > .mdl-card__actions,
   .displaymatch-card-event > .mdl-card__actions > .mdl-button {
-    color: #FFF;
+    color: #5c001f;
   }  
   
 
@@ -252,7 +252,7 @@
 }
 
 .height150 {
-  height: 306px !important;
+  height: 418px !important;
   min-height: 190px !important;
 }    
 
@@ -263,19 +263,19 @@
 
 #RetourProfil {
   background: #ffffff;
-  color: #018498; 
+  color: #5c001f; 
 }
 
 #RetourAcceuil {
   background: #ffffff;
-  color: #018498;
+  color: #5c001f;
 }
 
 
 .match-card-event.mdl-card {
   width: 480px;
   height: 500px;
-  background: rgb(1 132 152);
+  background: #6b1834;
   margin: auto;
   margin-top: 40px;
 }
@@ -366,3 +366,6 @@
 }
 
 
+.classementbutton {
+  background: none !important;
+}

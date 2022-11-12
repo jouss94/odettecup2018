@@ -1,11 +1,15 @@
 <?php
 
-    $lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
-	$qry = "SELECT *, (nb_perf+nb_correct_plus+nb_correct+nb_inverse+nb_echec)  as total from joueurs 
+	$qry = "SELECT *, 
+	(nb_perf+nb_correct_plus+nb_correct+nb_inverse+nb_echec)  as total ,
+	equipe_winner.logo as logo
+	from joueurs 
 	LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'general' 
+	
+	LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe 
 	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC, surnom;";
 	$result = mysqli_query($con, $qry);
 	$find = false;
@@ -62,8 +66,13 @@
 				<td class="ClassementSurnom">
 					<div id="lienSurnom', $id_joueur,'" style="" class="surnomClassementDiv clickJoueur">',
 					
-					$surnom,
-					'</div>
+					$surnom;
+				if ($row["logo"] != null) {
+					echo '<img class="logoEquipProfil" src="';
+					echo $row["logo"];	
+					echo '" />';
+				}					
+				echo	'</div>
 				</td>
 				<td class="ClassementNbPronos">',
 					$total,

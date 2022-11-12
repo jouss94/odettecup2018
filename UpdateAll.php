@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 $id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
@@ -20,9 +19,6 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<script src="javascript/bandeau.js"></script>
 		<script src="javascript/acceuil.js"></script>
 	</head>
-	
-	<?php include("init.php");?>
-	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
 		<?php include("background.php");?>

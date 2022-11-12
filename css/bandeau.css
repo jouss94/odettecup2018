@@ -1,33 +1,32 @@
-table.bandeau {
+.bandeau {
     width: 100%;
     height: 40px;
     border-collapse: collapse;
-    background: #018498;
+    background: #ffffffcc;
     position: fixed;
     z-index: 999;
-    color: white;
+    color: #981d46;
     border-bottom: 1px solid #fff;
 }
 
-table.bandeauacceuil {
+/* table.bandeauacceuil {
     background: rgba(0, 0, 0, 0.35);
-}
+} */
 
-td#bandeauAcceuil {
+#bandeauAcceuil {
     width: 5%;
     text-align: center;
-    background-color: #ffffff21;
+    background: #ffffff6b;
 }
 
-td#bandeauAcceuil:hover {
+#bandeauAcceuil:hover {
     width: 5%;
     text-align: center;
-    color: #000;
+    color: #fff;
     cursor: pointer;
 }
 
-
-td#bandeauNom {
+#bandeauNom {
     font-size: 20px;
     width: 65%;
     text-align: center;
@@ -35,41 +34,39 @@ td#bandeauNom {
     cursor: context-menu;
 }
 
-td#bandeauProfil {
+#bandeauProfil {
     width: 13%;
-    text-align: center;
-    background-image: url("../images/icon/user_9x12_white.png");
-    background-repeat:no-repeat;
-    background-position:20 center;
-    color: white;
-    background-color: #ffffff21;
+    cursor: pointer;
+    background: #ffffff6b;
 }
 
-td#bandeauProfil:hover {
+#bandeauProfil:hover {
     width: 13%;
-    text-align: center;
-    background-image: url("../images/icon/user_9x12.png");
-    background-repeat:no-repeat;
-    background-position:20 center;
     color: white;
     cursor: pointer;
 }
 
 
-td#bandeauDeconnect {
+#bandeauDeconnect {
     width: 17%;
-    text-align: center;
-    background-image: url("../images/icon/x_11x11_white.png");
-    background-repeat:no-repeat;
-    background-position:10 center;
+    cursor: pointer;
 }
 
-td#bandeauDeconnect:hover {
+#bandeauDeconnect:hover {
     width: 17%;
-    text-align: center;
     color: white;
     cursor: pointer;
-    background-image: url("../images/icon/x_11x11.png");
-    background-repeat:no-repeat;
-    background-position:10 center;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.bandeauText {
+    padding-top: 2px;
+    padding-left: 10px;
 }

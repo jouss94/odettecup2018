@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 $id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+if ($id == 0) { header('Location: index.php'); }
 
 ?>
 
@@ -27,10 +27,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
-	</head>
-	
-	<?php include("init.php");?>
-	
+	</head>	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
 		<?php include("background.php");?>

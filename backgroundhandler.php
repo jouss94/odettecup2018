@@ -1,7 +1,5 @@
 <?php
 
-/// TODO : CE CODE EST MORT ?!!!
-
 /**
  * Connexion simple à la base de données via PDO !
  */
@@ -39,8 +37,12 @@ function getMessages(){
   joueurs.surnom as surnom,
   joueurs.id_joueur as id_joueur,
   joueurs.image as image,
-  joueurs.color as color
-  FROM messages LEFT JOIN joueurs ON messages.author_id = joueurs.id_joueur ORDER BY created_at DESC LIMIT 200");
+  joueurs.color as color,
+  equipe_winner.logo as logo
+  FROM messages 
+  LEFT JOIN joueurs ON messages.author_id = joueurs.id_joueur
+  LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe 
+  ORDER BY created_at DESC LIMIT 200");
 
   // 2. On traite les résultats
   $messages = $resultats->fetchAll();

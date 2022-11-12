@@ -1,6 +1,5 @@
 <?php
 	
-	$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
@@ -70,7 +69,7 @@
 
 		echo '<td class="homeSmallDate">';
 		echo '<div>';
-			echo $date_array['day']. "/0" . $date_array['month'];	
+			echo $date_array['day']. "/" . $date_array['month'];	
 		echo '</div>';
 		echo '<div>';
 			echo $date_array['hour']. ":00";	

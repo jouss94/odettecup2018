@@ -1,6 +1,5 @@
 <?php
 
-		$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
@@ -47,17 +46,30 @@
 		$montagne = $row["montagne"];
 
 
-		echo '
-
-				<h2> ',$group,'</h2>';
+		// echo '<h2> ',$group,'</h2>';
 		
 		if ($row["montagne"] == 1)
 		{
 			echo '<div class="matchmontagne">Match de montagne</div>';
 		}		
 
+		echo '<table style="margin:auto;width: 85%;border-collapse: collapse;text-align: center;    font-style: italic;">
+			<tr>
+					<td style="margin: auto;    width: 33%;text-align: left 	;">',
+						 $date_array,'
+					</td>
+					<td style="margin: auto;    width: 33%;">', $stadium;
+
+
+					echo '</td>
+					<td style="margin: auto;    width: 33%;text-align: right;" >', $diff,  
+					'</td>';
+
+		echo '</tr>
+		</table>';
+
 		echo '
-		<table style="margin:auto;width: 100%;border-collapse: collapse;    margin-top: 55px;">
+		<table style="margin:auto;width: 100%;border-collapse: collapse;    margin-top: 20px;">
 			<tr>
 					<td style="margin: auto;text-align: right;padding-right: 40px;">
 						<img class="logoEquipeBig" src="', $home_logo,'" />
@@ -77,14 +89,14 @@
 					<td class="BigTitreRight" >', 
 						$home_name,
 					'</td>
-					<td style="width: 5%;">'; 
+					<td style="width: 8%;">'; 
 						if ($played == 1)
 							echo '<span class="pancarte" style="font-size: 35px;">',  $score_home,'</span>';
 
 					echo '</td >
-					<td style="font-size: 50px;"> - ', 
+					<td style="font-size: 50px;width:20px">&nbsp;', 
 					'</td>
-					<td style="width: 5%;">'; 
+					<td style="width: 8%;">'; 
 						if ($played == 1)
 							echo '<span class="pancarte" style="font-size: 35px;">',  $score_away,'</span>';
 
@@ -95,20 +107,7 @@
 			</tr>
 		</table>';
 
-		echo '<table style="margin:auto;width: 85%;border-collapse: collapse;text-align: center;    font-style: italic;">
-			<tr>
-					<td style="margin: auto;    width: 33%;text-align: left 	;">',
-						 $date_array,'
-					</td>
-					<td style="margin: auto;    width: 33%;">', $stadium;
 
-
-					echo '</td>
-					<td style="margin: auto;    width: 33%;text-align: right;" >', $diff,  
-					'</td>';
-
-		echo '</tr>
-		</table>';
 
 
 	}

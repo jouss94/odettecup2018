@@ -1,15 +1,14 @@
-SET @prenom = 'Léa';
-SET @nom = 'Le Chapelain';
-SET @surnom = 'Léa';
-SET @email = 'Lealechapelain@yahoo.fr';
-SET @password = 'VB62WK';
-SET @telephone = '0612341117';
-SET @female = 0;
-SET @description = "Boss is back ?";
+SET @nom = 'Jousseau';
+SET @prenom = 'Odile';
+SET @surnom = 'Mamie loute';
+SET @email = 'Dam-papillon@live.fr';
+SET @password = 'LA58PE';
+SET @telephone = '0620694215';
+SET @description = "Contenter de vous retrouver  j’espère que mon mari ne va pas m’aider car il est trop fort...";
 
 
-INSERT INTO `joueurs` (`prenom`, `nom`, `surnom`, `email`, `password`, `telephone`, `female`, `description`) 
-VALUES (@prenom, @nom, @surnom, @email, @password, @telephone, @female, @description);
+INSERT INTO `joueurs` (`prenom`, `nom`, `surnom`, `email`, `password`, `telephone`, `description`) 
+VALUES (@prenom, @nom, @surnom, @email, @password, @telephone, @description);
 
 SET @ID = LAST_INSERT_ID();
 

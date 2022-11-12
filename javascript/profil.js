@@ -8,4 +8,7 @@ $(document).ready(function() {
 	$("#ModifierProfil").click(function(){	
 		document.location = 'modifierProfil.php?id=' + document.getElementById("idPhp").getAttribute("name");
 	});
+	$("#modifierJoker").click(function(){	
+		document.location = 'modifierJoker.php?id=' + document.getElementById("idPhp").getAttribute("name");
+	});
 });

@@ -79,5 +79,6 @@ $(function() {
 			}
 		}	
 	});
-	$( "#equipeWin" ).selectmenu();
+	$( "#equipeWin" ).selectmenu({ width : 250});
+	$( "#joueurWin" ).selectmenu({ width : 250});
 });

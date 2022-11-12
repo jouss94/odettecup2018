@@ -91,6 +91,7 @@ CREATE TABLE IF NOT EXISTS `equipes` (
   `group` varchar(1) COLLATE utf8_general_ci NOT NULL,
   `image` varchar(255) COLLATE utf8_general_ci NOT NULL,
   `logo` varchar(255) COLLATE utf8_general_ci NOT NULL DEFAULT 'images\\flag\\',
+  `color` varchar(255) COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id_equipe`)
 ) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT  COLLATE=utf8_general_ci;
 
@@ -98,39 +99,39 @@ CREATE TABLE IF NOT EXISTS `equipes` (
 -- Déchargement des données de la table `equipes`
 --
 
-INSERT INTO `equipes` (`id_equipe`, `name`, `group`, `image`, `logo`) VALUES
-(1, 'Qatar', 'A', '', 'images\\flag\\QAT.webp'),
-(2, 'Équateur', 'A', '', 'images\\flag\\ECU.webp'),
-(3, 'Sénégal', 'A', '', 'images\\flag\\SEN.webp'),
-(4, 'Pays-Bas', 'A', '', 'images\\flag\\NED.webp'),
-(5, 'Angleterre', 'B', '', 'images\\flag\\ENG.webp'),
-(6, 'Iran', 'B', '', 'images\\flag\\IRN.webp'),
-(7, 'États-Unis', 'B', '', 'images\\flag\\USA.webp'),
-(8, 'Pays de Galles', 'B', '', 'images\\flag\\WAL.webp'),
-(9, 'Argentine', 'C', '', 'images\\flag\\ARG.webp'),
-(10, 'Arabie saoudite', 'C', '', 'images\\flag\\KSA.webp'),
-(11, 'Mexique', 'C', '', 'images\\flag\\MEX.webp'),
-(12, 'Pologne', 'C', '', 'images\\flag\\POL.webp'),
-(13, 'France', 'D', '', 'images\\flag\\FRA.webp'),
-(14, 'Danemark', 'D', '', 'images\\flag\\DEN.webp'),
-(15, 'Tunisie', 'D', '', 'images\\flag\\TUN.webp'),
-(16, 'Australie', 'D', '', 'images\\flag\\AUS.webp'),
-(17, 'Espagne', 'E', '', 'images\\flag\\ESP.jpg'),
-(18, 'Allemagne', 'E', '', 'images\\flag\\GER.webp'),
-(19, 'Japon', 'E', '', 'images\\flag\\JPN.webp'),
-(20, 'Costa Rica', 'E', '', 'images\\flag\\CRC.webp'),
-(21, 'Belgique', 'F', '', 'images\\flag\\BEL.webp'),
-(22, 'Canada', 'F', '', 'images\\flag\\CAN.webp'),
-(23, 'Maroc', 'F', '', 'images\\flag\\MAR.webp'),
-(24, 'Croatie', 'F', '', 'images\\flag\\CRO.webp'),
-(25, 'Brésil', 'G', '', 'images\\flag\\BRA.webp'),
-(26, 'Serbie', 'G', '', 'images\\flag\\SRB.webp'),
-(27, 'Suisse', 'G', '', 'images\\flag\\SUI.webp'),
-(28, 'Cameroun', 'G', '', 'images\\flag\\CMR.webp'),
-(29, 'Portugal', 'H', '', 'images\\flag\\POR.webp'),
-(30, 'Ghana', 'H', '', 'images\\flag\\GHA.webp'),
-(31, 'Uruguay', 'H', '', 'images\\flag\\URU.webp'),
-(32, 'Rép. de Corée', 'H', '', 'images\\flag\\KOR.webp');
+INSERT INTO `equipes` (`id_equipe`, `name`, `group`, `image`, `logo`, `color`) VALUES
+(1, 'Qatar', 'A', '', 'images\\flag\\QAT.webp', '#65112d'),
+(2, 'Équateur', 'A', '', 'images\\flag\\ECU.webp', '#faea0e'),
+(3, 'Sénégal', 'A', '', 'images\\flag\\SEN.webp', '#138f55'),
+(4, 'Pays-Bas', 'A', '', 'images\\flag\\NED.webp', '#ff7e04'),
+(5, 'Angleterre', 'B', '', 'images\\flag\\ENG.webp', '#ffffff'),
+(6, 'Iran', 'B', '', 'images\\flag\\IRN.webp', '#950c0c'),
+(7, 'États-Unis', 'B', '', 'images\\flag\\USA.webp', '#292975'),
+(8, 'Pays de Galles', 'B', '', 'images\\flag\\WAL.webp', '#179355'),
+(9, 'Argentine', 'C', '', 'images\\flag\\ARG.webp', '#5bbee9'),
+(10, 'Arabie saoudite', 'C', '', 'images\\flag\\KSA.webp', '#004300'),
+(11, 'Mexique', 'C', '', 'images\\flag\\MEX.webp', '#159153'),
+(12, 'Pologne', 'C', '', 'images\\flag\\POL.webp', '#dc171d'),
+(13, 'France', 'D', '', 'images\\flag\\FRA.webp', '#000066'),
+(14, 'Danemark', 'D', '', 'images\\flag\\DEN.webp', '#dc171d'),
+(15, 'Tunisie', 'D', '', 'images\\flag\\TUN.webp', '#dc171e'),
+(16, 'Australie', 'D', '', 'images\\flag\\AUS.webp', '#e1d71d'),
+(17, 'Espagne', 'E', '', 'images\\flag\\ESP.jpg', '#dc080d'),
+(18, 'Allemagne', 'E', '', 'images\\flag\\GER.webp', '#000000'),
+(19, 'Japon', 'E', '', 'images\\flag\\JPN.webp', '#fff'),
+(20, 'Costa Rica', 'E', '', 'images\\flag\\CRC.webp', '#012987'),
+(21, 'Belgique', 'F', '', 'images\\flag\\BEL.webp', '#dc151d'),
+(22, 'Canada', 'F', '', 'images\\flag\\CAN.webp', '#dc171e'),
+(23, 'Maroc', 'F', '', 'images\\flag\\MAR.webp', '#db161d'),
+(24, 'Croatie', 'F', '', 'images\\flag\\CRO.webp', '#db161d'),
+(25, 'Brésil', 'G', '', 'images\\flag\\BRA.webp', '#ffec00'),
+(26, 'Serbie', 'G', '', 'images\\flag\\SRB.webp', '#dc080d'),
+(27, 'Suisse', 'G', '', 'images\\flag\\SUI.webp', '#dc080d'),
+(28, 'Cameroun', 'G', '', 'images\\flag\\CMR.webp', '#ffec00'),
+(29, 'Portugal', 'H', '', 'images\\flag\\POR.webp', '#149153'),
+(30, 'Ghana', 'H', '', 'images\\flag\\GHA.webp', '#fcea0d'),
+(31, 'Uruguay', 'H', '', 'images\\flag\\URU.webp', '#5bbee9'),
+(32, 'Rép. de Corée', 'H', '', 'images\\flag\\KOR.webp', '#fff');
 
 -- --------------------------------------------------------
 
@@ -176,11 +177,12 @@ CREATE TABLE IF NOT EXISTS `joueurs` (
   `modif_profil` tinyint(1) NOT NULL DEFAULT '0',
   `modif_match` tinyint(1) NOT NULL DEFAULT '0',
   `modif_bonus` tinyint(1) NOT NULL DEFAULT '0',
+  `modif_joker` tinyint(1) NOT NULL DEFAULT '0',
   `description` varchar(4024) COLLATE utf8_general_ci DEFAULT NULL,
   `equipe` int(11) DEFAULT NULL,
   `oauth` enum('Yes','No') COLLATE utf8_general_ci NOT NULL DEFAULT 'No',
   `status` enum('active','inactive') COLLATE utf8_general_ci NOT NULL DEFAULT 'active',
-  `color` varchar(100) NOT NULL DEFAULT '#209aad',
+  `color` varchar(100) NOT NULL DEFAULT '#9c2950',
   PRIMARY KEY (`id_joueur`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT  COLLATE=utf8_general_ci;
 
@@ -188,8 +190,8 @@ CREATE TABLE IF NOT EXISTS `joueurs` (
 -- Déchargement des données de la table `joueurs`
 --
 
-INSERT INTO `joueurs` (`id_joueur`, `prenom`, `nom`, `surnom`, `email`, `password`, `image`, `departement`, `telephone`, `payed`, `updated`, `female`, `modif_profil`, `modif_match`, `modif_bonus`, `description`, `equipe`, `oauth`, `status`) VALUES
-(1, 'Florian ', 'Jousseau', 'La Flouf', 'f.jousseau@gmail.com', 'admin', 'images/user/18260_10200113693266289_1751359165_n.jpg', 94, '0760851992', 0, 0, 0, 0, 0, 0, 'Président directeur général de la Odette Cup', NULL, 'No', 'active');
+INSERT INTO `joueurs` (`id_joueur`, `prenom`, `nom`, `surnom`, `email`, `password`, `image`, `departement`, `telephone`, `payed`, `updated`, `female`, `modif_profil`, `modif_match`, `modif_bonus`, `modif_joker`, `description`, `equipe`, `oauth`, `status`) VALUES
+(1, 'Florian ', 'Jousseau', 'La Flouf', 'f.jousseau@gmail.com', 'admin', 'images/user/18260_10200113693266289_1751359165_n.jpg', 94, '0760851992', 0, 0, 0, 0, 0, 0, 0, 'Président directeur général de la Odette Cup', NULL, 'No', 'active');
 
 -- --------------------------------------------------------
 
@@ -210,73 +212,73 @@ CREATE TABLE IF NOT EXISTS `matches` (
   `played` tinyint(1) NOT NULL DEFAULT '0',
   `modif` tinyint(1) NOT NULL DEFAULT '1',
   `groupe` varchar(5) COLLATE utf8_general_ci NOT NULL,
-  `phased` tinyint(1) NOT NULL DEFAULT '0',
+  `dayOfstage` tinyint(1) NOT NULL DEFAULT '0',
   `montagne` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_match`)
 ) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT  COLLATE=utf8_general_ci;
 
-INSERT INTO `matches` (`id_match`, `id_team_home`, `id_team_away`, `score_home`, `score_away`, `date`, `stadium`, `diff`, `played`, `modif`, `groupe`, `phased`, `montagne`) VALUES
+INSERT INTO `matches` (`id_match`, `id_team_home`, `id_team_away`, `score_home`, `score_away`, `date`, `stadium`, `diff`, `played`, `modif`, `groupe`, `dayOfstage`, `montagne`) VALUES
 
-(1, 2, 1, 0, 0, '2022-11-20 17:00:00', 'Al Bayt Stadium', 'TF1 - BeIn1', 0, 1, 'A', 0, 0),
+(1, 1, 2, 0, 0, '2022-11-20 17:00:00', 'Al Bayt Stadium', 'TF1 - BeIn1', 0, 1, 'A', 1, 0),
 
-(2, 5, 6, 0, 0, '2022-11-21 14:00:00', 'Khalifa International Stadium', 'BeIn1', 0, 1, 'B', 0, 0),
-(3, 3, 4, 0, 0, '2022-11-21 17:00:00', 'Al Thumama Stadium', 'BeIn1', 0, 1, 'A', 0, 0),
-(4, 7, 8, 0, 0, '2022-11-21 20:00:00', 'Ahmad Bin Ali Stadium', 'TF1 - BeIn1', 0, 1, 'B', 0, 0),
+(2, 5, 6, 0, 0, '2022-11-21 14:00:00', 'Khalifa International Stadium', 'BeIn1', 0, 1, 'B', 1, 0),
+(3, 3, 4, 0, 0, '2022-11-21 17:00:00', 'Al Thumama Stadium', 'BeIn1', 0, 1, 'A', 1, 0),
+(4, 7, 8, 0, 0, '2022-11-21 20:00:00', 'Ahmad Bin Ali Stadium', 'TF1 - BeIn1', 0, 1, 'B', 1, 0),
 
-(5, 9, 10, 0, 0, '2022-11-22 11:00:00', 'Lusail Stadium', 'BeIn1', 0, 1, 'C', 0, 0),
-(6, 14, 15, 0, 0, '2022-11-22 14:00:00', 'Education City Stadium', 'BeIn1', 0, 1, 'D', 0, 0),
-(7, 11, 12, 0, 0, '2022-11-22 17:00:00', 'Stadium 974', 'BeIn1', 0, 1, 'C', 0, 0),
-(8, 13, 16, 0, 0, '2022-11-22 20:00:00', 'Al-Janoub Stadium', 'TF1 - BeIn1', 0, 1, 'D', 0, 0),
+(5, 9, 10, 0, 0, '2022-11-22 11:00:00', 'Lusail Stadium', 'BeIn1', 0, 1, 'C', 1, 0),
+(6, 14, 15, 0, 0, '2022-11-22 14:00:00', 'Education City Stadium', 'BeIn1', 0, 1, 'D', 1, 0),
+(7, 11, 12, 0, 0, '2022-11-22 17:00:00', 'Stadium 974', 'BeIn1', 0, 1, 'C', 1, 0),
+(8, 13, 16, 0, 0, '2022-11-22 20:00:00', 'Al-Janoub Stadium', 'TF1 - BeIn1', 0, 1, 'D', 1, 0),
 
-(9, 23, 24, 0, 0, '2022-11-23 11:00:00', 'Al Bayt Stadium', 'BeIn1', 0, 1, 'F', 0, 0),
-(10, 18, 19, 0, 0, '2022-11-23 14:00:00', 'Khalifa International Stadium', 'BeIn1', 0, 1, 'E', 0, 0),
-(11, 17, 20, 0, 0, '2022-11-23 17:00:00', 'Al Thumama Stadium', 'BeIn1', 0, 1, 'E', 0, 0),
-(12, 21, 22, 0, 0, '2022-11-23 20:00:00', 'Ahmad Bin Ali Stadium', 'TF1 - BeIn1', 0, 1, 'F', 0, 0),
+(9, 23, 24, 0, 0, '2022-11-23 11:00:00', 'Al Bayt Stadium', 'BeIn1', 0, 1, 'F', 1, 0),
+(10, 18, 19, 0, 0, '2022-11-23 14:00:00', 'Khalifa International Stadium', 'BeIn1', 0, 1, 'E', 1, 0),
+(11, 17, 20, 0, 0, '2022-11-23 17:00:00', 'Al Thumama Stadium', 'BeIn1', 0, 1, 'E', 1, 0),
+(12, 21, 22, 0, 0, '2022-11-23 20:00:00', 'Ahmad Bin Ali Stadium', 'TF1 - BeIn1', 0, 1, 'F', 1, 0),
 
-(13, 27, 28, 0, 0, '2022-11-24 11:00:00', 'Al-Janoub Stadium', 'BeIn1', 0, 1, 'G', 0, 0),
-(14, 31, 32, 0, 0, '2022-11-24 14:00:00', 'Education City Stadium', 'BeIn1', 0, 1, 'H', 0, 0),
-(15, 29, 30, 0, 0, '2022-11-24 17:00:00', 'Stadium 974', 'BeIn1', 0, 1, 'H', 0, 0),
-(16, 25, 26, 0, 0, '2022-11-24 20:00:00', 'Lusail Stadium', 'TF1 - BeIn1', 0, 1, 'G', 0, 0),
+(13, 27, 28, 0, 0, '2022-11-24 11:00:00', 'Al-Janoub Stadium', 'BeIn1', 0, 1, 'G', 1, 0),
+(14, 31, 32, 0, 0, '2022-11-24 14:00:00', 'Education City Stadium', 'BeIn1', 0, 1, 'H', 1, 0),
+(15, 29, 30, 0, 0, '2022-11-24 17:00:00', 'Stadium 974', 'BeIn1', 0, 1, 'H', 1, 0),
+(16, 25, 26, 0, 0, '2022-11-24 20:00:00', 'Lusail Stadium', 'TF1 - BeIn1', 0, 1, 'G', 1, 0),
 
-(17, 8, 6, 0, 0, '2022-11-25 11:00:00', 'Ahmad Bin Ali Stadium', 'BeIn1', 0, 1, 'B', 0, 0),
-(18, 1, 3, 0, 0, '2022-11-25 14:00:00', 'Al Thumama Stadium', 'BeIn1', 0, 1, 'A', 0, 0),
-(19, 4, 2, 0, 0, '2022-11-25 17:00:00', 'Khalifa International Stadium', 'BeIn1', 0, 1, 'A', 0, 0),
-(20, 5, 7, 0, 0, '2022-11-25 20:00:00', 'Al Bayt Stadium', 'TF1 - BeIn1', 0, 1, 'B', 0, 0),
+(17, 8, 6, 0, 0, '2022-11-25 11:00:00', 'Ahmad Bin Ali Stadium', 'BeIn1', 0, 1, 'B', 2, 0),
+(18, 1, 3, 0, 0, '2022-11-25 14:00:00', 'Al Thumama Stadium', 'BeIn1', 0, 1, 'A', 2, 0),
+(19, 4, 2, 0, 0, '2022-11-25 17:00:00', 'Khalifa International Stadium', 'BeIn1', 0, 1, 'A', 2, 0),
+(20, 5, 7, 0, 0, '2022-11-25 20:00:00', 'Al Bayt Stadium', 'TF1 - BeIn1', 0, 1, 'B', 2, 0),
 
-(21, 15, 16, 0, 0, '2022-11-26 11:00:00', 'Al-Janoub Stadium', 'BeIn1', 0, 1, 'D', 0, 0),
-(22, 12, 10, 0, 0, '2022-11-26 14:00:00', 'Education City Stadium', 'BeIn1', 0, 1, 'C', 0, 0),
-(23, 13, 14, 0, 0, '2022-11-26 17:00:00', 'Stadium 974', 'TF1 - BeIn1', 0, 1, 'D', 0, 0),
-(24, 9, 11, 0, 0, '2022-11-26 20:00:00', 'Lusail Stadium', 'TF1 - BeIn1', 0, 1, 'C', 0, 0),
+(21, 15, 16, 0, 0, '2022-11-26 11:00:00', 'Al-Janoub Stadium', 'BeIn1', 0, 1, 'D', 2, 0),
+(22, 12, 10, 0, 0, '2022-11-26 14:00:00', 'Education City Stadium', 'BeIn1', 0, 1, 'C', 2, 0),
+(23, 13, 14, 0, 0, '2022-11-26 17:00:00', 'Stadium 974', 'TF1 - BeIn1', 0, 1, 'D', 2, 0),
+(24, 9, 11, 0, 0, '2022-11-26 20:00:00', 'Lusail Stadium', 'TF1 - BeIn1', 0, 1, 'C', 2, 0),
 
-(25, 19, 20, 0, 0, '2022-11-27 11:00:00', 'Ahmad Bin Ali Stadium', 'BeIn1', 0, 1, 'E', 0, 0),
-(26, 21, 23, 0, 0, '2022-11-27 14:00:00', 'Al Thumama Stadium', 'TF1 - BeIn1', 0, 1, 'F', 0, 0),
-(27, 24, 22, 0, 0, '2022-11-27 17:00:00', 'Khalifa International Stadium', 'BeIn1', 0, 1, 'F', 0, 0),
-(28, 17, 18, 0, 0, '2022-11-27 20:00:00', 'Al Bayt Stadium', 'TF1 - BeIn1', 0, 1, 'E', 0, 0),
+(25, 19, 20, 0, 0, '2022-11-27 11:00:00', 'Ahmad Bin Ali Stadium', 'BeIn1', 0, 1, 'E', 2, 0),
+(26, 21, 23, 0, 0, '2022-11-27 14:00:00', 'Al Thumama Stadium', 'TF1 - BeIn1', 0, 1, 'F', 2, 0),
+(27, 24, 22, 0, 0, '2022-11-27 17:00:00', 'Khalifa International Stadium', 'BeIn1', 0, 1, 'F', 2, 0),
+(28, 17, 18, 0, 0, '2022-11-27 20:00:00', 'Al Bayt Stadium', 'TF1 - BeIn1', 0, 1, 'E', 2, 0),
 
-(29, 28, 26, 0, 0, '2022-11-28 11:00:00', 'Al-Janoub Stadium', 'BeIn1', 0, 1, 'G', 0, 0),
-(30, 32, 30, 0, 0, '2022-11-28 14:00:00', 'Education City Stadium', 'BeIn1', 0, 1, 'H', 0, 0),
-(31, 25, 27, 0, 0, '2022-11-28 17:00:00', 'Stadium 974', 'BeIn1', 0, 1, 'G', 0, 0),
-(32, 29, 31, 0, 0, '2022-11-28 20:00:00', 'Lusail Stadium', 'TF1 - BeIn1', 0, 1, 'H', 0, 0),
+(29, 28, 26, 0, 0, '2022-11-28 11:00:00', 'Al-Janoub Stadium', 'BeIn1', 0, 1, 'G', 2, 0),
+(30, 32, 30, 0, 0, '2022-11-28 14:00:00', 'Education City Stadium', 'BeIn1', 0, 1, 'H', 2, 0),
+(31, 25, 27, 0, 0, '2022-11-28 17:00:00', 'Stadium 974', 'BeIn1', 0, 1, 'G', 2, 0),
+(32, 29, 31, 0, 0, '2022-11-28 20:00:00', 'Lusail Stadium', 'TF1 - BeIn1', 0, 1, 'H', 2, 0),
 
-(33, 2, 3, 0, 0, '2022-11-29 16:00:00', 'Khalifa International Stadium', 'BeIn2', 0, 1, 'A', 0, 0),
-(34, 4, 1, 0, 0, '2022-11-29 16:00:00', 'Al Bayt Stadium', 'BeIn1', 0, 1, 'A', 0, 0),
-(35, 6, 7, 0, 0, '2022-11-29 20:00:00', 'Al Thumama Stadium', 'BeIn2', 0, 1, 'B', 0, 0),
-(36, 8, 5, 0, 0, '2022-11-29 20:00:00', 'Ahmad Bin Ali Stadium', 'TF1 - BeIn1', 0, 1, 'B', 0, 0),
+(33, 2, 3, 0, 0, '2022-11-29 16:00:00', 'Khalifa International Stadium', 'BeIn2', 0, 1, 'A', 3, 0),
+(34, 4, 1, 0, 0, '2022-11-29 16:00:00', 'Al Bayt Stadium', 'BeIn1', 0, 1, 'A', 3, 0),
+(35, 6, 7, 0, 0, '2022-11-29 20:00:00', 'Al Thumama Stadium', 'BeIn2', 0, 1, 'B', 3, 0),
+(36, 8, 5, 0, 0, '2022-11-29 20:00:00', 'Ahmad Bin Ali Stadium', 'TF1 - BeIn1', 0, 1, 'B', 3, 0),
 
-(37, 16, 14, 0, 0, '2022-11-30 16:00:00', 'Al-Janoub Stadium', 'BeIn2', 0, 1, 'D', 0, 0),
-(38, 15, 13, 0, 0, '2022-11-30 16:00:00', 'Education City Stadium', 'TF1 - BeIn1', 0, 1, 'D', 0, 0),
-(39, 10, 11, 0, 0, '2022-11-30 20:00:00', 'Lusail Stadium', 'BeIn2', 0, 1, 'C', 0, 0),
-(40, 12,  9, 0, 0, '2022-11-30 20:00:00', 'Stadium 974', 'TF1 - BeIn1', 0, 1, 'C', 0, 0),
+(37, 16, 14, 0, 0, '2022-11-30 16:00:00', 'Al-Janoub Stadium', 'BeIn2', 0, 1, 'D', 3, 0),
+(38, 15, 13, 0, 0, '2022-11-30 16:00:00', 'Education City Stadium', 'TF1 - BeIn1', 0, 1, 'D', 3, 0),
+(39, 10, 11, 0, 0, '2022-11-30 20:00:00', 'Lusail Stadium', 'BeIn2', 0, 1, 'C', 3, 0),
+(40, 12,  9, 0, 0, '2022-11-30 20:00:00', 'Stadium 974', 'TF1 - BeIn1', 0, 1, 'C', 3, 0),
 
-(41, 22, 23, 0, 0, '2022-12-01 16:00:00', 'Al Thumama Stadium', 'BeIn2', 0, 1, 'F', 0, 0),
-(42, 24, 21, 0, 0, '2022-12-01 16:00:00', 'Ahmad Bin Ali Stadium', 'BeIn1', 0, 1, 'F', 0, 0),
-(43, 20, 18, 0, 0, '2022-12-01 20:00:00', 'Al Bayt Stadium', 'BeIn2', 0, 1, 'E', 0, 0),
-(44, 19, 17, 0, 0, '2022-12-01 20:00:00', 'Khalifa International Stadium', 'TF1 - BeIn1', 0, 1, 'E', 0, 0),
+(41, 22, 23, 0, 0, '2022-12-01 16:00:00', 'Al Thumama Stadium', 'BeIn2', 0, 1, 'F', 3, 0),
+(42, 24, 21, 0, 0, '2022-12-01 16:00:00', 'Ahmad Bin Ali Stadium', 'BeIn1', 0, 1, 'F', 3, 0),
+(43, 20, 18, 0, 0, '2022-12-01 20:00:00', 'Al Bayt Stadium', 'BeIn2', 0, 1, 'E', 3, 0),
+(44, 19, 17, 0, 0, '2022-12-01 20:00:00', 'Khalifa International Stadium', 'TF1 - BeIn1', 0, 1, 'E', 3, 0),
 
-(45, 30, 31, 0, 0, '2022-12-02 16:00:00', 'Al-Janoub Stadium', 'BeIn2', 0, 1, 'H', 0, 0),
-(46, 32, 29, 0, 0, '2022-12-02 16:00:00', 'Education City Stadium', 'BeIn1', 0, 1, 'H', 0, 0),
-(47, 26, 27, 0, 0, '2022-12-02 20:00:00', 'Stadium 974', 'BeIn2', 0, 1, 'G', 0, 0),
-(48, 28, 25, 0, 0, '2022-12-02 20:00:00', 'Lusail Stadium', 'TF1 - BeIn1', 0, 1, 'G', 0, 0),
+(45, 30, 31, 0, 0, '2022-12-02 16:00:00', 'Al-Janoub Stadium', 'BeIn2', 0, 1, 'H', 3, 0),
+(46, 32, 29, 0, 0, '2022-12-02 16:00:00', 'Education City Stadium', 'BeIn1', 0, 1, 'H', 3, 0),
+(47, 26, 27, 0, 0, '2022-12-02 20:00:00', 'Stadium 974', 'BeIn2', 0, 1, 'G', 3, 0),
+(48, 28, 25, 0, 0, '2022-12-02 20:00:00', 'Lusail Stadium', 'TF1 - BeIn1', 0, 1, 'G', 3, 0),
 
 (49, 1, 1, 0, 0, '2022-12-03 16:00:00', 'Khalifa International Stadium', 'BeIn1', 0, 0, '', 0, 0),
 (50, 1, 1, 0, 0, '2022-12-03 20:00:00', 'Ahmad Bin Ali Stadium', 'BeIn1', 0, 0, '', 0, 0),
@@ -323,9 +325,22 @@ CREATE TABLE IF NOT EXISTS `pronostics` (
 
 -- --------------------------------------------------------
 
---
--- Structure de la table `pronostics_bonus`
---
+DROP TABLE IF EXISTS `joker`;
+CREATE TABLE IF NOT EXISTS `joker` (
+  `id_membre` int(11) NOT NULL,
+
+  `joker_double_match` int(11) NOT NULL,
+  `joker_double_point` int(4) NULL DEFAULT '-1',
+
+  `joker_score_match` int(11) NULL,
+  `joker_score_match_pronos` varchar(255) NULL,
+  `joker_score_point` int(4) NULL DEFAULT '-1',
+
+  `joker_but_match` int(11) NOT NULL,
+  `joker_but_point` int(4) NULL DEFAULT '-1',
+  UNIQUE KEY `id_membre` (`id_membre`)
+) ENGINE=MyISAM DEFAULT  COLLATE=utf8_general_ci;
+COMMIT;
 
 DROP TABLE IF EXISTS `pronostics_bonus`;
 CREATE TABLE IF NOT EXISTS `pronostics_bonus` (
@@ -340,6 +355,9 @@ CREATE TABLE IF NOT EXISTS `pronostics_bonus` (
   `total_but_point` int(4) NULL DEFAULT '-1',
   `best_scorer` varchar(255) COLLATE utf8_general_ci NULL,
   `best_scorer_point` int(4) NULL DEFAULT '-1',
+  `player_winner_id` int(11) NOT NULL,  
+  `player_winner` varchar(255) COLLATE utf8_general_ci NULL,
+  `player_winner_point` int(4) NULL DEFAULT '-1',
   `modif` int(11) NULL DEFAULT '1',
   UNIQUE KEY `id_membre` (`id_membre`)
 ) ENGINE=MyISAM DEFAULT  COLLATE=utf8_general_ci;
@@ -365,7 +383,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-ALTER DATABASE euro2021 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci
+ALTER DATABASE id19608161_qatar2022 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

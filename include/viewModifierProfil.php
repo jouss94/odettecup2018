@@ -1,6 +1,5 @@
 <?php
 
-	$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
@@ -124,17 +123,17 @@
 				echo '</td>';
 			echo '</tr>';
 
-			echo '<tr>';
-				echo '<td class="fisrtColumnProfilModifier"> Département';
-				echo '</td>';
+			// echo '<tr>';
+			// 	echo '<td class="fisrtColumnProfilModifier"> Département';
+			// 	echo '</td>';
 
-				echo '<td class="secondColumnProfilModifier"> ';
-					echo '<input id="departementProfil" class="serverside-validation" name="departementProfil" type="text" value="'; if ($departement !== null) echo $departement; echo '"  size="8" />';
-				echo '	<span class="error" id="departementProfilerror1">Requis</span> ';
-				echo '	<span class="error size13" id="departementProfilerror2">Entrez un numéro</span> '; 
-				echo '	<span class="error size13" id="departementProfilerror3">Numéro non comforme</span> ';
-				echo '</td>';
-			echo '</tr>';
+			// 	echo '<td class="secondColumnProfilModifier"> ';
+			// 		echo '<input id="departementProfil" class="serverside-validation" name="departementProfil" type="text" value="'; if ($departement !== null) echo $departement; echo '"  size="8" />';
+			// 	echo '	<span class="error" id="departementProfilerror1">Requis</span> ';
+			// 	echo '	<span class="error size13" id="departementProfilerror2">Entrez un numéro</span> '; 
+			// 	echo '	<span class="error size13" id="departementProfilerror3">Numéro non comforme</span> ';
+			// 	echo '</td>';
+			// echo '</tr>';
 
 			echo '<tr>
 					<td class="fisrtColumnProfilModifierTop">
@@ -154,13 +153,13 @@
 				echo '</td>';
 			echo '</tr>';
 
-			echo '<tr>';
-				echo '<td class="fisrtColumnProfilModifier"> Couleur de votre profil';
-				echo '</td>';
-				echo '<td class="secondColumnProfilModifier"> ';
-					echo '<input type="color" name="colorProfil" id="colorProfil" style="width: 50px;height: 50px;" value="',$color,'" />';
-				echo '</td>';
-			echo '</tr>';
+			// echo '<tr>';
+			// 	echo '<td class="fisrtColumnProfilModifier"> Couleur de votre profil';
+			// 	echo '</td>';
+			// 	echo '<td class="secondColumnProfilModifier"> ';
+			// 		echo '<input type="color" name="colorProfil" id="colorProfil" style="width: 50px;height: 50px;" value="',$color,'" />';
+			// 	echo '</td>';
+			// echo '</tr>';
 
 			echo '<tr>';
 				echo '<td class="fisrtColumnProfilModifier"> Avatar actuel';
