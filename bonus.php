@@ -30,7 +30,7 @@ if ($id == 0) { header('Location: index.php'); }
 		<title>Accueil</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/style-v1.css">
+		<link rel="stylesheet" type="text/css" href="css/style-v2.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 		<script src="javascript/jquery-2.2.3.min.js"></script>
@@ -38,10 +38,10 @@ if ($id == 0) { header('Location: index.php'); }
 		<script src="javascript/login.js"></script>
 		<script src="javascript/bandeau.js"></script>
 		<script src="javascript/acceuil.js"></script>
-
+		<script src="javascript/reglement.js"></script>
 		
 		<link rel="stylesheet" href="./material_design/material.css">
-		<link rel="stylesheet" href="./material_design/style-v1.css">
+		<link rel="stylesheet" href="./material_design/style-v2.css">
 		<link rel="stylesheet" href="./material_design/font.css">
 	</head>
 	
@@ -54,7 +54,11 @@ if ($id == 0) { header('Location: index.php'); }
 		<div class="padding20">
 			<div class="loginform-in">
 				<div style="width:100%;padding-bottom: 20px">
-
+					<span class="RetourSpan"  style="padding-top: 20px;    margin: 0px 20px 0px 20px;">
+						<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">
+							Retour
+						</button>
+					</span>
 						<table class="tableAcceuil" style="padding-top: 20px;">
 							<tr>
 								<td>

@@ -383,6 +383,21 @@ CREATE TABLE IF NOT EXISTS `messages` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+DROP TABLE IF EXISTS `best_scorer`;
+CREATE TABLE IF NOT EXISTS `best_scorer` (
+  `id_joueur` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `nb_but` int(11) NOT NULL,
+  PRIMARY KEY (`id_joueur`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `best_scorer`
+--
+
+INSERT INTO `best_scorer` (`id_joueur`, `name`, `nb_but`) VALUES
+(1, 'Valencia', 2);
+
 ALTER DATABASE id19608161_qatar2022 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
