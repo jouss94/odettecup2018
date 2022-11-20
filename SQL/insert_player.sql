@@ -1,10 +1,10 @@
-SET @nom = 'Jousseau';
-SET @prenom = 'Odile';
-SET @surnom = 'Mamie loute';
-SET @email = 'Dam-papillon@live.fr';
-SET @password = 'LA58PE';
-SET @telephone = '0620694215';
-SET @description = "Contenter de vous retrouver  j’espère que mon mari ne va pas m’aider car il est trop fort...";
+SET @nom = 'Monica';
+SET @prenom = 'Mathias';
+SET @surnom = 'Jah-Bis';
+SET @email = 'mathiasmonica@zohomail.eu';
+SET @password = 'HT12KL';
+SET @telephone = '0781958773';
+SET @description = "Pull up, viva ARGENTINAAAAAAAA";
 
 
 INSERT INTO `joueurs` (`prenom`, `nom`, `surnom`, `email`, `password`, `telephone`, `description`) 

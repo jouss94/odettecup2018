@@ -762,13 +762,19 @@ $findBonus = true;
  $total_but = $rowBonus["total_but"];
  $best_scorer = utf8_encode_function($rowBonus["best_scorer"]);
 
+ $team_winner_id_point_value = $rowBonus["team_winner_id_point"];
  $team_winner_id_point = intval ($rowBonus["team_winner_id_point"]);
+ $player_winner_point_value = $rowBonus["player_winner_point"];
  $player_winner_point = intval ($rowBonus["player_winner_point"]);
+ $min_first_point_value = $rowBonus["min_first_point"];
  $min_first_point = intval ($rowBonus["min_first_point"]);
+ $min_last_point_value = $rowBonus["min_last_point"];
  $min_last_point = intval ($rowBonus["min_last_point"]);
+ $total_but_point_value = $rowBonus["total_but_point"];
  $total_but_point = intval ($rowBonus["total_but_point"]);
- $best_scorer_point = intval ($rowBonus["best_scorer_point"]);	
- 
+ $best_scorer_point_value = $rowBonus["best_scorer_point"];	
+ $best_scorer_point = intval ($rowBonus["best_scorer_point"]);	 
+
  
  $logo = $rowBonus["logo"];
 }
@@ -783,7 +789,7 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 
 	echo '<td >';
 		echo '<span class="';
-		if ($team_winner_id_point != -1)
+		if ($team_winner_id_point_value != null)
 		{
 			if ($team_winner_id_point == 0 || $team_winner_id_point == -3)
 				echo ' pancarteBonusEchec ';
@@ -802,10 +808,20 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 		echo $logo;	
 		echo '" />';
 	echo '</td>';
-	echo '<td class="pointBonus">';
-	if ($team_winner_id_point >= 0)
+	echo '<td class="pointBonus ';
+	if ($team_winner_id_point_value != null)
 	{
-			echo '+'. $team_winner_id_point;
+		if ($team_winner_id_point > 0)
+		{
+			echo 'classTRCorrectHome"> +';
+		}
+		else {
+			echo 'classTREchecHome">';
+		}
+		echo $team_winner_id_point;
+	}
+	else {
+		echo '">';
 	}
 	echo '</td>';
 
@@ -816,7 +832,7 @@ echo '<tr class="affPronosLigne backgroundTab2" >';
 
 	echo '<td style="width:50%">';
 		echo '<span class="';
-		if ($total_but_point >= 0)
+		if ($total_but_point_value != null)
 		{
 			if ($total_but_point == 0)
 				echo ' pancarteBonusEchec ';
@@ -830,10 +846,20 @@ echo '<tr class="affPronosLigne backgroundTab2" >';
 		echo $total_but;
 		echo '</span> Buts';
 	echo '</td>';
-	echo '<td class="pointBonus">';
-	if ($total_but_point >= 0)
+	echo '<td class="pointBonus ';
+	if ($total_but_point_value != null)
 	{
-			echo '+'. $total_but_point;
+		if ($total_but_point > 0)
+		{
+			echo 'classTRCorrectHome">';
+		}
+		else {
+			echo 'classTREchecHome">';
+		}
+		echo '+'. $total_but_point;
+	}
+	else {
+		echo '">';
 	}
 	echo '</td>';
 echo '</tr>';
@@ -843,7 +869,7 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 
 	echo '<td style="width:50%">';
 		echo '<span class="';
-		if ($min_first_point >= 0)
+		if ($min_first_point_value != null)
 		{
 			if ($min_first_point == 0)
 				echo ' pancarteBonusEchec ';
@@ -857,10 +883,20 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 		echo $min_first;
 		echo '</span> Minutes';
 	echo '</td>';
-	echo '<td class="pointBonus">';
-	if ($min_first_point >= 0)
+	echo '<td class="pointBonus ';
+	if ($min_first_point_value != null)
 	{
+		if ($min_first_point > 0)
+		{
+			echo 'classTRCorrectHome">';
+		}
+		else {
+			echo 'classTREchecHome">';
+		}
 			echo '+'. $min_first_point;
+	}
+	else {
+		echo '">';
 	}
 	echo '</td>';
 echo '</tr>';
@@ -870,7 +906,7 @@ echo '<tr class="affPronosLigne backgroundTab2" >';
 
 	echo '<td style="width:50%">';
 		echo '<span class="';
-		if ($min_last_point >= 0)
+		if ($min_last_point_value != null)
 		{
 			if ($min_last_point == 0)
 				echo ' pancarteBonusEchec ';
@@ -884,10 +920,20 @@ echo '<tr class="affPronosLigne backgroundTab2" >';
 		echo $min_last;
 		echo '</span> Minutes';
 	echo '</td>';
-	echo '<td class="pointBonus">';
-	if ($min_last_point >= 0)
+	echo '<td class="pointBonus ';
+	if ($min_last_point_value != null)
 	{
+		if ($min_last_point > 0)
+		{
+			echo 'classTRCorrectHome">';
+		}
+		else {
+			echo 'classTREchecHome">';
+		}
 			echo '+'. $min_last_point;
+	}
+	else {
+		echo '">';
 	}
 	echo '</td>';
 echo '</tr>';
@@ -899,7 +945,7 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 
 	echo '<td style="width:50%">';
 		echo '<span class="';
-		if ($best_scorer_point >= 0)
+		if ($best_scorer_point_value != null)
 		{
 			if ($best_scorer_point == 0)
 				echo ' pancarteBonusEchec ';
@@ -913,21 +959,32 @@ echo '<tr class="affPronosLigne backgroundTab1" >';
 		echo $best_scorer;
 		echo '</span> ';
 	echo '</td>';
-	echo '<td class="pointBonus">';
-	if ($best_scorer_point >= 0)
+	echo '<td class="pointBonus ';
+	if ($best_scorer_point_value != null)
 	{
+		if ($best_scorer_point > 0)
+		{
+			echo 'classTRCorrectHome">';
+		}
+		else {
+			echo 'classTREchecHome">';
+		}
 			echo '+'. $best_scorer_point;
 	}
+	else {
+		echo '">';
+	}
+
 	echo '</td>';
 echo '</tr>';
 
 
 echo '<tr class="affPronosLigne backgroundTab2" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Joueur vaiqueur</td>';
+	echo '<td style="width:50%" class="tdBonusLeft">Joueur vainqueur</td>';
 
 	echo '<td >';
 		echo '<span class="';
-		if ($player_winner_point >= 0)
+		if ($player_winner_point_value != null)
 		{
 			if ($player_winner_point == 0)
 				echo ' pancarteBonusEchec ';
@@ -940,10 +997,20 @@ echo '<tr class="affPronosLigne backgroundTab2" >';
 		echo $player_winner_id;
 		echo '</span> ';
 	echo '</td>';
-	echo '<td class="pointBonus">';
-	if ($player_winner_point >= 0)
+	echo '<td class="pointBonus ';
+	if ($player_winner_point_value != null)
 	{
+		if ($player_winner_point > 0)
+		{
+			echo 'classTRCorrectHome">';
+		}
+		else {
+			echo 'classTREchecHome">';
+		}
 			echo '+'. $player_winner_point;
+	}
+	else {
+		echo '">';
 	}
 	echo '</td>';
 

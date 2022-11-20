@@ -54,26 +54,23 @@ if ($id == 0) { header('Location: index.php'); }
 		<div class="padding20">
 			<div class="loginform-in">
 				<div style="width:100%;padding-bottom: 20px">
-				
-					<?php include("include/updateProfil.php");?>
-					<div class="allAcceuil">
 
-						<table class="tableAcceuil">
+						<table class="tableAcceuil" style="padding-top: 20px;">
 							<tr>
 								<td>
 									<div class="tableAcceuilBas">
-											<div class="statistics-card-event mdl-card mdl-shadow--2dp">
+											<div class="bonus-favotire-card-event bonus-card-event mdl-card mdl-shadow--2dp">
 												<div class="mdl-card__title mdl-card--expand">
-													<span class="TitreTableauBas">
-													⚠️🚨 Nouvelle page - Bonus 🚨⚠️
-													</span>
+													<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+															<?php include("include/viewBonusFavorite.php");?>
 													</div>
+												</div>
 												<div class="mdl-card__actions mdl-card--border">
-													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="bonus.php" >
-														Voir tous les bonus sur une seule page
+													<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >
+														Equipe favorite
 													</a>
 													<div class="mdl-layout-spacer"></div>
-													<i class="material-icons">filter_9_plus</i>
+													<i class="material-icons">favorite</i>
 												</div>
 											</div>
 									</div>
@@ -85,96 +82,89 @@ if ($id == 0) { header('Location: index.php'); }
 							<tr >
 								<td>
 									<div class="tableAcceuilResultat">
-										<div class="demo-card-event mdl-card mdl-shadow--2dp">
+										<div class="bonus-small-card-event bonus-card-event  mdl-card mdl-shadow--2dp">
 											<div class="mdl-card__title mdl-card--expand">
 												<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
-													<?php include("include/viewHomeLastMatch.php");?>
+													<?php include("include/viewBonusFirstBut.php");?>
 												</div>
 											</div>
 											<div class="mdl-card__actions mdl-card--border">
-												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php" >
-													Derniers matches
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+													Minute du premier but
 												</a>
 												<div class="mdl-layout-spacer"></div>
-												<i class="material-icons">event</i>
+												<i class="material-icons">watch_later</i>
 											</div>
 										</div>
-										<div class="demo-card-event mdl-card mdl-shadow--2dp">
+										<div class="bonus-small-card-event bonus-card-event mdl-card mdl-shadow--2dp">
 											<div class="mdl-card__title mdl-card--expand">
 												<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
-												<?php include("include/viewHomeNextMatch.php");?>
+												<?php include("include/viewBonusLastBut.php");?>
 												</div>
 											</div>
 											<div class="mdl-card__actions mdl-card--border">
-												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php" >
-													Prochains matches
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+													Minute dernier but
 												</a>
 												<div class="mdl-layout-spacer"></div>
-												<i class="material-icons">event</i>
+												<i class="material-icons">watch_later</i>
+											</div>
+										</div>
+										<div class="bonus-small-card-event bonus-card-event mdl-card mdl-shadow--2dp">
+											<div class="mdl-card__title mdl-card--expand">
+												<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+													<?php include("include/viewBonusTotalBut.php");?>
+												</div>
+											</div>
+											<div class="mdl-card__actions mdl-card--border">
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >
+													Nombre total de but
+												</a>
+												<div class="mdl-layout-spacer"></div>
+												<i class="material-icons">filter_9_plus</i>
 											</div>
 										</div>
 									</div>
 								</td>
 							</tr>
 						</table>
+
 						<table class="tableAcceuil">
-							<tr>
-								<td >
-									<div class="tableAcceuilClassement"> 
-										<div class="classement-card-event mdl-card classement-general mdl-shadow--2dp backgroundwhite">
-											<div class="mdl-card__title mdl-card--expand">
-												<div class="cadreTableauAcceuilClassement cadreTableauAcceuilBg">
-													<?php include("include/viewHomeClassementGeneral.php");?>
-												</div>
-											</div>
-											<div class="mdl-card__actions mdl-card--border">
-												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=General" >
-													Classement
-												</a>
-												<div class="mdl-layout-spacer"></div>
-												<i class="material-icons">storage</i>
-											</div>
-										</div>
-									</div>
-								</td>
-							</tr>
-						</table>
-						<table class="tableAcceuil">
-							<tr>
+							<tr >
 								<td>
-									<div class="tableAcceuilBas">
-										<div class="information-card-event mdl-card mdl-shadow--2dp">
+									<div class="tableAcceuilResultat">
+										<div class="bonus-medium-card-event bonus-card-event  mdl-card mdl-shadow--2dp">
 											<div class="mdl-card__title mdl-card--expand">
-												<span class="TitreTableauBas">
-													Liste des Joueurs
-												</span>
+												<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+													<?php include("include/viewBonusScorer.php");?>
+												</div>
 											</div>
 											<div class="mdl-card__actions mdl-card--border">
-												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="listeJoueur.php" >
-													Voir la liste des joueurs
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+													Meilleur buteur
 												</a>
 												<div class="mdl-layout-spacer"></div>
-												<i class="material-icons">supervisor_account</i>
+												<i class="material-icons">looks_one</i>
 											</div>
 										</div>
-										<div class="information-card-event mdl-card mdl-shadow--2dp">
+										<div class="bonus-medium-card-event bonus-card-event mdl-card mdl-shadow--2dp">
 											<div class="mdl-card__title mdl-card--expand">
-												<span class="TitreTableauBas">
-													Règlement
-												</span>
+												<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+													<?php include("include/viewBonusPlayer.php");?>
+												</div>
 											</div>
 											<div class="mdl-card__actions mdl-card--border">
-												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="reglement.php" >
-													Voir le Règlement de la compétition
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >
+													Joueur vainqueur
 												</a>
 												<div class="mdl-layout-spacer"></div>
-											<i class="material-icons">gavel</i>
+												<i class="material-icons">face</i>
+											</div>
 										</div>
 									</div>
 								</td>
 							</tr>
 						</table>
-					</div>
 				</div>
 			</div>
 		</div>
