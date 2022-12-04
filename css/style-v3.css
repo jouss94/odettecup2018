@@ -525,6 +525,7 @@ table.sortable thead {
     height: 330px;
     width: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .cadreTableauAcceuilNoHeight {
@@ -1127,7 +1128,7 @@ table.sortable thead {
 
 .pancarteBig {
     background: rgba(0, 0, 0, 0.68);
-    padding: 3px;
+    padding: 2px;
     display: block;
     text-align: center;
     font-size: 17px;
@@ -1942,4 +1943,187 @@ cursor: pointer;
 
 .gain_name {
     width: 60px;
+}
+
+.bar{
+   height: 14px;
+   padding: 0px;
+}
+
+.percentBar {
+    border-collapse: collapse;
+    margin: 12px auto; 
+}
+
+.nextmatchsoloteams {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+}
+
+.logoEquipebigbig {
+    width: 100px;
+    margin: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.nextmatchsoloteamshomename {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nextmatchsoloteamsawayname {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nextmatchsoloteamsmiddle {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.nextmatchsolodate {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.nextmatchsolotime {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.nextmatchsolopronos {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.lastmatchsolopronos {
+    display: flex;
+    justify-content: center;
+}
+
+.nextmatchsolopronosmiddle {
+    width: 40px;
+}
+
+.lastmatchsolopronosmiddle {
+    width: 20px;
+    line-height: 27px;
+}
+
+
+.pancarteBigBig {
+    background: rgb(0 0 0 / 85%);
+    width: 50px;
+    height: 50px;
+    display: block;
+    font-size: 40px;
+    color: #FFF;
+    font-weight: bold;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.pancarteBigBigSmall {
+    background: rgb(0 0 0 / 85%);
+    width: 35px;
+    height: 30px;
+    display: block;
+    font-size: 25px;
+    color: #FFF;
+    font-weight: bold;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.percentBarpronos {
+    border-collapse: collapse;
+    margin: 22px 40px 2px 40px;
+}
+
+.percentBarresult {
+    border-collapse: collapse;    
+    margin: 10px 40px 2px 40px;
+}
+
+.barpronos{
+    height: 14px;
+    padding: 0px;
+ }
+
+ .cadreTableauAcceuilOneMatch {
+    height: 250px;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+ .onematch-card-event.mdl-card {
+  width: 415px;
+  height: 324px;
+  background: #ffffff91;
+}
+.onematch-card-event > .mdl-card__actions {
+border-color: rgba(255, 255, 255, 0.2);
+}
+.onematch-card-event > .mdl-card__title {
+align-items: flex-start;
+padding: 10px 10px;
+}
+.onematch-card-event > .mdl-card__title > h4 {
+margin-top: 0;
+}
+.onematch-card-event > .mdl-card__actions {
+display: flex;
+box-sizing:border-box;
+align-items: center;
+}
+.onematch-card-event > .mdl-card__actions > .material-icons {
+padding-right: 10px;
+}
+.onematch-card-event > .mdl-card__title,
+.onematch-card-event > .mdl-card__actions,
+.onematch-card-event > .mdl-card__actions > .mdl-button {
+color: #992149;
+}
+
+.firstbar {
+    border-radius: 5px 0px 0px 5px;
+}
+
+.lastbar {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.onebar {
+    border-radius: 5px;
+}
+
+span.scoretext {
+    padding: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.magintopless20 {
+    margin-top: -26px;
+}
+.magintoplessline {
+    margin-top: -23px;
+}
+
+.middleResultText, .resultText, .resultTextPoint {
+    width: 120px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+span.textmatch {
+    padding: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    color: #6d1a36;
 }

@@ -705,6 +705,8 @@ table.sortable thead {
     width: 18%;
     text-align: center;
     cursor: pointer;
+    text-decoration: underline;
+    color: #992149;
 }
 
 .tableListeDetail:hover {
@@ -1885,3 +1887,59 @@ cursor: pointer;
     border-radius: 50%;
     right: 0px;
   }
+
+  
+  .small-widget-content {
+    height: 100%;
+  }
+
+ .totalbut {
+    font-size: 34px;
+    color: #992149;
+}
+ .totatbutsmall {
+    font-size: 20px;
+    color: #992149;
+}
+
+.totalbutmoyenne {
+    font-size: 14px;
+    color: #992149;
+}
+ .totatbutsmallmoyenne {
+    font-size: 9px;
+    color: #992149;
+}
+
+
+.minute {
+    text-align: left;
+    color: #992149;
+    line-height: 24px;
+}
+
+.scorers {
+    color: #992149;
+    line-height: 19px;
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+}
+
+.scorer_name {
+    width: 140px;
+}
+
+
+.gain {
+    color: #992149;
+    line-height: 14px;
+    font-size: 12px;
+    text-align: left;
+    display: flex;
+    padding-left: 39px;
+}
+
+.gain_name {
+    width: 60px;
+}

@@ -30,7 +30,7 @@ if ($id == 0) { header('Location: index.php'); }
 		<title>Accueil</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/style-v2.css">
+		<link rel="stylesheet" type="text/css" href="css/style-v4.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 		<script src="javascript/jquery-2.2.3.min.js"></script>
@@ -62,7 +62,7 @@ if ($id == 0) { header('Location: index.php'); }
 							<tr >
 								<td>
 									<div class="tableAcceuilResultat">
-										<div class="small-card-event bonus-card-event mdl-card mdl-shadow--2dp">
+										<div class="small-card-event bonus-card-event bonus-card-event-small-padding mdl-card mdl-shadow--2dp">
 											<div class="mdl-card__title mdl-card--expand">
 												<div class="cadreTableauAcceuilNoHeight cadreTableauAcceuilBg">
 													<?php include("include/viewTotalBut.php");?>
@@ -116,6 +116,27 @@ if ($id == 0) { header('Location: index.php'); }
 												</a>
 												<div class="mdl-layout-spacer"></div>
 												<i class="material-icons">euro_symbol</i>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+
+						<table class="tableAcceuil">
+							<tr >
+								<td>
+									<div class="tableAcceuilResultat">
+										<div class="onematch-card-event mdl-card mdl-shadow--2dp">
+											<div class="mdl-card__title mdl-card--expand">
+												<div class="cadreTableauAcceuilOneMatch cadreTableauAcceuilBg">
+													<?php include("include/viewHomeLastMatchSolo.php");?>
+											</div>
+										</div>
+										<div class="onematch-card-event mdl-card mdl-shadow--2dp">
+											<div class="mdl-card__title mdl-card--expand">
+												<div class="cadreTableauAcceuilOneMatch cadreTableauAcceuilBg">
+												<?php include("include/viewHomeNextMatchSolo.php");?>
 											</div>
 										</div>
 									</div>

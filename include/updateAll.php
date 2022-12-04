@@ -104,18 +104,17 @@
 
 		$teams_dict_result = null;
 
-		// $teams_dict_result = [
-		// 	5 => 0, // Angleterre
-		// 	9 => 0, // Argentine
-		// 	13 => 0, // France
-		// 	14 => 0, // Danemark
-		// 	17 => 0, // Espagne
-		// 	18 => 0, // Allemagne
-		// 	25 => 0, // Brésil
-		// 	29 => 0  // Portugal
-		// ];
-
-
+		$teams_dict_result = [
+			5 => 0, // Angleterre
+			9 => 0, // Argentine
+			13 => 0, // France
+			14 => -3, // Danemark
+			17 => 0, // Espagne
+			18 => -3, // Allemagne
+			25 => 0, // Brésil
+			29 => 0  // Portugal
+		];
+		
 		$qryBonus = "SELECT * 
 				FROM pronostics_bonus
 				Left JOIN joueurs ON pronostics_bonus.id_membre = joueurs.id_joueur

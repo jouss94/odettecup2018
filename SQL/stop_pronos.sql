@@ -42,6 +42,8 @@ C:\wamp64\www\odettecup2018-git\include\updateAll.php
 C:\wamp64\www\odettecup2018-git\include\viewProfil.php
 C:\wamp64\www\odettecup2018-git\css\style.css -- V1
 C:\wamp64\www\odettecup2018-git\acceuil.php
+C:\wamp64\www\odettecup2018-git\css\style-v1.css
+C:\wamp64\www\odettecup2018-git\material_design\style-v1.css
 
 ---------------------------------------------------
 -- Prochain tour 8eme / Quart / Demi / Finale
@@ -49,9 +51,14 @@ C:\wamp64\www\odettecup2018-git\acceuil.php
 
 
 ---- Set les matchs equipe + modif = 1
+--- export de la base
+--- mise a jour de  update
 UPDATE `etat` SET `value`= 1 WHERE `attribut` = 'PRONOS';
 UPDATE `joueurs` SET `modif_match`=0 ;
 
+--- 1/8
+UPDATE `etat` SET `value`= 0;
+UPDATE `matches` SET `modif`=2 WHERE `id_match` >= 49 AND `id_match` <= 56;
 
 --- Nombre de but :
 
@@ -67,6 +74,8 @@ GROUP BY joueurs.id_joueur;
 
 SELECT * FROM `joueurs` WHERE `modif_profil` = 0 OR `modif_match` = 0 OR `modif_bonus` = 0
 
+INSERT INTO `best_scorer` (`name`, `nb_but`) VALUES ('Morata', '3');
+INSERT INTO `best_scorer` (`name`, `nb_but`) VALUES ('Ferran', '2');
 
 1er Boubou0677 266€
 2eme Alvorada 103€

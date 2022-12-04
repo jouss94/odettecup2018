@@ -1,428 +1,428 @@
 .rougedefault {
-    background: #ffffff91;
-    /* background: brown; */
+  background: #ffffff91;
+  /* background: brown; */
 }
 
 .blackougedefault {
-  /* background: #6bb3bd; */
+/* background: #6bb3bd; */
 }
 
 .blackougewhite {
-  background: white;
+background: white;
 }
 
 .demo-card-event.mdl-card {
-    width: 415px;
-    height: 405px;
-    background: #ffffff91;
+  width: 415px;
+  height: 405px;
+  background: #ffffff91;
 }
 .demo-card-event > .mdl-card__actions {
-  border-color: rgba(255, 255, 255, 0.2);
+border-color: rgba(255, 255, 255, 0.2);
 }
 .demo-card-event > .mdl-card__title {
-  align-items: flex-start;
-  padding: 10px 10px;
+align-items: flex-start;
+padding: 10px 10px;
 }
 .demo-card-event > .mdl-card__title > h4 {
-  margin-top: 0;
+margin-top: 0;
 }
 .demo-card-event > .mdl-card__actions {
-  display: flex;
-  box-sizing:border-box;
-  align-items: center;
+display: flex;
+box-sizing:border-box;
+align-items: center;
 }
 .demo-card-event > .mdl-card__actions > .material-icons {
-  padding-right: 10px;
+padding-right: 10px;
 }
 .demo-card-event > .mdl-card__title,
 .demo-card-event > .mdl-card__actions,
 .demo-card-event > .mdl-card__actions > .mdl-button {
+color: #992149;
+}
+
+
+.classement-card-event.mdl-card {
+  width: 100%;
+  height: 412px;
+}
+.classement-general {
+  /* background: #fbe835; */
+  background: #72203c70;
+      /* background: #b83e3e; */
+}
+
+.classement-equipe {
+  /* background: #2947ca; */
+  background: #2240c6;
+  /* background: #b83e3e; */
+
+}
+
+.classement-femme {
+  background: #f51461;
+  /* background: #fb62ba; */
+  /* background: #b83e3e; */
+}
+
+.classement-montagne {
+  /* background: #ff5f1a; */
+  background: #3bae1a;
+  /* background: #b83e3e; */
+}
+
+
+.classement-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.classement-card-event > .mdl-card__title {
+  align-items: flex-start;
+  padding: 10px 10px;
+}
+.classement-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.classement-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.classement-card-event > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.classement-card-event > .mdl-card__title,
+.classement-card-event > .mdl-card__actions,
+.classement-card-event > .mdl-card__actions > .mdl-button {
   color: #992149;
 }
 
 
-  .classement-card-event.mdl-card {
-    width: 100%;
-    height: 412px;
-  }
-  .classement-general {
-    /* background: #fbe835; */
-    background: #72203c70;
-        /* background: #b83e3e; */
+.information-card-event.mdl-card {
+  width: 415px;
+  min-height: 100px;
+  height: 100px;
+  background: #ffffff91;
 }
 
-  .classement-equipe {
-    /* background: #2947ca; */
-    background: #2240c6;
-    /* background: #b83e3e; */
-
-  }
-
-  .classement-femme {
-    background: #f51461;
-    /* background: #fb62ba; */
-    /* background: #b83e3e; */
-  }
-
-  .classement-montagne {
-    /* background: #ff5f1a; */
-    background: #3bae1a;
-    /* background: #b83e3e; */
-  }
-
-
-  .classement-card-event > .mdl-card__actions {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-  .classement-card-event > .mdl-card__title {
-    align-items: flex-start;
-    padding: 10px 10px;
-  }
-  .classement-card-event > .mdl-card__title > h4 {
-    margin-top: 0;
-  }
-  .classement-card-event > .mdl-card__actions {
-    display: flex;
-    box-sizing:border-box;
-    align-items: center;
-  }
-  .classement-card-event > .mdl-card__actions > .material-icons {
-    padding-right: 10px;
-  }
-  .classement-card-event > .mdl-card__title,
-  .classement-card-event > .mdl-card__actions,
-  .classement-card-event > .mdl-card__actions > .mdl-button {
-    color: #992149;
-  }
-
-
-  .information-card-event.mdl-card {
-    width: 415px;
-    min-height: 100px;
-    height: 100px;
-    background: #ffffff91;
-  }
-
-  .information-card-event > .mdl-card__actions {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-  .information-card-event > .mdl-card__title {
-    align-items: flex-start;
-    padding: 10px 10px;
-  }
-  .information-card-event > .mdl-card__title > h4 {
-    margin-top: 0;
-  }
-  .information-card-event > .mdl-card__actions {
-    display: flex;
-    box-sizing:border-box;
-    align-items: center;
-  }
-  .information-card-event > .mdl-card__actions > .material-icons {
-    padding-right: 10px;
-  }
-  .information-card-event > .mdl-card__title,
-  .information-card-event > .mdl-card__actions,
-  .information-card-event > .mdl-card__actions > .mdl-button {
-    color: #992149;
-  }
-
-
-  .statistics-card-event.mdl-card {
-    width: 840px;
-    min-height: 100px;
-    height: 100px;
-    background: #ffffff91;
-  }
-
-  .statistics-card-event > .mdl-card__actions {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-  .statistics-card-event > .mdl-card__title {
-    align-items: flex-start;
-    padding: 7px 10px;
-  }
-  .statistics-card-event > .mdl-card__title > h4 {
-    margin-top: 0;
-  }
-  .statistics-card-event > .mdl-card__actions {
-    display: flex;
-    box-sizing:border-box;
-    align-items: center;
-  }
-  .statistics-card-event > .mdl-card__actions > .material-icons {
-    padding-right: 10px;
-  }
-  .statistics-card-event > .mdl-card__title,
-  .statistics-card-event > .mdl-card__actions,
-  .statistics-card-event > .mdl-card__actions > .mdl-button {
-    color: #992149;
-  }
-
-  .bonus-favotire-card-event.mdl-card {
-    width: 840px;
-    min-height: 408px;
-    height: 408px;
-    background: #ffffff91;
-  }
-
-  .bonus-small-card-event.mdl-card {
-    width: 270px;
-    height: 405px;
-    background: #ffffff91;
-  }
-
-  .small-card-event.mdl-card {
-    width: 200px;
-    height: 120px;
-    min-height: 120px;
-    background: #ffffff91;
-  }
-
-  .bonus-medium-card-event.mdl-card {
-    width: 415px;
-    height: 405px;
-    background: #ffffff91;
+.information-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.information-card-event > .mdl-card__title {
+  align-items: flex-start;
+  padding: 10px 10px;
+}
+.information-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.information-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.information-card-event > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.information-card-event > .mdl-card__title,
+.information-card-event > .mdl-card__actions,
+.information-card-event > .mdl-card__actions > .mdl-button {
+  color: #992149;
 }
 
-  .bonus-card-event > .mdl-card__actions {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-  .bonus-card-event > .mdl-card__title {
-    align-items: flex-start;
-    padding: 10px 10px;
-  }
-  .bonus-card-event > .mdl-card__title > h4 {
-    margin-top: 0;
-  }
-  .bonus-card-event > .mdl-card__actions {
-    display: flex;
-    box-sizing:border-box;
-    align-items: center;
-  }
-  .bonus-card-event > .mdl-card__actions > .material-icons {
-    padding-right: 10px;
-  }
-  .bonus-card-event > .mdl-card__title,
-  .bonus-card-event > .mdl-card__actions,
-  .bonus-card-event > .mdl-card__actions > .mdl-button {
-    color: #992149;
-  }
 
-  .bonus-card-event-small-padding > .mdl-card__title {
-    align-items: flex-start;
-    padding: 4px 10px;
-  }
+.statistics-card-event.mdl-card {
+  width: 840px;
+  min-height: 100px;
+  height: 100px;
+  background: #ffffff91;
+}
 
-  
+.statistics-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.statistics-card-event > .mdl-card__title {
+  align-items: flex-start;
+  padding: 7px 10px;
+}
+.statistics-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.statistics-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.statistics-card-event > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.statistics-card-event > .mdl-card__title,
+.statistics-card-event > .mdl-card__actions,
+.statistics-card-event > .mdl-card__actions > .mdl-button {
+  color: #992149;
+}
 
-  .classementperso-card-event.mdl-card {
-    margin: auto;
-    width: 160px;
-    min-height: 100px;
-    height: 100px;
-    margin-top: 20px;
-  }
+.bonus-favotire-card-event.mdl-card {
+  width: 840px;
+  min-height: 408px;
+  height: 408px;
+  background: #ffffff91;
+}
 
-  .classementperso-card-event > .mdl-card__actions {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-  .classementperso-card-event > .mdl-card__title {
-    align-items: flex-start;
-    padding: 10px 10px;
-  }
-  .classementperso-card-event > .mdl-card__title > h4 {
-    margin-top: 0;
-  }
-  .classementperso-card-event > .mdl-card__actions {
-    display: flex;
-    box-sizing:border-box;
-    align-items: center;
-  }
-  .classementperso-card-event > .mdl-card__actions > .material-icons {
-    padding-right: 10px;
-  }
-  .classementperso-card-event > .mdl-card__title,
-  .classementperso-card-event > .mdl-card__actions,
-  .classementperso-card-event > .mdl-card__actions > .mdl-button {
-    color: rgb(255, 255, 255);
-  }
+.bonus-small-card-event.mdl-card {
+  width: 270px;
+  height: 405px;
+  background: #ffffff91;
+}
 
-  .chips-body {
-    background: #ffffff26;
-    color: #fff;
-  }
+.small-card-event.mdl-card {
+  width: 200px;
+  height: 120px;
+  min-height: 120px;
+  background: #ffffff91;
+}
 
-  .chips-red {
-    background: #f51414 !important;
-  }
+.bonus-medium-card-event.mdl-card {
+  width: 415px;
+  height: 405px;
+  background: #ffffff91;
+}
 
-  .chips-green {
-    background: #3bae1a !important;
-  }
+.bonus-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.bonus-card-event > .mdl-card__title {
+  align-items: flex-start;
+  padding: 10px 10px;
+}
+.bonus-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.bonus-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.bonus-card-event > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.bonus-card-event > .mdl-card__title,
+.bonus-card-event > .mdl-card__actions,
+.bonus-card-event > .mdl-card__actions > .mdl-button {
+  color: #992149;
+}
 
-  .chips-red-body:active {
-    background: #f51414 !important;
-  }
+.bonus-card-event-small-padding > .mdl-card__title {
+  align-items: flex-start;
+  padding: 4px 10px;
+}
 
-  .chips-green-body:active {
-    background: #3bae1a !important;
-  }
-  
 
-  .displaymatch-card-event.mdl-card {
-    margin: auto;
-    width: 600px;
-    min-height: 655px;
-    height: 655px;
-    margin-top: 20px;
-  }
 
-  .displaymatch-card-event > .mdl-card__actions {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-  .displaymatch-card-event > .mdl-card__title {
-    align-items: flex-start;
-    padding: 10px 10px;
-  }
-  .displaymatch-card-event > .mdl-card__title > h4 {
-    margin-top: 0;
-  }
-  .displaymatch-card-event > .mdl-card__actions {
-    display: flex;
-    box-sizing:border-box;
-    align-items: center;
-  }
-  .displaymatch-card-event > .mdl-card__actions > .material-icons {
-    padding-right: 10px;
-  }
-  .displaymatch-card-event > .mdl-card__title,
-  .displaymatch-card-event > .mdl-card__actions,
-  .displaymatch-card-event > .mdl-card__actions > .mdl-button {
-    color: #5c001f;
-  }  
-  
+.classementperso-card-event.mdl-card {
+  margin: auto;
+  width: 160px;
+  min-height: 100px;
+  height: 100px;
+  margin-top: 20px;
+}
+
+.classementperso-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.classementperso-card-event > .mdl-card__title {
+  align-items: flex-start;
+  padding: 10px 10px;
+}
+.classementperso-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.classementperso-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.classementperso-card-event > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.classementperso-card-event > .mdl-card__title,
+.classementperso-card-event > .mdl-card__actions,
+.classementperso-card-event > .mdl-card__actions > .mdl-button {
+  color: rgb(255, 255, 255);
+}
+
+.chips-body {
+  background: #ffffff26;
+  color: #fff;
+}
+
+.chips-red {
+  background: #f51414 !important;
+}
+
+.chips-green {
+  background: #3bae1a !important;
+}
+
+.chips-red-body:active {
+  background: #f51414 !important;
+}
+
+.chips-green-body:active {
+  background: #3bae1a !important;
+}
+
+
+.displaymatch-card-event.mdl-card {
+  margin: auto;
+  width: 600px;
+  min-height: 655px;
+  height: 655px;
+  margin-top: 20px;
+}
+
+.displaymatch-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.displaymatch-card-event > .mdl-card__title {
+  align-items: flex-start;
+  padding: 10px 10px;
+}
+.displaymatch-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.displaymatch-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.displaymatch-card-event > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.displaymatch-card-event > .mdl-card__title,
+.displaymatch-card-event > .mdl-card__actions,
+.displaymatch-card-event > .mdl-card__actions > .mdl-button {
+  color: #5c001f;
+}  
+
 
 .height300 {
-  height: 356px !important;
-  min-height: 356px !important;
+height: 356px !important;
+min-height: 356px !important;
 }
 
 .height150 {
-  height: 418px !important;
-  min-height: 190px !important;
+height: 418px !important;
+min-height: 190px !important;
 }    
 
 .heightbonusform {
-    height: 500px !important;
-    min-height: 500px !important;
+  height: 500px !important;
+  min-height: 500px !important;
 }
 
 #RetourProfil {
-  background: #ffffff;
-  color: #5c001f; 
+background: #ffffff;
+color: #5c001f; 
 }
 
 #RetourAcceuil {
-  background: #ffffff;
-  color: #5c001f;
+background: #ffffff;
+color: #5c001f;
 }
 
 
 .match-card-event.mdl-card {
-  width: 480px;
-  height: 500px;
-  background: #6b1834;
-  margin: auto;
-  margin-top: 40px;
+width: 480px;
+height: 500px;
+background: #6b1834;
+margin: auto;
+margin-top: 40px;
 }
 .match-card-event > .mdl-card__actions {
-  border-color: rgba(255, 255, 255, 0.2);
+border-color: rgba(255, 255, 255, 0.2);
 }
 .match-card-event > .mdl-card__title {
-  align-items: flex-start;
-  padding: 10px 10px;
+align-items: flex-start;
+padding: 10px 10px;
 }
 .match-card-event > .mdl-card__title > h4 {
-  margin-top: 0;
+margin-top: 0;
 }
 .match-card-event > .mdl-card__actions {
-  display: flex;
-  box-sizing:border-box;
-  align-items: center;
+display: flex;
+box-sizing:border-box;
+align-items: center;
 }
 .match-card-event > .mdl-card__actions > .material-icons {
-  padding-right: 10px;
+padding-right: 10px;
 }
 .match-card-event > .mdl-card__title,
 .match-card-event > .mdl-card__actions,
 .match-card-event > .mdl-card__actions > .mdl-button {
-  color: #fff;
+color: #fff;
 }
 
 
 .joueur-card-event.mdl-card {
-  width: 250px;
-  background: #2947ca;
+width: 250px;
+background: #2947ca;
 }
 .joueur-card-event > .mdl-card__actions {
-  border-color: rgba(255, 255, 255, 0.2);
+border-color: rgba(255, 255, 255, 0.2);
 }
 .joueur-card-event > .mdl-card__title {
-  align-items: flex-start;
-  padding: 10px 10px;
+align-items: flex-start;
+padding: 10px 10px;
 }
 .joueur-card-event > .mdl-card__title > h4 {
-  margin-top: 0;
+margin-top: 0;
 }
 .joueur-card-event > .mdl-card__actions {
-  display: flex;
-  box-sizing:border-box;
-  align-items: center;
+display: flex;
+box-sizing:border-box;
+align-items: center;
 }
 .joueur-card-event > .mdl-card__actions > .material-icons {
-  padding-right: 10px;
+padding-right: 10px;
 }
 .joueur-card-event > .mdl-card__title,
 .joueur-card-event > .mdl-card__actions,
 .joueur-card-event > .mdl-card__actions > .mdl-button {
-  color: #fff;
+color: #fff;
 }
 
 
 
 .classementequipe-card-event.mdl-card {
-  MARGIN: 20PX;
-  width: 490px;
-  height: 80px;
-  MIN-HEIGHT: 80PX;
-  background: #2947ca;
+MARGIN: 20PX;
+width: 490px;
+height: 80px;
+MIN-HEIGHT: 80PX;
+background: #2947ca;
 }
 .classementequipe-card-event > .mdl-card__actions {
-  border-color: rgba(255, 255, 255, 0.2);
+border-color: rgba(255, 255, 255, 0.2);
 }
 .classementequipe-card-event > .mdl-card__title {
-  align-items: flex-start;
-  padding: 10px 10px;
+align-items: flex-start;
+padding: 10px 10px;
 }
 .classementequipe-card-event > .mdl-card__title > h4 {
-  margin-top: 0;
+margin-top: 0;
 }
 .classementequipe-card-event > .mdl-card__actions {
-  display: flex;
-  box-sizing:border-box;
-  align-items: center;
+display: flex;
+box-sizing:border-box;
+align-items: center;
 }
 .classementequipe-card-event > .mdl-card__actions > .material-icons {
-  padding-right: 10px;
+padding-right: 10px;
 }
 .classementequipe-card-event > .mdl-card__title,
 .classementequipe-card-event > .mdl-card__actions,
 .classementequipe-card-event > .mdl-card__actions > .mdl-button {
-  color: #fff;
+color: #fff;
 }
 
 
 .classementbutton {
-  background: none !important;
+background: none !important;
 }

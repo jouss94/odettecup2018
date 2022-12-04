@@ -20,14 +20,17 @@
 					equipes_home.name  as home_name,
 					equipes_home.logo  as home_logo,
 					equipes_away.name  as away_name,
-					equipes_away.logo  as away_logo
+					equipes_away.logo  as away_logo,
+					equipes_home.color as colorHome,
+					equipes_away.color as colorAway
 					FROM matches 
 			LEFT JOIN equipes equipes_home ON equipes_home.id_equipe = matches.id_team_home
 			LEFT JOIN equipes equipes_away ON equipes_away.id_equipe = matches.id_team_away 
 			WHERE id_match = $idMatch;";
 		$result = mysqli_query($con, $qry);
 	$find = false;
-
+	$modif = 0;
+	
 	while ($row = mysqli_fetch_array($result )) 
 	{
 		$group = $row["groupe"];
@@ -44,6 +47,8 @@
 		$score_home = $row["score_home"];
 		$score_away = $row["score_away"];
 		$montagne = $row["montagne"];
+		$colorHome = $row["colorHome"];
+		$colorAway = $row["colorAway"];
 
 
 		// echo '<h2> ',$group,'</h2>';
@@ -137,9 +142,29 @@
 	echo '';
 
 echo '
+<span class="textmatch">Pronostics :</span>
+<table class="percentBar">
+    <tr> 
+        <td class="color1 bar bar1"></td>
+        <td class="color2 bar bar2"></td>
+        <td class="color3 bar bar3"></td>
+    </tr>
+</table>    
+<span class="textmatch">Résultats :</span>
+<table class="percentBar">
+<tr> 
+	<td class="colorEresult barpronos barresulte "></td>
+	<td class="colorIresult barpronos barresulti "></td>
+	<td class="colorCresult barpronos barresultc "></td>
+	<td class="colorPresult barpronos barresultp "></td>
+</tr>
+</table>  
 
 <div class="match-card-event mdl-card mdl-shadow--2dp">
 <div class="mdl-card__title mdl-card--expand">
+
+
+
 
 <div style="height: 430px;overflow-y: auto;width:100%">
 <table style="
@@ -149,6 +174,16 @@ echo '
 	$i = 0;
 	// $row = mysqli_fetch_array($result );
 	// while ($i < 50) 
+	$Result1 = 0;
+	$ResultN = 0;
+	$Result2 = 0;
+		
+	$ResultP = 0;
+	$ResultC = 0;
+	$ResultI = 0;
+	$ResultE = 0;
+
+
 	while ($row = mysqli_fetch_array($result ))
 	{
 		$find = true;
@@ -167,11 +202,30 @@ echo '
 		$score_away = $row["score_away"];
 		$nom =  utf8_encode_function($row["surnom"]);
 		$rang =  $row["rang"];
-		$pronos_home = $row["prono_home"];
-		$pronos_away = $row["prono_away"];
+		$pronos_home = intval($row["prono_home"]);
+		$pronos_away = intval($row["prono_away"]);
 		$point = $row["point"];
-		$palyed = $row["played"];
+		$played = $row["played"];
+		
+		$modif = $row["modif"];
 
+		if ($pronos_home > $pronos_away) {
+			$Result1++;
+		} else if ($pronos_away > $pronos_home) {
+			$Result2++;
+		} else {
+			$ResultN++;
+		}
+
+		if ($point == 7) {
+			$ResultP++;
+		} else if ($point == 3) {
+			$ResultC++;
+		} else if ($point == 1) {
+			$ResultI++;
+		} else {
+			$ResultE++;
+		}
 
 		$classTR = "classTRNeutre";
 			if ($point == 0)
@@ -187,13 +241,13 @@ echo '
 
 					$date_array = date_parse($row["date"]);
 
-$date_array = date_parse($row["date"]);
-if ($i++ % 2 == 0) {
-	echo '	<tr class="backgroundTab1">';
-}
-else {
-	echo '	<tr class="backgroundTab2">';
-}
+		$date_array = date_parse($row["date"]);
+		if ($i++ % 2 == 0) {
+			echo '	<tr class="backgroundTab1">';
+		}
+		else {
+			echo '	<tr class="backgroundTab2">';
+		}
 
 		echo '<td class="rangMatch">', $rang ,' </td>';
 		echo '<td class="surnomMatch">', $nom ,' </td>';
@@ -214,11 +268,7 @@ else {
 		}
 		
 		echo '</td>';
-echo '	</tr>';		
-
-
-
-
+		echo '	</tr>';		
 	}
 
 	
@@ -247,6 +297,133 @@ echo '	</tr>';
 
 				</div>
 ';
+
+
+if ($modif == 2) {
+
+$total = $Result1 + $Result2 + $ResultN;
+$px_b1 = $Result1 * 600 / $total;
+$px_b2 = $Result2 * 600 / $total;
+$px_bN = $ResultN * 600 / $total;
+
+$total2 = $ResultP + $ResultC + $ResultI + $ResultE;
+$px_bP = $ResultP * 600 / $total2;
+$px_bC = $ResultC * 600 / $total2;
+$px_bI = $ResultI * 600 / $total2;
+$px_bE = $ResultE * 600 / $total2;
+
+
+$class_bP = "0px 5px 5px 0px";
+$class_bC = "0px";
+$class_bI = "0px";
+$class_bE = "5px 0px 0px 5px";
+
+if ($px_bP == 600) {
+	$class_bP = "5px";
+} else if ($px_bC == 600) {
+	$class_bC = "5px";
+} else if ($px_bI == 600) {
+	$class_bI = "5px";
+}  else if ($px_bE == 600) {
+	$class_bE = "5px";
+}	else {
+	if ($px_bP == 0) {
+		$class_bC = "0px 5px 5px 0px";
+		if ($px_bC == 0) {
+			$class_bI = "0px 5px 5px 0px";
+		}
+	} 
+
+	if ($px_bE == 0) {
+		$class_bI = "5px 0px 0px 5px";
+		if ($px_bI == 0) {
+			$class_bC = "5px 0px 0px 5px";
+		}
+	}
+}
+
+$class_b1 = "5px 0px 0px 5px";
+$class_bN = "0px";
+$class_b2 = "0px 5px 5px 0px";
+
+if ($px_b1 == 600) {
+	$class_b1 = "5px";
+} else if ($px_b2 == 600) {
+	$class_b2 = "5px";
+} else if ($px_bN == 600) {
+	$class_bN = "5px";
+} else if ($px_b1 == 0) {
+	$class_bN = "5px 0px 0px 5px";
+} else if ($px_b2 == 0) {
+	$class_bN = "0px 5px 5px 0px";
+}
+
+echo '
+<style>
+.bar1{
+	border-radius: '.$class_b1.';
+    width: '. $px_b1 .'px;
+ }
+.bar2{
+	border-radius: '.$class_bN.';
+	width: '. $px_bN .'px;
+ }
+.bar3{
+	border-radius: '.$class_b2.';
+    width: '. $px_b2 .'px;
+}
+
+.color1{
+  background-color: '.$colorHome.';
+}
+.color2{
+  background-color: #66666c;
+}
+.color3{
+   background-color: '.$colorAway.';
+}
+
+</style>';
+
+if ($played == 1) {
+	echo '
+	
+	<style>
+	.barresultp{	
+		border-radius: '.$class_bP.';
+		width: '. $px_bP .'px;
+	}
+	.barresultc{
+		border-radius: '.$class_bC.';
+		width: '. $px_bC .'px;
+	}
+	.barresulti{
+		border-radius: '.$class_bI.';
+		width: '. $px_bI .'px;
+	}
+	.barresulte{
+		border-radius: '.$class_bE.';
+		width: '. $px_bE .'px;
+}
+
+.colorPresult{
+	background-color: #18beff;
+}
+.colorCresult{
+	background-color: #29cd35;
+}
+.colorIresult{
+	background-color: #757575;
+}
+.colorEresult{
+	background-color: #ff3b3b;
+}
+</style>
+';
+
+}
+
+}
 
 
 ?>
