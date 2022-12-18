@@ -8,6 +8,7 @@ SELECT * FROM `joueurs` WHERE `payed` = 0
 
 
 
+
 ---------------------------------------------------
 -- Stop Pronos Premier tour
 ---------------------------------------------------
@@ -60,6 +61,19 @@ UPDATE `joueurs` SET `modif_match`=0 ;
 UPDATE `etat` SET `value`= 0;
 UPDATE `matches` SET `modif`=2 WHERE `id_match` >= 49 AND `id_match` <= 56;
 
+--- 1/4
+UPDATE `etat` SET `value`= 0;
+UPDATE `matches` SET `modif`=2 WHERE `id_match` >= 57 AND `id_match` <= 60;
+
+
+--- 1/2
+UPDATE `etat` SET `value`= 0;
+UPDATE `matches` SET `modif`=2 WHERE `id_match` >= 61 AND `id_match` <= 62;
+
+--- final
+UPDATE `etat` SET `value`= 0;
+UPDATE `matches` SET `modif`=2 WHERE `id_match` >= 63 AND `id_match` <= 64;
+
 --- Nombre de but :
 
 SELECT SUM(score_home + score_away) FROM `matches` WHERE 1;
@@ -74,8 +88,17 @@ GROUP BY joueurs.id_joueur;
 
 SELECT * FROM `joueurs` WHERE `modif_profil` = 0 OR `modif_match` = 0 OR `modif_bonus` = 0
 
+SELECT joueurs.surnom, pronostics.prono_home, pronostics.prono_away FROM pronostics
+JOIN joueurs on joueurs.id_joueur = pronostics.id_membre
+JOIN classements on classements.owner_id = joueurs.id_joueur
+Where pronostics.id_match = 60
+ORDER BY classements.rang
+
+
 INSERT INTO `best_scorer` (`name`, `nb_but`) VALUES ('Morata', '3');
 INSERT INTO `best_scorer` (`name`, `nb_but`) VALUES ('Ferran', '2');
+
+INSERT INTO `best_scorer` (`name`, `nb_but`) VALUES ('Messi', '4');
 
 1er Boubou0677 266€
 2eme Alvorada 103€

@@ -90,17 +90,17 @@
 		$resultText = "Echec";
 		$resultTextCss = "perfectEchec";
 		$resultPancarteCss = "colorEresult";
-		if ($point == 7) {
+		if ($point == 7 || $point == 14) {
 			$ResultP++;
 			$resultText = "Perfect";
 			$resultTextCss = "perfectTitre";
 			$resultPancarteCss = "colorPresult";
-		} else if ($point == 3) {
+		} else if ($point == 3 || $point == 6) {
 			$ResultC++;
 			$resultText = "Correct";
 			$resultTextCss = "perfectCorrect";
 			$resultPancarteCss = "colorCresult";
-		} else if ($point == 1) {
+		} else if ($point == 1 || $point == 2) {
 			$ResultI++;
 			$resultText = "Inverse";
 			$resultTextCss = "perfectInverse";

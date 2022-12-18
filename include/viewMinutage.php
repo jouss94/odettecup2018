@@ -8,7 +8,7 @@
 
 echo '<div class="small-widget-content">';
 echo '<div class="minute">Premier but : <strong>16\'</strong></div>
-	<div class="minute">Dernier but : </div>';
+	<div class="minute">Dernier but : <strong>118\'</strong></div>';
 	echo '</div>';
 
 ?>

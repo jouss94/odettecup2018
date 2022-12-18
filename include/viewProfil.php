@@ -379,13 +379,13 @@
 					$point = $row["point"];
 					if ($point == 0)
 						$classTR = "classTREchecHome";
-					if ($point == 1)
+					if ($point == 1 || $point == 2)
 						$classTR = "classTRInverseHome";
-					if ($point == 3)
+					if ($point == 3 || $point == 6)
 						$classTR = "classTRCorrectHome";
-					if ($point == 4)
+					if ($point == 4 || $point == 8)
 						$classTR = "classTRCorrectPlusHome";
-					if ($point == 7)
+					if ($point == 7 || $point == 14)
 						$classTR = "classTRPerfectHome";
 				}
 				else if ($row["played"] == 0)
@@ -453,13 +453,13 @@
 							$point = $row["point"];
 							if ($point == 0)
 								echo '<div class="EchecPronos">ECHEC</div>';
-							if ($point == 1)
+							if ($point == 1 || $point == 2)
 								echo '<div class="InversePronos">INVERSE</div>';
-							if ($point == 3)
+							if ($point == 3 || $point == 6)
 								echo '<div class="CorrectPronos">CORRECT</div>';
-							if ($point == 4)
+							if ($point == 4 || $point == 8)
 								echo '<div class="CorrectPlusPronos">CORRECT+</div>';
-							if ($point == 7)
+							if ($point == 7 || $point == 14)
 								echo '<div class="PerfectPronos">PERFECT</div>';
 						}
 						else if ($row["played"] == 0)

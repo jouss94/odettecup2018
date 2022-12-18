@@ -41,13 +41,13 @@
 		$classTR = "classTRNeutre";
 			if ($point == 0)
 				$classTR = "classTREchecHome";
-			if ($point == 1)
+			if ($point == 1 || $point == 2)
 				$classTR = "classTRInverseHome";
-			if ($point == 3)
+			if ($point == 3 || $point == 6)
 				$classTR = "classTRCorrectHome";
 			if ($point == 4)
 				$classTR = "classTRCorrectPlusHome";
-			if ($point == 7)
+			if ($point == 7 || $point == 14)
 				$classTR = "classTRPerfectHome";
 
 		$date_array = date_parse($row["date"]);

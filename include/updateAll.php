@@ -85,6 +85,11 @@
 				$points += $pointMacht;									
 			}
 
+			if ($id_match == 64)
+			{
+				$pointMacht = $pointMacht * 2;
+			}
+
 
 			$update = "UPDATE pronostics SET point   = $pointMacht WHERE id_pronostic = $id_pronostic";
 			$result3 = mysqli_query($con, $update);
@@ -97,24 +102,24 @@
 
 		/// VALEUR A MODIFIER
 		$first_but_result = 16;
-		$last_but_result = -1;
-		$total_but_result = -1;
-		$best_scorer_result = "";
-		$player_win_result = -1;
+		$last_but_result = 118;
+		$total_but_result = 172;
+		$best_scorer_result = "Mbappe";
+		$player_win_result = 9;
 
 		$teams_dict_result = null;
 
 		$teams_dict_result = [
-			5 => 0, // Angleterre
-			9 => 0, // Argentine
-			13 => 0, // France
+			5 => 1, // Angleterre
+			9 => 11, // Argentine
+			13 => 6, // France
 			14 => -3, // Danemark
 			17 => 0, // Espagne
 			18 => -3, // Allemagne
-			25 => 0, // Brésil
-			29 => 0  // Portugal
+			25 => 1, // Brésil
+			29 => 1  // Portugal
 		];
-		
+ 
 		$qryBonus = "SELECT * 
 				FROM pronostics_bonus
 				Left JOIN joueurs ON pronostics_bonus.id_membre = joueurs.id_joueur

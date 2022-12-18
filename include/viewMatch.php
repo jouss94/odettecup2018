@@ -217,11 +217,11 @@ echo '
 			$ResultN++;
 		}
 
-		if ($point == 7) {
+		if ($point == 7 || $point == 14) {
 			$ResultP++;
-		} else if ($point == 3) {
+		} else if ($point == 3 || $point == 6) {
 			$ResultC++;
-		} else if ($point == 1) {
+		} else if ($point == 1 || $point == 2) {
 			$ResultI++;
 		} else {
 			$ResultE++;
@@ -230,13 +230,13 @@ echo '
 		$classTR = "classTRNeutre";
 			if ($point == 0)
 				$classTR = "classTREchecHome";
-			if ($point == 1)
+			if ($point == 1 || $point == 2)
 				$classTR = "classTRInverseHome";
-			if ($point == 3)
+			if ($point == 3 || $point == 6)
 				$classTR = "classTRCorrectHome";
-			if ($point == 4)
+			if ($point == 4 || $point == 8)
 				$classTR = "classTRCorrectPlusHome";
-			if ($point == 7)
+			if ($point == 7 || $point == 14)
 				$classTR = "classTRPerfectHome";
 
 					$date_array = date_parse($row["date"]);
