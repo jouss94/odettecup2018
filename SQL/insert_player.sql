@@ -5,18 +5,19 @@ SET @email = 'mathiasmonica@zohomail.eu';
 SET @password = 'HT12KL';
 SET @telephone = '0781958773';
 SET @description = "Pull up, viva ARGENTINAAAAAAAA";
+SET @competition = 1; -- 1
 
 
-INSERT INTO `joueurs` (`prenom`, `nom`, `surnom`, `email`, `password`, `telephone`, `description`) 
-VALUES (@prenom, @nom, @surnom, @email, @password, @telephone, @description);
+INSERT INTO `joueurs` (`prenom`, `nom`, `surnom`, `email`, `password`, `telephone`, `description`, `competition`) 
+VALUES (@prenom, @nom, @surnom, @email, @password, @telephone, @description, @competition);
 
 SET @ID = LAST_INSERT_ID();
 
 SELECT @ID;
 SET @TypeGeneral = 'general';
 
-INSERT INTO `classements`(`type`, `owner_id`) 
-VALUES (@TypeGeneral, @ID);
+INSERT INTO `classements`(`type`, `owner_id`, `competition`) 
+VALUES (@TypeGeneral, @ID, @competition);
 
 
 

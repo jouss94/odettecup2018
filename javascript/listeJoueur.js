@@ -16,7 +16,7 @@ $(document).ready(function(){
 	}
 
 	$(".RetourSpan").click(function(){
-		 	document.location = 'acceuil.php';
+		history.back();
 		 	return false;
 	});
 

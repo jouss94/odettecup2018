@@ -9,79 +9,7 @@
 
 	parse_str($_SERVER["QUERY_STRING"], $query);
 	$idProfil = $query['id'];
-
-		echo '<div class="profilInformation floaleft">';
-
-
-	$qry = "SELECT *, joueurs.nom as joueursnom,
-	joueurs.image as joueursimage,
-	joueurs.color as joueursColor,
-	equipe_winner.logo as logo
-	 FROM joueurs 
-	
-	LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe
-	WHERE id_joueur='".$idProfil."';";
-	$result = mysqli_query($con, $qry);
-	$find = false;
-	while ($row = mysqli_fetch_array($result )) 
-	{	
-		$find = true;
-		echo '<div class="profilInformationSurnomBig" style=" background:linear-gradient(', $row["joueursColor"] ,' 0%, #9c2950 40%);">';
-
-		echo '<div class="cadreprofilsurnom"> ';
-		echo '<span style="padding-top: 15px;display: block;FONT-WEIGHT: bold;">';
-		echo utf8_encode_function($row["surnom"]);
-		if ($row["logo"] != null) {
-			echo '<img class="logoEquipProfil" src="';
-			echo $row["logo"];	
-			echo '" />';
-		}
-		echo '</span>';
-		echo '</div> ';
-
-		echo '<div class="profilInformationImageDiv"> 
-
-				<img src="', utf8_encode_function($row["joueursimage"]), '" class="profilInformationImage mdl-button--raised joueursimage"/>
-
-			</div>';
-		// if ($idProfil == $id)
-		// {
-		// 	echo '<div> 
-		// 		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="ModifierProfil">
-		// 			Modifier Profil 
-		// 		</button>
-		// 	</div>';
-		// }
-
-		// echo '<div class="profilInformationCivil">', utf8_encode_function($row["prenom"]), '</div>';
-		// echo '<div class="profilInformationCivil">', utf8_encode_function($row["joueursnom"]), '</div>';
-		// echo '<div class="profilInformationCivil">', utf8_encode_function($row["email"]), '</div>';
-		echo '<div class="profilInformationEmail">', utf8_encode_function($row["description"]), '</div>';
-		
-		
-		$chipsProfil = 'chips-red';
-		if (intval($row["modif_profil"]) == 1 && intval($row["modif_match"]) == 1 && intval($row["modif_bonus"]) == 1)
-		$chipsProfil = 'chips-green';
-		
-		$chipsPayement = 'chips-red';
-		if (intval($row["payed"]) == 1) $chipsPayement = 'chips-green';
-
-
-		echo '
-		<span class="mdl-chip mdl-chip--contact chips-body ', $chipsProfil, '-body">
-			<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white ', $chipsProfil, '"></span>
-			<span class="mdl-chip__text ">Profil à jour</span>
-		</span>
-		<span class="mdl-chip mdl-chip--contact chips-body ', $chipsPayement, '-body"">
-			<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white ', $chipsPayement, '"></span>
-			<span class="mdl-chip__text ">Paiement</span>
-		</span>';
-
-		echo '</div>';
-	}
-
-	echo '</div>';
-
+	$find = true;
 	if ($find)
 	{
 
@@ -89,21 +17,15 @@
 
 	echo '
 
-	<div class="profilPronosBig floaleft">
-	<span class="profilPronosTitre">Pronostics Matches</span>
+	<span class="listeJoueurTitre">Pronostics matches</span>
 	
-		<span class="RetourSpan">
+		<span class="RetourSpanContainer">
 			<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonRouge">
 				Retour
 			</button>
 		</span>
 
-	<form action="addMatches.php" method="post">
-
-	';
-
-
-
+	<form action="addMatches.php" method="post">';
 
 	$qry = "SELECT matches.*,
 					matches.id_match as id, 
@@ -115,7 +37,7 @@
 			FROM matches 
 			LEFT JOIN equipes equipes_home ON equipes_home.id_equipe = matches.id_team_home 
 			LEFT JOIN equipes equipes_away ON equipes_away.id_equipe = matches.id_team_away 
-			LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match AND pronos.id_membre = $id WHERE modif=1 ORDER BY groupe, date, id;";
+			LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match AND pronos.id_joueur = $id WHERE modif=1 ORDER BY groupe, date, id;";
 	$result = mysqli_query($con, $qry);
 	$oldgroup = "";
 	$first = true;
@@ -131,7 +53,6 @@
 		$id_match = $row["id"];
 		$pronos_home = $row["prono_home"];
 		$pronos_away = $row["prono_away"];
-		$montagne = $row["montagne"];
 
 		if ($oldgroup != $group)
 		{
@@ -143,7 +64,7 @@
 			else
 				echo '</table>';
 
-			echo '<span class="profilPronosSousTitre"> Groupe ', $group ,'</span>';
+			echo '<div class="profilPronosSousTitre"> Groupe ', $group ,'</div>';
 
 			echo '<table class="tableauPronosForm">';
 
@@ -155,16 +76,6 @@
 
 		$oldgroup = $group;
 
-
-		if ($montagne == 1)
-		{
-			echo '<tr>
-				<td colspan="7" class="tdmontagne">
-				&darr; Match de montagne &darr;
-				</td>
-			</tr>';
-		}
-
 		echo '<tr>';
 		echo '
 			<td><img class="logoEquipe" src="', $home_logo, '" /></td>
@@ -175,14 +86,14 @@
 		';
 		echo '
 			<td>
-				<input id="match_', $id_match ,'_home" name="numberMatch_', $id_match ,'_home" type="text" value=';
+				<input id="match_', $id_match ,'_home" name="numberMatch_', $id_match ,'_home" value=';
 
 				if ($pronos_home != "NULL")
 					echo '"', $pronos_home, '"';
 				else
 					echo '""';
 
-				echo ' class="serverside-validation" size="6" />
+				echo ' type="number" size="6" />
 			</td>
 		';
 		echo '
@@ -190,14 +101,14 @@
 		';
 		echo '
 			<td>
-				<input id="match_', $id_match ,'_away" name="numberMatch_', $id_match ,'_away" type="text" value=';
+				<input id="match_', $id_match ,'_away" name="numberMatch_', $id_match ,'_away" value=';
 
 				if ($pronos_away != "NULL")
 					echo '"', $pronos_away, '"';
 				else
 					echo '""';
 
-				echo ' class="serverside-validation" size="6" />
+				echo ' type="number" size="6" />
 			</td>
 		';
 
@@ -230,7 +141,7 @@
 			</div>';
 	
 
-	echo '		</form></div>';
+	echo '		</form>';
 	}
 	else
 	{

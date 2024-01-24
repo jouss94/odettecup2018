@@ -13,7 +13,7 @@
                     <form class="chat-form" method="POST">
                         <input type="text" name="joueur_id" id="joueur_id" value="<?php echo $id ?>" style="display:none;"/>
                         <input type="text" autocomplete="off" id="content" name="content" placeholder="Tape ton message ici..."/>
-                        <button type="submit" id="submit" disabled="disabled">Chat</button>
+                        <button type="submit" id="submit" disabled="disabled">Envoyer</button>
                     </form>
                 </div>
             </section>

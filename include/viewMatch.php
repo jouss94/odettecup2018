@@ -2,10 +2,18 @@
 
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
 
 	require_once 'config.php';
 	require_once 'functions.php';
 
+	$days = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi','Jeudi','Vendredi', 'Samedi');
+	$months = array(
+		11 => "Novembre",
+		12 => "Décembre",
+		06 => "Juin",
+		07 => "Juillet",
+	);
 
 	echo '
 
@@ -43,31 +51,29 @@
 		$diff = utf8_encode_function($row["diff"]);
 		$stadium = utf8_encode_function($row["stadium"]);
 		$played = $row["played"];
-		$date_array = $row["date"];
+		$modif = $row["modif"];
+		$date_array = date_parse($row["date"]);
 		$score_home = $row["score_home"];
 		$score_away = $row["score_away"];
-		$montagne = $row["montagne"];
 		$colorHome = $row["colorHome"];
 		$colorAway = $row["colorAway"];
 
-
-		// echo '<h2> ',$group,'</h2>';
-		
-		if ($row["montagne"] == 1)
-		{
-			echo '<div class="matchmontagne">Match de montagne</div>';
-		}		
-
-		echo '<table style="margin:auto;width: 85%;border-collapse: collapse;text-align: center;    font-style: italic;">
+		echo '<table style="margin:auto;width: 85%;border-collapse: collapse;text-align: center;    font-weight: bold;">
 			<tr>
-					<td style="margin: auto;    width: 33%;text-align: left 	;">',
-						 $date_array,'
+					<td style="margin: auto;width: 25%;text-align: left;">',
+						$stadium,'
 					</td>
-					<td style="margin: auto;    width: 33%;">', $stadium;
+					<td style="margin: auto;width: 50%;"><div class="match-date">',
+					$days[date('w', strtotime($date))] 
+					,' '
+					,$date_array['day']
+					,' '
+					,$months[$date_array['month']],
+					"</br>",
+					$date_array['hour'], 'h00';
 
-
-					echo '</td>
-					<td style="margin: auto;    width: 33%;text-align: right;" >', $diff,  
+					echo '</div></td>
+					<td style="margin: auto;width: 25%;text-align: right;" >', $diff,  
 					'</td>';
 
 		echo '</tr>
@@ -99,7 +105,7 @@
 							echo '<span class="pancarte" style="font-size: 35px;">',  $score_home,'</span>';
 
 					echo '</td >
-					<td style="font-size: 50px;width:20px">&nbsp;', 
+					<td style="font-size: 50px;width:20px">-', 
 					'</td>
 					<td style="width: 8%;">'; 
 						if ($played == 1)
@@ -112,7 +118,27 @@
 			</tr>
 		</table>';
 
-
+		if ($modif == 2 )
+		echo '
+		<div class="match-bars">
+		<span class="textmatch">Pronostics :</span>
+		<table class="percentBar">
+			<tr> 
+				<td class="color1 bar bar1"></td>
+				<td class="color2 bar bar2"></td>
+				<td class="color3 bar bar3"></td>
+			</tr>
+		</table>    
+		<span class="textmatch">Résultats :</span>
+		<table class="percentBar">
+		<tr> 
+			<td class="colorEresult barpronos barresulte "></td>
+			<td class="colorIresult barpronos barresulti "></td>
+			<td class="colorCresult barpronos barresultc "></td>
+			<td class="colorPresult barpronos barresultp "></td>
+		</tr>
+		</table></div>  ';
+		
 
 
 	}
@@ -130,9 +156,9 @@
 			LEFT JOIN equipes equipes_home ON equipes_home.id_equipe = matches.id_team_home 
 			LEFT JOIN equipes equipes_away ON equipes_away.id_equipe = matches.id_team_away 
 			LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match 
-			LEFT JOIN joueurs ON joueurs.id_joueur = pronos.id_membre 
+			LEFT JOIN joueurs ON joueurs.id_joueur = pronos.id_joueur 
 			LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'general'
-			WHERE modif=2 AND matches.id_match = $idMatch  ORDER BY classements.rang;";
+			WHERE modif=2 AND matches.id_match = $idMatch AND joueurs.competition = $competition ORDER BY classements.rang;";
 	$result = mysqli_query($con, $qry);
 	$find = false;
 
@@ -141,24 +167,8 @@
 
 	echo '';
 
+
 echo '
-<span class="textmatch">Pronostics :</span>
-<table class="percentBar">
-    <tr> 
-        <td class="color1 bar bar1"></td>
-        <td class="color2 bar bar2"></td>
-        <td class="color3 bar bar3"></td>
-    </tr>
-</table>    
-<span class="textmatch">Résultats :</span>
-<table class="percentBar">
-<tr> 
-	<td class="colorEresult barpronos barresulte "></td>
-	<td class="colorIresult barpronos barresulti "></td>
-	<td class="colorCresult barpronos barresultc "></td>
-	<td class="colorPresult barpronos barresultp "></td>
-</tr>
-</table>  
 
 <div class="match-card-event mdl-card mdl-shadow--2dp">
 <div class="mdl-card__title mdl-card--expand">
@@ -169,7 +179,7 @@ echo '
 <div style="height: 430px;overflow-y: auto;width:100%">
 <table style="
     border-collapse: collapse;
-    width: 100%;color:#FFF;">';
+    width: 100%;color:#000;">';
 
 	$i = 0;
 	// $row = mysqli_fetch_array($result );
@@ -276,7 +286,7 @@ echo '
 	if (!$find)
 	echo '<tr>
 			<td>
-				<div style="margin: auto;width: 100%;text-align: center;color: #FFF;">Pas encore de pronostics pour ce match.</div>
+				<div style="margin: auto;width: 100%;text-align: center;color: #000;">Pas encore de pronostics pour ce match.</div>
 			</td>
 		</tr>';
 	echo '';
@@ -284,12 +294,13 @@ echo '
 	echo '</table></div>';
 	echo '
 	</div>
-	<div class="mdl-card__actions mdl-card--border">
-		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="listeJoueur.php" >
+	<div class="mdl-card__actions mdl-card--border" style="justify-content: space-evenly;">
+		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="trombi.php" >
 			Liste joueurs 
 		</a>
-		<div class="mdl-layout-spacer"></div>
-		<i class="material-icons">event</i>
+		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.phpp?ranking=General" >
+			Classement 
+		</a>
 	</div>
 </div>
 

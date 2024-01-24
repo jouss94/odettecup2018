@@ -10,8 +10,10 @@
 
 body {
     color: black;
+    
+    background: -webkit-gradient(linear, left top, left bottom, from(#143cdb), to(#00ba5d)) fixed;
     /* background: -webkit-gradient(linear, left top, left bottom, from(#e66465), to(#9198e5)) fixed; */
-    background: -webkit-gradient(linear, left top, left bottom, from(#5e0925), to(#af6780)) fixed;
+    /* background: -webkit-gradient(linear, left top, left bottom, from(#5e0925), to(#af6780)) fixed; */
     /* background-color: #981d46; */
     background-repeat: no-repeat;
     margin: 0px;
@@ -19,15 +21,19 @@ body {
     font-family: Roboto;
 }
 
+select {
+    height: 30px; 
+}
+
+
 table {
-    font-family: 'Roboto';
+    /* font-family: 'Roboto'; */
 }
 
 .ClassementPoints {
     text-align: center;
     width: 7%;
     font-weight: bold;
-    color: #ffffff;
     font-size: 20px;
 }
 
@@ -86,9 +92,8 @@ table {
 .ClassementRang {
     width: 50px;
     text-align: center;
-        font-size: 22px;
-        font-weight: bold;
-        color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .titleSmallTexte {
@@ -102,7 +107,6 @@ table {
 table.sortable {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 table.sortable thead {
@@ -121,6 +125,8 @@ table.sortable thead {
     margin-top: 10px;
     height: 600px;
     overflow-y: auto;
+    background: #ffffff36;
+    border-radius: 10px;
 }
 
 .uniqueClassement {
@@ -134,19 +140,22 @@ table.sortable thead {
 .surnomClassementDiv {
     cursor: pointer;
     word-break: break-word;
-    color: #FFF;
+    color: #000;
+    font-weight: bold;
     cursor: pointer;
+    font-size: 20px;
 }
 
 .surnomClassementDiv:hover {
-    color: #000;
+    color: #FFF;
     cursor: pointer;
 }
 
 .homeClassementPoint {
     text-align: center;
     font-size: 20px;
-    color: #FFF;
+    color: #000;
+    font-weight: bold;
 }
 
 .homeClassementSurnom {
@@ -159,7 +168,8 @@ table.sortable thead {
 
 .homeClassementRang {
     padding-left: 5px;
-    color: #FFF;
+    color: #000;
+    font-weight: bold;
     font-size: 14px;
     text-align: center;
 }
@@ -242,13 +252,14 @@ table.sortable thead {
     margin: auto;
     margin-top: 30px;
     background: rgba(255, 255, 255, 0.56);
-    z-index: 1;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    z-index: 1;    
+    border-radius: 20px;
 }
 
 .tableCalendrierL1 {
     text-align: center;
-    background: rgba(255, 255, 255, 0.611764705882353)
+    background: rgba(255, 255, 255, 0.611764705882353);
+    border-radius: 20px;
 }
 
 .tableCalendrierL3 {
@@ -269,7 +280,7 @@ table.sortable thead {
     margin: auto;
     
     background: rgba(255, 255, 255, 0.45);
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 20px;
 }
 
 .allPronosJoueurs {
@@ -287,15 +298,34 @@ table.sortable thead {
     font-size: 20px;
     font-weight: 400;
     background: rgba(228, 228, 228, 0.26);
-    border-bottom: 1px solid #fff;
+    border-radius: 20px 0 0 20px;
 }
 
 .backgroundTab1 {
-    background:#9a224aa3;
+    /* background:#9a224aa3; */
+    /* border-bottom: solid 1px #FFF; */
+    font-weight: bold;
+
 }
 
 .backgroundTab2 {
-    background: #c27e94
+    background: #ffffff26;
+    /* border-bottom: solid 1px #FFF; */
+    font-weight: bold;
+}
+
+.profil-line {
+    border-bottom: solid 1px #FFF;
+}
+
+.profil-score {
+    text-align: left;
+    /* margin-left: 20px; */
+    margin-top: -12px;
+    padding: 0 0 4px 215px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #474747;
 }
 
 .backgroundTab1Jaune {
@@ -371,7 +401,7 @@ table.sortable thead {
 
 .classTRPerfectHome {
     color: #c0f6ff;
-    text-shadow: 2px 0 #0490c7, -2px 0 #0490c7, 0 2px #0490c7, 0 -2px #0490c7, 1px 1px #0490c7, -1px -1px #0490c7, 1px -1px #0490c7, -1px 1px #0490c7;
+    text-shadow: 2px 0 #00b7ff, -2px 0 #00b7ff, 0 2px #00b7ff, 0 -2px #00b7ff, 1px 1px #00b7ff, -1px -1px #00b7ff, 1px -1px #00b7ff, -1px 1px #00b7ff;
     font-weight: bold;
 }
 
@@ -384,7 +414,8 @@ table.sortable thead {
 
 .classTRCorrectHome {
     color: #b1f7c0;
-    text-shadow: 2px 0 #02990d, -2px 0 #02990d, 0 2px #02990d, 0 -2px #02990d, 1px 1px #02990d, -1px -1px #02990d, 1px -1px #02990d, -1px 1px #02990d;
+    /* text-shadow: 2px 0 #2bdf6e, -2px 0 #2bdf6e, 0 2px #2bdf6e, 0 -2px #2bdf6e, 1px 1px #2bdf6e, -1px -1px #2bdf6e, 1px -1px #2bdf6e, -1px 1px #2bdf6e; */
+    text-shadow: 2px 0 #2bdf6e, -2px 0 #2bdf6e, 0 2px #2bdf6e, 0 -2px #2bdf6e, 1px 1px #2bdf6e, -1px -1px #2bdf6e, 1px -1px #2bdf6e, -1px 1px #2bdf6e;
     font-weight: bold;
 }
 
@@ -395,7 +426,7 @@ table.sortable thead {
 
 .classTREchecHome {
     color: #ed9d9d;
-    text-shadow: 2px 0 #9f0000, -2px 0 #9f0000, 0 2px #9f0000, 0 -2px #9f0000, 1px 1px #9f0000, -1px -1px #9f0000, 1px -1px #9f0000, -1px 1px #9f0000;
+    text-shadow: 2px 0 #ed1e25, -2px 0 #ed1e25, 0 2px #ed1e25, 0 -2px #ed1e25, 1px 1px #ed1e25, -1px -1px #ed1e25, 1px -1px #ed1e25, -1px 1px #ed1e25;
     font-weight: bold;
 }
 
@@ -525,6 +556,8 @@ table.sortable thead {
     height: 330px;
     width: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 15px; 
 }
 
 .cadreTableauAcceuilNoHeight {
@@ -617,7 +650,7 @@ table.sortable thead {
 
 .perfectTitre {
     color: #c0f6ff;
-    text-shadow: 2px 0 #0490c7, -2px 0 #0490c7, 0 2px #0490c7, 0 -2px #0490c7, 1px 1px #0490c7, -1px -1px #0490c7, 1px -1px #0490c7, -1px 1px #0490c7;
+    text-shadow: 2px 0 #00b7ff, -2px 0 #00b7ff, 0 2px #00b7ff, 0 -2px #00b7ff, 1px 1px #00b7ff, -1px -1px #00b7ff, 1px -1px #00b7ff, -1px 1px #00b7ff;
     /* color: #1792c1; */
 }
 
@@ -630,7 +663,7 @@ table.sortable thead {
 .perfectCorrect {
     
     color: #b1f7c0;
-    text-shadow: 2px 0 #02990d, -2px 0 #02990d, 0 2px #02990d, 0 -2px #02990d, 1px 1px #02990d, -1px -1px #02990d, 1px -1px #02990d, -1px 1px #02990d;
+    text-shadow: 2px 0 #2bdf6e, -2px 0 #2bdf6e, 0 2px #2bdf6e, 0 -2px #2bdf6e, 1px 1px #2bdf6e, -1px -1px #2bdf6e, 1px -1px #2bdf6e, -1px 1px #2bdf6e;
     /* color : #1ea228; */
 }
 
@@ -640,7 +673,7 @@ table.sortable thead {
 
 .perfectEchec {
     color: #ed9d9d;
-    text-shadow: 2px 0 #9f0000, -2px 0 #9f0000, 0 2px #9f0000, 0 -2px #9f0000, 1px 1px #9f0000, -1px -1px #9f0000, 1px -1px #9f0000, -1px 1px #9f0000;
+    text-shadow: 2px 0 #ed1e25, -2px 0 #ed1e25, 0 2px #ed1e25, 0 -2px #ed1e25, 1px 1px #ed1e25, -1px -1px #ed1e25, 1px -1px #ed1e25, -1px 1px #ed1e25;
    /* color: rgba(0, 0, 0, 0.91); */
 }
 
@@ -656,10 +689,9 @@ table.sortable thead {
 .reglementDiv {
     text-align: left;
     margin: 50px;
-    background: #72203c70;
-    color: #380817;
+    background: #ffffff40;
+    color: #00123f;
     border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
     padding: 1px 0px 20px 50px;
 }
 
@@ -702,25 +734,36 @@ table.sortable thead {
 }
 
 .tableListeDetail {
-    width: 18%;
-    text-align: center;
-    cursor: pointer;
-    text-decoration: underline;
-    color: #992149;
+    padding: 0 55px;
+    /* text-align: center;
+    color: #002c90; */
 }
 
-.tableListeDetail:hover {
+/* .tableListeDetail:hover {
     width: 18%;
     text-align: center;
     color: #FFF;
     cursor: pointer;
-}
+} */
 
+
+.tableListe .tableCalendrierElse ~ .tableCalendrierElse {
+    background-color: #00123f;
+}
 
 .tableListeThird {
     width: 35%;
     text-align: center;
     font-size: 17px;
+}
+
+.tableListeThird-round {
+    border-radius: 0 20px 0 0;
+}
+
+.tableCalendrierL2-hour {
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .tableListeSecond {
@@ -754,8 +797,10 @@ table.sortable thead {
     padding: 30px;
     font-size: 28px;
     font-weight: bold;
-    color: #380817;
+    color: #002c90;
     background: #ffffff4f;
+    border-radius: 0px 0px 30px 30px;
+    border-bottom: solid 2px #002c90;
 }
 
 .detailTitreListeJoueurs:hover {
@@ -794,6 +839,7 @@ table.sortable thead {
     padding-bottom: 5px;
     padding-top: 5px;
     font-weight: bold;
+    color: #000;
     /* display: block; */
 }
 
@@ -855,18 +901,24 @@ table.sortable thead {
 .detailTitreUpdateRedSpan {
     font-size: 12px;
    cursor: pointer;
+   font-weight: bold;
 }
 
 .sousTitreUpdateRed {
     padding-left: 30px;
     font-size: 12px;
     width: 590px;
+    font-weight: bold;
 }
 
 .titreUpdateRed {
+    /* color: #ed9d9d; */
+    /* text-shadow: 2px 0 #ed1e25, -2px 0 #ed1e25, 0 2px #ed1e25, 0 -2px #ed1e25, 1px 1px #ed1e25, -1px -1px #ed1e25, 1px -1px #ed1e25, -1px 1px #ed1e25; */
+    /* font-weight: bold; */
     color: red;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
+    font-family: "Kalam", cursive;
 }
 
 .etatProfilRed {
@@ -875,17 +927,26 @@ table.sortable thead {
     margin-bottom: 20px;
     background: #ffffff82;
     width: 800px;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 20px 20px; 
+    border-bottom: solid 1px #FFF;
+    border-right: solid 1px #FFF;
+    border-left: solid 1px #FFF;
 }
 
 .etatProfilGreen {
-    color: #fff;
+    color: #002c90;
     padding: 5px 21px;
     margin: auto;
     margin-bottom: 20px;
-    background: #6af168a1;
+    background: #ffffff82;
+    /* text-shadow: 1px 0 #2bdf6e, -1px 0 #2bdf6e, 0 1px #2bdf6e, 0 -1px #2bdf6e, 1px 1px #2bdf6e, -1px -1px #2bdf6e, 1px -1px #2bdf6e, -1px 1px #2bdf6e; */
+    font-weight: bold;
     width: 800px;
     border-radius: 0px 0px 20px 20px;
+    border-bottom: solid 1px #FFF;
+    border-right: solid 1px #FFF;
+    border-left: solid 1px #FFF;
+    font-family: "Kalam", cursive;
 }
 
 
@@ -983,29 +1044,8 @@ table.sortable thead {
 
 .pointBonus {
     font-size: 18px;
-    padding-right: 30px;
+    padding-right: 20px;
     font-weight: bold;
-}
-
-.pancarteBonusEchec {
-    background: rgba(197, 41, 41, 0.68);
-        text-align: center;
-        box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
-    font-size: 17px;
-    color: #FFF;
-    font-weight: bold;
-    padding: 5px;
-}
-
-
-.pancarteBonusCorrect {
-    background: rgba(56, 150, 76, 0.68);
-    text-align: center;
-    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
-    font-size: 17px;
-    color: #FFF;
-    font-weight: bold;
-    padding: 5px;
 }
 
 .tdBonusCenter {
@@ -1032,21 +1072,21 @@ table.sortable thead {
 }
 
 #ModifierProfil {
-    color: #5c001f;
-    background: #FFF;
+    background: #ffffffad;
+    color: #002c90;
  }
 
  #ModifierMatch {
-    background: #ffffff;
-    color: #5c001f;
+    background: #ffffffad;
+    color: #002c90;
  }
  #modifierBonus {
-    background: #ffffff;
-    color: #5c001f;
+    background: #ffffffad;
+    color: #002c90;
  }
  #modifierJoker {
-    background: #ffffff;
-    color: #5c001f;
+    background: #ffffffad;
+    color: #002c90;
  }
 
 .InversePronos {
@@ -1088,11 +1128,20 @@ table.sortable thead {
 .pancarteAuto {
     background: rgba(0, 0, 0, 0.68);
     text-align: center;
-    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
-    font-size: 17px;
+    font-size: 18px;
     color: #FFF;
     font-weight: bold;
-    padding: 5px;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.pancarteBonusEchec {
+    background: rgba(197, 41, 41, 0.68);
+}
+
+
+.pancarteBonusCorrect {
+    background: rgba(56, 150, 76, 0.68);
 }
 
 .BigTitreRight {
@@ -1122,44 +1171,79 @@ table.sortable thead {
     font-size: 17px;
     color: #FFF;
     font-weight: bold;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */
 }
 
 .pancarteBig {
     background: rgba(0, 0, 0, 0.68);
-    padding: 3px;
+    padding: 2px;
     display: block;
     text-align: center;
     font-size: 17px;
     color: #FFF;
     font-weight: bold;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */
     width: 26px;
 }
+
+.pancarte-profil {
+    background: rgba(0, 0, 0, 0.68);
+    padding: 4px 9px;
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    color: #FFF;
+    font-weight: bold;
+    min-width: 10px;
+    border-radius: 5px;
+}
+
+.pancarte-padding {
+    padding: 3px 9px;
+}
+
+.pancarte-perfect {
+    background: #00b7ff;
+    border: solid 2px #c0f4fa;
+}
+
+.pancarte-correct {
+    background: #2bdf6e;
+    border: solid 2px #b1f7c0;
+}
+
+.pancarte-inverse {
+    background: #757575;
+    border: solid 2px #cdcdcd;
+}
+
+.pancarte-echec {
+    background: #ed1e25;
+    border: solid 2px #ed9d9d;
+}
+
 
 img.logoEquipeBig {
     width: 90px;
     margin: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     /* border: solid 2px #000; */
 }
 
 img.logoEquipe {
     width: 34px;
     margin: 5px;
-    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
 img.logoEquipeSmall {
     width: 30px;
     margin: 5px;
-    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
 img.logoEquipeSmaller {
     width: 18px;
     margin: 5px;
-    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
 
@@ -1179,7 +1263,7 @@ img.logoEquipeSmaller {
 .affPronosTableau {
     width: 100%;
     border-collapse: collapse;
-    color: #FFF;
+    font-weight: bold;
 }
 
 .emptyTableau {
@@ -1190,16 +1274,16 @@ img.logoEquipeSmaller {
 }
 
 .profilPronosSousTitre {
-    display: block;
-    margin-top: 40px;
-    margin-left: 145px;
-    font-size: 20px;
+    /* display: block; */
+    /* margin-top: 40px; */
+    /* margin: auto; */
+    /* margin-left: 145px; */
+    font-size: 25px;
     font-weight: bold;
-    
-    text-align: left;
-    
-    color: #380817;
-    margin-bottom: 8px;
+    color: #000000;
+    margin: 20px;
+    text-align: center;
+    /* margin-bottom: 8px; */
 }
 
 .profilPronosTitre {
@@ -1379,6 +1463,15 @@ span.titre {
     flex-direction: row-reverse;
 }
 
+.RetourSpanContainer {
+    font-size: 25px;
+    color: #FFF;
+    font-weight: bold;
+    margin: 10px 20px 0px 20px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 .RetourSpanButton {
     margin-left: 650px;
     font-size: 25px;
@@ -1408,11 +1501,28 @@ span.titre {
 #RetourButtonBlanc {
     color: #000;
     background: #FFF;
+    background: #ffffffad;
+    color: #002c90;
+}
+
+#RetourArrow {
+    background: none;
+    font-size: 65px;
+}
+
+#ButtonMoulinette {
+    background: rgb(22 115 22);
+    color: #FFF;
+}
+
+#ButtonBonus {
+    color: #000;
+    background: #FFF;
 }
 
 #RetourButtonRouge {
     background: #ffffff;
-    color: #5c001f;
+    color: #002c90;
 }
 
 #buttonValidationSubmit {
@@ -1444,7 +1554,7 @@ span.ui-button-text {
     margin-left: 10px;
 
     background: #ffffff;
-    color: #5c001f;
+    color: #002c90;
 
 }
 
@@ -1469,6 +1579,7 @@ div#add_err {
     padding: 0;
     max-width: 1000px;
     background: #ffffff61;
+    border-radius: 0 0 20px 20px;
 }
 
 .loginform-in-acceuil {
@@ -1558,13 +1669,14 @@ div#add_err {
     padding: 1px 1px 1px 10px;
     width: 180px;
     outline: none;
+    border-radius: 10px;
 }
 
 .full-table-collapse-white {
     border-collapse: collapse;
     width: 100%;
-    color: #FFF;
-    font-weight: normal;
+    color: #000;
+    font-weight: bold;
 }
 
 .statusprofil {
@@ -1589,12 +1701,12 @@ div#add_err {
 }
 
 #login {
-    background: rgb(149 194 61);
+    background: #143cdb;
     width: 180px;
 }
 
 #demand {
-    background: rgb(249 178 51);
+    background: #00ba5d;
     width: 180px;
 }
 
@@ -1687,7 +1799,11 @@ div#add_err {
 }
 
 a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect {
-    background: #e189a794;
+    background: #689dd1ad;
+    color: #002c90;
+    /* background: #e189a794; */
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 .dateCalendar {
@@ -1702,7 +1818,7 @@ span.dateCalendarText {
     line-height: 40px;
     font-size: 19px;
     font-weight: bold;
-    color: #5a1129;
+    color: #ffffff;
 }
 
 .resumeJoker {
@@ -1895,31 +2011,31 @@ cursor: pointer;
 
  .totalbut {
     font-size: 34px;
-    color: #992149;
+    color: #002c90;
 }
  .totatbutsmall {
     font-size: 20px;
-    color: #992149;
+    color: #002c90;
 }
 
 .totalbutmoyenne {
     font-size: 14px;
-    color: #992149;
+    color: #002c90;
 }
  .totatbutsmallmoyenne {
     font-size: 9px;
-    color: #992149;
+    color: #002c90;
 }
 
 
 .minute {
     text-align: left;
-    color: #992149;
+    color: #002c90;
     line-height: 24px;
 }
 
 .scorers {
-    color: #992149;
+    color: #002c90;
     line-height: 19px;
     font-size: 16px;
     text-align: left;
@@ -1932,7 +2048,7 @@ cursor: pointer;
 
 
 .gain {
-    color: #992149;
+    color: #002c90;
     line-height: 14px;
     font-size: 12px;
     text-align: left;
@@ -1942,4 +2058,557 @@ cursor: pointer;
 
 .gain_name {
     width: 60px;
+}
+
+.bar{
+   height: 14px;
+   padding: 0px;
+}
+
+.percentBar {
+    border-collapse: collapse;
+    margin: 12px auto; 
+}
+
+.nextmatchsoloteams {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+}
+
+.logoEquipebigbig {
+    width: 100px;
+    margin: 5px;
+}
+
+.nextmatchsoloteamshomename {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nextmatchsoloteamsawayname {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nextmatchsoloteamsmiddle {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.nextmatchsolodate {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.nextmatchsolotime {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.nextmatchsolopronos {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.lastmatchsolopronos {
+    display: flex;
+    justify-content: center;
+}
+
+.nextmatchsolopronosmiddle {
+    width: 40px;
+}
+
+.lastmatchsolopronosmiddle {
+    width: 20px;
+    line-height: 27px;
+}
+
+
+.pancarteBigBig {
+    background: rgb(0 0 0 / 85%);
+    width: 50px;
+    height: 50px;
+    display: block;
+    font-size: 40px;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 10px;
+    /* box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%); */
+}
+
+.pancarteBigBigSmall {
+    background: rgb(0 0 0 / 85%);
+    width: 35px;
+    height: 30px;
+    display: block;
+    font-size: 25px;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 10px;
+    /* box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%); */
+}
+
+.percentBarpronos {
+    border-collapse: collapse;
+    margin: 22px 40px 2px 40px;
+}
+
+.percentBarresult {
+    border-collapse: collapse;    
+    margin: 10px 40px 2px 40px;
+}
+
+.barpronos{
+    height: 14px;
+    padding: 0px;
+ }
+
+ .cadreTableauAcceuilOneMatch {
+    height: 250px;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+ .onematch-card-event.mdl-card {
+  width: 415px;
+  height: 324px;
+  background: #ffffff91;
+}
+.onematch-card-event > .mdl-card__actions {
+border-color: rgba(255, 255, 255, 0.2);
+}
+.onematch-card-event > .mdl-card__title {
+align-items: flex-start;
+padding: 10px 10px;
+}
+.onematch-card-event > .mdl-card__title > h4 {
+margin-top: 0;
+}
+.onematch-card-event > .mdl-card__actions {
+display: flex;
+box-sizing:border-box;
+align-items: center;
+}
+.onematch-card-event > .mdl-card__actions > .material-icons {
+padding-right: 10px;
+}
+.onematch-card-event > .mdl-card__title,
+.onematch-card-event > .mdl-card__actions,
+.onematch-card-event > .mdl-card__actions > .mdl-button {
+color: #002c90;
+}
+
+.firstbar {
+    border-radius: 5px 0px 0px 5px;
+}
+
+.lastbar {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.onebar {
+    border-radius: 5px;
+}
+
+span.scoretext {
+    padding: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.magintopless20 {
+    margin-top: -26px;
+}
+.magintoplessline {
+    margin-top: -23px;
+}
+
+.middleResultText, .resultText, .resultTextPoint {
+    width: 120px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+span.textmatch {
+    padding: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    color: #000;
+}
+
+.profilPageContent {
+    width:100%;
+    height:1600px;
+    display:flex;
+}
+
+/* ------------------------- */
+
+.profilPage {
+    text-align: center;
+    /* height: 367px; */
+    margin: auto;
+    padding: 0;
+    background: #ffffff61;
+    max-width: 1200px;
+    border-radius: 0 0 20px 20px;
+}
+
+.profilPageContentNew {
+    width:100%;
+    padding-bottom: 40px;
+    display:flex;
+    flex-direction: column;
+}
+
+.profilPage-info {
+    width:100%;
+    /* height: 200px; */
+    background: #ffffff4f;
+    color: #002c90;
+    padding-bottom: 12px;
+
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profilPage-info-perso {
+    display:flex;
+    flex-direction: column;
+}
+
+.profilPage-info-perso-surnom {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.profilPage-info-perso-photo-img {
+    width: 170px;
+    border-radius: 15px;
+    border: solid 2px #FFF;
+}
+
+.profilPage-info-perso-modif {
+    height: 38px;
+}
+
+.profilPage-info-perso-modifprofil {
+    padding: 6px;
+}
+
+.profilPage-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.profilPage-content-pronos {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profilPage-info-about {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.profilPage-info-about-title {
+    font-size: 17px;
+    font-weight: bold;
+    padding: 8px 15px;
+}
+
+.profilPage-info-about-title-petit {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 15px;
+}
+
+.profilPage-info-about-content {
+    padding-left: 20px;
+}
+
+.profilPage-info-about-content-value {
+    font-weight: bold;
+}
+
+.profilPage-info-about-profil {
+    display: flex;
+    justify-content: flex-end;
+    width: 180px;
+}
+
+.profilPage-info-about-paiement{
+    display: flex;
+}
+
+.profilPage-info-citation-content {
+    font-family: 'Special Elite';
+    font-weight: 100;
+    font-size: 24px;
+    max-width: 340px;
+    line-height: 1.4;
+    position: relative;
+    margin: 0;
+    padding: 10px;
+}
+
+.profilPage-info-citation-content:before,
+.profilPage-info-citation-content:after {
+	position: absolute;
+	color: #f1efe6;
+	font-size: 8rem;
+	width: 8rem;
+	height: 6rem;
+}
+
+.profilPage-info-citation-content:before {
+	content: '“';
+	left: -6rem;
+	top: 0rem;
+}
+
+.profilPage-info-citation-content:after {
+	content: '”';
+	right: -5rem;
+	bottom: 0rem;
+}
+
+
+.profilPage-info-citation-content-cite {
+    font-family: "Kalam", cursive;
+    padding-left: 200px;
+    font-size: 18px;
+}
+
+.bonuscard {
+    width: 300px !important;
+}
+
+input[type="number" i] {
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+
+.checkbox-wrapper-22 .switch {
+display: inline-block;
+height: 34px;
+position: relative;
+width: 60px;
+}
+
+.checkbox-wrapper-22 .switch input {
+display:none;
+}
+
+.checkbox-wrapper-22 .slider {
+background-color: #b74a4a;
+bottom: 0;
+cursor: pointer;
+left: 0;
+position: absolute;
+right: 0;
+top: 0;
+transition: .4s;
+}
+
+.checkbox-wrapper-22 .slider:before {
+background-color: #fff;
+bottom: 4px;
+content: "";
+height: 26px;
+left: 4px;
+position: absolute;
+transition: .4s;
+width: 26px;
+}
+
+.checkbox-wrapper-22 input:checked + .slider {
+/* background-color: #66bb6a; */
+background-color: #429b46;
+}
+
+.checkbox-wrapper-22 input:checked + .slider:before {
+transform: translateX(26px);
+}
+
+.checkbox-wrapper-22 .slider.round {
+border-radius: 34px;
+}
+
+.checkbox-wrapper-22 .slider.round:before {
+border-radius: 50%;
+}
+
+.match-date {
+    font-size: 25px;
+}
+
+.match-bars {
+    padding-top: 29px;
+}
+
+.showmore {
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    background: #83b6d3;
+    color: #002c90;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 3px 15px;
+    font-size: 12px;
+    height: 25px;
+    font-family: Arial;
+}
+
+.RetourSpan-profil {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    z-index: 99;
+    color: #ffffffab;
+}
+
+.RetourSpan-profil:hover {
+    color: #ffffff;
+}
+
+.admin {
+    margin: 0px 70px;
+    background: #ffffff61;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-date {
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+}
+
+.admin-match {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #ffffff42;
+}
+
+.admin-match-name {
+    width: 120px;
+}
+
+.admin-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-button {
+    font-size: 25px;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 12px 36px;
+}
+
+.admin-bonus {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 100px;
+}
+
+.admin-bonus-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-bonus-titre {
+    padding: 10px;
+    width: 230px;
+}
+
+.admin-bonus-value {
+    padding: 10px;
+}
+
+.trombi {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+img.tombi-carte-content-photo-img {
+    max-width: 180px;
+    border-radius: 10px;
+    border: solid 1px #FFF;
+}
+
+.tombi-carte {
+    margin: 10px;
+    width: 280px;
+    background: #ffffff91;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tombi-carte-surnom {
+    background: #1058c0;
+    color: #FFF;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Orbitron", sans-serif;
+}
+
+.tombi-carte-content {
+    padding: 10px 10px 0 10px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tombi-carte-content-info {
+    padding: 10px 10px 0 10px;
+}
+
+.tombi-carte-content-info-citation {
+    padding: 20px;
+    font-family: 'Special Elite';
+}
+
+.tombi-carte-content-code {
+    font-family: "Libre Barcode 128 Text", system-ui;
+    font-size: 30px;
+}
+
+.tombi-carte-content-info-showmore {
+    padding: 20px;
 }

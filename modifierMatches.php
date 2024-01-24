@@ -39,8 +39,8 @@ if ($id != $idProfil)
 		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
-			<div class="loginform-in">
-				<div style="width:100%;height:3000px;display:flex">
+			<div class="loginform-in blackougedefault">
+				<div style="width:100%;padding-bottom: 30px;">
 					<?php include("include/viewModifierMatch.php");?> 					
 				</div>
 			</div>

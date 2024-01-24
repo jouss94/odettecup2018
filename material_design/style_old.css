@@ -37,7 +37,7 @@ padding-right: 10px;
 .demo-card-event > .mdl-card__title,
 .demo-card-event > .mdl-card__actions,
 .demo-card-event > .mdl-card__actions > .mdl-button {
-color: #992149;
+color: #002c90;
 }
 
 
@@ -92,14 +92,14 @@ color: #992149;
 .classement-card-event > .mdl-card__title,
 .classement-card-event > .mdl-card__actions,
 .classement-card-event > .mdl-card__actions > .mdl-button {
-  color: #992149;
+  color: #002c90;
 }
 
 
 .information-card-event.mdl-card {
   width: 415px;
-  min-height: 100px;
-  height: 100px;
+  min-height: 101px;
+  height: 101px;
   background: #ffffff91;
 }
 
@@ -124,7 +124,7 @@ color: #992149;
 .information-card-event > .mdl-card__title,
 .information-card-event > .mdl-card__actions,
 .information-card-event > .mdl-card__actions > .mdl-button {
-  color: #992149;
+  color: #002c90;
 }
 
 
@@ -156,7 +156,7 @@ color: #992149;
 .statistics-card-event > .mdl-card__title,
 .statistics-card-event > .mdl-card__actions,
 .statistics-card-event > .mdl-card__actions > .mdl-button {
-  color: #992149;
+  color: #002c90;
 }
 
 .bonus-favotire-card-event.mdl-card {
@@ -206,7 +206,7 @@ color: #992149;
 .bonus-card-event > .mdl-card__title,
 .bonus-card-event > .mdl-card__actions,
 .bonus-card-event > .mdl-card__actions > .mdl-button {
-  color: #992149;
+  color: #002c90;
 }
 
 .bonus-card-event-small-padding > .mdl-card__title {
@@ -299,7 +299,7 @@ color: #992149;
 .displaymatch-card-event > .mdl-card__title,
 .displaymatch-card-event > .mdl-card__actions,
 .displaymatch-card-event > .mdl-card__actions > .mdl-button {
-  color: #5c001f;
+  color: #002c90;
 }  
 
 
@@ -320,12 +320,12 @@ min-height: 190px !important;
 
 #RetourProfil {
 background: #ffffff;
-color: #5c001f; 
+color: #002c90; 
 }
 
 #RetourAcceuil {
 background: #ffffff;
-color: #5c001f;
+color: #002c90;
 }
 
 

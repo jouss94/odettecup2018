@@ -299,7 +299,7 @@ color: #992149;
 .displaymatch-card-event > .mdl-card__title,
 .displaymatch-card-event > .mdl-card__actions,
 .displaymatch-card-event > .mdl-card__actions > .mdl-button {
-  color: #5c001f;
+  color: #002c90;
 }  
 
 
@@ -320,12 +320,12 @@ min-height: 190px !important;
 
 #RetourProfil {
 background: #ffffff;
-color: #5c001f; 
+color: #002c90; 
 }
 
 #RetourAcceuil {
 background: #ffffff;
-color: #5c001f;
+color: #002c90;
 }
 
 

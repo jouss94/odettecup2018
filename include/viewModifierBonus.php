@@ -10,77 +10,7 @@
 	parse_str($_SERVER["QUERY_STRING"], $query);
 	$idProfil = $query['id'];
 
-		echo '<div class="profilInformation floaleft">';
-
-		$qry = "SELECT *, joueurs.nom as joueursnom,
-		joueurs.image as joueursimage,
-		joueurs.color as joueursColor,
-		equipe_winner.logo as logo
-		 FROM joueurs 
-		
-		LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe
-		WHERE id_joueur='".$idProfil."';";
-	$result = mysqli_query($con, $qry);
-	$find = false;
-	if ( $result) {
-		while ($row = mysqli_fetch_array($result )) 
-		{	
-			$find = true;
-			echo '<div class="profilInformationSurnom" style=" background:linear-gradient(', $row["joueursColor"] ,' 0%, #9c2950 40%);">';
-
-			echo '<div class="cadreprofilsurnom"> ';
-			echo '<span style="padding-top: 15px;display: block;FONT-WEIGHT: bold;">';
-			echo utf8_encode_function($row["surnom"]);
-			if ($row["logo"] != null) {
-				echo '<img class="logoEquipProfil" src="';
-				echo $row["logo"];	
-				echo '" />';
-			}
-			echo '</span>';
-			echo '</div> ';
-
-			echo '<div class="profilInformationImageDiv"> 
-
-					<img src="', utf8_encode_function($row["joueursimage"]), '" class="profilInformationImage mdl-button--raised joueursimage"/>
-
-				</div>';
-			// if ($idProfil == $id)
-			// {
-			// 	echo '<div> 
-			// 		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="ModifierProfil">
-			// 			Modifier Profil 
-			// 		</button>
-			// 	</div>';
-			// }
-
-			// echo '<div class="profilInformationCivil">', utf8_encode_function($row["prenom"]), '</div>';
-			// // echo '<div class="profilInformationCivil">', utf8_encode_function($row["joueursnom"]), '</div>';
-			// echo '<div class="profilInformationCivil">', utf8_encode_function($row["email"]), '</div>';
-			echo '<div class="profilInformationEmail">', utf8_encode_function($row["description"]), '</div>';
-			
-			
-			$chipsProfil = 'chips-red';
-			if (intval($row["modif_profil"]) == 1 && intval($row["modif_match"]) == 1 && intval($row["modif_bonus"]) == 1)
-			$chipsProfil = 'chips-green';
-			
-			$chipsPayement = 'chips-red';
-			if (intval($row["payed"]) == 1) $chipsPayement = 'chips-green';
-
-
-			echo '
-			<span class="mdl-chip mdl-chip--contact chips-body ', $chipsProfil, '-body">
-				<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white ', $chipsProfil, '"></span>
-				<span class="mdl-chip__text ">Profil à jour</span>
-			</span>
-			<span class="mdl-chip mdl-chip--contact chips-body ', $chipsPayement, '-body"">
-				<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white ', $chipsPayement, '"></span>
-				<span class="mdl-chip__text ">Paiement</span>
-			</span>';
-
-			echo '</div>';
-		}
-	}
-	echo '</div>';
+	$find = true;
 
 	if ($find)
 	{
@@ -91,7 +21,7 @@
 	 	$min_last = "";
 	 	$total_but = "";
 	 	$best_scorer = "";
-		$qryBonus = "SELECT * FROM pronostics_bonus WHERE id_membre='".$idProfil."';";
+		$qryBonus = "SELECT * FROM pronostics_bonus WHERE id_joueur='".$idProfil."';";
 		$resultBonus = mysqli_query($con, $qryBonus);
 		while ($rowBonus = mysqli_fetch_array($resultBonus )) 
 		{	
@@ -112,11 +42,9 @@
 	// Pronotics
 
 	echo '
+	<span class="listeJoueurTitre">Pronostics Bonus</span>
 
-	<div class="profilPronosSmall floaleft">
-	<span class="profilPronosTitre">Pronostics Bonus</span>
-
-		<span class="RetourSpan">
+		<span class="RetourSpanContainer">
 			<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonRouge">
 				Retour
 			</button>
@@ -131,7 +59,7 @@
 			echo '<td class="ParamTitre">Nombre total de buts</td>';
 
 			echo '<td rowspan="2" class="tdMatch tdMatchRight">';
-				echo '<input id="totalBut" class="serverside-validation" name="totalBut" type="text" value="'; if ($total_but !== null) echo $total_but; echo '"  size="8" /> Buts';
+				echo '<input id="totalBut" type="number" name="totalBut" value="'; if ($total_but !== null) echo $total_but; echo '"  size="8" /> Buts';
 			echo '</td>';
 		echo '</tr>';
 		echo '<tr>';
@@ -146,7 +74,7 @@
 			echo '<td class="ParamTitre">Minute du premier but</td>';
 
 			echo '<td rowspan="2" class="tdMatch tdMatchRight">';
-				echo '<input id="MinPronosFirst" class="serverside-validation" name="MinPronosFirst" type="text" value="'; if ($min_first !== null) echo $min_first; echo '"  size="8" /> Minutes';
+				echo '<input id="MinPronosFirst" type="number" name="MinPronosFirst"  value="'; if ($min_first !== null) echo $min_first; echo '"  size="8" /> Minutes';
 			echo '</td>';
 		echo '</tr>';
 		echo '<tr>';
@@ -160,7 +88,7 @@
 			echo '<td class="ParamTitre">Minute du dernier but</td>';
 
 			echo '<td rowspan="2" class="tdMatch tdMatchRight">';
-				echo '<input id="MinPronosLast" class="serverside-validation" name="MinPronosLast" type="text" value="'; if ($min_last !== null) echo $min_last; echo '"  size="8" /> Minutes';
+				echo '<input id="MinPronosLast" type="number" name="MinPronosLast" value="'; if ($min_last !== null) echo $min_last; echo '"  size="8" /> Minutes';
 			echo '</td>';
 		echo '</tr>';
 		echo '<tr>';
@@ -175,7 +103,7 @@
 		echo '<td class="ParamTitre">Meilleur buteur</td>';
 
 		echo '<td rowspan="2" class="tdMatch tdMatchRight">';
-			echo '<input id="InputTextBestScorer" class="serverside-validation" name="InputTextBestScorer" type="text" value="'; if ($best_scorer !== null) echo $best_scorer; echo '"  size="8" /> ';
+			echo '<input id="InputTextBestScorer" name="InputTextBestScorer" type="text" value="'; if ($best_scorer !== null) echo $best_scorer; echo '"  size="8" /> ';
 		echo '</td>';
 	echo '</tr>';
 	echo '<tr>';

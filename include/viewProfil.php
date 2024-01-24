@@ -129,106 +129,9 @@
 				<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect classementbutton" href="classement.php?ranking=General" >
 					Class.
 				</a>
-				<div class="mdl-layout-spacer"></div>
-				<i class="material-icons">poll</i>
 				</div>
 		</div>
 		';
-
-	// echo '
-	// <div class="classementperso-card-event mdl-card classement-equipe mdl-shadow--2dp">
-	// 	<div class="mdl-card__title mdl-card--expand">
-	// 		<span class="TitreSmallClassement">';
-	// 			$rangGenerel = intval($row["equiperang"]);
-	// 			echo $rangGenerel;
-	// 			if ($rangGenerel == 1)
-	// 			{
-	// 				echo ' er';
-	// 			}
-	// 			else {
-	// 				echo ' eme';
-	// 			}
-
-	// 			echo'</span>
-	// 		<span class="TitreTableauBas">';
-	// 		echo intval($row["equipepoints"]);
-	// 		echo ' pts
-	// 		</span>
-	// 		</div>
-	// 	<div class="mdl-card__actions mdl-card--border">
-	// 		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Equipe" >
-	// 			equipe
-	// 		</a>
-	// 		<div class="mdl-layout-spacer"></div>
-	// 		<i class="material-icons">poll</i>
-	// 		</div>
-	// </div>
-	// ';
-
-	// $female = intval($row["female"]);
-	// if ($female == 1)
-	// {
-	// 	echo '
-	// 	<div class="classementperso-card-event mdl-card classement-femme mdl-shadow--2dp">
-	// 		<div class="mdl-card__title mdl-card--expand">
-	// 			<span class="TitreSmallClassement">';
-	// 				$rangGenerel = intval($row["femmerang"]);
-	// 				echo $rangGenerel;
-	// 				if ($rangGenerel == 1)
-	// 				{
-	// 					echo ' er';
-	// 				}
-	// 				else {
-	// 					echo ' eme';
-	// 				}
-
-	// 				echo'</span>
-	// 			<span class="TitreTableauBas">';
-	// 			echo intval($row["femmepoints"]);
-	// 			echo ' pts
-	// 			</span>
-	// 			</div>
-	// 		<div class="mdl-card__actions mdl-card--border">
-	// 			<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Femme" >
-	// 			femme
-	// 			</a>
-	// 			<div class="mdl-layout-spacer"></div>
-	// 			<i class="material-icons">poll</i>
-	// 			</div>
-	// 	</div>
-	// 	';
-	// 	}
-
-	// echo '
-	// <div class="classementperso-card-event mdl-card classement-montagne mdl-shadow--2dp">
-	// 	<div class="mdl-card__title mdl-card--expand">
-	// 		<span class="TitreSmallClassement">';
-	// 			$rangGenerel = intval($row["montagnerang"]);
-	// 			echo $rangGenerel;
-	// 			if ($rangGenerel == 1)
-	// 			{
-	// 				echo ' er';
-	// 			}
-	// 			else {
-	// 				echo ' eme';
-	// 			}
-
-	// 			echo'</span>
-	// 		<span class="TitreTableauBas">';
-	// 		echo intval($row["montagnepoints"]);
-	// 		echo ' pts
-	// 		</span>
-	// 		</div>
-	// 	<div class="mdl-card__actions mdl-card--border">
-	// 		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=Montagne" >
-	// 		montagne
-	// 		</a>
-	// 		<div class="mdl-layout-spacer"></div>
-	// 		<i class="material-icons">poll</i>
-	// 		</div>
-	// </div>
-	// ';
-
 
 		echo '<div>';
 		echo '<table class="tableDetails">';
@@ -356,7 +259,7 @@
 					LEFT JOIN matches ON matches.id_match = pronostics.id_match  
 					LEFT JOIN equipes equipe_home ON equipe_home.id_equipe = matches.id_team_home 
 					LEFT JOIN equipes equipe_away ON equipe_away.id_equipe = matches.id_team_away			
-					WHERE id_membre ='".$idProfil."' ";
+					WHERE id_joueur ='".$idProfil."' ";
 				if ($idProfil == $id)
 				{
 					$qry .= "AND (matches.modif = 1 || matches.modif = 2) ";
@@ -394,11 +297,6 @@
 				}	
 
 				$classPancarte = "";
-				if ($row["montagne"] == 1)
-				{
-					$classPancarte = "pancarteMontagne";
-				}
-		
 		
 				$find = true;
 		
@@ -494,8 +392,6 @@
 		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php" >
 			MATCHES
 		</a>
-		<div class="mdl-layout-spacer"></div>
-		<i class="material-icons">event</i>
 		</div>
 </div>';
 
@@ -532,7 +428,7 @@
 // $qryBonus = "SELECT *, equipe_winner.name as equipe_w
 // 		FROM pronostics_bonus
 // 		LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = pronostics_bonus.team_winner_id
-// 		WHERE id_membre='".$idProfil."' ;";
+// 		WHERE id_joueur='".$idProfil."' ;";
 // $resultBonus = mysqli_query($con, $qryBonus);
 // $findBonus = false;
 
@@ -748,7 +644,7 @@ $qryBonus = "SELECT *, equipe_winner.name as equipe_w, joueurs.surnom as joueur,
 		FROM pronostics_bonus
 		LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = pronostics_bonus.team_winner_id
 		LEFT JOIN joueurs joueurs ON joueurs.id_joueur = pronostics_bonus.player_winner_id
-		WHERE id_membre='".$idProfil."' ;";
+		WHERE pronostics_bonus.id_joueur='".$idProfil."' ;";
 $resultBonus = mysqli_query($con, $qryBonus);
 $findBonus = false;
 
@@ -1032,8 +928,6 @@ echo '
 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
 	BONUS
 </a>
-<div class="mdl-layout-spacer"></div>
-<i class="material-icons">event</i>
 </div>
 </div>';
 

@@ -26,6 +26,9 @@ if ($id == 0) { header('Location: index.php'); }
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Libre+Barcode+128+Text&family=Orbitron:wght@400..900&family=Special+Elite&display=swap" rel="stylesheet">
 	</head>	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
@@ -35,7 +38,7 @@ if ($id == 0) { header('Location: index.php'); }
 			<div class="loginform-in blackougedefault">
 				<div style="width:100%;height:800px;">
 					<span class="listeJoueurTitre">Classement</span>
-					<span class="RetourSpan">
+					<span class="RetourSpanContainer">
 						<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">
 							Retour
 						</button>

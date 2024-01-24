@@ -20,7 +20,7 @@
 			FROM matches 
 			LEFT JOIN equipes equipes_home ON equipes_home.id_equipe = matches.id_team_home 
 			LEFT JOIN equipes equipes_away ON equipes_away.id_equipe = matches.id_team_away 
-			LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match AND pronos.id_membre = $id WHERE (modif=1 OR modif=2) and played = 0 ORDER BY date, id;";
+			LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match AND pronos.id_joueur = $id WHERE (modif=1 OR modif=2) and played = 0 ORDER BY date, id;";
 	$result = mysqli_query($con, $qry);
 	$find = false;
 	$i = 0;
@@ -35,7 +35,6 @@
 		$id_match = $row["id"];
 		$pronos_home = $row["prono_home"];
 		$pronos_away = $row["prono_away"];
-		$montagne = $row["montagne"];
 
 		$point = $row["point"];
 		$classTR = "classTRNeutre";
@@ -50,17 +49,13 @@
 		}
 
 		$classPancarte = "";
-		if ($row["montagne"] == 1)
-		{
-			$classPancarte = "pancarteMontagne";
-		}
 
 		echo '<td class="homeSmallDate">';
 		echo '<div>';
-			echo $date_array['day']. "/" . $date_array['month'];	
+			echo $date_array['day']. "/0" . $date_array['month'];	
 		echo '</div>';
 		echo '<div>';
-			echo $date_array['hour']. ":00";	
+			echo $date_array['hour']. "h00";	
 		echo '</div>';
 		echo '</td>';
 		echo '<td><img class="logoEquipeSmall" src="';

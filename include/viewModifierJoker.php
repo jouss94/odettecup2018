@@ -93,7 +93,7 @@
 	<div class="profilPronosSmall floaleft">
 	<span class="profilPronosTitre">Pronostics Joker</span>
 
-		<span class="RetourSpan">
+		<span class="RetourSpanContainer">
 			<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonRouge">
 				Retour
 			</button>
@@ -150,7 +150,7 @@
 	FROM matches 
 	LEFT JOIN equipes equipes_home ON equipes_home.id_equipe = matches.id_team_home 
 	LEFT JOIN equipes equipes_away ON equipes_away.id_equipe = matches.id_team_away 
-	LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match AND pronos.id_membre = $id WHERE modif=1 ORDER BY dayOfStage, groupe, date, id;";
+	LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match AND pronos.id_joueur = $id WHERE modif=1 ORDER BY dayOfStage, groupe, date, id;";
 	$result = mysqli_query($con, $qry);
 
 	$oldDayOfStage = 0;

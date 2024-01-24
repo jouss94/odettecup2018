@@ -95,7 +95,7 @@ Where pronostics.id_match = 60
 ORDER BY classements.rang
 
 
-INSERT INTO `best_scorer` (`name`, `nb_but`) VALUES ('Morata', '3');
+INSERT INTO `best_scorer` (`name`, `nb_but`) VALUES ('Alvarez', '4');
 INSERT INTO `best_scorer` (`name`, `nb_but`) VALUES ('Ferran', '2');
 
 INSERT INTO `best_scorer` (`name`, `nb_but`) VALUES ('Messi', '4');

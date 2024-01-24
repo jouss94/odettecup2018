@@ -16,31 +16,5 @@
 	echo '
 	<div class="uniqueStatistics">',include "viewStatisticsGeneral.php",'</div>
 	<script>openClassement(event, \'General\')</script>';
-	
-// 	echo '
-// 		<div class="tab">
-//   <button id="tabsGeneral" class="tablinks tablinksgeneral" onclick="openClassement(event, \'General\')">General</button>
-//   <button id="tabsEquipe" class="tablinks tablinksequipe" onclick="openClassement(event, \'Equipe\')">Equipe</button>
-//   <button id="tabsFemme" class="tablinks tablinksfemme" onclick="openClassement(event, \'Femme\')">Femme</button>
-//   <button id="tabsMontagne" class="tablinks tablinksmontagne" onclick="openClassement(event, \'Montagne\')">Montagne</button>
-// </div>
-
-// <div id="General" class="tabcontent">',include "viewStatisticsGeneral.php",'</div>
-
-// <div id="Equipe" class="tabcontent">',include("viewStatisticsEquipe.php"),'</div>
-
-// <div id="Femme" class="tabcontent">',include("viewStatisticsFemme.php"),'</div>
-
-// <div id="Montagne" class="tabcontent">',include("viewStatisticsMontagne.php"),'</div>
-
-// <div id="Joueur" class="tabcontent">',include("viewStatisticsJoueur.php"),'</div>
-
-
-// <script>
-// // Get the element with id="defaultOpen" and click on it
-// document.getElementById("tabs', $currentClassement, '").click();
-// </script>
-
-// 	';
 
 ?>

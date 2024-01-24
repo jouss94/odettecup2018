@@ -10,8 +10,8 @@
 
 body {
     color: black;
-    /* background: -webkit-gradient(linear, left top, left bottom, from(#e66465), to(#9198e5)) fixed; */
-    background: -webkit-gradient(linear, left top, left bottom, from(#5e0925), to(#af6780)) fixed;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e66465), to(#9198e5)) fixed;
+    /* background: -webkit-gradient(linear, left top, left bottom, from(#5e0925), to(#af6780)) fixed; */
     /* background-color: #981d46; */
     background-repeat: no-repeat;
     margin: 0px;
@@ -371,7 +371,7 @@ table.sortable thead {
 
 .classTRPerfectHome {
     color: #c0f6ff;
-    text-shadow: 2px 0 #0490c7, -2px 0 #0490c7, 0 2px #0490c7, 0 -2px #0490c7, 1px 1px #0490c7, -1px -1px #0490c7, 1px -1px #0490c7, -1px 1px #0490c7;
+    text-shadow: 2px 0 #00b7ff, -2px 0 #00b7ff, 0 2px #00b7ff, 0 -2px #00b7ff, 1px 1px #00b7ff, -1px -1px #00b7ff, 1px -1px #00b7ff, -1px 1px #00b7ff;
     font-weight: bold;
 }
 
@@ -384,7 +384,7 @@ table.sortable thead {
 
 .classTRCorrectHome {
     color: #b1f7c0;
-    text-shadow: 2px 0 #02990d, -2px 0 #02990d, 0 2px #02990d, 0 -2px #02990d, 1px 1px #02990d, -1px -1px #02990d, 1px -1px #02990d, -1px 1px #02990d;
+    text-shadow: 2px 0 #2bdf6e, -2px 0 #2bdf6e, 0 2px #2bdf6e, 0 -2px #2bdf6e, 1px 1px #2bdf6e, -1px -1px #2bdf6e, 1px -1px #2bdf6e, -1px 1px #2bdf6e;
     font-weight: bold;
 }
 
@@ -395,7 +395,7 @@ table.sortable thead {
 
 .classTREchecHome {
     color: #ed9d9d;
-    text-shadow: 2px 0 #9f0000, -2px 0 #9f0000, 0 2px #9f0000, 0 -2px #9f0000, 1px 1px #9f0000, -1px -1px #9f0000, 1px -1px #9f0000, -1px 1px #9f0000;
+    text-shadow: 2px 0 #ed1e25, -2px 0 #ed1e25, 0 2px #ed1e25, 0 -2px #ed1e25, 1px 1px #ed1e25, -1px -1px #ed1e25, 1px -1px #ed1e25, -1px 1px #ed1e25;
     font-weight: bold;
 }
 
@@ -617,7 +617,7 @@ table.sortable thead {
 
 .perfectTitre {
     color: #c0f6ff;
-    text-shadow: 2px 0 #0490c7, -2px 0 #0490c7, 0 2px #0490c7, 0 -2px #0490c7, 1px 1px #0490c7, -1px -1px #0490c7, 1px -1px #0490c7, -1px 1px #0490c7;
+    text-shadow: 2px 0 #00b7ff, -2px 0 #00b7ff, 0 2px #00b7ff, 0 -2px #00b7ff, 1px 1px #00b7ff, -1px -1px #00b7ff, 1px -1px #00b7ff, -1px 1px #00b7ff;
     /* color: #1792c1; */
 }
 
@@ -630,7 +630,7 @@ table.sortable thead {
 .perfectCorrect {
     
     color: #b1f7c0;
-    text-shadow: 2px 0 #02990d, -2px 0 #02990d, 0 2px #02990d, 0 -2px #02990d, 1px 1px #02990d, -1px -1px #02990d, 1px -1px #02990d, -1px 1px #02990d;
+    text-shadow: 2px 0 #2bdf6e, -2px 0 #2bdf6e, 0 2px #2bdf6e, 0 -2px #2bdf6e, 1px 1px #2bdf6e, -1px -1px #2bdf6e, 1px -1px #2bdf6e, -1px 1px #2bdf6e;
     /* color : #1ea228; */
 }
 
@@ -640,7 +640,7 @@ table.sortable thead {
 
 .perfectEchec {
     color: #ed9d9d;
-    text-shadow: 2px 0 #9f0000, -2px 0 #9f0000, 0 2px #9f0000, 0 -2px #9f0000, 1px 1px #9f0000, -1px -1px #9f0000, 1px -1px #9f0000, -1px 1px #9f0000;
+    text-shadow: 2px 0 #ed1e25, -2px 0 #ed1e25, 0 2px #ed1e25, 0 -2px #ed1e25, 1px 1px #ed1e25, -1px -1px #ed1e25, 1px -1px #ed1e25, -1px 1px #ed1e25;
    /* color: rgba(0, 0, 0, 0.91); */
 }
 
@@ -983,14 +983,14 @@ table.sortable thead {
 
 .pointBonus {
     font-size: 18px;
-    padding-right: 30px;
+    padding-right: 20px;
     font-weight: bold;
 }
 
 .pancarteBonusEchec {
     background: rgba(197, 41, 41, 0.68);
-        text-align: center;
-        box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    text-align: center;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
     font-size: 17px;
     color: #FFF;
     font-weight: bold;
@@ -1032,21 +1032,21 @@ table.sortable thead {
 }
 
 #ModifierProfil {
-    color: #5c001f;
+    color: #002c90;
     background: #FFF;
  }
 
  #ModifierMatch {
     background: #ffffff;
-    color: #5c001f;
+    color: #002c90;
  }
  #modifierBonus {
     background: #ffffff;
-    color: #5c001f;
+    color: #002c90;
  }
  #modifierJoker {
     background: #ffffff;
-    color: #5c001f;
+    color: #002c90;
  }
 
 .InversePronos {
@@ -1412,7 +1412,7 @@ span.titre {
 
 #RetourButtonRouge {
     background: #ffffff;
-    color: #5c001f;
+    color: #002c90;
 }
 
 #buttonValidationSubmit {
@@ -1444,7 +1444,7 @@ span.ui-button-text {
     margin-left: 10px;
 
     background: #ffffff;
-    color: #5c001f;
+    color: #002c90;
 
 }
 

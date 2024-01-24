@@ -11,4 +11,9 @@ $(document).ready(function() {
 	$("#modifierJoker").click(function(){	
 		document.location = 'modifierJoker.php?id=' + document.getElementById("idPhp").getAttribute("name");
 	});
+
+	$(".RetourSpan").click(function(){
+		history.back();
+		return false;
+});
 });

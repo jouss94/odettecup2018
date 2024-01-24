@@ -18,6 +18,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 		<script src="javascript/login.js"></script>
 		<script src="javascript/bandeau.js"></script>
 		<script src="javascript/acceuil.js"></script>
+		<link rel="stylesheet" href="./material_design/font.css">
 	</head>
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
@@ -27,7 +28,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 			<div class="loginform-in">
 				<div style="width:100%;height:200px;">
 					<?php include("include/updateAll.php");?>
-						UPDATE OK
+						Données mises à jour
 				</div>
 			</div>
 		</div>

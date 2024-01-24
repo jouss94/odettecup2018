@@ -30,7 +30,7 @@ if ($id == 0) { header('Location: index.php'); }
 
 				<div style="width:100%;padding-bottom: 20px;">
 					<span class="listeJoueurTitre">Calendrier</span>
-					<span class="RetourSpan">
+					<span class="RetourSpanContainer">
 						<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">
 							Retour
 						</button>

@@ -32,7 +32,7 @@ if ($id == 0) { header('Location: index.php'); }
 			<div class="loginform-in blackougedefault">
 				<div style="width:100%;height:850px;">
 					<span class="listeJoueurTitre">Liste des joueurs</span>
-					<span class="RetourSpan">
+					<span class="RetourSpanContainer">
 						<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">
 							Retour
 						</button>

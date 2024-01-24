@@ -1,3 +1,15 @@
+body {
+    font-family: "Lexend", sans-serif;
+    
+  font-family: "Kalam", cursive;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Dosis", sans-serif;
+  /* font-family: "Play", sans-serif;
+    
+  font-family: "Acme", sans-serif; */
+}
+
 .bandeau {
     width: 100%;
     height: 40px;
@@ -5,34 +17,54 @@
     background: #ffffffcc;
     position: fixed;
     z-index: 999;
-    color: #981d46;
+    color: #002c90;
     border-bottom: 1px solid #fff;
+    font-weight: bold;
 }
 
 /* table.bandeauacceuil {
     background: rgba(0, 0, 0, 0.35);
 } */
 
+#bandeauMenuBurger {
+    width: 5%;
+    text-align: center;
+    background: #ffffff6b;
+    cursor: pointer;
+}
+
+#bandeauMenuBurger {
+    color: #002c9080;
+}
+
 #bandeauAcceuil {
     width: 5%;
     text-align: center;
     background: #ffffff6b;
+    cursor: pointer;
 }
 
 #bandeauAcceuil:hover {
-    width: 5%;
-    text-align: center;
-    color: #fff;
-    cursor: pointer;
+    color: #002c9080;
 }
 
 #bandeauNom {
     font-size: 20px;
-    width: 65%;
+    width: 60%;
     text-align: center;
     font-weight: bold;
     cursor: context-menu;
 }
+
+#bandeauAdmin {
+    width: 10%;
+    cursor: pointer;
+}
+
+#bandeauAdmin:hover {
+    color: #002c9080;
+}
+
 
 #bandeauProfil {
     width: 13%;
@@ -41,9 +73,7 @@
 }
 
 #bandeauProfil:hover {
-    width: 13%;
-    color: white;
-    cursor: pointer;
+    color: #002c9080;
 }
 
 
@@ -53,9 +83,7 @@
 }
 
 #bandeauDeconnect:hover {
-    width: 17%;
-    color: white;
-    cursor: pointer;
+    color: #002c9080;
 }
 
 .flex {
@@ -70,3 +98,77 @@
     padding-top: 2px;
     padding-left: 10px;
 }
+
+/* Sidenav menu */
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 40;
+    left: -250px;
+    background-color: #ffffffa6;
+    padding-top: 25px;
+    transition: left 0.3s ease;
+  }
+  
+  /* Sidenav menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #000000;
+    display: block;
+    transition: 0.5s;
+  }
+  
+  .sidenav a:hover {
+    color: #013b95;
+  }
+  
+  .sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Active class */
+  .sidenav.active {
+    left: 0;
+    z-index: 100;
+  }
+  
+  /* Close btn */
+  .sidenav .close {
+    position: absolute;
+    top: 40;
+    right: 25px;
+    font-size: 36px;
+  }
+
+  .bandeauMenuBurgerHidden {
+    display: none !important;
+  }
+  
+  .sidenav-logo {
+    margin: auto;
+    width: 160px;
+    margin: 6px;
+    display: block;
+    margin: auto;
+    margin-bottom: 25px;
+  }
+
+  .sidebar-content-item {
+    transition: background-color 0.5s ease;
+    padding: 10px 0px 10px 0px;
+    border-bottom: solid 1px white;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.sidebar-content-item:hover {
+    background: #ffffff70;
+    }
+  
+  

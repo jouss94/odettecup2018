@@ -10,6 +10,8 @@
 	$months = array(
 		11 => "Novembre",
 		12 => "Décembre",
+		06 => "Juin",
+		07 => "Juillet",
 	);
 
 	$qry = "SELECT matches.*,
@@ -31,6 +33,7 @@
 		<table class="tableListe" >';
 
 	$current_date = "";
+	$first = false;
 	while ($row = mysqli_fetch_array($result )) 
 	{
 
@@ -49,10 +52,6 @@
 		$score_away = $row["score_away"];
 
 		$classPancarte = "";
-		if ($row["montagne"] == 1)
-		{
-			$classPancarte = "pancarteMontagne";
-		}
 
 	$dateDay = substr($date, 0, 10);
 	if ($current_date != $dateDay) {
@@ -74,6 +73,10 @@
 		
 		<div class="allListeCalendrier">
 		<table class="tableListe" >';
+		$first = true;
+	}
+	else {
+		$first = false;
 	}
 	$current_date = $dateDay;
 	
@@ -83,10 +86,11 @@
 				$group,
 			'</td>
 			<td class="tableCalendrierElse">
-				<table style="border-collapse: collapse;width: 100%;">
+				<table style="border-collapse: collapse;width: 100%;    border-radius: 20px;">
 					<tr class="tableCalendrierL1">';
-
-						echo'<td colspan="3" class="tableListeThird"> ',
+						$classname = "";
+						if ($first) $classname = "tableListeThird-round";
+						echo'<td colspan="3" class="tableListeThird ', $classname ,'"> ',
 								'<table style="border-collapse: collapse;width: 100%;height: 50px;text-align: center;font-size: 20px;font-weight: bold;">
 									<tr>
 										<td style="width: 20%;">
@@ -123,21 +127,24 @@
 							<td style="width: 33%;">',
 								$diff,
 							'</td>
-							<td style="width: 33%;"> ',
-								$date_array['day'], '/', $date_array['month'], ' ', $date_array['hour'], 'h00',
+							<td style="width: 33%;" class="tableCalendrierL2-hour"> ',
+								// $date_array['day'], '/0', $date_array['month'], ' ',
+								 $date_array['hour'], 'h00',
 							'</td>
-							<td style="width: 33%;" class="tableListeDetail" id="detailMatche', $id_match ,'">
-								Détails &rarr;
-							</td>
+							<td style="width: 33%;"> ',
+								$stade,
+							'</td>
 					</tr>
 					<tr class="tableCalendrierL3 ">';
 
 						echo'
 							<td></td>
-							<td> ',
-								$stade,
-							'</td>
-							<td></td>
+							<td style="width: 33%;" class="tableListeDetail" id="detailMatche', $id_match ,'">
+								<div>
+									<a class="showmore" href="matches.php?id=', $id_match ,'">Détails</a>
+							 	</div>
+							</td>
+						<td></td>
 					</tr>
 				</table>
 			</td>

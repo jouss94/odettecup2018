@@ -9,14 +9,14 @@ function erreur($err='')
 function utf8_encode_function($str)
 {
     // TODO : CHECK il me semble que cetait un probleme d'env
-    //return utf8_encode($str);
+    return utf8_encode($str);
     return ($str);
 }
 
 function utf8_decode_function($str)
 {
-    // TODO : CHECK il me semble que cetait un probleme d'env
-    //return utf8_decode($str);
+    // TODO : CHECK il me semble que cetait un probleme d'env 
+    return utf8_decode($str);
     return ($str);
 }
 

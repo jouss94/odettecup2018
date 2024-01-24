@@ -21,7 +21,7 @@ $best_scorer_point = -1;
 $qryBonus = "SELECT *, equipe_winner.name as equipe_w, joueurs.surnom as joueur, joueurs_w.surnom as joueur_w, equipe_winner.logo as logo
 		FROM pronostics_bonus
 		LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = pronostics_bonus.team_winner_id
-		LEFT JOIN joueurs joueurs ON joueurs.id_joueur = pronostics_bonus.id_membre
+		LEFT JOIN joueurs joueurs ON joueurs.id_joueur = pronostics_bonus.id_joueur
 		LEFT JOIN joueurs joueurs_w ON joueurs_w.id_joueur = pronostics_bonus.player_winner_id
 		ORDER BY pronostics_bonus.min_first;";
 $resultBonus = mysqli_query($con, $qryBonus);
@@ -72,7 +72,7 @@ while ($rowBonus = mysqli_fetch_array($resultBonus ))
 		echo '</td>';
 
 		echo '<td >';
-			echo '<span class="';
+			echo '<span class="pancarteAuto ';
 			if ($min_first_point_value != null)
 			{
 				if ($min_first_point == 0 || $min_first_point == -3)
@@ -80,8 +80,6 @@ while ($rowBonus = mysqli_fetch_array($resultBonus ))
 				else
 					echo ' pancarteBonusCorrect ';
 			}
-			else
-					echo ' pancarteAuto ';
 			echo ' "  > ';
 			echo $min_first;
 			

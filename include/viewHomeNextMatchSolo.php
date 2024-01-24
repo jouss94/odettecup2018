@@ -6,7 +6,9 @@
 	require_once 'config.php';
 	require_once 'functions.php';
 
-	echo '<div class="nextmatchsolo">';
+	echo '
+	<div class="cadreTableauAcceuilOneMatch cadreTableauAcceuilBg">
+	<div class="nextmatchsolo">';
 	
 	$qry = "SELECT matches.*,
 	matches.id_match as id, 
@@ -41,10 +43,9 @@
 		$id_match = $row["id"];
 		$pronos_home = $row["prono_home"];
 		$pronos_away = $row["prono_away"];
-		$montagne = $row["montagne"];
 		$colorHome = $row["colorHome"];
 		$colorAway = $row["colorAway"];
-		$id_membre = $row["id_membre"];
+		$id_joueur = $row["id_joueur"];
 		
 		$id_match = $row["id_match"];
 		$modif = $row["modif"];
@@ -55,7 +56,7 @@
 		if ($i++ == 0) {
 			echo '
 				<div class="nextmatchsolodate">
-					'.$date_array['day']. ' / ' . $date_array['month'].' / '.$date_array['year'].'
+					'.$date_array['day']. ' / 0' . $date_array['month'].' / '.$date_array['year'].'
 				</div>
 				<div class="nextmatchsolotime">
 					'.$date_array['hour']. ' h 00
@@ -74,7 +75,7 @@
 					</div>
 					<div class="nextmatchsoloteamsaway">
 						<div class="nextmatchsoloteamsawayflag">
-						<img class="logoEquipebigbig" src="'.$away_logo.'" />
+							<img class="logoEquipebigbig" src="'.$away_logo.'" />
 						</div>
 						<div class="nextmatchsoloteamsawayname">
 							<span>'.$away_name.'</span>
@@ -93,19 +94,19 @@
 		}
 
 
-		if (intval($id_membre) == $id) {
+		if (intval($id_joueur) == $id) {
 			echo '
 			<div class="nextmatchsolopronos">
-					<div class="nextmatchsolopronoshome">
-						<span class="pancarteBigBig">'.$pronos_home.'</span>
-					</div>
-					<div class="nextmatchsolopronosmiddle">
-						<span></span>
-					</div>
-					<div class="nextmatchsolopronosaway">
-						<span class="pancarteBigBig">'.$pronos_away.'</span>
-					</div>			
+				<div class="nextmatchsolopronoshome">
+					<span class="pancarteBigBig">'.$pronos_home.'</span>
 				</div>
+				<div class="nextmatchsolopronosmiddle">
+					<span></span>
+				</div>
+				<div class="nextmatchsolopronosaway">
+					<span class="pancarteBigBig">'.$pronos_away.'</span>
+				</div>			
+			</div>
 			
 			';
 		}
@@ -191,8 +192,6 @@ echo '
 			<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=matches.php?id='.$id_match.' >
 				Détail prochain match
 			</a>
-			<div class="mdl-layout-spacer"></div>
-			<i class="material-icons">event</i>
 
 ';
 

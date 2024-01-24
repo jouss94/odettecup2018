@@ -36,7 +36,7 @@ if ($id == 0) { header('Location: index.php'); }
 				<div style="width:100%;height:800px;">
 					<span class="listeJoueurTitre"></span>
 						<?php include("include/viewEquipes.php");?>
-					<span class="RetourSpan">
+					<span class="RetourSpanContainer">
 						<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">
 							Retour
 						</button>

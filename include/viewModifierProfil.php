@@ -10,7 +10,7 @@
 	parse_str($_SERVER["QUERY_STRING"], $query);
 	$idProfil = $query['id'];
 
-		echo '<div class="profilInformation floaleft width100">';
+		echo '<div class="profilInformation width100">';
 
 
 	$qry = "SELECT * FROM joueurs WHERE id_joueur='".$idProfil."';";
@@ -33,10 +33,10 @@
 
 		echo '
 
-		<div class="profilPronosFulll floaleft">
-		<span class="profilPronosTitre">Modifier Profil</span>
+		<div class="">
+		<span class="listeJoueurTitre">Modifier Profil</span>
 		
-			<span class="RetourSpan">
+			<span class="RetourSpanContainer">
 				<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonRouge">
 				Retour
 				</button>
@@ -137,7 +137,7 @@
 
 			echo '<tr>
 					<td class="fisrtColumnProfilModifierTop">
-						Description
+						Citation
 					</td>
 					<td>
 						<textarea name="description" id="descriptionProfil" style="resize:none" name="name" 

@@ -25,7 +25,7 @@ function addMatches($con)
 	$firstID = intval($_POST[ 'firstid' ]);
 	$lastID = intval($_POST[ 'lastid' ]);
 
-	$qry = " DELETE FROM pronostics WHERE id_membre = $id and id_match >= $firstID AND id_match <= $lastID;";
+	$qry = " DELETE FROM pronostics WHERE id_joueur = $id and id_match >= $firstID AND id_match <= $lastID;";
 	$result = mysqli_query($con, $qry);
 	if (!$result) 
 	{
@@ -52,7 +52,7 @@ function addMatches($con)
 				$away = $_POST[ $idAway ];
 
 				// echo $idMatch . " - ";
-				$qry = " INSERT INTO pronostics (id_membre, id_match, prono_home, prono_away) VALUES ($id, $idMatch, $home, $away);";
+				$qry = " INSERT INTO pronostics (id_joueur, id_match, prono_home, prono_away) VALUES ($id, $idMatch, $home, $away);";
 				$result = mysqli_query($con, $qry);
 					if (!$result) {
 						$return = false;
@@ -112,7 +112,7 @@ function addMatches($con)
 			{
 
 				echo "<div class='valideDemand' id='add_valideDemand'><img src='images/check.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Votre demande a été enregistrée.
-			</br></br> Merci pour cette enregistrement, vous pouvez toujours modifier vos pronostics jusqu'au 17 novembre dans la rubrique Profil</div>";
+			</br></br> Vous pouvez toujours modifier vos pronostics jusqu'à la date butoir sur votre Profil</div>";
 				changeEtat($con);
 			}
 			else
@@ -125,7 +125,7 @@ function addMatches($con)
 						</button>
 
 						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourAcceuil">
-							Retour Acceuil
+							Retour Accueil
 						</button>
 					</div>
 

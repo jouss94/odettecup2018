@@ -43,8 +43,4 @@ $(function () {
 			}
 		}
 	});
-
-	$("#payement").selectmenu({
-		width: 200
-	});
 });

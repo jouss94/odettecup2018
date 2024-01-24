@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	$(".RetourSpan").click(function() {
-		document.location = 'classement.php?ranking=Equipe';
+		history.back();
 		return false;
 	});
 

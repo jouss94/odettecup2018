@@ -2,6 +2,7 @@
 
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
 
 	$qry = "SELECT *, 
 	(nb_perf+nb_correct_plus+nb_correct+nb_inverse+nb_echec)  as total ,
@@ -10,6 +11,7 @@
 	LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'general' 
 	
 	LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe 
+	WHERE joueurs.competition = $competition
 	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC, surnom;";
 	$result = mysqli_query($con, $qry);
 	$find = false;

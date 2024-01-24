@@ -161,7 +161,7 @@ function addProfil($con)
 						{
 
 							echo "<div class='valideDemand' id='add_valideDemand'><img src='images/check.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Votre Profil a été modifié.
-								</br></br> Merci pour cette enregistrement, vous pouvez à tout moment modifier votre profil.
+								</br></br> Vous pouvez à tout moment modifier votre profil.
 								</div>";
 							changeEtat($con);
 						}
@@ -175,7 +175,7 @@ function addProfil($con)
 						</button>
 
 						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourAcceuil">
-							Retour Acceuil
+							Retour Accueil
 						</button>
 					</div>
 				</div>

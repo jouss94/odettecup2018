@@ -62,7 +62,7 @@ function addBonus($con)
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
-	$qry = " DELETE FROM pronostics_bonus WHERE id_membre = $id;";
+	$qry = " DELETE FROM pronostics_bonus WHERE id_joueur = $id;";
 	$result = mysqli_query($con, $qry);
 	if (!$result) 
 	{
@@ -82,7 +82,7 @@ function addBonus($con)
 
 	$player_winner_id = intval($_POST[ 'joueurWin' ]);
 
-	$qry = " INSERT INTO pronostics_bonus (id_membre, team_winner_id, total_but, min_first, min_last, player_winner_id, best_scorer) 
+	$qry = " INSERT INTO pronostics_bonus (id_joueur, team_winner_id, total_but, min_first, min_last, player_winner_id, best_scorer) 
 										VALUES ($id, $team_winner_id, $total_but, $min_first, $min_last, $player_winner_id, '$best_scorer');";
 
 	$result = mysqli_query($con, $qry);
@@ -138,7 +138,7 @@ function addBonus($con)
 						if (addBonus($con))
 						{
 							echo "<div class='valideDemand' id='add_valideDemand'><img src='images/check.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Votre demande a été enregistrée.
-								</br></br> Merci pour cette enregistrement, vous pouvez toujours modifier vos pronostics jusqu'au 1er Juin dans la rubrique Profil
+								</br></br> Vous pouvez toujours modifier vos pronostics jusqu'à la date butoir sur votre Profil
 								</div>";
 						}
 						else
@@ -153,7 +153,7 @@ function addBonus($con)
 						</button>
 
 						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourAcceuil">
-							Retour Acceuil
+							Retour Accueil
 						</button>
 					</div>
 				</div>

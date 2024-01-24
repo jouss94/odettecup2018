@@ -42,7 +42,7 @@ while ($dateCurrent <= $today)
 	
 		$qry2 = "SELECT * 
 				FROM pronostics  
-				Left JOIN joueurs ON pronostics.id_membre = joueurs.id_joueur
+				Left JOIN joueurs ON pronostics.id_joueur = joueurs.id_joueur
 				Left JOIN matches ON pronostics.id_match = matches.id_match
 				WHERE joueurs.id_joueur = $id_joueur AND matches.played = 1 AND matches.date < '$dateCurrent'";
 		$result2 = mysqli_query($con, $qry2);
@@ -147,7 +147,7 @@ while ($dateCurrent <= $today)
 		// Bonus first Min = all 0
 		// $qryBonus = "SELECT * 
 		// 		FROM pronostics_bonus
-		// 		Left JOIN joueurs ON pronostics_bonus.id_membre = joueurs.id_joueur
+		// 		Left JOIN joueurs ON pronostics_bonus.id_joueur = joueurs.id_joueur
 		// 		WHERE joueurs.id_joueur = $id_joueur;";
 		// $resultBonus = mysqli_query($con, $qryBonus);
 

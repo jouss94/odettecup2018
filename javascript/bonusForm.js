@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$(".RetourSpan").click(function() {
-		document.location = 'profil.php?id=' + document.getElementById("idPhp").getAttribute("name");
+		history.back();
 		return false;
 	});
 });
@@ -35,6 +35,6 @@ $(function() {
 		}
 	});
 	
-	$( "#equipeWin" ).selectmenu();  
-	$( "#joueurWin" ).selectmenu();
+	// $( "#equipeWin" ).selectmenu();  
+	// $( "#joueurWin" ).selectmenu();
 });

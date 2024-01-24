@@ -5,9 +5,6 @@ $(document).ready(function(){
 	$("#detailReglement").click(function() {
 		document.location = 'reglement.php';
 	});
-	$("#detailListeJoueur").click(function() {
-		document.location = 'listeJoueur.php';
-	});
 	$("#detailCalendrier").click(function() {
 		document.location = 'calendrier.php';
 	});
@@ -38,3 +35,5 @@ $(document).ready(function(){
 		return false;
 	});
 });
+
+

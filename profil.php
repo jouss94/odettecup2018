@@ -24,15 +24,19 @@ if ($id == 0) { header('Location: index.php'); }
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
 		<?php include("background.php");?>
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
-			<div class="loginform-in">
-				<div style="width:100%;height:1600px;display:flex">
-					<?php include("include/viewProfil.php");?>					
+			<div class="profilPage">
+				<div class="profilPageContentNew">
+					<?php include("include/viewProfil_new.php");?>					
 				</div>
 			</div>
 		</div>

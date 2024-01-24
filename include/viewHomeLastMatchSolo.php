@@ -6,7 +6,9 @@
 	require_once 'config.php';
 	require_once 'functions.php';
 
-	echo '<div class="nextmatchsolo">';
+	echo '
+	<div class="cadreTableauAcceuilOneMatch cadreTableauAcceuilBg">
+		<div class="nextmatchsolo">';
 	
 	$qry = "SELECT matches.*,
 	matches.id_match as id, 
@@ -31,6 +33,10 @@
 	$ResultI = 0;
 	$ResultE = 0;
 
+	$modif = -1;
+
+	$id_match = 0;
+
 	while ($row = mysqli_fetch_array($result )) 
 	{
 		$find = true;
@@ -42,10 +48,9 @@
 		$id_match = $row["id"];
 		$pronos_home = $row["prono_home"];
 		$pronos_away = $row["prono_away"];
-		$montagne = $row["montagne"];
 		$colorHome = $row["colorHome"];
 		$colorAway = $row["colorAway"];
-		$id_membre = $row["id_membre"];
+		$id_joueur = $row["id_joueur"];
 		$score_home = $row["score_home"];
 		$score_away = $row["score_away"];
 				
@@ -58,7 +63,7 @@
 		if ($i++ == 0) {
 			echo '
 				<div class="nextmatchsolodate">
-					'.$date_array['day']. ' / ' . $date_array['month'].' / '.$date_array['year'].'
+					'.$date_array['day']. ' / 0' . $date_array['month'].' / '.$date_array['year'].'
 				</div>
 				<div class="nextmatchsolotime">
 					'.$date_array['hour']. ' h 00
@@ -110,7 +115,7 @@
 		}
 
 
-		if (intval($id_membre) == $id) {
+		if (intval($id_joueur) == $id) {
 			echo '
 			<div class="lastmatchsolopronos magintopless20">
 				<span class="scoretext">Score :</span>		
@@ -150,39 +155,44 @@
 	}
 
 	$total = $ResultP + $ResultC + $ResultI + $ResultE;
-$px_bP = $ResultP * 315 / $total;
-$px_bC = $ResultC * 315 / $total;
-$px_bI = $ResultI * 315 / $total;
-$px_bE = $ResultE * 315 / $total;
 
-$class_bP = "lastbar";
-$class_bC = "";
-$class_bI = "";
-$class_bE = "firstbar";
+	if ($total != 0) {
+		$px_bP = $ResultP * 315 / $total;
+		$px_bC = $ResultC * 315 / $total;
+		$px_bI = $ResultI * 315 / $total;
+		$px_bE = $ResultE * 315 / $total;
 
-if ($px_bP == 315) {
-	$class_bP = "onebar";
-} else if ($px_bC == 315) {
-	$class_bC = "onebar";
-} else if ($px_bI == 315) {
-	$class_bI = "onebar";
-}  else if ($px_bE == 315) {
-	$class_bE = "onebar";
-}	else {
-	if ($px_bP == 0) {
-		$class_bC = "lastbar";
-		if ($px_bC == 0) {
-			$class_bI = "lastbar";
+		$class_bP = "lastbar";
+		$class_bC = "";
+		$class_bI = "";
+		$class_bE = "firstbar";
+
+		if ($px_bP == 315) {
+			$class_bP = "onebar";
+		} else if ($px_bC == 315) {
+			$class_bC = "onebar";
+		} else if ($px_bI == 315) {
+			$class_bI = "onebar";
+		}  else if ($px_bE == 315) {
+			$class_bE = "onebar";
+		}	else {
+			if ($px_bP == 0) {
+				$class_bC = "lastbar";
+				if ($px_bC == 0) {
+					$class_bI = "lastbar";
+				}
+			} 
+
+			if ($px_bE == 0) {
+				$class_bI = "firstbar";
+				if ($px_bI == 0) {
+					$class_bC = "firstbar";
+				}
+			}
 		}
-	} 
 
-	if ($px_bE == 0) {
-		$class_bI = "firstbar";
-		if ($px_bI == 0) {
-			$class_bC = "firstbar";
-		}
 	}
-}
+	
 
 
 echo '<div class="nextmatchsolobar">';
@@ -199,35 +209,35 @@ echo '<div class="nextmatchsolobar">';
 		</tr>
 		</table>    
 			
-	<style>
-	.barresultp{
-		width: '. $px_bP .'px;
-	}
-	.barresultc{
-		width: '. $px_bC .'px;
-	}
-	.barresulti{
-		width: '. $px_bI .'px;
-	}
-	.barresulte{
-		width: '. $px_bE .'px;
-	}
+			<style>
+			.barresultp{
+				width: '. $px_bP .'px;
+			}
+			.barresultc{
+				width: '. $px_bC .'px;
+			}
+			.barresulti{
+				width: '. $px_bI .'px;
+			}
+			.barresulte{
+				width: '. $px_bE .'px;
+			}
 
-	.colorPresult{
-		background-color: #18beff;
-	}
-	.colorCresult{
-		background-color: #29cd35;
-	}
-	.colorIresult{
-		background-color: #757575;
-	}
-	.colorEresult{
-		background-color: #ff3b3b;
-	}
-	</style>
-	';
-}
+			.colorPresult{
+				background-color: #18beff;
+			}
+			.colorCresult{
+				background-color: #29cd35;
+			}
+			.colorIresult{
+				background-color: #757575;
+			}
+			.colorEresult{
+				background-color: #ff3b3b;
+			}
+			</style>
+			';
+		}
 	
 	echo '</div>';
 	
@@ -251,8 +261,6 @@ echo '
 			<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=matches.php?id='.$id_match.' >
 				Détail dernier résultat
 			</a>
-			<div class="mdl-layout-spacer"></div>
-			<i class="material-icons">event</i>
 
 ';
 

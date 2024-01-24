@@ -2,11 +2,13 @@
 
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
 
 	require_once 'config.php';
 	require_once 'functions.php';
 
-	$qry = "SELECT * FROM joueurs LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'general';";
+	$qry = "SELECT * FROM joueurs LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'general'
+	WHERE joueurs.competition = $competition ;";
 	$result = mysqli_query($con, $qry);
 	$find = false;
 

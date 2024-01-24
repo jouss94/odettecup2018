@@ -9,6 +9,10 @@ $(document).ready(function(){
 		document.location = 'profil.php?id=' + document.getElementById("idPhp").getAttribute("name");
 	});
 
+	$("#bandeauAdmin").click(function() {
+		document.location = 'admin.php';
+	});
+
 	$("#modifProfilDetails").click(function() {
 		document.location = 'modifierProfil.php?id=' + document.getElementById("idPhp").getAttribute("name");
 	});
@@ -21,4 +25,34 @@ $(document).ready(function(){
 	$("#modifJokerDetails").click(function() {
 		document.location = 'modifierJoker.php?id=' + document.getElementById("idPhp").getAttribute("name");
 	});
+
+	var sidenav = document.getElementById("mySidenav");
+	var bandeauMenuBurgerButton = document.getElementById("bandeauMenuBurgerButton");
+	var bandeauCloseBurgerButton = document.getElementById("bandeauCloseBurgerButton");
+	// var openBtn = document.getElementById("openBtn");
+	// var closeBtn = document.getElementById("closeBtn");
+
+	$("#bandeauMenuBurger").click(function() {	
+		bandeauCloseBurgerButton.classList.toggle('bandeauMenuBurgerHidden');
+		bandeauMenuBurgerButton.classList.toggle('bandeauMenuBurgerHidden');
+		sidenav.classList.toggle("active");
+	});
+
+	$("#closeBtn").click(function() {	
+		sidenav.classList.remove("active");
+	});
+
+
+	// openBtn.onclick = openNav;
+	// closeBtn.onclick = closeNav;
+
+	// /* Set the width of the side navigation to 250px */
+	// function openNav() {
+	// 	sidenav.classList.add("active");
+	// }
+
+	// /* Set the width of the side navigation to 0 */
+	// function closeNav() {
+	// 	sidenav.classList.remove("active");
+	// }
 });
