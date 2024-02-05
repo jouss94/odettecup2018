@@ -3,24 +3,25 @@ session_start();
 
 $id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
 
-parse_str($_SERVER["QUERY_STRING"], $query);
+require_once 'config.php';
+require_once 'functions.php';
 
-if (isset($query['username'])) {
-	$username = base64_decode($query['username']);
-
-	include('config.php');
-	
-	$qry = "SELECT id_joueur, surnom FROM joueurs WHERE surnom='".$username."';";
-	$res = mysqli_query($con, $qry);
-	$row = mysqli_fetch_assoc($res);
-	
-	$_SESSION['id'] = $row['id_joueur'];
-	$_SESSION['pseudo'] = $row['surnom'];
-	$id = $row['id_joueur'];
-	$pseudo = $row['surnom'];
+$qry = "SELECT * FROM etat WHERE competition = $competition;";
+$result = mysqli_query($con, $qry);
+while ($row = mysqli_fetch_array($result )) 
+{
+    if ($row["attribut"] == "PRONOS_BONUS") {
+        $modifBonus = $row["value"];
+    }
+    if ($row["attribut"] == "PRONOS") {
+        $modifMatch = $row["value"];
+    }
+    if ($row["attribut"] == "JOKER") {
+        $modifJoker = $row["value"];
+    }
 }
-
 if ($id == 0) { header('Location: index.php'); }
 
 ?>
@@ -62,6 +63,7 @@ if ($id == 0) { header('Location: index.php'); }
                         Retour
                     </button>
                 </span>
+                <?php if ($modifBonus == 0) { ?>
                 <table class="tableAcceuil" style="padding-top: 20px;">
                     <tr>
                         <td>
@@ -160,6 +162,17 @@ if ($id == 0) { header('Location: index.php'); }
                         </td>
                     </tr>
                 </table>
+                <?php } else { ?>
+                    <div class="bonus-empty">
+                        Les bonus ne sont pas encore ouvert à tous.
+                    </div>
+                    <div class="bonus-empty-phrase-middle">
+                        Il reste encore du temps pour les modifier.
+                    </div>
+                    <div class="bonus-empty-phrase">
+                        Reviens quand tous les pronostics seront validés pour avoir une belle vue d'ensemble sur tous les bonus, INCROYABLE !
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>

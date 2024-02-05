@@ -25,6 +25,9 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
         <div class="sidebar-content-item">
             <a href="trombi.php">Joueurs</a>
         </div>
+        <div class="sidebar-content-item">
+            <a href="bonus.php">Bonus</a>
+        </div>
         <div class="sidebar-content-item" style="border-bottom:none;">
             <a href="reglement.php">Règlement</a>
         </div>

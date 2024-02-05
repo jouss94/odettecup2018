@@ -15,7 +15,7 @@
 	$modifBonus = false;
 	$modifJoker = false;
 
-	$qry = "SELECT * FROM etat;";
+	$qry = "SELECT * FROM etat WHERE competition = $competition;";
 	$result = mysqli_query($con, $qry);
 	while ($row = mysqli_fetch_array($result )) 
 	{
@@ -664,6 +664,143 @@
         </div>
     </div>
     <div class="profilPage-content-stats">
-        <!-- stats -->
+
+		<?php 
+
+
+		$qry = "SELECT COUNT(*) as played FROM `matches` WHERE played = 1;";
+		$result = mysqli_query($con, $qry);
+		$showStat = false;
+		while ($row = mysqli_fetch_array($result )) 
+		{
+			if (intval($row["played"]) > 0) {
+				$showStat = true;
+			}
+		}
+		
+		// $bonus = 10;
+		$nb_perf_point = $nb_perf * 7;
+		$nb_correct_point = $nb_correct * 3;
+		$nb_inverse_point = $nb_inverse;
+		$nb_echec;
+		
+		$nb_total_point = $nb_perf_point + $nb_correct_point + $nb_inverse_point + $bonus;
+		$nb_total = $nb_perf + $nb_correct + $nb_inverse + $nb_echec;
+
+		$nb_total_point = max($nb_perf_point, $nb_correct_point, $nb_inverse_point, $bonus);
+		$nb_total = max($nb_perf, $nb_correct, $nb_inverse, $nb_echec);
+
+
+		$pc_perf_match = ($nb_perf * 93 / $nb_total) + 7;
+		$pc_correct_match = ($nb_correct * 93 / $nb_total) + 7;
+		$pc_inverse_match = ($nb_inverse * 93 / $nb_total) + 7;
+		$pc_echec_match = ($nb_echec * 93 / $nb_total) + 7;
+		$pc_bonus_match = 7;
+
+		$pc_perf_point = ($nb_perf_point * 93 / $nb_total_point) + 7;
+		$pc_correct_point = ($nb_correct_point * 93 / $nb_total_point) + 7;
+		$pc_inverse_point = ($nb_inverse_point * 93 / $nb_total_point) + 7;
+		
+		$pc_bonus_point = ($bonus * 93 / $nb_total_point) + 7;
+		$pc_echec_point = 7;
+
+		?>
+
+
+		<div class="profilPage-content-stat">
+			<div class="displaymatch-card-event mdl-card mdl-shadow--2dp rougedefault stats">
+
+				<?php if ($showStat) { ?>
+				
+				<div class="profilPage-content-stats-bars">
+					<div class="profilPage-content-stats-bars-line">
+						<div class="profilPage-content-stats-bars-line-match">
+							<div style=" width:<?php echo $pc_perf_match?>%; " class="profilPage-content-stats-bars-line-match-bar bar-perfect">
+								<?php echo $nb_perf?>
+							</div>
+						</div>
+						<div class="profilPage-content-stats-bars-line-titre">
+							Perfect
+						</div>
+						<div class="profilPage-content-stats-bars-line-point">
+							<div style=" width:<?php echo $pc_perf_point?>%; " class="profilPage-content-stats-bars-line-point-bar bar-perfect">
+								<?php echo $nb_perf_point?>pts
+							</div>
+						</div>
+					</div>
+					<div class="profilPage-content-stats-bars-line">
+						<div class="profilPage-content-stats-bars-line-match">
+							<div  style=" width:<?php echo $pc_correct_match?>%; " class="profilPage-content-stats-bars-line-match-bar bar-correct">
+								<?php echo $nb_correct?>
+							</div>
+						</div>
+						<div class="profilPage-content-stats-bars-line-titre">
+							Correct
+						</div>
+						<div class="profilPage-content-stats-bars-line-point">
+							<div  style=" width:<?php echo $pc_correct_point?>%; " class="profilPage-content-stats-bars-line-point-bar bar-correct">
+								<?php echo $nb_correct_point?>pts
+							</div>
+						</div>
+					</div>
+					<div class="profilPage-content-stats-bars-line">
+						<div class="profilPage-content-stats-bars-line-match">
+							<div  style=" width:<?php echo $pc_inverse_match?>%; " class="profilPage-content-stats-bars-line-match-bar bar-inverse">
+								<?php echo $nb_inverse?>
+							</div>
+						</div>
+						<div class="profilPage-content-stats-bars-line-titre">
+							Inverse
+						</div>
+						<div class="profilPage-content-stats-bars-line-point">
+							<div style=" width:<?php echo $pc_inverse_point?>%; " class="profilPage-content-stats-bars-line-point-bar bar-inverse">
+								<?php echo $nb_inverse_point?>pts
+							</div>
+						</div>
+					</div>
+					<div class="profilPage-content-stats-bars-line">
+						<div class="profilPage-content-stats-bars-line-match">
+							<div style=" width:<?php echo $pc_echec_match?>%; " class="profilPage-content-stats-bars-line-match-bar bar-echec">
+								<?php echo $nb_echec?>
+							</div>
+						</div>
+						<div class="profilPage-content-stats-bars-line-titre">
+							Echec
+						</div>
+						<div class="profilPage-content-stats-bars-line-point">
+							<div style=" width:<?php echo $pc_echec_point?>%; "  class="profilPage-content-stats-bars-line-point-bar bar-echec">
+								N/A
+							</div>
+						</div>
+					</div>
+
+					<div class="profilPage-content-stats-bars-line">
+						<div class="profilPage-content-stats-bars-line-match">
+							<div style=" width:<?php echo $pc_bonus_match?>%; " class="profilPage-content-stats-bars-line-match-bar bar-bonus">
+								N/A
+							</div>
+						</div>
+						<div class="profilPage-content-stats-bars-line-titre">
+							Bonus
+						</div>
+						<div class="profilPage-content-stats-bars-line-point">
+							<div style=" width:<?php echo $pc_bonus_point?>%; "  class="profilPage-content-stats-bars-line-point-bar bar-bonus">
+								<?php echo $bonus?>pts
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<?php } else { ?>
+					<div class="profilPage-content-stats-waiting-titre">
+						Les statistiques ne sont pas encore disponible.
+					</div>
+					<div class="profilPage-content-stats-waiting-phrase">
+						Mais reviens plus tard, tu verras c'est stylé de ouf !	
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+
     </div>
 </div>

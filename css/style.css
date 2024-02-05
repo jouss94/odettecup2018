@@ -2612,3 +2612,130 @@ img.tombi-carte-content-photo-img {
 .tombi-carte-content-info-showmore {
     padding: 20px;
 }
+
+.profilPage-content-stat {
+    padding: 0 42px;
+}
+
+
+
+.profilPage-content-stats-bars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 50px;
+}
+
+.profilPage-content-stats-bars-line {
+    display: flex;
+    width: 100%;
+}
+
+.profilPage-content-stats-bars-line-match {
+    
+    width: 45%;
+    color: #FFF;
+    display: flex;
+    justify-content: end;
+    padding: 2px 10px;
+    text-align: left;
+}
+
+.profilPage-content-stats-bars-line-match-bar {
+    padding-left: 10px;
+    border-radius: 25px;
+    line-height: 28px;
+}
+
+.profilPage-content-stats-bars-line-titre {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8px;
+
+    min-width: 80px;
+}
+
+.profilPage-content-stats-bars-line-point {
+    width: 45%;
+    display: flex;
+    justify-content: start;    
+    color: #FFF;
+    padding: 2px 10px;
+    
+    text-align: right;
+}
+
+.profilPage-content-stats-bars-line-point-bar {
+    padding-right: 6px;
+    padding-left: 2px;
+    border-radius: 25px;
+    
+    line-height: 28px;
+}
+
+
+.bar-perfect {
+    background: #00b7ff;
+    border: solid 2px #c0f4fa;
+}
+
+.bar-correct {
+    background: #2bdf6e;
+    border: solid 2px #b1f7c0;
+}
+
+.bar-inverse {
+    background: #757575;
+    border: solid 2px #cdcdcd;
+}
+
+.bar-echec {
+    background: #ed1e25;
+    border: solid 2px #ed9d9d;
+}
+
+.bar-bonus {
+    background: #d9ca00;
+    border: solid 2px #fff130;
+}
+
+.profilPage-content-stat-graph {
+    display: flex;
+    justify-content: center;
+}
+
+
+.profilPage-content-stats-waiting-titre {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 90px 50px 28px 50px;
+    color: #3f3f3f;
+}
+
+.profilPage-content-stats-waiting-phrase {
+    font-size: 18px;
+    color: #3f3f3f;
+    font-family: "Kalam", cursive;
+}
+
+.bonus-empty {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 90px 50px 28px 50px;
+    color: #3f3f3f;
+}
+
+.bonus-empty-phrase {
+    font-size: 18px;
+    color: #3f3f3f;
+    font-family: "Kalam", cursive;
+    width: 80%;
+    margin: auto;
+    padding: 10px 0px 20px 0px;
+}
+
+.bonus-empty-phrase-middle {
+    font-size: 18px;
+    color: #3f3f3f;
+    padding: 0px 0px 40px 0px;
+}

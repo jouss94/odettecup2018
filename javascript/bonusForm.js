@@ -34,7 +34,4 @@ $(function() {
 			secondary: ' ui-icon-closethick'
 		}
 	});
-	
-	// $( "#equipeWin" ).selectmenu();  
-	// $( "#joueurWin" ).selectmenu();
 });

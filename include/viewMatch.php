@@ -298,7 +298,7 @@ echo '
 		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="trombi.php" >
 			Liste joueurs 
 		</a>
-		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.phpp?ranking=General" >
+		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classement.php?ranking=General" >
 			Classement 
 		</a>
 	</div>

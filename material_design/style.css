@@ -277,6 +277,12 @@ color: #002c90;
   margin-top: 20px;
 }
 
+.displaymatch-card-event.stats {
+  height: 250px;
+  width: 100%;
+}
+
+
 .displaymatch-card-event > .mdl-card__actions {
   border-color: rgba(255, 255, 255, 0.2);
 }

@@ -120,6 +120,7 @@ body {
     color: #000000;
     display: block;
     transition: 0.5s;
+    font-weight: bold;
   }
   
   .sidenav a:hover {

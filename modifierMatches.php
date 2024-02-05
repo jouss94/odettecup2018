@@ -3,13 +3,29 @@ session_start();
 
 $id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
 if ($id == 0) { header('Location: index.php'); }
 
 parse_str($_SERVER["QUERY_STRING"], $query);
 $idProfil = $query['id'];
 
 if ($id != $idProfil)
-	 header('Location: acceuil.php');
+{
+	header('Location: acceuil.php');
+}
+require_once 'config.php';
+require_once 'functions.php';
+
+$qry = "SELECT * FROM etat WHERE competition = $competition;";
+$result = mysqli_query($con, $qry);
+while ($row = mysqli_fetch_array($result )) 
+{
+	if ($row["attribut"] == "PRONOS") {
+		$modifMatch = $row["value"];
+	}
+}
+
+if ($modifMatch == 0) { header('Location: acceuil.php'); }
 
 ?>
 

@@ -3842,6 +3842,7 @@ ul, ol {
 /* Dialog */
 .mdl-button {
   font-family: Arial;
+  
   background: transparent;
   border: none;
   border-radius: 2px;
