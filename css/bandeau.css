@@ -70,6 +70,12 @@ body {
     width: 13%;
     cursor: pointer;
     background: #ffffff6b;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #bandeauProfil:hover {
@@ -98,6 +104,53 @@ body {
     padding-top: 2px;
     padding-left: 10px;
 }
+
+.topnav {
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  top: -300px;
+  right: 0;
+  background-color: #ffffffa6;
+  transition: top 0.3s ease;
+  border-radius: 0 0 0 20px;
+}
+.topnav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #000000;
+  display: block;
+  transition: 0.5s;
+  font-weight: bold;
+}
+.topnav.active {
+  top: 40px;
+  z-index: 100;
+}
+
+
+.topnav a:hover {
+  color: #013b95;
+}
+
+.topnav-content-item {
+  transition: background-color 0.5s ease;
+  padding: 10px 0px 10px 0px;
+  border-bottom: solid 1px white;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.topnav-content-item-last {
+  border-radius: 0 0 0 20px;
+}
+
+.topnav-content-item:hover {
+  background: #ffffff70;
+  }
+
+
 
 /* Sidenav menu */
 .sidenav {

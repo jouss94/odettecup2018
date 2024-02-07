@@ -5,9 +5,9 @@ $(document).ready(function(){
 	$("#bandeauDeconnect").click(function() {
 		document.location = 'deconnect.php';
 	});
-	$("#bandeauProfil").click(function() {
-		document.location = 'profil.php?id=' + document.getElementById("idPhp").getAttribute("name");
-	});
+	// $("#bandeauProfil").click(function() {
+	// 	document.location = 'profil.php?id=' + document.getElementById("idPhp").getAttribute("name");
+	// });
 
 	$("#bandeauAdmin").click(function() {
 		document.location = 'admin.php';
@@ -27,10 +27,19 @@ $(document).ready(function(){
 	});
 
 	var sidenav = document.getElementById("mySidenav");
+	var topnav = document.getElementById("myTopnav");
 	var bandeauMenuBurgerButton = document.getElementById("bandeauMenuBurgerButton");
 	var bandeauCloseBurgerButton = document.getElementById("bandeauCloseBurgerButton");
+
+	
+	var bandeauProfilButton = document.getElementById("bandeauProfil");
 	// var openBtn = document.getElementById("openBtn");
 	// var closeBtn = document.getElementById("closeBtn");
+
+	$("#bandeauProfil").click(function() {	
+		topnav.classList.toggle("active");
+	});
+
 
 	$("#bandeauMenuBurger").click(function() {	
 		bandeauCloseBurgerButton.classList.toggle('bandeauMenuBurgerHidden');
