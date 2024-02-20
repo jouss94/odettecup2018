@@ -19,13 +19,11 @@ require_once 'config.php';
 		$idHome = "numberMatch_" . $firstID . "_home";
 		$idAway = "numberMatch_" . $firstID . "_away";
 		$idPlayed = "numberMatch_" . $firstID . "_played";
-		$idModif = "numberMatch_" . $firstID . "_modif";
 		echo'pas la';
 
 		$home = 0;
 		$away = 0;
 		$played = 0;
-		$modif = $_POST[$idModif];
 
 		if( isset($_POST[ $idHome ]) && isset($_POST[ $idAway ]) && isset($_POST[ $idPlayed ]))
 		{
@@ -35,7 +33,7 @@ require_once 'config.php';
 		}
 
 		// echo $idMatch . " - ";
-		$qry = " UPDATE matches SET score_home=$home, score_away=$away, played=$played, modif=$modif WHERE id_match = $idMatch";
+		$qry = " UPDATE matches SET score_home=$home, score_away=$away, played=$played WHERE id_match = $idMatch";
 		$result = mysqli_query($con, $qry);
 		if (!$result) {
 			$return = false;

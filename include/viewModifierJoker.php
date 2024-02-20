@@ -141,9 +141,9 @@
 
 	$qry = "SELECT matches.*,
 	matches.id_match as id, 
-	equipes_home.name  as home_name,
+	equipes_home.display_name  as home_name,
 	equipes_home.logo  as home_logo,
-	equipes_away.name  as away_name,
+	equipes_away.display_name  as away_name,
 	equipes_away.logo  as away_logo,
 	matches.dayOfStage,
 	pronos.*

@@ -3841,7 +3841,6 @@ ul, ol {
 /* Animations */
 /* Dialog */
 .mdl-button {
-  font-family: Arial;
   
   background: transparent;
   border: none;
@@ -3854,7 +3853,7 @@ ul, ol {
   padding: 0 16px;
   display: inline-block;
   /* font-family: "Roboto", "Helvetica", "Arial", sans-serif; */
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
   line-height: 1;
@@ -3888,6 +3887,7 @@ input.mdl-button[type="submit"] {
   border-radius: 10px;
   font-weight: bold;
   background: rgba(158,158,158, 0.20);
+  font-family: "Dosis", sans-serif;
   /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);  */
 }
   .mdl-button--raised:active {

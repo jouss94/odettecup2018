@@ -8,12 +8,6 @@
 	require_once 'functions.php';
 
 	$days = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi','Jeudi','Vendredi', 'Samedi');
-	$months = array(
-		11 => "Novembre",
-		12 => "Décembre",
-		06 => "Juin",
-		07 => "Juillet",
-	);
 
 	echo '
 
@@ -25,9 +19,9 @@
 
 	$qry = "SELECT matches.*,
 					matches.id_match as id, 
-					equipes_home.name  as home_name,
+					equipes_home.display_name  as home_name,
 					equipes_home.logo  as home_logo,
-					equipes_away.name  as away_name,
+					equipes_away.display_name  as away_name,
 					equipes_away.logo  as away_logo,
 					equipes_home.color as colorHome,
 					equipes_away.color as colorAway
@@ -37,11 +31,10 @@
 			WHERE id_match = $idMatch;";
 		$result = mysqli_query($con, $qry);
 	$find = false;
-	$modif = 0;
 	
 	while ($row = mysqli_fetch_array($result )) 
 	{
-		$group = $row["groupe"];
+		$day = $row["day"];
 		$home_logo = utf8_encode_function($row["home_logo"]);
 		$home_name = utf8_encode_function($row["home_name"]);
 		$away_logo = utf8_encode_function($row["away_logo"]);
@@ -51,12 +44,25 @@
 		$diff = utf8_encode_function($row["diff"]);
 		$stadium = utf8_encode_function($row["stadium"]);
 		$played = $row["played"];
-		$modif = $row["modif"];
 		$date_array = date_parse($row["date"]);
 		$score_home = $row["score_home"];
 		$score_away = $row["score_away"];
 		$colorHome = $row["colorHome"];
 		$colorAway = $row["colorAway"];
+
+		$canDisplayPronos = false;
+
+		$subQry = "SELECT * FROM matches WHERE day = $day AND Date < CURDATE() ORDER BY Date LIMIT 1;";
+		$subResult = mysqli_query($con, $subQry);
+		$num_row = mysqli_num_rows($subResult);
+		if ($num_row == 1) {
+			$canDisplayPronos = true;
+		}
+
+		$minute = $date_array['minute'];
+		if (intval($minute) < 9) {
+			$minute = '0' . $minute;
+		}
 
 		echo '<table style="margin:auto;width: 85%;border-collapse: collapse;text-align: center;    font-weight: bold;">
 			<tr>
@@ -70,7 +76,7 @@
 					,' '
 					,$months[$date_array['month']],
 					"</br>",
-					$date_array['hour'], 'h00';
+					$date_array['hour'], 'h', $minute;
 
 					echo '</div></td>
 					<td style="margin: auto;width: 25%;text-align: right;" >', $diff,  
@@ -118,7 +124,9 @@
 			</tr>
 		</table>';
 
-		if ($modif == 2 )
+if ($canDisplayPronos)
+{
+
 		echo '
 		<div class="match-bars">
 		<span class="textmatch">Pronostics :</span>
@@ -139,15 +147,15 @@
 		</tr>
 		</table></div>  ';
 		
-
+}
 
 	}
 
 	$qry = "SELECT matches.*,
 					matches.id_match as id, 
-					equipes_home.name  as home_name,
+					equipes_home.display_name  as home_name,
 					equipes_home.logo  as home_logo,
-					equipes_away.name  as away_name,
+					equipes_away.display_name  as away_name,
 					equipes_away.logo  as away_logo,
 					pronos.*,
 					joueurs.*,
@@ -158,7 +166,7 @@
 			LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match 
 			LEFT JOIN joueurs ON joueurs.id_joueur = pronos.id_joueur 
 			LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'general'
-			WHERE modif=2 AND matches.id_match = $idMatch AND joueurs.competition = $competition ORDER BY classements.rang;";
+			WHERE matches.id_match = $idMatch AND joueurs.competition = $competition ORDER BY classements.rang;";
 	$result = mysqli_query($con, $qry);
 	$find = false;
 
@@ -194,6 +202,7 @@ echo '
 	$ResultE = 0;
 
 
+	if ($canDisplayPronos) {
 	while ($row = mysqli_fetch_array($result ))
 	{
 		$find = true;
@@ -217,7 +226,6 @@ echo '
 		$point = $row["point"];
 		$played = $row["played"];
 		
-		$modif = $row["modif"];
 
 		if ($pronos_home > $pronos_away) {
 			$Result1++;
@@ -280,6 +288,7 @@ echo '
 		echo '</td>';
 		echo '	</tr>';		
 	}
+}
 
 	
 	
@@ -310,7 +319,7 @@ echo '
 ';
 
 
-if ($modif == 2) {
+if ($canDisplayPronos == 1) {
 
 $total = $Result1 + $Result2 + $ResultN;
 $px_b1 = $Result1 * 600 / $total;

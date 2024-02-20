@@ -20,6 +20,7 @@ if ($id != 1) { header('Location: index.php'); }
 		<script src="javascript/login.js"></script>
 		<script src="javascript/bandeau.js"></script>
 		<script src="javascript/admin.js"></script>
+		<script src="javascript/getDisplayDay.js"></script>
 
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">

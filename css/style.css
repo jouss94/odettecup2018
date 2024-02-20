@@ -296,7 +296,7 @@ table.sortable thead {
     width: 60px;
     text-align: center;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: bold;
     background: rgba(228, 228, 228, 0.26);
     border-radius: 20px 0 0 20px;
 }
@@ -322,7 +322,7 @@ table.sortable thead {
     text-align: left;
     /* margin-left: 20px; */
     margin-top: -12px;
-    padding: 0 0 4px 215px;
+    padding: 0 0 4px 45%;
     font-weight: bold;
     font-size: 13px;
     color: #474747;
@@ -553,7 +553,7 @@ table.sortable thead {
 }
 
 .cadreTableauAcceuil {
-    height: 330px;
+    height: 510px;
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
@@ -1232,12 +1232,12 @@ img.logoEquipeBig {
 }
 
 img.logoEquipe {
-    width: 34px;
+    width: 55px;
     margin: 5px;
 }
 
 img.logoEquipeSmall {
-    width: 30px;
+    width: 40px;
     margin: 5px;
 }
 
@@ -1319,7 +1319,6 @@ img.logoEquipeSmaller {
 }
 
 .cadreTableauMatch {
-    height:580px;
     overflow-y: auto;     
 }
 
@@ -1467,7 +1466,7 @@ span.titre {
     font-size: 25px;
     color: #FFF;
     font-weight: bold;
-    margin: 10px 20px 0px 20px;
+    margin: 10px 20px 10px 20px;
     display: flex;
     flex-direction: row-reverse;
 }
@@ -2527,6 +2526,13 @@ border-radius: 50%;
     align-items: center;
 }
 
+.admin-buttons-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .admin-button {
     font-size: 25px;
     color: #FFF;
@@ -2738,4 +2744,149 @@ img.tombi-carte-content-photo-img {
     font-size: 18px;
     color: #3f3f3f;
     padding: 0px 0px 40px 0px;
+}
+
+
+.carousel-wrapper{
+    width: 650px;
+    position:relative;
+    height: 130%;
+    margin:0 auto;
+  }
+  .carousel-item{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    opacity:0;
+    /* transition: all 0.5s ease-in-out; */
+  }
+  .arrow{
+    border: solid #002c90;
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 7px;
+  }
+  
+  .arrow-prev{
+    left: 130px;
+    position: absolute;
+    top: 10px;
+    transform: translateY(-50%) rotate(135deg);
+  }
+   
+  .arrow-next{
+    right: 130px;
+    position: absolute;
+    top: 10px;
+    transform: translateY(-50%) rotate(-45deg);
+    }
+  
+  .light{
+    color:white;
+  }
+  
+  @media (max-width: 480px) {
+        .arrow, .light .arrow {
+          background-size: 10px;
+          background-position: 10px 50%;
+        }
+      }
+  
+    .JourneeTitre {
+        font-size: 20px;
+        font-weight: bold;
+        color: #002c90;
+    }
+ 
+.viewMatchTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30px;
+    padding: 10px 0 2px 0;
+    color: #002c90;
+    background: #ffffff26;
+}
+
+.viewMatchTitlProfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30px;
+    padding: 10px 0 2px 0;
+    color: #002c90;
+    background: #ffffff26;
+    border-radius: 20px 20px 0 0;
+}
+
+.viewMatchTitleDay {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.viewMatchTitleArrow, .viewProfilTitleNextDay, .viewProfilTitlePrevDay {
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.viewMatchTitleArrowHidden {
+    cursor: default;
+    opacity: 0;
+}
+
+.viewCalendarTitleDay {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.viewCalendarTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 30px;
+    padding: 10px 0 2px 0;
+    color: #002c90;
+    /* background: #ffffff26; */
+}
+
+.viewCalendarTitleArrow {
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.viewMatchTitleProfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 30px;
+    padding: 10px 0 2px 0;
+    color: #002c90;
+    /* background: #ffffff26; */
+}
+
+.viewProfilTitleDay {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.viewProfilTitleArrow, .viewProfilTitleDay, .viewCalendarTitleDay, .viewMatchTitleDay {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

@@ -2,19 +2,51 @@
 	
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
+	$current_day = $GLOBALS['current_day'];
+
+	$prev_day = $current_day - 1;
 
 	require_once 'config.php';
 	require_once 'functions.php';
+	?>
 
+	<div class="viewMatchTitle">
+		<div id="viewPrevMatchTitlePrevDay" class="viewMatchTitlePrevDay viewMatchTitleArrow"><i class="material-icons">arrow_back_ios</i></div>
+		<div id="viewPrevMatchTitleDay" class="viewMatchTitleDay"></div>
+		<div id="viewPrevMatchTitleNextDay" class="viewMatchTitleNextDay viewMatchTitleArrow"><i class="material-icons">arrow_forward_ios</i></div>
+	</div>
+
+	<div id="viewPrevMatchContent" class="viewPrevMatchContent">
+	<?php
+echo 
+'<script type="text/javascript">',
+	 "getDisplayMatchDay(
+		'getDisplayMatchLastDayAccueil',
+		$id, 
+		$id,
+		$competition, 
+		$prev_day, 
+		$current_day, 
+		'viewPrevMatchContent', 
+		'viewPrevMatchTitlePrevDay', 
+		'viewPrevMatchTitleNextDay', 
+		'viewPrevMatchTitleDay',
+		'profilLast');",
+ '</script>';
+?>
+
+</div>
+<!-- 
 	echo '<table class="full-table-collapse-white">';
 	
 
 	$qry = "SELECT * FROM matches WHERE modif=2;";
 	$qry = "SELECT matches.*,
 					matches.id_match as id, 
-					equipes_home.name  as home_name,
+					equipes_home.display_name  as home_name,
 					equipes_home.logo  as home_logo,
-					equipes_away.name  as away_name,
+					equipes_away.display_name  as away_name,
 					equipes_away.logo  as away_logo,
 					pronos.*
 			FROM matches 
@@ -65,8 +97,11 @@
 		$date_array = date_parse($row["date"]);
 // echo '	<tr class="', $classTR, '">';
 
-
-
+		$classPancarte = "";
+		$minute = $date_array['minute'];
+		if (intval($minute) < 9) {
+			$minute = '0' . $minute;
+		}
 
 		if ($i++ % 2 == 0) {
 			echo '	<tr class="backgroundTab2">';
@@ -80,7 +115,7 @@
 			echo $date_array['day']. "/0" . $date_array['month'];	
 		echo '</div>';
 		echo '<div>';
-			echo $date_array['hour']. "h00";	
+			echo $date_array['hour']. "h" . $minute;	
 		echo '</div>';
 		echo '</td>';
 		echo '<td><img class="logoEquipeSmall" src="';
@@ -116,4 +151,4 @@ echo '</table>';
 	echo 'Pas encore de matches joués.';
 	echo '';
 
-?>
+?> -->

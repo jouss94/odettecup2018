@@ -25,6 +25,14 @@ function addMatches($con)
 	$firstID = intval($_POST[ 'firstid' ]);
 	$lastID = intval($_POST[ 'lastid' ]);
 
+	$qry = " SELECT day FROM matches WHERE id_match = $firstID AND date > CURDATE() LIMIT 1";
+	$result = mysqli_query($con, $qry);
+	$num_row = mysqli_num_rows($result);
+	if ($num_row != 1) {
+		$return = false;
+		return false;
+	}
+
 	$qry = " DELETE FROM pronostics WHERE id_joueur = $id and id_match >= $firstID AND id_match <= $lastID;";
 	$result = mysqli_query($con, $qry);
 	if (!$result) 
@@ -60,7 +68,6 @@ function addMatches($con)
 					}
 					else
 						$return = true;
-
 		}
 
 
@@ -93,7 +100,6 @@ function addMatches($con)
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
 		
-
 	</head>	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>
@@ -128,10 +134,7 @@ function addMatches($con)
 							Retour Accueil
 						</button>
 					</div>
-
-
 				</div>
-
 			</div>
 		</div>
 </body>

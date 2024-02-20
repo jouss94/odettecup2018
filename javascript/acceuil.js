@@ -34,6 +34,16 @@ $(document).ready(function(){
 		document.location = 'equipes.php?id=' + idLocal;
 		return false;
 	});
+
+	$("#lastMatchButton").click(function() {
+		var day = document.getElementById("viewPrevMatchTitleDay").innerHTML.substring(8);	
+		document.location = "calendrier.php?day=" + day;
+	}); 
+
+	$("#nextMatchButton").click(function() {
+		var day = document.getElementById("viewNextMatchTitleDay").innerHTML.substring(8);	
+		document.location = "calendrier.php?day=" + day;
+	}); 
 });
 
 

@@ -3,6 +3,9 @@
 $id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
+require_once 'config.php';
+require_once 'functions.php';
+
 ?>
 
 <link
@@ -10,7 +13,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
     rel="stylesheet">
 
 <div id="mySidenav" class="sidenav">
-    <img src="images/Logo_UEFA_OCUP_2024.png" class="sidenav-logo" />
+    <img src="images/OdetteLigue-V2.1.png" class="sidenav-logo" />
     <div class="sidebar-content">
         <div class="sidebar-content-item">
             <a href="acceuil.php">Accueil</a>
@@ -67,7 +70,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
             <i class="material-icons">home</i>
         </td>
         <td id="bandeauNom">
-            Odette Cup - Euro 2024
+            Odette Ligue - Journée <?php echo getCurrentDay($con) ?>
         </td>
 
         <!-- <?php if($id == 1): ?>

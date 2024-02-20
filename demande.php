@@ -24,7 +24,7 @@ session_start();
 <body>
     <div class="padding20">
         <div class="loginform-in">
-            <img src="images/Logo_UEFA_OCUP_2024.png" style="width: 140px;margin: 10px;" />
+            <img src="images/OdetteLigue-V2.1.png" style="width: 140px;margin: 10px;" />
             <h3 style="margin-top: 0;color:#FFF">Formulaire d'inscription</h1>
                 <div class="Retour">
                     <button

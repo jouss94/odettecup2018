@@ -2,7 +2,7 @@
 $isProd = false;
 
 $host = $isProd ? 'db5010493162.hosting-data.io': 'localhost';
-$dbname = $isProd ? 'dbs8886736' : 'allemagne2024';
+$dbname = $isProd ? 'dbs8886736' : 'odetteligue';
 $user= $isProd ? 'dbu1681172' : 'root';
 $pass = $isProd ? 'DZHJDLQS58266' : '';
 

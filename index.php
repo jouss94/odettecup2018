@@ -23,7 +23,7 @@ session_start();
 		<div class="padding20">
 			<div class="loginform-in loginform-in-acceuil">
 				<fieldset>	
-					<img src="images/Logo_UEFA_OCUP_2024.png" style="width: 350px;margin: 20px;"/>
+					<img src="images/OdetteLigue-V2.1.png" style="width: 350px;margin: 20px;"/>
 				
 					<!-- <div class="err" id="add_err"></div>
 					<div class="load" id="add_load"></div> -->

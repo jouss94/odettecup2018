@@ -44,4 +44,46 @@ function sanitize_string($str, $con)
 	return $sanitize;
 }
 
+$GLOBALS['current_day'] = null;
+
+function getCurrentDay($con) {
+    // $GLOBALS['current_day'] = null;
+    if ($GLOBALS['current_day'] == null) {
+
+        $qry = "SELECT day FROM matches where date > CURDATE() ORDER BY date LIMIT 1";
+        $result = mysqli_query($con, $qry);
+        $num_row = mysqli_num_rows($result);
+
+        if ($num_row == 1) {
+            $GLOBALS['current_day'] = date(mysqli_fetch_array($result)[0]);
+        }
+    }
+
+    return $GLOBALS['current_day'];
+}
+
+function display2DigitNumer($number) {
+    if (intval($number) <= 9) {
+        return '0' . $number;
+    }
+
+    return $number;
+}
+
+$years = "2023-2024";
+
+$months = array(
+    1 => "Janvier",
+    2 => "Février",
+    3 => "Mars",
+    4 => "Avril",
+    5 => "Mai",
+    6 => "Juin",
+    7 => "Juillet",
+    8 => "Aout",
+    9 => "Septembre",
+    10 => "Octobre",
+    11 => "Novembre",
+    12 => "Décembre",
+);
 ?>

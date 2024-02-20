@@ -13,7 +13,6 @@ background: white;
 
 .demo-card-event.mdl-card {
   width: 415px;
-  height: 405px;
   background: #ffffff91;
 }
 .demo-card-event > .mdl-card__actions {
@@ -273,13 +272,10 @@ color: #002c90;
 .displaymatch-card-event.mdl-card {
   margin: auto;
   width: 750px;
-  height: 655px;
   margin-top: 20px;
 }
 
 .displaymatch-card-event.stats {
-  height: 250px;
-  width: 100%;
 }
 
 

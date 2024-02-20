@@ -12,9 +12,9 @@
 	
 	$qry = "SELECT matches.*,
 	matches.id_match as id, 
-	equipes_home.name  as home_name,
+	equipes_home.display_name  as home_name,
 	equipes_home.logo  as home_logo,
-	equipes_away.name  as away_name,
+	equipes_away.display_name  as away_name,
 	equipes_away.logo  as away_logo,
 	equipes_home.color as colorHome,
 	equipes_away.color as colorAway,
@@ -59,7 +59,7 @@
 					'.$date_array['day']. ' / 0' . $date_array['month'].' / '.$date_array['year'].'
 				</div>
 				<div class="nextmatchsolotime">
-					'.$date_array['hour']. ' h 00
+					'.$date_array['hour']. ' h '.$date_array['minute']. '
 				</div>
 				<div class="nextmatchsoloteams">
 					<div class="nextmatchsoloteamshome">

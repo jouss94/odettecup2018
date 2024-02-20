@@ -21,6 +21,7 @@ if ($id == 0) { header('Location: index.php'); }
 		<script src="javascript/bandeau.js"></script>
 		<script src="javascript/acceuil.js"></script>
 		<script src="javascript/profil.js"></script>
+		<script src="javascript/getDisplayDay.js"></script>
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">

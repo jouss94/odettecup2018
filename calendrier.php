@@ -20,12 +20,12 @@ if ($id == 0) { header('Location: index.php'); }
 		<script src="javascript/login.js"></script>
 		<script src="javascript/bandeau.js"></script>
 		<script src="javascript/calendrier.js"></script>
+		<script src="javascript/getDisplayDay.js"></script>
 
 		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
 		<link rel="stylesheet" href="./material_design/font.css">
 		
-
 	</head>	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'></div>

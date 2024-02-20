@@ -1,10 +1,3 @@
-$(document).ready(function() {
-	$(".RetourSpan").click(function() {
-		history.back();
-		 	return false;
-	});
-});
-
 $(function() {
 	$('form').validVal({
 		customValidations: {
@@ -23,8 +16,8 @@ $(function() {
 							{
 								confirm = document.getElementById("confirmationProfil").value;
 								mdp = document.getElementById("mpdProfil").value;
-								console.log(confirm);
-								console.log(mdp);
+								// console.log(confirm);
+								// console.log(mdp);
 								if (confirm == mdp)
 								{
 									for (var index =0; index < 5; index++) 

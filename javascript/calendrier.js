@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$(".RetourSpan").click(function() {
-		history.back();
-		return false;
+		document.location = 'acceuil.php';
 	});
 });
+

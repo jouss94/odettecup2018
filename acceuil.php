@@ -23,6 +23,7 @@ $showMatch = 0;
 		<script src="javascript/login.js"></script>
 		<script src="javascript/bandeau.js"></script>
 		<script src="javascript/acceuil.js"></script>
+		<script src="javascript/getDisplayDay.js"></script>
 
 		
 		<link rel="stylesheet" href="./material_design/material.css">
@@ -154,24 +155,24 @@ $showMatch = 0;
 									<div class="demo-card-event mdl-card mdl-shadow--2dp">
 										<div class="mdl-card__title mdl-card--expand">
 											<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
-												<?php include("include/viewHomeLastMatch.php");?>
+												<?php include("include/viewHomeLastMatchday.php");?>
 											</div>
 										</div>
 										<div class="mdl-card__actions mdl-card--border">
-											<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php" >
-												Derniers matches
+											<a id="lastMatchButton" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >
+												Détails
 											</a>
 										</div>
 									</div>
 									<div class="demo-card-event mdl-card mdl-shadow--2dp">
 										<div class="mdl-card__title mdl-card--expand">
 											<div class="cadreTableauAcceuil cadreTableauAcceuilBg">
-											<?php include("include/viewHomeNextMatch.php");?>
+											<?php include("include/viewHomeNextMatchday.php");?>
 											</div>
 										</div>
 										<div class="mdl-card__actions mdl-card--border">
-											<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php" >
-												Prochains matches
+											<a id="nextMatchButton" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >
+											Détails
 											</a>
 										</div>
 									</div>
@@ -190,7 +191,7 @@ $showMatch = 0;
 												</span>
 												</div>
 											<div class="mdl-card__actions mdl-card--border">
-												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php" >
+												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="calendrier.php#item-<?php echo $GLOBALS['current_day'] ?>" >
 												
 												Voir tous les matches													
 												</a>

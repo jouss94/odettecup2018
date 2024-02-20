@@ -16,22 +16,13 @@
 	// Pronotics
 
 	echo '
-
-	<span class="listeJoueurTitre">Pronostics matches</span>
-	
-		<span class="RetourSpanContainer">
-			<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonRouge">
-				Retour
-			</button>
-		</span>
-
 	<form action="addMatches.php" method="post">';
 
 	$qry = "SELECT matches.*,
 					matches.id_match as id, 
-					equipes_home.name  as home_name,
+					equipes_home.display_name  as home_name,
 					equipes_home.logo  as home_logo,
-					equipes_away.name  as away_name,
+					equipes_away.display_name  as away_name,
 					equipes_away.logo  as away_logo,
 					pronos.*
 			FROM matches 

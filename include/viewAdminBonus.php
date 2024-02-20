@@ -7,13 +7,6 @@
 	require_once 'functions.php';
 
 	$days = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi','Jeudi','Vendredi', 'Samedi');
-	$months = array(
-		11 => "Novembre",
-		12 => "Décembre",
-		06 => "Juin",
-		07 => "Juillet",
-	);
-
 	?>
 
 <div class="admin-buttons">

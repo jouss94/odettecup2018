@@ -51,13 +51,13 @@ if ($id == 0) { header('Location: index.php'); }
                         <li class="pointRegle regleExemple">Exemple : <span class="regleExempleCorp">Pronostic 2-1 -
                                 Score 2-1 : + 7 points</span></li>
                     </ul>
-                    <!-- <div class="sousTitre perfectCorrectPlus">Correct +</div>
+                    <div class="sousTitre perfectCorrectPlus">Correct +</div>
 							<ul class="ulperso">
 								<li class="pointRegle reglePoint" >4 points</li>
-								<li class="pointRegle regleDetail" >Trouver le vainqueur du match et le nombre de but de l'une des deux équipes.</li>
-								<li class="pointRegle regleExemple" >Exemple : <span class="regleExempleCorp">Pronostic 2-1 - Score 2-0 : + 4 points</span></li>
-								<div style="margin-left: 161px;"><span class="regleExempleCorp">Pronostic 2-1 - Score 3-1 : + 4 points</span></div>
-							</ul> -->
+								<li class="pointRegle regleDetail" >Trouver le vainqueur du match et la différence de but entre les 2 équipes.</li>
+								<li class="pointRegle regleExemple" >Exemple : <span class="regleExempleCorp">Pronostic 2-1 - Score 1-0 : + 4 points</span></li>
+								<div style="margin-left: 161px;"><span class="regleExempleCorp">Pronostic 1-1 - Score 0-0 : + 4 points</span></div>
+							</ul>
                     <div class="sousTitre perfectCorrect">Correct</div>
                     <ul class="ulperso">
                         <li class="pointRegle reglePoint">3 points</li>
