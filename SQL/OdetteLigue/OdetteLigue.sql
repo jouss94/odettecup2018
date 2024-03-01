@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS `odetteligue`;
+DROP DATABASE IF EXISTS `odetteligue1`;
 
-CREATE DATABASE OdetteLigue CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE OdetteLigue;
+CREATE DATABASE OdetteLigue1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE OdetteLigue1;
 
 --
 -- Table `competition`
@@ -19,8 +19,7 @@ CREATE TABLE IF NOT EXISTS `competition` (
 --
 
 INSERT INTO `competition` (`id`, `name`) VALUES
-(1, 'famille'),
-(2, 'poto');
+(1, 'Ligue1_2023_2024_test');
 
 --
 -- Table `classements`
@@ -94,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `equipes` (
 INSERT INTO `equipes` (`id_equipe`, `name`, `display_name`, `group`, `image`, `logo`, `color`) VALUES
 (1, 'OGC Nice', 'Nice', '', '', 'images\\\ligue1\\NIC.png', '#e02025'),
 (2, 'Lille', 'Lille', '', '', 'images\\ligue1\\LIL.png', '#e9261d'),
-(3, 'Marseille', 'Marseille', '', '', 'images\\ligue1\\MAR.png', '#08a5e6'),
+(3, 'Olympique Marseille', 'Marseille', '', '', 'images\\ligue1\\MAR.png', '#08a5e6'),
 (4, 'Stade de Reims', 'Reims', '', '', 'images\\ligue1\\REM.png', '#ee0303'),
 (5, 'Paris Saint-Germain', 'Paris-SG', '', '', 'images\\ligue1\\PAR.png', '#0d5a98'),
 (6, 'Lorient', 'Lorient', '', '', 'images\\ligue1\\LOR.png', '#ff863c'), 
@@ -117,24 +116,24 @@ INSERT INTO `equipes` (`id_equipe`, `name`, `display_name`, `group`, `image`, `l
 -- Table `etat`
 --
 
-DROP TABLE IF EXISTS `etat`;
-CREATE TABLE IF NOT EXISTS `etat` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `attribut` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` int(1) NOT NULL,
-  `competition` int(11) NOT NULL DEFAULT '0',
-  FOREIGN KEY (competition) REFERENCES competition(id),
-  PRIMARY KEY (`id`)
-)  AUTO_INCREMENT=0 DEFAULT  COLLATE=utf8mb4_unicode_ci;
+-- DROP TABLE IF EXISTS `etat`;
+-- CREATE TABLE IF NOT EXISTS `etat` (
+--   `id` int(11) NOT NULL AUTO_INCREMENT,
+--   `attribut` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `value` int(1) NOT NULL,
+--   `competition` int(11) NOT NULL DEFAULT '0',
+--   FOREIGN KEY (competition) REFERENCES competition(id),
+--   PRIMARY KEY (`id`)
+-- )  AUTO_INCREMENT=0 DEFAULT  COLLATE=utf8mb4_unicode_ci;
 --
 -- Déchargement des données de la table `etat`
 --
 
-INSERT INTO `etat` (`attribut`, `value`, `competition`) VALUES
-('PRONOS_BONUS', 1, 1),
-('PRONOS', 1, 1),
-('PRONOS_BONUS', 1, 2),
-('PRONOS', 1, 2);
+-- INSERT INTO `etat` (`attribut`, `value`, `competition`) VALUES
+-- ('PRONOS_BONUS', 1, 1),
+-- ('PRONOS', 1, 1),
+-- ('PRONOS_BONUS', 1, 2),
+-- ('PRONOS', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -164,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `joueurs` (
   `equipe` int(11) DEFAULT NULL,
   `oauth` enum('Yes','No') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'No',
   `status` enum('active','inactive') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active',
-  `color` varchar(100) NOT NULL DEFAULT '#9c2950',
+  `color` varchar(100) NOT NULL DEFAULT '#1473e6',
   `competition` int(11) NOT NULL DEFAULT '0',
   FOREIGN KEY (competition) REFERENCES competition(id),
   PRIMARY KEY (`id_joueur`)
@@ -175,8 +174,7 @@ CREATE TABLE IF NOT EXISTS `joueurs` (
 --
 
 INSERT INTO `joueurs` (`id_joueur`, `prenom`, `nom`, `surnom`, `email`, `password`, `image`, `departement`, `telephone`, `payed`, `updated`, `female`, `modif_profil`, `modif_match`, `modif_bonus`, `modif_joker`, `description`, `equipe`, `oauth`, `status`, `competition`) VALUES
-(1, 'Florian ', 'Jousseau', 'La Flouf', 'f.jousseau@gmail.com', 'admin', 'images/user/18260_10200113693266289_1751359165_n.jpg', 94, '0760851992', 0, 0, 0, 0, 0, 0, 0, 'Président directeur général de la Odette Cup', NULL, 'No', 'active', 1),
-(2, 'Florian ', 'Jousseau', 'Jouss', 'f.jousseau@gmail.com', 'admin', 'images/user/18260_10200113693266289_1751359165_n.jpg', 94, '0760851992', 0, 0, 0, 0, 0, 0, 0, 'Président directeur général de la Odette Cup', NULL, 'No', 'active', 2);
+(1, 'Florian ', 'Jousseau', 'Jouss94', 'f.jousseau@gmail.com', 'admin', 'images/user/18260_10200113693266289_1751359165_n.jpg', 94, '0760851992', 0, 0, 0, 0, 0, 0, 0, 'Créateur président directeur général de la Odette Ligue', NULL, 'No', 'active', 1);
 
 -- --------------------------------------------------------
 
@@ -227,52 +225,52 @@ CREATE TABLE IF NOT EXISTS `pronostics` (
 -- Table `pronostics_bonus`
 --
 
-DROP TABLE IF EXISTS `pronostics_bonus`;
-CREATE TABLE IF NOT EXISTS `pronostics_bonus` (
-  `id_joueur` int(11) NOT NULL,
-  `team_winner_id` int(11) NOT NULL,
-  `team_winner_id_point` int(4) NULL DEFAULT NULL,
-  `min_first` int(11) NULL,
-  `min_first_point` int(4) NULL DEFAULT NULL,
-  `min_last` int(11) NULL,
-  `min_last_point` int(4) NULL DEFAULT NULL,
-  `total_but` int(11) NULL,
-  `total_but_point` int(4) NULL DEFAULT NULL,
-  `best_scorer` varchar(255) COLLATE utf8mb4_unicode_ci NULL,
-  `best_scorer_point` int(4) NULL DEFAULT NULL,
-  `player_winner_id` int(11) NOT NULL,  
-  `player_winner` varchar(255) COLLATE utf8mb4_unicode_ci NULL,
-  `player_winner_point` int(4) NULL DEFAULT NULL,
-  `modif` int(11) NULL DEFAULT '1',
-  UNIQUE KEY `id_joueur` (`id_joueur`)
-) ENGINE=MyISAM DEFAULT  COLLATE=utf8mb4_unicode_ci;
-COMMIT;
+-- DROP TABLE IF EXISTS `pronostics_bonus`;
+-- CREATE TABLE IF NOT EXISTS `pronostics_bonus` (
+--   `id_joueur` int(11) NOT NULL,
+--   `team_winner_id` int(11) NOT NULL,
+--   `team_winner_id_point` int(4) NULL DEFAULT NULL,
+--   `min_first` int(11) NULL,
+--   `min_first_point` int(4) NULL DEFAULT NULL,
+--   `min_last` int(11) NULL,
+--   `min_last_point` int(4) NULL DEFAULT NULL,
+--   `total_but` int(11) NULL,
+--   `total_but_point` int(4) NULL DEFAULT NULL,
+--   `best_scorer` varchar(255) COLLATE utf8mb4_unicode_ci NULL,
+--   `best_scorer_point` int(4) NULL DEFAULT NULL,
+--   `player_winner_id` int(11) NOT NULL,  
+--   `player_winner` varchar(255) COLLATE utf8mb4_unicode_ci NULL,
+--   `player_winner_point` int(4) NULL DEFAULT NULL,
+--   `modif` int(11) NULL DEFAULT '1',
+--   UNIQUE KEY `id_joueur` (`id_joueur`)
+-- ) ENGINE=MyISAM DEFAULT  COLLATE=utf8mb4_unicode_ci;
+-- COMMIT;
 
 --
 -- Table `pronostics_bonus_result`
 --
 
-DROP TABLE IF EXISTS `pronostics_bonus_result`;
-CREATE TABLE IF NOT EXISTS `pronostics_bonus_result` (
-  `id_pronostics_bonus_result` int(11) NOT NULL AUTO_INCREMENT,
-  `team_winner_id` int(11) NULL,
-  `team_winner_id_activated` tinyint(1) NOT NULL DEFAULT '0',
-  `min_first` int(11) NULL,
-  `min_first_activated` tinyint(1) NOT NULL DEFAULT '0',
-  `min_last` int(11) NULL,
-  `min_last_activated` tinyint(1) NOT NULL DEFAULT '0',
-  `total_but` int(11) NULL,
-  `total_but_activated` tinyint(1) NOT NULL DEFAULT '0',
-  `best_scorer` varchar(255) COLLATE utf8mb4_unicode_ci NULL,
-  `best_scorer_activated` tinyint(1) NOT NULL DEFAULT '0',
-  `player_winner_id` int(11) NULL,  
-  `player_winner_id_activated` tinyint(1) NOT NULL DEFAULT '0',
-  UNIQUE KEY `id_pronostics_bonus_result` (`id_pronostics_bonus_result`)
-) ENGINE=MyISAM DEFAULT  COLLATE=utf8mb4_unicode_ci;
-COMMIT;
+-- DROP TABLE IF EXISTS `pronostics_bonus_result`;
+-- CREATE TABLE IF NOT EXISTS `pronostics_bonus_result` (
+--   `id_pronostics_bonus_result` int(11) NOT NULL AUTO_INCREMENT,
+--   `team_winner_id` int(11) NULL,
+--   `team_winner_id_activated` tinyint(1) NOT NULL DEFAULT '0',
+--   `min_first` int(11) NULL,
+--   `min_first_activated` tinyint(1) NOT NULL DEFAULT '0',
+--   `min_last` int(11) NULL,
+--   `min_last_activated` tinyint(1) NOT NULL DEFAULT '0',
+--   `total_but` int(11) NULL,
+--   `total_but_activated` tinyint(1) NOT NULL DEFAULT '0',
+--   `best_scorer` varchar(255) COLLATE utf8mb4_unicode_ci NULL,
+--   `best_scorer_activated` tinyint(1) NOT NULL DEFAULT '0',
+--   `player_winner_id` int(11) NULL,  
+--   `player_winner_id_activated` tinyint(1) NOT NULL DEFAULT '0',
+--   UNIQUE KEY `id_pronostics_bonus_result` (`id_pronostics_bonus_result`)
+-- ) ENGINE=MyISAM DEFAULT  COLLATE=utf8mb4_unicode_ci;
+-- COMMIT;
 
-INSERT INTO `pronostics_bonus_result`( `team_winner_id_activated`, `min_first_activated`, `min_last_activated`, `total_but_activated`, `best_scorer_activated`, `player_winner_id_activated`) 
-VALUES (0, 0, 0, 0, 0, 0);
+-- INSERT INTO `pronostics_bonus_result`( `team_winner_id_activated`, `min_first_activated`, `min_last_activated`, `total_but_activated`, `best_scorer_activated`, `player_winner_id_activated`) 
+-- VALUES (0, 0, 0, 0, 0, 0);
 
 
 --
@@ -296,10 +294,10 @@ CREATE TABLE IF NOT EXISTS `messages` (
 -- Table `best_scorer`
 --
 
-DROP TABLE IF EXISTS `best_scorer`;
-CREATE TABLE IF NOT EXISTS `best_scorer` (
-  `id_joueur` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `nb_but` int(11) NOT NULL,
-  PRIMARY KEY (`id_joueur`)
-) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;
+-- DROP TABLE IF EXISTS `best_scorer`;
+-- CREATE TABLE IF NOT EXISTS `best_scorer` (
+--   `id_joueur` int(11) NOT NULL AUTO_INCREMENT,
+--   `name` varchar(255) NOT NULL,
+--   `nb_but` int(11) NOT NULL,
+--   PRIMARY KEY (`id_joueur`)
+-- ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;

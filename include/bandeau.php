@@ -13,7 +13,7 @@ require_once 'functions.php';
     rel="stylesheet">
 
 <div id="mySidenav" class="sidenav">
-    <img src="images/OdetteLigue-V2.1.png" class="sidenav-logo" />
+    <img src="images/OdetteLigue-V3.0.png" class="sidenav-logo" />
     <div class="sidebar-content">
         <div class="sidebar-content-item">
             <a href="acceuil.php">Accueil</a>
@@ -29,9 +29,6 @@ require_once 'functions.php';
         </div>
         <div class="sidebar-content-item">
             <a href="trombi.php">Joueurs</a>
-        </div>
-        <div class="sidebar-content-item">
-            <a href="bonus.php">Bonus</a>
         </div>
         <div class="sidebar-content-item" style="border-bottom:none;">
             <a href="reglement.php">Règlement</a>
@@ -51,9 +48,9 @@ require_once 'functions.php';
             </div>
         </div>
         <?php endif ;?>
-        <div class="topnav-content-item">
+        <!-- <div class="topnav-content-item">
             <a href="options.php">Options</a>
-        </div>
+        </div> -->
         <div class="topnav-content-item topnav-content-item-last">
             <a href="deconnect.php">Déconnexion</a>
         </div>

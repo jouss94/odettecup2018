@@ -72,3 +72,5 @@ class IcsHelper
         return $timestamp;
     }
 }
+
+?>

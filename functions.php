@@ -9,14 +9,14 @@ function erreur($err='')
 function utf8_encode_function($str)
 {
     // TODO : CHECK il me semble que cetait un probleme d'env
-    return utf8_encode($str);
+    // return utf8_encode($str);
     return ($str);
 }
 
 function utf8_decode_function($str)
 {
     // TODO : CHECK il me semble que cetait un probleme d'env 
-    return utf8_decode($str);
+    // return utf8_decode($str);
     return ($str);
 }
 
@@ -45,18 +45,38 @@ function sanitize_string($str, $con)
 }
 
 $GLOBALS['current_day'] = null;
+$GLOBALS['current_day_in_progress'] = null;
+
+function getCurrentDayInProgress($con, $day) {
+    // $GLOBALS['current_day'] = null;
+    if ($GLOBALS['current_day_in_progress'] == null && $day != '') {
+
+        $subQry = "SELECT * FROM matches WHERE day = $day AND Date < NOW() ORDER BY Date LIMIT 1;";
+		$subResult = mysqli_query($con, $subQry);
+
+		$num_row = mysqli_num_rows($subResult);
+		if ($num_row == 1) {
+			$GLOBALS['current_day_in_progress'] = true;
+		}
+    }
+
+    return $GLOBALS['current_day_in_progress'];
+}
 
 function getCurrentDay($con) {
-    // $GLOBALS['current_day'] = null;
     if ($GLOBALS['current_day'] == null) {
 
-        $qry = "SELECT day FROM matches where date > CURDATE() ORDER BY date LIMIT 1";
+        $qry = "SELECT day FROM matches where date > NOW() ORDER BY date LIMIT 1";
         $result = mysqli_query($con, $qry);
         $num_row = mysqli_num_rows($result);
 
         if ($num_row == 1) {
             $GLOBALS['current_day'] = date(mysqli_fetch_array($result)[0]);
         }
+        else {
+            $GLOBALS['current_day'] = 0;
+        }
+        getCurrentDayInProgress($con, $GLOBALS['current_day']);
     }
 
     return $GLOBALS['current_day'];
@@ -86,4 +106,6 @@ $months = array(
     11 => "Novembre",
     12 => "Décembre",
 );
+
+$days = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi','Jeudi','Vendredi', 'Samedi');
 ?>

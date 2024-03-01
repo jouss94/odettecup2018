@@ -2,6 +2,14 @@
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 
+	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
+
+	$current_day_update = $GLOBALS['current_day'];
+	$current_day_in_progress_update = $GLOBALS['current_day_in_progress'];
+	if ($current_day_in_progress_update) {
+		$current_day_update++;
+	}
+
 	require_once 'config.php';
 	require_once 'functions.php';
 
@@ -66,89 +74,93 @@
 	];
 
 
+	$qry = "SELECT * FROM joueurs 
+	LEFT JOIN pronostics pronos ON pronos.id_joueur = $id 
+	LEFT JOIN matches ON matches.id_match = pronos.id_match  
+	WHERE joueurs.id_joueur=$id and day = $current_day_update
+	";
+	$res = mysqli_query($con, $qry);
+	$nb = mysqli_num_rows($res);
+
 	$qry = "SELECT * FROM joueurs WHERE id_joueur=".$id.";";
 	$result = mysqli_query($con, $qry);
 	$find = false;
 	while ($row = mysqli_fetch_array($result )) 
 	{
 		$modif_profil = intval($row["modif_profil"]);
-		$modif_match = intval($row["modif_match"]);
-		$modif_bonus = intval($row["modif_bonus"]);
-		$modif_joker = intval($row["modif_joker"]);
+	}
 
-		if ($modif_bonus == 1 && $modif_match == 1 && $modif_profil == 1)
+
+	if ($nb == 9 && $modif_profil == 1)
+	{
+		echo "<div class='etatProfilGreen' id='add_valideDemand'>";
+		echo $citations[array_rand($citations)];
+		echo "</div>";
+	}
+
+	else
+	{
+		echo "<div class='etatProfilRed' id='add_errDemand'>
+				<div class='update-profil'>
+					<div>
+							<div class='titreUpdateRed'>";
+							echo $citationsNeg[array_rand($citationsNeg)]; 
+							echo" :</div>
+					</div>
+
+				";
+		if ($modif_profil == 0)
 		{
-			echo "<div class='etatProfilGreen' id='add_valideDemand'>";
-			echo $citations[array_rand($citations)];
-			echo "</div>";
-		}
-
-		else
-		{
-			echo "<div class='etatProfilRed' id='add_errDemand'>
-					<table style='border-collapse: collapse;'>
-						<tr>
-							<td>
-								<span rowspan='2' class='titreUpdateRed'>";
-								echo $citationsNeg[array_rand($citationsNeg)]; 
-								echo" :</span>
-							</td>
-						</tr>
-
+			echo "	<div class='update-profil-sub-line'>
+						<div class='sousTitreUpdateRed'>
+							<span >Vous devez modifier vos informations de profil </span>
+						</div>
+						<div class='detailTitreUpdateRed'>
+							<span class='detailTitreUpdateRedSpan' id='modifProfilDetails'> Clique ici pour mettre à jour &rarr; </span>
+						</div>
+					</div>
 					";
-			if ($modif_profil == 0)
-			{
-				echo "	<tr>
-							<td class='sousTitreUpdateRed'>
-								<span >Vous devez modifier vos informations de profil </span>
-							</td>
-							<td class='detailTitreUpdateRed'>
-								<span class='detailTitreUpdateRedSpan' id='modifProfilDetails'> Clique ici pour mettre à jour &rarr; </span>
-							</td>
-						</tr>
-						";
-			}
-			if ($modif_match == 0) 
-			{
-
-				echo "	<tr>
-							<td class='sousTitreUpdateRed'>
-								<span >Vous devez entrer vos pronostics pour les matches à venir </span>
-							</td>
-							<td class='detailTitreUpdateRed'>
-								<span class='detailTitreUpdateRedSpan' id='modifMatchDetails'> Clique ici pour mettre à jour &rarr; </span>
-							</td>
-						</tr>
-						";
-			}
-			// if ($modif_joker == 0) 
-			// {
-			// 	echo "	<tr>
-			// 				<td class='sousTitreUpdateRed'>
-			// 					<span >Vous devez entrer vos jokers </span>
-			// 				</td>
-			// 				<td class='detailTitreUpdateRed'>
-			// 					<span class='detailTitreUpdateRedSpan' id='modifJokerDetails'> Clique ici pour mettre à jour &rarr; </span>
-			// 				</td>
-			// 			</tr>
-			// 			";
-			// }
-			if ($modif_bonus == 0) 
-			{
-				echo "	<tr>
-							<td class='sousTitreUpdateRed'>
-								<span >Vous devez entrer vos pronostics bonus </span>
-							</td>
-							<td class='detailTitreUpdateRed'>
-								<span class='detailTitreUpdateRedSpan' id='modifBonusDetails'> Clique ici pour mettre à jour &rarr; </span>
-							</td>
-						</tr>
-						";
-			}
-
-			
-			echo "</table>
-				</div>";
 		}
+		if ($nb != 9) 
+		{
+
+			echo "	<div class='update-profil-sub-line'>
+						<div class='sousTitreUpdateRed'>
+							<span >Vous devez entrer vos pronostics pour la journée $current_day_update </span>
+						</div>
+						<div class='detailTitreUpdateRed'>
+							<span class='detailTitreUpdateRedSpan' id='modifMatchDetails'> Clique ici pour mettre à jour &rarr; </span>
+						</div>
+					</div>
+					";
+		}
+		// if ($modif_joker == 0) 
+		// {
+		// 	echo "	<tr>
+		// 				<td class='sousTitreUpdateRed'>
+		// 					<span >Vous devez entrer vos jokers </span>
+		// 				</td>
+		// 				<td class='detailTitreUpdateRed'>
+		// 					<span class='detailTitreUpdateRedSpan' id='modifJokerDetails'> Clique ici pour mettre à jour &rarr; </span>
+		// 				</td>
+		// 			</tr>
+		// 			";
+		// }
+		// if ($modif_bonus == 0) 
+		// {
+		// 	echo "	<tr>
+		// 				<td class='sousTitreUpdateRed'>
+		// 					<span >Vous devez entrer vos pronostics bonus </span>
+		// 				</td>
+		// 				<td class='detailTitreUpdateRed'>
+		// 					<span class='detailTitreUpdateRedSpan' id='modifBonusDetails'> Clique ici pour mettre à jour &rarr; </span>
+		// 				</td>
+		// 			</tr>
+		// 			";
+		// }
+
+		
+		echo "</div>
+			</div>";
 	}
 ?>

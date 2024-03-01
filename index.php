@@ -6,14 +6,11 @@ session_start();
 		<title>Accueil</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 		<script src="javascript/jquery-2.2.3.min.js"></script>
 		<script src="javascript/jquery-ui.min.js"></script>
 		<script src="javascript/login.js"></script>
-		<link rel="stylesheet" href="./material_design/material.css">
-		<link rel="stylesheet" href="./material_design/style.css">
-		<link rel="stylesheet" href="./material_design/font.css">
 		<link rel="icon" href="images/favicon.png" />
 	</head>
 		
@@ -23,7 +20,7 @@ session_start();
 		<div class="padding20">
 			<div class="loginform-in loginform-in-acceuil">
 				<fieldset>	
-					<img src="images/OdetteLigue-V2.1.png" style="width: 350px;margin: 20px;"/>
+					<img src="images/OdetteLigue-V3.0.png" style="width: 350px;margin: 20px;"/>
 				
 					<!-- <div class="err" id="add_err"></div>
 					<div class="load" id="add_load"></div> -->

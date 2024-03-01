@@ -43,6 +43,8 @@ require_once 'config.php';
 	}
 
 	if ($return) {
-		header("Location: admin.php");
+		header("Location:admin.php");
 	}
 
+exit();
+?>

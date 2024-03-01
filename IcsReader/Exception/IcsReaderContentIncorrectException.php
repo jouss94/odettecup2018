@@ -15,3 +15,5 @@ namespace IcsReader\Exception;
 class IcsReaderContentIncorrectException extends IcsReaderException {
 
 }
+
+?>

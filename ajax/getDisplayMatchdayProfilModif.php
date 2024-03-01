@@ -79,6 +79,7 @@
 			$first = false;
 		}
 
+		// $current_already_start = false;
 		
 		$dateDay = substr($date, 0, 10);
 		if ($current_date != $dateDay) {
@@ -94,8 +95,6 @@
 				.$date_array['day']
 				.' '
 				.$months[$date_array['month']]
-				.' '
-				.$date_array['year']
 			.' </span>
 			</div>
 			
@@ -111,6 +110,15 @@
 
 
 		$html .='<tr>';
+
+		$html .= '<td class="homeSmallDateModif">';
+		// $html .= '<div>';
+		// 	$html .= display2DigitNumer($date_array['day']). "/" . display2DigitNumer($date_array['month']);	
+		// $html .= '</div>';
+		$html .= '<div>';
+			$html .= display2DigitNumer($date_array['hour']). ":" . display2DigitNumer($date_array['minute']);	
+		$html .= '</div>';
+		$html .= '</td>';
 
 		$html .='
 			<td class="tdMatch tdMatchLeft">'. $home_name. '</td>

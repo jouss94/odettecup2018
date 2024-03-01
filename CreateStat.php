@@ -11,7 +11,7 @@ if ($id == 0) { header('Location: index.php'); }
 		<title>Accueil</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 		<script src="javascript/jquery-2.2.3.min.js"></script>

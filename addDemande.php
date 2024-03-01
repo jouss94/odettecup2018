@@ -61,18 +61,14 @@ function addDemande($con)
 		<script src="javascript/jquery-ui.min.js"></script>
 		<script src="javascript/demande.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<?php include("include/style.php");?>
 		<script src="javascript/jquery.validVal.min.js"></script>
-
-		<link rel="stylesheet" href="./material_design/material.css">
-		<link rel="stylesheet" href="./material_design/style.css">
-		<link rel="stylesheet" href="./material_design/font.css">
 	</head>
 
 	<body>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault" style="height:450px">
-				<img src="images/OdetteLigue-V2.1.png" style="width: 110px;margin: 6px;"/>
+				<img src="images/OdetteLigue-V3.0.png" style="width: 110px;margin: 6px;"/>
 				<div class="Retoudiv">
 					<button class="Retour mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourProfil">
 						Retour

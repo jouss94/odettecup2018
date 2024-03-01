@@ -26,7 +26,7 @@
 
 	$html = "";
 	
-	$html .= '<table class="full-table-collapse-white">';
+	// $html .= '<table class="full-table-collapse-white">';
 	
 	$qry = "SELECT matches.*,
 					matches.id_match as id, 
@@ -43,6 +43,8 @@
 	$result = mysqli_query($con, $qry);
 	$find = false;
 	$i = 0;
+	$current_date = "";
+
 	while ($row = mysqli_fetch_array($result )) 
 	{
 		$find = true;
@@ -57,61 +59,83 @@
 
 		$point = $row["point"];
 		$classTR = "classTRNeutre";
-		
 
+		$date = utf8_encode_function($row["date"]);		
+		$dateDay = substr($date, 0, 10);
+		
 		$date_array = date_parse($row["date"]);
-		if ($i++ % 2 == 0) {
-			$html .= '	<tr class="backgroundTab1">';
+
+		if ($current_date != $dateDay) {
+	
+			$html .=  '
+			<div class="dateMatchText"> '
+				.$days[date('w', strtotime($date))] 
+				.' '
+				.$date_array['day']
+				.' '
+				.$months[$date_array['month']]
+			.' </div>';
+			$first = true;
+			$i = 0;
+		}
+		$current_date = $dateDay;
+
+		$background = "";
+		if ($i++ % 2 != 0) {
+			$background = "backgroundTab1";
 		}
 		else {
-			$html .= '	<tr class="backgroundTab2">';
+			$background = "backgroundTab2";
 		}
 
 		$classPancarte = "";
 
-		$html .= '<td class="homeSmallDate">';
+		$html .= '<div class="accueil-match-line '.$background.'">';
+		// $html .= '<div>';
+		// 	$html .= display2DigitNumer($date_array['day']). "/" . display2DigitNumer($date_array['month']);	
+		// $html .= '</div>';
 		$html .= '<div>';
-			$html .= display2DigitNumer($date_array['day']). "/" . display2DigitNumer($date_array['month']);	
+			$html .= display2DigitNumer($date_array['hour']). ":" . display2DigitNumer($date_array['minute']);	
 		$html .= '</div>';
-		$html .= '<div>';
-			$html .= display2DigitNumer($date_array['hour']). "h" . display2DigitNumer($date_array['minute']);	
-		$html .= '</div>';
-		$html .= '</td>';
-		$html .= '<td><img class="logoEquipeSmall" src="';
+		$html .= '<div><img class="logoEquipeSmall" src="';
 		$html .= $home_logo;	
-		$html .= '" /></td>';
-		$html .= '<td class="homeEquipeDroite2">';
-		$html .= $home_name;	
-		$html .= '</td>';
-		$html .= '<td class="homeEquipeEquipe">';
-		if ( $row["prono_home"] != null)
-		{
-			$html .= '<span class="pancarteBig ' . $classPancarte . '">';
-			$html .= $row["prono_home"];
-			$html .= '</span>';
-		}
-		$html .= '</td>';
+		$html .= '" /></div>';
+		$html .='<div class="accueil-match-score">';
+			$html .= '<div class="homeEquipeDroite2">';
+			$html .= $home_name;	
+			$html .= '</div>';
+			$html .= '<div class="homeEquipeEquipe">';
+			if ( $row["prono_home"] != null)
+			{
+				$html .= '<span class="pancarteBig ' . $classPancarte . '">';
+				$html .= $row["prono_home"];
+				$html .= '</span>';
+			}
+			$html .= '</div>';
 
-		$html .= '<td class="homeEquipeMilieu2"> - </td>';
-		$html .= '<td class="homeEquipeEquipe">';
-		if ( $row["prono_away"] != null)
-		{
-			$html .= '<span class="pancarteBig ' . $classPancarte . '">';
-			$html .= $row["prono_away"];
-			$html .= '</span>';
-		}
-		$html .= '</td>';
-		$html .= '<td class="homeEquipeGauche2">';
-		$html .= $away_name;	
-		$html .= '</td>';
-		$html .= '<td><img class="logoEquipeSmall" src="';
+			$html .= '<div class="homeEquipeMilieu2"> - </div>';
+			$html .= '<div class="homeEquipeEquipe">';
+			if ( $row["prono_away"] != null)
+			{
+				$html .= '<span class="pancarteBig ' . $classPancarte . '">';
+				$html .= $row["prono_away"];
+				$html .= '</span>';
+			}
+			$html .= '</div>';
+			$html .= '<div class="homeEquipeGauche2">';
+			$html .= $away_name;	
+			$html .= '</div>';
+		$html .= '</div>';
+		$html .= '<div><img class="logoEquipeSmall" src="';
 		$html .= $away_logo;	
-		$html .= '" /></td>';
-$html .= '	</tr>';		
+		$html .= '" /></div>';
+		$html .= '<div>
+		<a class="showmore" href="matches.php?id='. $id_match .'">Détails</a>
+	 </div>';
+		$html .='	</div>';	
 
 	}
 	
-$html .= '</table>';
 
 	if (!$find) {
 		$html .= 'Pas de matche disponible.';

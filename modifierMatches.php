@@ -23,7 +23,7 @@ require_once 'functions.php';
 		<title>Modifier matches</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/formMatch.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -36,9 +36,6 @@ require_once 'functions.php';
 		<script src="javascript/pronosForm.js"></script>
 		<script src="javascript/getDisplayDay.js"></script>
 		<script src="javascript/jquery.validVal.min.js"></script>
-		<link rel="stylesheet" href="./material_design/material.css">
-		<link rel="stylesheet" href="./material_design/style.css">
-		<link rel="stylesheet" href="./material_design/font.css">
 	</head>
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>

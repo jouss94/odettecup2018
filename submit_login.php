@@ -1,9 +1,9 @@
 <?php
+ob_start();
 session_start();
 
 include('config.php');
 include('functions.php');
-
 $postData = $_POST;
 
 /**
@@ -12,9 +12,10 @@ $postData = $_POST;
  */
 
 // Validation du formulaire
-
+echo 'Test';
 if (isset($postData['name']) && isset($postData['password'])) 
 {
+	echo '1';
 	$name = sanitize_string($_POST['name'], $con);
 	$password = sanitize_string($_POST['password'], $con);
 
@@ -25,21 +26,26 @@ if (isset($postData['name']) && isset($postData['password']))
 
 	if( $num_row == 1 ) 
 	{
-		// echo "OK";
+		echo "OK";
 		$_SESSION['id'] = $row['id_joueur'];
 		$_SESSION['pseudo'] = $row['surnom'];
 		$_SESSION['competition'] = $row['competition'];
 	}
 
 	if (!isset($_SESSION['id'])) {
-		// echo "NOOO";
+		 echo "NOOO";
 
 		$_SESSION['LOGIN_ERROR_MESSAGE'] = sprintf("Mauvais nom d'utilisateur ou mot de passe.");
-		header("Location: index.php");
+		header("Location:index.php");
 	} else {
-		// echo "YES";
-		header("Location: acceuil.php");
+		echo "YES";
+		header("Location:acceuil.php");
 	}
+} else {
+	echo '2';
+	header("Location:index.php");
+
 }
 
+exit();
 ?>

@@ -26,8 +26,6 @@
 
 	$html = "";
 
-	$days = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi','Jeudi','Vendredi', 'Samedi');
-
 	$qry = "SELECT matches.*,
 					matches.id_match as id, 
 					equipes_home.display_name  as home_name,
@@ -163,7 +161,7 @@
 							'</td>
 							<td style="width: 33%;" class="tableCalendrierL2-hour"> '.
 								// $date_array['day'], '/0', $date_array['month'], ' '.
-								 $date_array['hour']. 'h'. $minute.
+								 $date_array['hour']. ':'. $minute.
 							'</td>
 							<td style="width: 33%;"> '.
 								$stade.

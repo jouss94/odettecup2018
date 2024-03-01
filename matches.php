@@ -12,7 +12,7 @@ if ($id == 0) { header('Location: index.php'); }
     <title>Détail match</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <?php include("include/style.php");?>
     <link rel="stylesheet" type="text/css" href="css/bandeau.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
     <script src="javascript/jquery-2.2.3.min.js"></script>
@@ -21,9 +21,6 @@ if ($id == 0) { header('Location: index.php'); }
     <script src="javascript/bandeau.js"></script>
     <script src="javascript/acceuil.js"></script>
     <script src="javascript/match.js"></script>
-    <link rel="stylesheet" href="./material_design/material.css">
-    <link rel="stylesheet" href="./material_design/style.css">
-    <link rel="stylesheet" href="./material_design/font.css">
 </head>
 
 <body>

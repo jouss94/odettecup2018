@@ -3,7 +3,6 @@
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
-	$current_day = $GLOBALS['current_day'];
 
 	require_once 'config.php';
 	require_once 'functions.php';

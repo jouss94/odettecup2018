@@ -180,7 +180,13 @@ table.sortable thead {
 }
 
 .homePointMatch {
+    width: 44px;
+    font-size: 24px;
+    padding: 0;
     text-align: center;
+    font-family: "Poppins", sans-serif;    
+    -webkit-text-stroke-width: thin;
+    -webkit-text-stroke-color: #FFF;
 }
 
 .pronosMatch {
@@ -189,13 +195,13 @@ table.sortable thead {
 }
 
 .homeEquipeDroiteMatch {
-    width: 70px;
+    width: 110px;
     text-align: right;
     padding-right: 10px;
 }
 
 .homeEquipeGaucheMatch {
-    width: 70px;
+    width: 110px;
     text-align: left;
     padding-left: 10px;
 }
@@ -246,8 +252,8 @@ table.sortable thead {
 }
 
 .allMatch {
-    width: 700px;
-    PADDING: 20px;
+    width: 800px;
+    padding: 20px;
     display: block;
     margin: auto;
     margin-top: 30px;
@@ -315,18 +321,18 @@ table.sortable thead {
 }
 
 .profil-line {
-    border-bottom: solid 1px #FFF;
 }
 
 .profil-score {
-    text-align: left;
     /* margin-left: 20px; */
     margin-top: -12px;
-    padding: 0 0 4px 45%;
+    padding: 0 0 4px 0px;
     font-weight: bold;
     font-size: 13px;
     color: #474747;
 }
+
+
 
 .backgroundTab1Jaune {
     background: #f3e883;
@@ -399,7 +405,7 @@ table.sortable thead {
     font-weight: bold;
 }
 
-.classTRPerfectHome {
+/* .classTRPerfectHome {
     color: #c0f6ff;
     text-shadow: 2px 0 #00b7ff, -2px 0 #00b7ff, 0 2px #00b7ff, 0 -2px #00b7ff, 1px 1px #00b7ff, -1px -1px #00b7ff, 1px -1px #00b7ff, -1px 1px #00b7ff;
     font-weight: bold;
@@ -414,13 +420,13 @@ table.sortable thead {
 
 .classTRCorrectHome {
     color: #b1f7c0;
-    /* text-shadow: 2px 0 #2bdf6e, -2px 0 #2bdf6e, 0 2px #2bdf6e, 0 -2px #2bdf6e, 1px 1px #2bdf6e, -1px -1px #2bdf6e, 1px -1px #2bdf6e, -1px 1px #2bdf6e; */
     text-shadow: 2px 0 #2bdf6e, -2px 0 #2bdf6e, 0 2px #2bdf6e, 0 -2px #2bdf6e, 1px 1px #2bdf6e, -1px -1px #2bdf6e, 1px -1px #2bdf6e, -1px 1px #2bdf6e;
     font-weight: bold;
 }
 
 .classTRCorrectPlusHome {
-    color: rgb(15, 209, 48);
+    color: #b1f7ff;
+    text-shadow: 2px 0 #2bdfaa, -2px 0 #2bdfaa, 0 2px #2bdfaa, 0 -2px #2bdfaa, 1px 1px #2bdfaa, -1px -1px #2bdfaa, 1px -1px #2bdfaa, -1px 1px #2bdfaa;
     font-weight: bold;
  }
 
@@ -428,6 +434,27 @@ table.sortable thead {
     color: #ed9d9d;
     text-shadow: 2px 0 #ed1e25, -2px 0 #ed1e25, 0 2px #ed1e25, 0 -2px #ed1e25, 1px 1px #ed1e25, -1px -1px #ed1e25, 1px -1px #ed1e25, -1px 1px #ed1e25;
     font-weight: bold;
+} */
+
+.classTRPerfectHome {
+    color:#00b7ff; 
+}
+
+
+.classTRInverseHome {
+    color:#757575;
+}
+
+.classTRCorrectHome {
+    color: #2bdf6e;
+}
+
+.classTRCorrectPlusHome {
+    color: #2bdfaa;
+ }
+
+.classTREchecHome {
+    color: #ed1e25;
 }
 
 .homeEquipeEquipe {
@@ -435,7 +462,9 @@ table.sortable thead {
 }
 
 .homeEquipeMilieu {
+    
     text-align: center;
+        width: 10px;
 }
 
 
@@ -446,14 +475,14 @@ table.sortable thead {
 .homeEquipeGauche2 {
     text-align: left;
     padding-left: 8px;
-    font-size: 16x;
+    font-size: 18px;
     width: 110px;
 }
 
 .homeEquipeDroite2 {
     text-align: right;
     padding-right: 8px;
-    font-size: 16px;
+    font-size: 18px;
     width: 110px;
 }
 
@@ -461,27 +490,57 @@ table.sortable thead {
     width: 110px;
     text-align: left;
     padding-left: 6px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .homeEquipeDroite {
     width: 110px;
     text-align: right;
     padding-right: 6px;
-    font-size: 16px;
+    font-size: 18px;
 }
 .homePoint {
-    font-size: 17px;
-    padding-right: 5px;
+    width: 44px;
+    font-size: 28px;
+    padding: 0;
     text-align: center;
+    font-family: "Poppins", sans-serif;    
+    -webkit-text-stroke-width: thin;
+    -webkit-text-stroke-color: #FFF;
+}
+
+.ProfilPoint {
+    font-size: 35px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;    
+    -webkit-text-stroke-width: thin;
+    -webkit-text-stroke-color: #FFF;
+    margin: auto;
+}
+.ProfilPointText {
+    font-size: 12px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;    
+    margin: auto;
+}
+
+.homeSmallDateLast {
+    font-size: 16px;
+    width: 44px;
+    
+    padding: 0;
 }
 
 .homeSmallDate {
-    padding-left: 2px;
-    font-size: 12px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-left: 10px;
+    font-size: 16px;
+    width: 45px;
 }
+
+.homeSmallDateModif {
+    padding-left: 20px;
+}
+
 
 .black 
 {
@@ -553,7 +612,6 @@ table.sortable thead {
 }
 
 .cadreTableauAcceuil {
-    height: 510px;
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
@@ -668,7 +726,8 @@ table.sortable thead {
 }
 
 .perfectCorrectPlus {
-    color: rgb(15, 209, 48);
+    color: #b1f7ff;
+    text-shadow: 2px 0 #2bdfaa, -2px 0 #2bdfaa, 0 2px #2bdfaa, 0 -2px #2bdfaa, 1px 1px #2bdfaa, -1px -1px #2bdfaa, 1px -1px #2bdfaa, -1px 1px #2bdfaa;
  }
 
 .perfectEchec {
@@ -865,14 +924,16 @@ table.sortable thead {
     width: 100%;
     text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .tableAcceuilResultat {
     width: 100%;
     text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .tableAcceuilClassement{
@@ -888,7 +949,7 @@ table.sortable thead {
     margin: auto;
     margin-bottom: 0px;
     margin-top: 0px;
-    width: 845px;
+    width: 980px;
     padding-bottom: 8px;
 }
 
@@ -904,10 +965,13 @@ table.sortable thead {
    font-weight: bold;
 }
 
+.detailTitreUpdateRed {
+    padding-right: 30px;
+}
+
 .sousTitreUpdateRed {
-    padding-left: 30px;
+    padding-left: 60px;
     font-size: 12px;
-    width: 590px;
     font-weight: bold;
 }
 
@@ -919,6 +983,8 @@ table.sortable thead {
     font-weight: bold;
     font-size: 15px;
     font-family: "Kalam", cursive;
+    text-align: left;
+    padding: 2px 0 0 20px;
 }
 
 .etatProfilRed {
@@ -926,7 +992,6 @@ table.sortable thead {
     margin: auto;
     margin-bottom: 20px;
     background: #ffffff82;
-    width: 800px;
     border-radius: 0px 0px 20px 20px; 
     border-bottom: solid 1px #FFF;
     border-right: solid 1px #FFF;
@@ -941,7 +1006,6 @@ table.sortable thead {
     background: #ffffff82;
     /* text-shadow: 1px 0 #2bdf6e, -1px 0 #2bdf6e, 0 1px #2bdf6e, 0 -1px #2bdf6e, 1px 1px #2bdf6e, -1px -1px #2bdf6e, 1px -1px #2bdf6e, -1px 1px #2bdf6e; */
     font-weight: bold;
-    width: 800px;
     border-radius: 0px 0px 20px 20px;
     border-bottom: solid 1px #FFF;
     border-right: solid 1px #FFF;
@@ -1177,6 +1241,7 @@ table.sortable thead {
 
 .pancarteBig {
     background: rgba(0, 0, 0, 0.68);
+    border: solid 2px #757575;
     padding: 2px;
     display: block;
     text-align: center;
@@ -1190,6 +1255,7 @@ table.sortable thead {
 
 .pancarte-profil {
     background: rgba(0, 0, 0, 0.68);
+    border: solid 2px #757575;
     padding: 4px 9px;
     display: block;
     text-align: center;
@@ -1200,6 +1266,20 @@ table.sortable thead {
     border-radius: 5px;
 }
 
+.pancarte-match {
+    background: rgba(0, 0, 0, 0.68);
+    border: solid 2px #757575;
+    padding: 14px 12px;
+    display: block;
+    text-align: center;
+    font-size: 35px;
+    color: #FFF;
+    font-weight: bold;
+    min-width: 10px;
+    border-radius: 5px;
+}
+
+
 .pancarte-padding {
     padding: 3px 9px;
 }
@@ -1207,6 +1287,11 @@ table.sortable thead {
 .pancarte-perfect {
     background: #00b7ff;
     border: solid 2px #c0f4fa;
+}
+
+.pancarte-correct-plus {
+    background: #2bdfaa;
+    border: solid 2px #b1f7ff;
 }
 
 .pancarte-correct {
@@ -1576,14 +1661,18 @@ div#add_err {
     /* height: 367px; */
     margin: auto;
     padding: 0;
-    max-width: 1000px;
+    max-width: 980px;
     background: #ffffff61;
     border-radius: 0 0 20px 20px;
 }
 
 .loginform-in-acceuil {
-    background: rgba(255, 255, 255, 0.26);
-    width: auto;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    max-width: 1300px;
+    background: #ffffff61;
+    border-radius: 0 0 20px 20px;
 }
 
 .loginform-in fieldset {
@@ -1676,6 +1765,25 @@ div#add_err {
     width: 100%;
     color: #000;
     font-weight: bold;
+}
+
+.full-table-collapse-white-accueil {
+    border-collapse: collapse;
+    width: 100%;
+    color: #000;
+    font-weight: bold;
+    height: 60px;
+}
+
+.margin-top-minus {
+    margin-top: -10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.margin-auto {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .statusprofil {
@@ -1818,6 +1926,28 @@ span.dateCalendarText {
     font-size: 19px;
     font-weight: bold;
     color: #ffffff;
+}
+
+.dateMatchText {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 40px;
+    text-align: left;
+    padding-left: 50px;
+    border-bottom: solid 1px;
+    border-top: solid 1px;
+}
+
+.dateMatchProfilText {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    line-height: 40px;
+    text-align: left;
+    padding-left: 50px;
+    border-bottom: solid 1px #FFF;
+    border-top: solid 1px #FFF;
 }
 
 .resumeJoker {
@@ -2465,7 +2595,7 @@ border-radius: 50%;
 }
 
 .match-bars {
-    padding-top: 29px;
+    padding-top: 10px;
 }
 
 .showmore {
@@ -2620,7 +2750,6 @@ img.tombi-carte-content-photo-img {
 }
 
 .profilPage-content-stat {
-    padding: 0 42px;
 }
 
 
@@ -2629,7 +2758,7 @@ img.tombi-carte-content-photo-img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px 50px;
+    padding: 10px 10px;
 }
 
 .profilPage-content-stats-bars-line {
@@ -2690,6 +2819,12 @@ img.tombi-carte-content-photo-img {
     border: solid 2px #b1f7c0;
 }
 
+.bar-correct-plus {
+    background: #2bdfaa;
+    border: solid 2px #b1f7ff;
+}
+
+
 .bar-inverse {
     background: #757575;
     border: solid 2px #cdcdcd;
@@ -2714,7 +2849,7 @@ img.tombi-carte-content-photo-img {
 .profilPage-content-stats-waiting-titre {
     font-size: 30px;
     font-weight: bold;
-    padding: 90px 50px 28px 50px;
+    padding: 30px 50px 28px 50px;
     color: #3f3f3f;
 }
 
@@ -2722,6 +2857,7 @@ img.tombi-carte-content-photo-img {
     font-size: 18px;
     color: #3f3f3f;
     font-family: "Kalam", cursive;
+    padding: 10px 50px 28px 50px;
 }
 
 .bonus-empty {
@@ -2809,6 +2945,7 @@ img.tombi-carte-content-photo-img {
     padding: 10px 0 2px 0;
     color: #002c90;
     background: #ffffff26;
+    border-radius: 20px 20px 0 0;
 }
 
 .viewMatchTitlProfil {
@@ -2889,4 +3026,246 @@ img.tombi-carte-content-photo-img {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.match-ligne {
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.match-ligne-name {
+    font-size: 35px;
+    width: 200px;
+}
+.match-ligne-score {
+    width: 50px;
+}
+.match-ligne-separator {
+    font-size: 30px;
+    padding: 5px;
+}
+
+.match-ligne-right {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.match-ligne-left {
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+
+.rougedefault {
+    background: #ffffff91;
+}
+
+.mdl-card {
+    margin: 5px;
+    background: #ffffff91;
+}
+
+.demo-card-event.mdl-card {
+    flex: 1 1 600px;
+    margin: 5px;
+    background: #ffffff91;
+}
+  
+.classement-card-event.mdl-card {
+    width: 100%;
+    height: 412px;
+}
+
+.classement-general {
+    background: #72203c70;
+}
+  
+.classement-equipe {
+    background: #2240c6;
+}
+  
+.classement-femme {
+    background: #f51461;
+}
+  
+.classement-montagne {
+    background: #3bae1a;
+}
+  
+.information-card-event.mdl-card {
+    flex: 1 1 400px;
+    min-height: 102px;
+    background: #ffffff91;
+}
+
+.statistics-card-event.mdl-card {
+    width: 100%;
+    min-height: 110px;
+    background: #ffffff91;
+}
+  
+.bonus-favotire-card-event.mdl-card {
+    width: 840px;
+    min-height: 408px;
+    height: 408px;
+    background: #ffffff91;
+}
+  
+.bonus-small-card-event.mdl-card {
+    width: 270px;
+    height: 405px;
+    background: #ffffff91;
+}
+  
+.small-card-event.mdl-card {
+    width: 200px;
+    height: 120px;
+    min-height: 120px;
+    background: #ffffff91;
+}
+  
+.bonus-medium-card-event.mdl-card {
+    width: 415px;
+    height: 405px;
+    background: #ffffff91;
+}
+  
+.chips-body {
+    background: #ffffff26;
+    color: #fff;
+}
+  
+.chips-red {
+    background: #f51414 !important;
+}
+  
+.chips-green {
+    background: #3bae1a !important;
+}
+  
+.chips-red-body:active {
+    background: #f51414 !important;
+}
+  
+.chips-green-body:active {
+    background: #3bae1a !important;
+}
+  
+  
+.displaymatch-card-event.mdl-card {
+    margin: auto;
+    width: 850px;
+    margin-top: 20px;    
+    background: #ffffff91;
+}
+  
+.displaymatch-card-event.stats {
+    min-height: 0;
+}
+  
+.height300 {
+  height: 356px !important;
+  min-height: 356px !important;
+}
+  
+.height150 {
+  height: 418px !important;
+  min-height: 190px !important;
+}
+  
+.heightbonusform {
+    height: 500px !important;
+    min-height: 500px !important;
+}
+  
+#RetourProfil {
+  background: #ffffff;
+  color: #002c90; 
+}
+  
+#RetourAcceuil {
+  background: #ffffff;
+  color: #002c90;
+}
+
+.match-card-event.mdl-card {
+    width: 550px;
+    height: 500px;
+    background: #00000014;
+    margin: auto;
+    margin-top: 40px;
+}
+  
+.classementbutton {
+    background: none !important;
+}
+
+.accueil-match-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 65px;
+}
+
+/* .accueil-match-line-last-day {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 45px;
+} */
+
+.accueil-match-score {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 340px;
+}
+
+.accueil-match-score-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .accueil-match-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 340px;
+} */
+
+.accueil-match-score-last-day {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 340px;
+}
+
+.accueil-score {
+    /* margin-left: 20px; */
+    padding: 0;
+    font-weight: bold;
+    font-size: 13px;
+    color: #474747;
+    height: 12px;
+    padding: 2px 0 0 0;
+}
+
+.profil-time {
+    font-size: 18px;    
+    text-align: center;
+    margin: auto;
+}
+
+.update-profil-sub-line {
+    display: flex;
+    justify-content: space-between;
 }

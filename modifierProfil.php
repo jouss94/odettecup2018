@@ -11,8 +11,7 @@ if ($id == 0) { header('Location: index.php'); }
 	<head>
 		<title>Modifier Profil</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/formProfil.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -24,9 +23,6 @@ if ($id == 0) { header('Location: index.php'); }
 		<script src="javascript/profil.js"></script>
 		<script src="javascript/profilForm.js"></script>
 		<script src="javascript/jquery.validVal.min.js"></script>
-		<link rel="stylesheet" href="./material_design/material.css">
-		<link rel="stylesheet" href="./material_design/style.css">
-		<link rel="stylesheet" href="./material_design/font.css">
 	</head>	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>

@@ -21,11 +21,14 @@
 <div class="admin">
 
 <?php 
-	$url =  'http://ics.fixtur.es/v2/league/ligue-1.ics';
+	$url =  'https://ics.fixtur.es/v2/league/ligue-1.ics';
 	$file_name = basename($url); 
 
+	echo $file_name;
+
 	$calendarContent = file_get_contents($url);
-	include("IcsReader\IcsReader.php");
+
+	include("IcsReader/IcsReader.php");
 
 	$reader = new IcsReader();
 	$ics    = $reader->parse($calendarContent);
@@ -33,7 +36,7 @@
 	$arrayYears = explode('-', $years);
 	$startDate =  $arrayYears[0] . '/07/01';
 	$endDate =  $arrayYears[1] . '/07/01';
-
+	
 	$qry = " DELETE FROM `matches` WHERE date > '$startDate' AND date < '$endDate'";
 	echo $qry;
 	$result = mysqli_query($con, $qry);

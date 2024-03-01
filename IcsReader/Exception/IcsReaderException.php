@@ -15,3 +15,5 @@ namespace IcsReader\Exception;
 abstract class IcsReaderException extends \Exception {
 
 }
+
+?>

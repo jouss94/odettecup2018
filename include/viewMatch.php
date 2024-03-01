@@ -52,7 +52,7 @@
 
 		$canDisplayPronos = false;
 
-		$subQry = "SELECT * FROM matches WHERE day = $day AND Date < CURDATE() ORDER BY Date LIMIT 1;";
+		$subQry = "SELECT * FROM matches WHERE day = $day AND Date < NOW() ORDER BY Date LIMIT 1;";
 		$subResult = mysqli_query($con, $subQry);
 		$num_row = mysqli_num_rows($subResult);
 		if ($num_row == 1) {
@@ -76,7 +76,7 @@
 					,' '
 					,$months[$date_array['month']],
 					"</br>",
-					$date_array['hour'], 'h', $minute;
+					$date_array['hour'], ':', $minute;
 
 					echo '</div></td>
 					<td style="margin: auto;width: 25%;text-align: right;" >', $diff,  
@@ -84,45 +84,34 @@
 
 		echo '</tr>
 		</table>';
-
 		echo '
-		<table style="margin:auto;width: 100%;border-collapse: collapse;    margin-top: 20px;">
-			<tr>
-					<td style="margin: auto;text-align: right;padding-right: 40px;">
-						<img class="logoEquipeBig" src="', $home_logo,'" />
-					</td>
-					<td >';
+		<div class="match-ligne">
+			<div class="match-ligne-logo">
+				<img class="logoEquipeBig" src="', $home_logo,'" />
+			</div>
+			<div class="match-ligne-name match-ligne-right" >', 
+				$home_name,
+			'</div>
 
-					echo '</td>
-					<td >  ', 
-					'</td>
-					<td >'; 
-					echo '</td>
-					<td style="margin: auto;text-align: left;padding-left: 40px;">
+			<div class="match-ligne-score">'; 
+				if ($played == 1)
+					echo '<div class="pancarte-match " >',  $score_home,'</div>';
+
+			echo '</div>
+			<div class="match-ligne-separator" >-', 
+			'</div>
+			<div class="match-ligne-score">'; 
+				if ($played == 1)
+					echo '<div class="pancarte-match ">',  $score_away,'</div>';
+
+			echo '</div>
+			<div class="match-ligne-name match-ligne-left" >', 
+					$away_name,
+			'</div>
+			<div class="match-ligne-logo">
 						<img class="logoEquipeBig" src="', $away_logo,'" />
-					</td>
-			</tr>
-			<tr>
-					<td class="BigTitreRight" >', 
-						$home_name,
-					'</td>
-					<td style="width: 8%;">'; 
-						if ($played == 1)
-							echo '<span class="pancarte" style="font-size: 35px;">',  $score_home,'</span>';
-
-					echo '</td >
-					<td style="font-size: 50px;width:20px">-', 
-					'</td>
-					<td style="width: 8%;">'; 
-						if ($played == 1)
-							echo '<span class="pancarte" style="font-size: 35px;">',  $score_away,'</span>';
-
-					echo '</td>
-					<td class="BigTitreLeft" >', 
-						$away_name,
-					'</td>
-			</tr>
-		</table>';
+			</div>
+		</div>';
 
 if ($canDisplayPronos)
 {
@@ -141,8 +130,8 @@ if ($canDisplayPronos)
 		<table class="percentBar">
 		<tr> 
 			<td class="colorEresult barpronos barresulte "></td>
-			<td class="colorIresult barpronos barresulti "></td>
 			<td class="colorCresult barpronos barresultc "></td>
+			<td class="colorIresult barpronos barresultcp "></td>
 			<td class="colorPresult barpronos barresultp "></td>
 		</tr>
 		</table></div>  ';
@@ -198,7 +187,7 @@ echo '
 		
 	$ResultP = 0;
 	$ResultC = 0;
-	$ResultI = 0;
+	$ResultCp = 0;
 	$ResultE = 0;
 
 
@@ -239,25 +228,37 @@ echo '
 			$ResultP++;
 		} else if ($point == 3 || $point == 6) {
 			$ResultC++;
-		} else if ($point == 1 || $point == 2) {
-			$ResultI++;
+		} else if ($point == 4 || $point == 8) {
+			$ResultCp++;
 		} else {
 			$ResultE++;
 		}
 
+		$classPancarte = "";
 		$classTR = "classTRNeutre";
-			if ($point == 0)
+		if ($played == 1) {
+			if ($point == 0) {
 				$classTR = "classTREchecHome";
-			if ($point == 1 || $point == 2)
+				$classPancarte = "pancarte-echec";
+			}
+			if ($point == 1 || $point == 2) {
 				$classTR = "classTRInverseHome";
-			if ($point == 3 || $point == 6)
+				$classPancarte = "pancarte-inverse";
+			}
+			if ($point == 3 || $point == 6) {
 				$classTR = "classTRCorrectHome";
-			if ($point == 4 || $point == 8)
+				$classPancarte = "pancarte-correct";
+			}
+			if ($point == 4 || $point == 8) {
 				$classTR = "classTRCorrectPlusHome";
-			if ($point == 7 || $point == 14)
+				$classPancarte = "pancarte-correct-plus";
+			}
+			if ($point == 7 || $point == 14) {
 				$classTR = "classTRPerfectHome";
-
-					$date_array = date_parse($row["date"]);
+				$classPancarte = "pancarte-perfect";
+				
+			}
+		}
 
 		$date_array = date_parse($row["date"]);
 		if ($i++ % 2 == 0) {
@@ -272,9 +273,9 @@ echo '
 		echo '<td class="homeEquipeDroiteMatch">';
 		echo $home_name;	
 		echo '</td>';
-		echo '<td class="pronosMatch">', $pronos_home ,' </td>';
+		echo '<td class="pronosMatch"><span class="pancarteBig '.$classPancarte.'">', $pronos_home ,'</span> </td>';
 		echo '<td class="homeEquipeMilieuMatch"> - </td>';
-		echo '<td class="pronosMatch">', $pronos_away ,' </td>';
+		echo '<td class="pronosMatch"><span class="pancarteBig '.$classPancarte.'">', $pronos_away ,'</span> </td>';
 		echo '<td class="homeEquipeGaucheMatch">';
 		echo $away_name;	
 		echo '</td>';
@@ -326,16 +327,16 @@ $px_b1 = $Result1 * 600 / $total;
 $px_b2 = $Result2 * 600 / $total;
 $px_bN = $ResultN * 600 / $total;
 
-$total2 = $ResultP + $ResultC + $ResultI + $ResultE;
+$total2 = $ResultP + $ResultC + $ResultCp + $ResultE;
 $px_bP = $ResultP * 600 / $total2;
 $px_bC = $ResultC * 600 / $total2;
-$px_bI = $ResultI * 600 / $total2;
+$px_bI = $ResultCp * 600 / $total2;
 $px_bE = $ResultE * 600 / $total2;
 
 
 $class_bP = "0px 5px 5px 0px";
 $class_bC = "0px";
-$class_bI = "0px";
+$class_bCp = "0px";
 $class_bE = "5px 0px 0px 5px";
 
 if ($px_bP == 600) {
@@ -343,19 +344,19 @@ if ($px_bP == 600) {
 } else if ($px_bC == 600) {
 	$class_bC = "5px";
 } else if ($px_bI == 600) {
-	$class_bI = "5px";
+	$class_bCp = "5px";
 }  else if ($px_bE == 600) {
 	$class_bE = "5px";
 }	else {
 	if ($px_bP == 0) {
 		$class_bC = "0px 5px 5px 0px";
 		if ($px_bC == 0) {
-			$class_bI = "0px 5px 5px 0px";
+			$class_bCp = "0px 5px 5px 0px";
 		}
 	} 
 
 	if ($px_bE == 0) {
-		$class_bI = "5px 0px 0px 5px";
+		$class_bCp = "5px 0px 0px 5px";
 		if ($px_bI == 0) {
 			$class_bC = "5px 0px 0px 5px";
 		}
@@ -417,8 +418,8 @@ if ($played == 1) {
 		border-radius: '.$class_bC.';
 		width: '. $px_bC .'px;
 	}
-	.barresulti{
-		border-radius: '.$class_bI.';
+	.barresultcp{
+		border-radius: '.$class_bCp.';
 		width: '. $px_bI .'px;
 	}
 	.barresulte{
@@ -433,7 +434,7 @@ if ($played == 1) {
 	background-color: #29cd35;
 }
 .colorIresult{
-	background-color: #757575;
+	background-color: #2bdfaa;
 }
 .colorEresult{
 	background-color: #ff3b3b;

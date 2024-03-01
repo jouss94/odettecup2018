@@ -7,28 +7,41 @@
 	require_once 'config.php';
 	require_once 'functions.php';
 
+	$current_day_update = $GLOBALS['current_day'];
+	$current_day_in_progress_update = $GLOBALS['current_day_in_progress'];
+	if ($current_day_in_progress_update) {
+		$current_day_update++;
+	}
 
 	parse_str($_SERVER["QUERY_STRING"], $query);
 	$idProfil = $query['id'];
 
-	$modifMatch = false;
-	$modifBonus = false;
-	$modifJoker = false;
+	$qry = "SELECT * FROM joueurs 
+	LEFT JOIN pronostics pronos ON pronos.id_joueur = $id 
+	LEFT JOIN matches ON matches.id_match = pronos.id_match  
+	WHERE joueurs.id_joueur=$id and day = $current_day_update
+	";
+	$res = mysqli_query($con, $qry);
+	$nb = mysqli_num_rows($res);
 
-	$qry = "SELECT * FROM etat WHERE competition = $competition;";
-	$result = mysqli_query($con, $qry);
-	while ($row = mysqli_fetch_array($result )) 
-	{
-		if ($row["attribut"] == "PRONOS_BONUS") {
-			$modifBonus = $row["value"];
-		}
-		if ($row["attribut"] == "PRONOS") {
-			$modifMatch = $row["value"];
-		}
-		if ($row["attribut"] == "JOKER") {
-			$modifJoker = $row["value"];
-		}
-	}
+	// $modifMatch = false;
+	// $modifBonus = false;
+	// $modifJoker = false;
+
+	// $qry = "SELECT * FROM etat WHERE competition = $competition;"; // CHANGE HERE
+	// $result = mysqli_query($con, $qry);
+	// while ($row = mysqli_fetch_array($result )) 
+	// {
+	// 	if ($row["attribut"] == "PRONOS_BONUS") {
+	// 		$modifBonus = $row["value"];
+	// 	}
+	// 	if ($row["attribut"] == "PRONOS") {
+	// 		$modifMatch = $row["value"];
+	// 	}
+	// 	if ($row["attribut"] == "JOKER") {
+	// 		$modifJoker = $row["value"];
+	// 	}
+	// }
 
 	$qry = "SELECT 
 		*,
@@ -67,7 +80,7 @@
 			$generalpoints = intval($row["generalpoints"]);
 			$nb_perf = intval($row["nb_perf"]);
 			$nb_correct = intval($row["nb_correct"]);
-			$nb_inverse = intval($row["nb_inverse"]);
+			$nb_correct_plus = intval($row["nb_correct_plus"]);
 			$nb_echec = intval($row["nb_echec"]);
 			$bonus = intval($row["bonus"]);
 		}
@@ -103,7 +116,7 @@
             <div class="checkbox-wrapper-22">
                 <label class="switch" for="checkbox-profil">
                     <input type="checkbox" id="checkbox-profil" disabled
-                        <?php if ($modif_profil == 1 && $modif_match == 1 && $modif_bonus == 1) echo 'checked';?> />
+                        <?php if ($modif_profil == 1 && $nb == 9) echo 'checked';?> />
                     <div class="slider round"></div>
                 </label>
             </div>
@@ -155,7 +168,7 @@
     <div class="profilPage-content-pronos">
         <div class="profilPage-content-pronos-list">
             <div class="profilPage-info-perso-modif">
-            <?php if($idProfil == $id && $modifMatch == 1): ?>
+            <?php if($idProfil == $id): ?>
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
                     id="modifierMatch">
                     Modifier matches
@@ -196,38 +209,34 @@ echo '
 		// $bonus = 10;
 		$nb_perf_point = $nb_perf * 7;
 		$nb_correct_point = $nb_correct * 3;
-		$nb_inverse_point = $nb_inverse;
+		$nb_correct_plus_point = $nb_correct_plus * 4;
 		$nb_echec;
 		
-		$nb_total_point = $nb_perf_point + $nb_correct_point + $nb_inverse_point + $bonus;
-		$nb_total = $nb_perf + $nb_correct + $nb_inverse + $nb_echec;
+		$nb_total_point = $nb_perf_point + $nb_correct_point + $nb_correct_plus_point;
+		$nb_total = $nb_perf + $nb_correct + $nb_correct + $nb_echec;
 
-		$nb_total_point = max($nb_perf_point, $nb_correct_point, $nb_inverse_point, $bonus);
-		$nb_total = max($nb_perf, $nb_correct, $nb_inverse, $nb_echec);
+		$nb_total_point = max($nb_perf_point, $nb_correct_point, $nb_correct_plus_point);
+		$nb_total = max($nb_perf, $nb_correct, $nb_correct_plus, $nb_echec);
 
 		$pc_perf_match = 7;
 		$pc_correct_match = 7;
-		$pc_inverse_match = 7;
+		$pc_correct_plus_match = 7;
 		$pc_echec_match = 7;
-		$pc_bonus_match = 7;
 		if ($nb_total != 0) {
 			$pc_perf_match = ($nb_perf * 93 / $nb_total) + 7;
 			$pc_correct_match = ($nb_correct * 93 / $nb_total) + 7;
-			$pc_inverse_match = ($nb_inverse * 93 / $nb_total) + 7;
+			$pc_correct_plus_match = ($nb_correct_plus * 93 / $nb_total) + 7;
 			$pc_echec_match = ($nb_echec * 93 / $nb_total) + 7;
-			$pc_bonus_match = 7;
 		}
 
 		$pc_perf_point = 7;
 		$pc_correct_point = 7;
-		$pc_inverse_point = 7;
-		$pc_bonus_point = 7;
+		$pc_correct_plus_point = 7;
 		$pc_echec_point = 7;
 		if ($nb_total_point != 0) {
 			$pc_perf_point = ($nb_perf_point * 93 / $nb_total_point) + 7;
 			$pc_correct_point = ($nb_correct_point * 93 / $nb_total_point) + 7;
-			$pc_inverse_point = ($nb_inverse_point * 93 / $nb_total_point) + 7;
-			$pc_bonus_point = ($bonus * 93 / $nb_total_point) + 7;
+			$pc_correct_plus_point = ($nb_correct_plus_point * 93 / $nb_total_point) + 7;
 			$pc_echec_point = 7;
 		}
 
@@ -257,6 +266,21 @@ echo '
 					</div>
 					<div class="profilPage-content-stats-bars-line">
 						<div class="profilPage-content-stats-bars-line-match">
+							<div  style=" width:<?php echo $pc_correct_plus_match?>%; " class="profilPage-content-stats-bars-line-match-bar bar-correct-plus">
+								<?php echo $nb_correct_plus?>
+							</div>
+						</div>
+						<div class="profilPage-content-stats-bars-line-titre">
+							Correct+
+						</div>
+						<div class="profilPage-content-stats-bars-line-point">
+							<div style=" width:<?php echo $pc_correct_plus_point?>%; " class="profilPage-content-stats-bars-line-point-bar bar-correct-plus">
+								<?php echo $nb_correct_plus_point?>pts
+							</div>
+						</div>
+					</div>
+					<div class="profilPage-content-stats-bars-line">
+						<div class="profilPage-content-stats-bars-line-match">
 							<div  style=" width:<?php echo $pc_correct_match?>%; " class="profilPage-content-stats-bars-line-match-bar bar-correct">
 								<?php echo $nb_correct?>
 							</div>
@@ -267,21 +291,6 @@ echo '
 						<div class="profilPage-content-stats-bars-line-point">
 							<div  style=" width:<?php echo $pc_correct_point?>%; " class="profilPage-content-stats-bars-line-point-bar bar-correct">
 								<?php echo $nb_correct_point?>pts
-							</div>
-						</div>
-					</div>
-					<div class="profilPage-content-stats-bars-line">
-						<div class="profilPage-content-stats-bars-line-match">
-							<div  style=" width:<?php echo $pc_inverse_match?>%; " class="profilPage-content-stats-bars-line-match-bar bar-inverse">
-								<?php echo $nb_inverse?>
-							</div>
-						</div>
-						<div class="profilPage-content-stats-bars-line-titre">
-							Inverse
-						</div>
-						<div class="profilPage-content-stats-bars-line-point">
-							<div style=" width:<?php echo $pc_inverse_point?>%; " class="profilPage-content-stats-bars-line-point-bar bar-inverse">
-								<?php echo $nb_inverse_point?>pts
 							</div>
 						</div>
 					</div>
@@ -300,23 +309,6 @@ echo '
 							</div>
 						</div>
 					</div>
-
-					<div class="profilPage-content-stats-bars-line">
-						<div class="profilPage-content-stats-bars-line-match">
-							<div style=" width:<?php echo $pc_bonus_match?>%; " class="profilPage-content-stats-bars-line-match-bar bar-bonus">
-								N/A
-							</div>
-						</div>
-						<div class="profilPage-content-stats-bars-line-titre">
-							Bonus
-						</div>
-						<div class="profilPage-content-stats-bars-line-point">
-							<div style=" width:<?php echo $pc_bonus_point?>%; "  class="profilPage-content-stats-bars-line-point-bar bar-bonus">
-								<?php echo $bonus?>pts
-							</div>
-						</div>
-					</div>
-
 				</div>
 				<?php } else { ?>
 					<div class="profilPage-content-stats-waiting-titre">

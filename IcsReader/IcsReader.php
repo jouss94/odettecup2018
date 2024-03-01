@@ -15,9 +15,9 @@
  * @package IcsReader
  */
 
- 
- include("IcsReader\IcsHelper.php");
- include("IcsReader\IcsResult.php");
+ echo 'OK';
+ include("IcsReader/IcsHelper.php");
+ include("IcsReader/IcsResult.php");
 
 class IcsReader
 {
@@ -302,3 +302,5 @@ class IcsReader
         $iCalResult->setCalendar($calendar);
     }
 }
+
+?>

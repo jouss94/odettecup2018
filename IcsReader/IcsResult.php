@@ -197,3 +197,5 @@ class IcsResult
         $this->lastKeyword = $lastKeyword;
     }
 }
+
+?>

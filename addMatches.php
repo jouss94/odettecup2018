@@ -8,15 +8,6 @@ if ($id == 0) { header('Location: index.php'); }
 
 require_once 'config.php';
 
-function changeEtat($con)
-{
-	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
-
-	$qry = " UPDATE  joueurs SET modif_match = 1 
-							WHERE id_joueur = $id";
-	$result = mysqli_query($con, $qry);
-}
-
 function addMatches($con)
 {
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
@@ -25,11 +16,10 @@ function addMatches($con)
 	$firstID = intval($_POST[ 'firstid' ]);
 	$lastID = intval($_POST[ 'lastid' ]);
 
-	$qry = " SELECT day FROM matches WHERE id_match = $firstID AND date > CURDATE() LIMIT 1";
+	$qry = " SELECT day FROM matches WHERE id_match = $firstID AND date > NOW() LIMIT 1";
 	$result = mysqli_query($con, $qry);
 	$num_row = mysqli_num_rows($result);
 	if ($num_row != 1) {
-		$return = false;
 		return false;
 	}
 
@@ -37,12 +27,7 @@ function addMatches($con)
 	$result = mysqli_query($con, $qry);
 	if (!$result) 
 	{
-		$return = false;
 		return false;
-	}
-	else 
-	{
-		$return = true;
 	}
 
 
@@ -59,22 +44,21 @@ function addMatches($con)
 				$home = $_POST[ $idHome ];
 				$away = $_POST[ $idAway ];
 
-				// echo $idMatch . " - ";
-				$qry = " INSERT INTO pronostics (id_joueur, id_match, prono_home, prono_away) VALUES ($id, $idMatch, $home, $away);";
-				$result = mysqli_query($con, $qry);
-					if (!$result) {
-						$return = false;
-						return false;
-					}
-					else
-						$return = true;
+				if( is_numeric($home) && is_numeric($away) )
+				{
+					$qry = " INSERT INTO pronostics (id_joueur, id_match, prono_home, prono_away) VALUES ($id, $idMatch, $home, $away);";
+					$result = mysqli_query($con, $qry);
+						if (!$result) {
+							return false;
+						}
+				}
 		}
 
 
 		$firstID++;
 	}
 
-	return $return;
+	return true;
 }
 
 ?>
@@ -84,7 +68,7 @@ function addMatches($con)
 		<title>Modifier matches</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/formMatch.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -96,9 +80,6 @@ function addMatches($con)
 		<script src="javascript/profil.js"></script>
 		<script src="javascript/pronosForm.js"></script>
 		<script src="javascript/jquery.validVal.min.js"></script>
-		<link rel="stylesheet" href="./material_design/material.css">
-		<link rel="stylesheet" href="./material_design/style.css">
-		<link rel="stylesheet" href="./material_design/font.css">
 		
 	</head>	
 	<body>
@@ -119,7 +100,6 @@ function addMatches($con)
 
 				echo "<div class='valideDemand' id='add_valideDemand'><img src='images/check.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Votre demande a été enregistrée.
 			</br></br> Vous pouvez toujours modifier vos pronostics jusqu'à la date butoir sur votre Profil</div>";
-				changeEtat($con);
 			}
 			else
 				echo "<div class='errorDemand' id='add_errDemand'><img src='images/alert.png' style='width: 40px;display:block;margin: auto;margin-top: 15px;padding-bottom: 30px;' />Une erreur est survenue.</div>";

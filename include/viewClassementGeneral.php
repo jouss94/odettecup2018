@@ -5,14 +5,14 @@
 	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
 
 	$qry = "SELECT *, 
-	(nb_perf+nb_correct_plus+nb_correct+nb_inverse+nb_echec)  as total ,
+	(nb_perf+nb_correct_plus+nb_correct+nb_echec)  as total ,
 	equipe_winner.logo as logo
 	from joueurs 
 	LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'general' 
 	
 	LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe 
 	WHERE joueurs.competition = $competition
-	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC, surnom;";
+	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, surnom;";
 	$result = mysqli_query($con, $qry);
 	$find = false;
 	$i = 0;
@@ -28,10 +28,9 @@
 <th >Surnom</th>
 <th class="titleSmallTexte">Ponos</th>
 <th class="titleSmallTexte">Perfect</th>
+<th class="titleSmallTexte">Correct+</th>
 <th class="titleSmallTexte">Correct</th>
-<th class="titleSmallTexte">Inverse</th>
 <th class="titleSmallTexte">Echec</th>
-<th class="titleSmallTexte">Bonus</th>
 <th class="titleSmallTexte"> Points</th>
 </tr>
 </thead>';
@@ -83,16 +82,13 @@
 					$nb_perf,
 				'</td>
 				<td class="ClassementCorrect">',
-					$nb_correct,
+					$nb_correct_plus,
 				'</td>
-				<td class="ClassementInverse">',
-					$nb_inverse,
+				<td class="ClassementCorrect">',
+					$nb_correct,
 				'</td>
 				<td class="ClassementEchec">',
 					$nb_echec,
-				'</td>
-				<td class="ClassementBonus">',
-					$bonus,
 				'</td>
 				<td class="ClassementPoints">',
 					$points,

@@ -12,7 +12,7 @@ if ($id == 0) { header('Location: index.php'); }
 		<title>Profil</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 		<script src="javascript/jquery-2.2.3.min.js"></script>
@@ -22,10 +22,6 @@ if ($id == 0) { header('Location: index.php'); }
 		<script src="javascript/acceuil.js"></script>
 		<script src="javascript/profil.js"></script>
 		<script src="javascript/getDisplayDay.js"></script>
-		<link rel="stylesheet" href="./material_design/material.css">
-		<link rel="stylesheet" href="./material_design/style.css">
-		<link rel="stylesheet" href="./material_design/font.css">
-
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">

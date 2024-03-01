@@ -48,6 +48,9 @@
 	date_default_timezone_set('Europe/Paris');
 	$now = new \DateTime(date("Y-m-d H:i:s"), new DateTimeZone("Europe/Paris"));
 
+	
+	$current_date = "";
+
 	while ($row = mysqli_fetch_array($result )) 
 	{	
 		$find = true;
@@ -83,10 +86,6 @@
 		}	
 
 		$classPancarte = "";
-
-
-
-		$date_array = date_parse($row["date"]);
 		if ($i++ % 2 == 0) {
 			$background = 'backgroundTab1';
 		}
@@ -94,62 +93,101 @@
 			$background = 'backgroundTab2';
 		}
 
+
 		$html .='<div class="profil-line '. $background .'">';
 
 		$html .='<table class="affPronosTableau">';
 
+		$date = utf8_encode_function($row["date"]);		
+		$dateDay = substr($date, 0, 10);
+		
+		$date_array = date_parse($row["date"]);
 
+		if ($current_date != $dateDay) {
+	
+			$html .=  '
+			</table>
+			</div>
+			<div class="dateMatchProfilText"> '
+				.$days[date('w', strtotime($date))] 
+				.' '
+				.$date_array['day']
+				.' '
+				.$months[$date_array['month']]
+			.' </div>
+			<div class="profil-line backgroundTab2">	
+			<table class="full-table-collapse-white">
+			';
+			$first = true;
+			$i = 0;
+		}
+		$current_date = $dateDay;
 
-		$html .='	<tr class="affPronosLigne ">';
-			if ($row["played"] == 1)
-			{
-				$point = $row["point"];
-				if ($point == 0)
-					$classPancarte = "pancarte-padding pancarte-echec";
-				if ($point == 1 || $point == 2)
-					$classPancarte = "pancarte-padding pancarte-inverse";
-				if ($point == 3 || $point == 6)
-					$classPancarte = "pancarte-padding pancarte-correct";
-				if ($point == 4 || $point == 8)
-					$classPancarte = "pancarte-padding pancarte-correct";
-				if ($point == 7 || $point == 14)
-					$classPancarte = "pancarte-padding pancarte-perfect";
-			}
+		$html .='	<tr class="affPronosLigne">';
+		if ($row["played"] == 1)
+		{
+			$point = $row["point"];
+			if ($point == 0)
+				$classPancarte = "pancarte-padding pancarte-echec";
+			if ($point == 1 || $point == 2)
+				$classPancarte = "pancarte-padding pancarte-inverse";
+			if ($point == 3 || $point == 6)
+				$classPancarte = "pancarte-padding pancarte-correct";
+			if ($point == 4 || $point == 8)
+				$classPancarte = "pancarte-padding pancarte-correct-plus";
+			if ($point == 7 || $point == 14)
+				$classPancarte = "pancarte-padding pancarte-perfect";
+
+			$html .='<td class="ProfilPointText '. $classTR .'"  style="width:12%">';
 			
-			$html .='<td class="'. $classTR .'"  style="width:8%">';
-			if ($row["played"] == 1)
-			{
-				$point = $row["point"];
-				if ($point == 0)
-					$html .='<div class="EchecPronos">ECHEC</div>';
-				if ($point == 1 || $point == 2)
-					$html .='<div class="InversePronos">INVERSE</div>';
-				if ($point == 3 || $point == 6)
-					$html .='<div class="CorrectPronos">CORRECT</div>';
-				if ($point == 4 || $point == 8)
-					$html .='<div class="CorrectPlusPronos">CORRECT+</div>';
-				if ($point == 7 || $point == 14)
-					$html .='<div class="PerfectPronos">PERFECT</div>';
-			}
 			// else if ($row["played"] == 0)
 			// {
 			// 	 $html .='<div class="PasJouePronos">EN ATTENTE</div>';					
 			// }	
 
-		$html .='</td>';
+			// $html .='</td>';
 
 			$point = 0;
 			if ($row["point"] != "") {
 				$point = $row["point"];
 			}
 
-			$html .='<td class="'. $classTR .'" style="width:4%;text-align: center;font-size: 16px;font-weight: bold;">';
+			$html .='<div class="ProfilPoint '. $classTR .'" >';
 			if ($row["played"] == 1)
 				{
-					$html .='+'. $point;
+					if ($point > 0) {
+						$html .= '+';
+					}
+					$html .= $point;
 				}
 
+			$html .='</div>';
+
+			if ($row["played"] == 1)
+			{
+				$point = $row["point"];
+				if ($point == 0)
+					$html .='<div class="">ECHEC</div>';
+				if ($point == 1 || $point == 2)
+					$html .='<div class="">INVERSE</div>';
+				if ($point == 3 || $point == 6)
+					$html .='<div class="">CORRECT</div>';
+				if ($point == 4 || $point == 8)
+					$html .='<div class="">CORRECT+</div>';
+				if ($point == 7 || $point == 14)
+					$html .='<div class="">PERFECT</div>';
+			}
+
 			$html .='</td>';
+		}
+		else {
+			$html .='<td class=""  style="width:12%">';
+				$html .= '<div class="profil-time">';
+				$html .= display2DigitNumer($date_array['hour']). ":" . display2DigitNumer($date_array['minute']);	
+			$html .= '</div>';
+			$html .='</td>';
+		}
+
 
 			$html .='<td style="width:8%;padding: 15px 0px;" class="affPronosLogo">';
 				$html .='<img class="logoEquipe"  style="margin-top: 2px;margin-bottom: 2px;margin-left: 10px;" src="'. utf8_encode_function($row["home_logo"]). '" />';

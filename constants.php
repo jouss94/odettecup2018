@@ -1,10 +1,10 @@
 <?php
 $isProd = false;
 
-$host = $isProd ? 'db5010493162.hosting-data.io': 'localhost';
-$dbname = $isProd ? 'dbs8886736' : 'odetteligue';
-$user= $isProd ? 'dbu1681172' : 'root';
-$pass = $isProd ? 'DZHJDLQS58266' : '';
+$host = $isProd ? 'db5015460564.hosting-data.io': 'localhost';
+$dbname = $isProd ? 'dbs12640172' : 'odetteligue1';
+$user= $isProd ? 'dbu5599130' : 'root';
+$pass = $isProd ? 'U2LTUPKYkBh+hUf' : '';
 
 // $host = $isProd ? 'localhost': 'localhost';
 // $dbname = $isProd ? 'id19608161_qatar2022' : 'qatar2022';

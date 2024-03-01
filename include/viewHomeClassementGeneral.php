@@ -18,7 +18,7 @@
 	LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'general' 
 	LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe 
 	WHERE joueurs.competition = $competition
-	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, nb_inverse DESC, surnom;";
+	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, surnom;";
 	$result = mysqli_query($con, $qry);
 	$find = false;
 	$i = 0;

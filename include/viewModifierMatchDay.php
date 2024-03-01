@@ -5,6 +5,12 @@
 	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
 	$current_day = $GLOBALS['current_day'];
 
+	$current_day_in_progress = $GLOBALS['current_day_in_progress'];
+	if ($current_day_in_progress) {
+		$current_day++;
+	}
+
+
 	require_once 'config.php';
 	require_once 'functions.php';
 

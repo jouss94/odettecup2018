@@ -1,10 +1,11 @@
-SET @nom = 'Monica';
-SET @prenom = 'Mathias';
-SET @surnom = 'Jah-Bis';
-SET @email = 'mathiasmonica@zohomail.eu';
-SET @password = 'HT12KL';
-SET @telephone = '0781958773';
-SET @description = "Pull up, viva ARGENTINAAAAAAAA";
+SET @nom = 'Jousseau';
+SET @prenom = 'Bernard';
+SET @surnom = 'Miadaim';
+SET @email = 'Varadero77@hotmail.fr';
+SET @password = 'MI45AU';
+SET @telephone = '0620694215';
+SET @description = "Soit je gagne, soit j’apprends 
+Dans tout les cas je suis content ";
 SET @competition = 1; -- 1
 
 
