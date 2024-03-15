@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-	$(".Retour").click(function () {
+	$(".RetourSpan").click(function () {
 		document.location = 'index.php';
 		return false;
 	});

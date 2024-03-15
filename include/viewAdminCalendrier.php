@@ -11,7 +11,7 @@
 <div class="admin-buttons-column">
 	<div class="admin-button">
 		<button class="InitializeCalendrierAdminSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="ButtonBonus" >
-			Initialize
+			Initialize Calendrier
 		</button>
 	</div>
 	<div class="admin-button">

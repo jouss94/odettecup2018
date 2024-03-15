@@ -222,7 +222,14 @@ body {
 }
 
 .sidebar-content-item:hover {
-    background: #ffffff70;
-    }
+  background: #ffffff70;
+  }
   
-  
+.version {
+  position: absolute;
+  font-size: 15px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  bottom: 150px;
+}

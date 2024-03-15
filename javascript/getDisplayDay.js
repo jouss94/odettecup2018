@@ -9,6 +9,7 @@ function getDisplayMatchDay(
     button_prev_id, 
     button_next_id, 
     display_day_id,
+    playoff_days,
     specific = null) {
 
     var contentElement = document.getElementById(htmlcontentid);
@@ -35,7 +36,8 @@ function getDisplayMatchDay(
             if (prevDay && (specific != 'profilNext' || prevDay >= current_day)) {
                 button_prev.classList.remove("viewMatchTitleArrowHidden");
                 button_prev.onclick = function() {
-                    getDisplayMatchDay(php_call, id_joueur, id_profil, competition, dataJson.id_prev_day, current_day, htmlcontentid, button_prev_id, button_next_id, display_day_id, specific)
+                    getDisplayMatchDay(php_call, id_joueur, id_profil, competition, dataJson.id_prev_day, current_day, 
+                        htmlcontentid, button_prev_id, button_next_id, display_day_id, playoff_days, specific)
                 };
             }
             else {
@@ -46,7 +48,8 @@ function getDisplayMatchDay(
             if (nextDay && (specific != 'profilLast' || nextDay < current_day)) {
                 button_next.classList.remove("viewMatchTitleArrowHidden");
                 button_next.onclick = function() {
-                    getDisplayMatchDay(php_call, id_joueur, id_profil, competition, dataJson.id_next_day, current_day, htmlcontentid, button_prev_id, button_next_id, display_day_id, specific)
+                    getDisplayMatchDay(php_call, id_joueur, id_profil, competition, dataJson.id_next_day, current_day, 
+                        htmlcontentid, button_prev_id, button_next_id, display_day_id, playoff_days, specific)
                 };
             }
             else {
@@ -56,6 +59,10 @@ function getDisplayMatchDay(
             
             
             display_day.innerHTML = "Journée " + day;
+            if (playoff_days.includes(day))
+            {
+                display_day.innerHTML += " - Playoff";
+            }
         }
     });
     return result;

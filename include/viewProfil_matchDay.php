@@ -3,16 +3,19 @@
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
-	$current_day = $GLOBALS['current_day'];
+	require_once 'config.php';
+	require_once 'functions.php';
 
+	$current_day = $GLOBALS['current_day_plus_2'];
 	if (isset($_GET['day'])) {
 		$current_day = $_GET['day'];
 	}
 
+	$playoff_days = getPlayoffDays($con, $competition);
+	$payoff_day_array_js = '["' . implode('", "', $playoff_days) . '"]';
+
 	$idProfil = $_GET['id'];
 
-	require_once 'config.php';
-	require_once 'functions.php';
 
 	?>
 
@@ -37,7 +40,8 @@ echo
 		'viewProfilContent', 
 		'viewProfilTitlePrevDay', 
 		'viewProfilTitleNextDay', 
-		'viewProfilTitleDay');",
+		'viewProfilTitleDay',
+		'$payoff_day_array_js');",
  '</script>';
 ?>
 

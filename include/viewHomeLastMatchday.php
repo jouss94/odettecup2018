@@ -3,6 +3,12 @@
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
+	
+	require_once 'config.php';
+	require_once 'functions.php';
+
+	$playoff_days = getPlayoffDays($con, $competition);
+	$payoff_day_array_js = '["' . implode('", "', $playoff_days) . '"]';
 
 	// WORK ALSO FOR NEXT MATCH (same page)
 	$current_day = $GLOBALS['current_day'];
@@ -12,9 +18,7 @@
 		$current_day++;
 		$prev_day++;
 	}
-
-	require_once 'config.php';
-	require_once 'functions.php';
+	
 	?>
 
 	<div class="viewMatchTitle">
@@ -38,6 +42,7 @@ echo
 		'viewPrevMatchTitlePrevDay', 
 		'viewPrevMatchTitleNextDay', 
 		'viewPrevMatchTitleDay',
+		'$payoff_day_array_js',
 		'profilLast');",
  '</script>';
 ?>

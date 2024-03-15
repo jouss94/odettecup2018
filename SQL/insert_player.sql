@@ -1,11 +1,10 @@
-SET @nom = 'Jousseau';
-SET @prenom = 'Bernard';
-SET @surnom = 'Miadaim';
-SET @email = 'Varadero77@hotmail.fr';
-SET @password = 'MI45AU';
-SET @telephone = '0620694215';
-SET @description = "Soit je gagne, soit j’apprends 
-Dans tout les cas je suis content ";
+SET @nom = 'NYK';
+SET @prenom = 'Josselin';
+SET @surnom = 'Polak';
+SET @email = 'josselin.nyk@gmail.com';
+SET @password = 'NH22TE';
+SET @telephone = '0676746467';
+SET @description = "Alea jacta est";
 SET @competition = 1; -- 1
 
 

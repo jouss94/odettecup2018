@@ -6,10 +6,7 @@
 
 	$current_day_update = $GLOBALS['current_day'];
 	$current_day_in_progress_update = $GLOBALS['current_day_in_progress'];
-	if ($current_day_in_progress_update) {
-		$current_day_update++;
-	}
-
+	
 	require_once 'config.php';
 	require_once 'functions.php';
 

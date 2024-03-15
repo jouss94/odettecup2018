@@ -13,7 +13,6 @@ $showMatch = 0;
 	<head>
 		<title>Accueil</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/favicon.png" />		
 		<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -59,6 +58,9 @@ $showMatch = 0;
 						</tr>
 					</table>
 					<?php endif; ?>
+
+					
+					<?php include("include/viewHomePlayoff.php");?>
 
 					<div class="tableAcceuilResultat">
 						<div class="demo-card-event mdl-card mdl-shadow--2dp">
@@ -130,6 +132,7 @@ $showMatch = 0;
 								</a>
 							</div>
 						</div>
+
 						<div class="information-card-event mdl-card mdl-shadow--2dp">
 							<div class="mdl-card__title mdl-card--expand">
 								<span class="TitreTableauBas">
@@ -142,7 +145,18 @@ $showMatch = 0;
 								</a>
 							</div>
 						</div>
-
+						<div class="information-card-event mdl-card mdl-shadow--2dp">
+							<div class="mdl-card__title mdl-card--expand">
+								<span class="TitreTableauBas">
+									Playoffs
+								</span>
+							</div>
+							<div class="mdl-card__actions mdl-card--border">
+								<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="playoffs.php" >
+									Voir le tableau des playoffs
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

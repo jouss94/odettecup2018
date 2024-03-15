@@ -6,6 +6,10 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 require_once 'config.php';
 require_once 'functions.php';
 
+getCurrentDay($con);
+getCurrentDayPlus2($con);
+getCurrentDayInProgress($con, $GLOBALS['current_day']);
+
 ?>
 
 <link
@@ -28,12 +32,16 @@ require_once 'functions.php';
             <a href="classement.php?ranking=General">Classement</a>
         </div>
         <div class="sidebar-content-item">
+            <a href="playoffs.php">Playoffs</a>
+        </div>
+        <div class="sidebar-content-item">
             <a href="trombi.php">Joueurs</a>
         </div>
         <div class="sidebar-content-item" style="border-bottom:none;">
             <a href="reglement.php">Règlement</a>
         </div>
     </div>
+    <div class="version">V<?php echo $version ?></div>
 </div>
 
 <div id="myTopnav" class="topnav">
@@ -67,7 +75,7 @@ require_once 'functions.php';
             <i class="material-icons">home</i>
         </td>
         <td id="bandeauNom">
-            Odette Ligue - Journée <?php echo getCurrentDay($con) ?>
+            Odette Ligue - Journée <?php echo $GLOBALS['current_day_plus_2'] ?>
         </td>
 
         <!-- <?php if($id == 1): ?>

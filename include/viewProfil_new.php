@@ -9,17 +9,19 @@
 
 	$current_day_update = $GLOBALS['current_day'];
 	$current_day_in_progress_update = $GLOBALS['current_day_in_progress'];
-	if ($current_day_in_progress_update) {
-		$current_day_update++;
-	}
 
 	parse_str($_SERVER["QUERY_STRING"], $query);
 	$idProfil = $query['id'];
 
+	// SELECT joueurs.id_joueur, joueurs.surnom, count(matches.id_match) as nb FROM joueurs 
+	// LEFT JOIN pronostics pronos ON pronos.id_joueur = joueurs.id_joueur 
+	// LEFT JOIN matches ON matches.id_match = pronos.id_match AND matches.day = 26
+    // GROUP BY joueurs.id_joueur, joueurs.surnom
+
 	$qry = "SELECT * FROM joueurs 
-	LEFT JOIN pronostics pronos ON pronos.id_joueur = $id 
+	LEFT JOIN pronostics pronos ON pronos.id_joueur = joueurs.id_joueur 
 	LEFT JOIN matches ON matches.id_match = pronos.id_match  
-	WHERE joueurs.id_joueur=$id and day = $current_day_update
+	WHERE joueurs.id_joueur=$idProfil and day = $current_day_update
 	";
 	$res = mysqli_query($con, $qry);
 	$nb = mysqli_num_rows($res);
@@ -52,7 +54,7 @@
 		joueurs.color as joueursColor,
 		equipe_winner.logo as logo
 	FROM joueurs 
-	LEFT JOIN classements as general ON general.owner_id = joueurs.id_joueur AND general.type = 'general' 
+	LEFT JOIN classements as general ON general.owner_id = joueurs.id_joueur
 	LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe
 	WHERE id_joueur='".$idProfil."';";
 	$result = mysqli_query($con, $qry);
@@ -218,26 +220,26 @@ echo '
 		$nb_total_point = max($nb_perf_point, $nb_correct_point, $nb_correct_plus_point);
 		$nb_total = max($nb_perf, $nb_correct, $nb_correct_plus, $nb_echec);
 
-		$pc_perf_match = 7;
-		$pc_correct_match = 7;
-		$pc_correct_plus_match = 7;
-		$pc_echec_match = 7;
+		$pc_perf_match = 8;
+		$pc_correct_match = 8;
+		$pc_correct_plus_match = 8;
+		$pc_echec_match = 8;
 		if ($nb_total != 0) {
-			$pc_perf_match = ($nb_perf * 93 / $nb_total) + 7;
-			$pc_correct_match = ($nb_correct * 93 / $nb_total) + 7;
-			$pc_correct_plus_match = ($nb_correct_plus * 93 / $nb_total) + 7;
-			$pc_echec_match = ($nb_echec * 93 / $nb_total) + 7;
+			$pc_perf_match = ($nb_perf * 92 / $nb_total) + 8;
+			$pc_correct_match = ($nb_correct * 92 / $nb_total) + 8;
+			$pc_correct_plus_match = ($nb_correct_plus * 92 / $nb_total) + 8;
+			$pc_echec_match = ($nb_echec * 92 / $nb_total) + 8;
 		}
 
-		$pc_perf_point = 7;
-		$pc_correct_point = 7;
-		$pc_correct_plus_point = 7;
-		$pc_echec_point = 7;
+		$pc_perf_point = 8;
+		$pc_correct_point = 8;
+		$pc_correct_plus_point = 8;
+		$pc_echec_point = 8;
 		if ($nb_total_point != 0) {
-			$pc_perf_point = ($nb_perf_point * 93 / $nb_total_point) + 7;
-			$pc_correct_point = ($nb_correct_point * 93 / $nb_total_point) + 7;
-			$pc_correct_plus_point = ($nb_correct_plus_point * 93 / $nb_total_point) + 7;
-			$pc_echec_point = 7;
+			$pc_perf_point = ($nb_perf_point * 92 / $nb_total_point) + 8;
+			$pc_correct_point = ($nb_correct_point * 92 / $nb_total_point) + 8;
+			$pc_correct_plus_point = ($nb_correct_plus_point * 92 / $nb_total_point) + 8;
+			$pc_echec_point = 8;
 		}
 
 		?>

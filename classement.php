@@ -11,8 +11,7 @@ if ($id == 0) { header('Location: index.php'); }
 	<head>
 		<title>Classements</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/tabs.css">
+				<link rel="stylesheet" type="text/css" href="css/tabs.css">
 		<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -33,7 +32,7 @@ if ($id == 0) { header('Location: index.php'); }
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">
-				<div style="width:100%;height:800px;">
+				<div style="width:100%;    padding-bottom: 30px;">
 					<span class="listeJoueurTitre">Classement</span>
 					<span class="RetourSpanContainer">
 						<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">

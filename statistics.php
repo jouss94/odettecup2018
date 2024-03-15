@@ -10,8 +10,7 @@ if ($id == 0) { header('Location: index.php'); }
 	<head>
 		<title>Statistiques</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/tabs.css">
+				<link rel="stylesheet" type="text/css" href="css/tabs.css">
 		<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">

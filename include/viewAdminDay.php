@@ -7,13 +7,16 @@
 
 	$prev_day = $current_day - 1;
 
+	$playoff_days = getPlayoffDays($con, $competition);
+	$payoff_day_array_js = '["' . implode('", "', $playoff_days) . '"]';
+
 	require_once 'config.php';
 	require_once 'functions.php';
 
 	$days = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi','Jeudi','Vendredi', 'Samedi');
 	?>
 
-	<div class="viewMatchTitle">
+	<div class="viewMatchTitleSingle">
 		<div id="viewPrevMatchTitlePrevDay" class="viewMatchTitlePrevDay viewMatchTitleArrow"><i class="material-icons">arrow_back_ios</i></div>
 		<div id="viewPrevMatchTitleDay" class="viewMatchTitleDay"></div>
 		<div id="viewPrevMatchTitleNextDay" class="viewMatchTitleNextDay viewMatchTitleArrow"><i class="material-icons">arrow_forward_ios</i></div>
@@ -33,7 +36,8 @@ echo
 		'viewPrevMatchContent', 
 		'viewPrevMatchTitlePrevDay', 
 		'viewPrevMatchTitleNextDay', 
-		'viewPrevMatchTitleDay');",
+		'viewPrevMatchTitleDay',
+		'$payoff_day_array_js');",
  '</script>';
  ?>
 

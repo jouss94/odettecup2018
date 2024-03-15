@@ -41,8 +41,8 @@ $(document).ready(function(){
 	}); 
 
 	$("#nextMatchButton").click(function() {
-		var day = document.getElementById("viewNextMatchTitleDay").innerHTML.substring(8);	
-		document.location = "calendrier.php?day=" + day;
+		var id = document.getElementById("idPhp").getAttribute("name");	
+		document.location = "modifierMatches.php?id=" + id;
 	}); 
 });
 

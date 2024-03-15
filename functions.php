@@ -1,4 +1,7 @@
 <?php
+
+include("playoff_matrices.php");
+
 function erreur($err='')
 {
    $mess=($err!='')? $err:'Une erreur inconnue s\'est produite';
@@ -45,6 +48,7 @@ function sanitize_string($str, $con)
 }
 
 $GLOBALS['current_day'] = null;
+$GLOBALS['current_day_plus_2'] = null;
 $GLOBALS['current_day_in_progress'] = null;
 
 function getCurrentDayInProgress($con, $day) {
@@ -76,11 +80,29 @@ function getCurrentDay($con) {
         else {
             $GLOBALS['current_day'] = 0;
         }
-        getCurrentDayInProgress($con, $GLOBALS['current_day']);
     }
 
     return $GLOBALS['current_day'];
 }
+
+function getCurrentDayPlus2($con) {
+    if ($GLOBALS['current_day_plus_2'] == null) {
+
+        $qry = "SELECT day FROM matches where date > DATE_ADD(NOW(), INTERVAL -2 DAY) ORDER BY date LIMIT 1";
+        $result = mysqli_query($con, $qry);
+        $num_row = mysqli_num_rows($result);
+
+        if ($num_row == 1) {
+            $GLOBALS['current_day_plus_2'] = date(mysqli_fetch_array($result)[0]);
+        }
+        else {
+            $GLOBALS['current_day_plus_2'] = 0;
+        }
+    }
+
+    return $GLOBALS['current_day_plus_2'];
+}
+
 
 function display2DigitNumer($number) {
     if (intval($number) <= 9) {
@@ -88,6 +110,55 @@ function display2DigitNumer($number) {
     }
 
     return $number;
+}
+
+$GLOBALS['playoff_days'] = null;
+
+function getPlayoffDays($con, $competition_param)
+{
+    if ($GLOBALS['playoff_days'] == null) {
+
+        $subQry = "SELECT DISTINCT day FROM playoffs WHERE competition=$competition_param ORDER BY day;";
+        $subResult = mysqli_query($con, $subQry);
+    
+        $array_result = array();
+        while ($row = mysqli_fetch_array($subResult)) 
+        {
+            array_push($array_result, $row["day"]); 
+        }
+    
+        $GLOBALS['playoff_days'] = $array_result;
+    }
+
+    return $GLOBALS['playoff_days'];
+}
+
+$GLOBALS['all_days'] = null;
+
+function getDays($con, $competition_param)
+{
+    if ($GLOBALS['all_days'] == null) {
+
+        $subQry = "SELECT DISTINCT day FROM matches WHERE competition=$competition_param ORDER BY day;";
+        $subResult = mysqli_query($con, $subQry);
+
+        $array_result = array();
+        while ($row = mysqli_fetch_array($subResult)) 
+        {
+            array_push($array_result, $row["day"]); 
+        }
+
+        $GLOBALS['all_days'] = $array_result;
+    }
+
+    return $GLOBALS['all_days'];
+}
+
+function getClassementFromNumeric($numeric) {
+    if ($numeric == 1) {
+        return "1er";
+    }
+    return strval($numeric) . "ème";
 }
 
 $years = "2023-2024";
@@ -108,4 +179,13 @@ $months = array(
 );
 
 $days = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi','Jeudi','Vendredi', 'Samedi');
+
+
+//TODO RESET TO 0 AFTER TEST = 0;
+// $playoff_titles = array("A" => '1er tour de Barrage', "B" => '2ème tour de Barrage', "C" => 'Quart de finale', "D" => 'Demi-finale', "E" => 'Finale',);
+$playoff_titles = array("Z" => '1er tour de Barrage', "Y" => '2ème tour de Barrage', "A" => 'Quart de finale', "B" => 'Demi-finale', "C" => 'Finale',);
+
+// $playoff_classement = array("A" => 'background-yellow', "B" => 'background-green', "C" => 'background-green-plus', "D" => 'background-bleu');
+$playoff_classement = array("A" => 'background-green', "B" => 'background-bleu', "C" => 'background-green-plus', "D" => 'background-bleu');
+
 ?>

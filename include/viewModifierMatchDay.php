@@ -9,11 +9,13 @@
 	if ($current_day_in_progress) {
 		$current_day++;
 	}
-
-
+	
 	require_once 'config.php';
 	require_once 'functions.php';
 
+	$playoff_days = getPlayoffDays($con, $competition);
+	$payoff_day_array_js = '["' . implode('", "', $playoff_days) . '"]';
+	
 	$idProfil = $_GET['id'];
 ?>
 	<span class="listeJoueurTitre">Pronostics matches</span>
@@ -24,7 +26,7 @@
 		</button>
 	</span>
 
-	<div class="viewMatchTitle">
+	<div class="viewMatchTitleSingle">
 		<div id="viewProfilTitlePrevDay" class="viewCalendarTitlePrevDay viewCalendarTitleArrow"><i class="material-icons">arrow_back_ios</i></div>
 		<div id="viewProfilTitleDay" class="viewCalendarTitleDay"></div>
 		<div id="viewProfilTitleNextDay" class="viewCalendarTitleNextDay viewCalendarTitleArrow"><i class="material-icons">arrow_forward_ios</i></div>
@@ -45,7 +47,8 @@ echo
 		'viewProfilContent', 
 		'viewProfilTitlePrevDay', 
 		'viewProfilTitleNextDay', 
-		'viewProfilTitleDay');",
+		'viewProfilTitleDay',
+		'$payoff_day_array_js');",
  '</script>';
 ?>
 

@@ -6,11 +6,13 @@
 
 	$qry = "SELECT *, 
 	(nb_perf+nb_correct_plus+nb_correct+nb_echec)  as total ,
-	equipe_winner.logo as logo
+	equipe_winner.logo as logo,
+    playoffs.name as playoffs_name
 	from joueurs 
-	LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'general' 
+	LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur
 	
 	LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe 
+    LEFT JOIN playoffs  ON (playoffs.equipe_home = classements.rang || playoffs.equipe_ext = classements.rang)
 	WHERE joueurs.competition = $competition
 	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, surnom;";
 	$result = mysqli_query($con, $qry);
@@ -52,6 +54,7 @@
 		$nb_echec = $row["nb_echec"];
 		$bonus = $row["bonus"];
 		$total = $row["total"];
+		$playoffs_name = $row["playoffs_name"];
 
 			if ($i % 2 == 0) {
 				echo '	<tr class="backgroundTab2">';
@@ -60,11 +63,20 @@
 				echo '	<tr class="backgroundTab1">';
 			}
 
+			$background_rang = "";
+			$background_surnom = "";
+		
+			if ($playoffs_name != "") {
+				$letter = $playoffs_name[0];
+				$value =  $playoff_classement[$letter];
+				$background_rang = $value;
+				$background_surnom = $value . "-gradient";	
+			}
 
-			echo '<td class="ClassementRang">',
+			echo '<td class="ClassementRang '.$background_rang.'">',
 					$rang,
 				'</td>
-				<td class="ClassementSurnom">
+				<td class="ClassementSurnom '.$background_surnom.'">
 					<div id="lienSurnom', $id_joueur,'" style="" class="surnomClassementDiv clickJoueur">',
 					
 					$surnom;

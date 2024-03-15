@@ -123,7 +123,6 @@ table.sortable thead {
     display: block;
     margin: auto;
     margin-top: 10px;
-    height: 600px;
     overflow-y: auto;
     background: #ffffff36;
     border-radius: 10px;
@@ -143,7 +142,7 @@ table.sortable thead {
     color: #000;
     font-weight: bold;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 23 px;
 }
 
 .surnomClassementDiv:hover {
@@ -156,22 +155,26 @@ table.sortable thead {
     font-size: 20px;
     color: #000;
     font-weight: bold;
+    padding-right: 30px;
 }
 
 .homeClassementSurnom {
-    padding-left: 10px;
-    font-size: 16px;
+    flex-grow: 1;
+    font-size: 25px;    
     font-weight: bold;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    height: 100%;
+    line-height: 60px;
 }
 
 .homeClassementRang {
-    padding-left: 5px;
+    width: 20px;
+    height: 100%;
     color: #000;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 24px;
     text-align: center;
+    padding: 0 30px;
+    line-height: 60px;
 }
 
 .homeEquipeMilieuMatch {
@@ -207,7 +210,7 @@ table.sortable thead {
 }
 
 .surnomMatch {
-    width: 120px;
+    width: 180px;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
@@ -493,11 +496,23 @@ table.sortable thead {
     font-size: 18px;
 }
 
+.homeEquipeGauche-pronos {
+    width: 90px;
+    padding-left: 4px;
+}
+
+
+
 .homeEquipeDroite {
     width: 110px;
     text-align: right;
     padding-right: 6px;
     font-size: 18px;
+}
+
+.homeEquipeDroite-pronos {
+    width: 90px;
+    padding-left: 4px;
 }
 .homePoint {
     width: 44px;
@@ -625,7 +640,6 @@ table.sortable thead {
 }
 
 .cadreTableauAcceuilClassement {
-    height: 338px;
     width: 100%;
     overflow-y: auto;
     color: #0A001D;
@@ -751,7 +765,92 @@ table.sortable thead {
     background: #ffffff40;
     color: #00123f;
     border-radius: 10px;
-    padding: 1px 0px 20px 50px;
+    line-height: 30px;
+
+}
+
+.reglement-titre-centre {
+    font-family: "Kalam", cursive;
+    font-size: 30px;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.reglement-sous-text {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.reglement-reponse-text {
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 70px;
+    font-family: "Kalam", cursive;
+}
+
+.reglement-titre {
+    font-family: "Kalam", cursive;
+    font-size: 30px;
+    padding: 60px 0 30px 40px;
+}
+
+.reglement-text {
+    padding: 10px 50px;
+    font-size: 20px;
+}
+
+.reglement-point {
+    display: flex;
+    margin: 20px;
+    background: #ffffff45;
+    border-radius: 20px;
+}
+
+.reglement-point-item {
+    /* width: 200px; */
+    flex: 1;
+    padding: 30px;
+    border-right: solid 1px #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    line-height: 40px;
+}
+
+.reglement-point-item:last-child {
+    border: none;
+  }
+
+  .reglement-point-item-text {
+    font-size: 26px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.reglement-point-item-point {
+    font-family: "Poppins", sans-serif;
+    font-size: 35px;
+    text-align: center;
+}
+
+.reglement-point-item-def {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.reglement-link {
+    text-decoration: none;
+    font-size: 20px;
+        cursor: pointer;
+            color: #000000;
+            font-weight: bold;
+}
+
+.reglement-link:hover {
+    color: #FFF;
 }
 
 .tableListeSecond {
@@ -1939,6 +2038,17 @@ span.dateCalendarText {
     border-top: solid 1px;
 }
 
+.dateMatchTextRight {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 40px;
+    text-align: right;
+    padding-right: 50px;
+    border-bottom: solid 1px;
+    border-top: solid 1px;
+}
+
 .dateMatchProfilText {
     font-size: 16px;
     font-weight: bold;
@@ -2936,6 +3046,16 @@ img.tombi-carte-content-photo-img {
         font-weight: bold;
         color: #002c90;
     }
+
+.viewMatchTitleSingle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30px;
+    padding: 10px 0 2px 0;
+    color: #002c90;
+    background: #ffffff26;
+}
  
 .viewMatchTitle {
     display: flex;
@@ -3076,7 +3196,6 @@ img.tombi-carte-content-photo-img {
   
 .classement-card-event.mdl-card {
     width: 100%;
-    height: 412px;
 }
 
 .classement-general {
@@ -3192,8 +3311,7 @@ img.tombi-carte-content-photo-img {
 }
 
 .match-card-event.mdl-card {
-    width: 550px;
-    height: 500px;
+    width: 650px;
     background: #00000014;
     margin: auto;
     margin-top: 40px;
@@ -3249,6 +3367,10 @@ img.tombi-carte-content-photo-img {
     min-width: 340px;
 }
 
+.accueil-match-score-last-day-pronos {
+    min-width: 0;
+}
+
 .accueil-score {
     /* margin-left: 20px; */
     padding: 0;
@@ -3268,4 +3390,341 @@ img.tombi-carte-content-photo-img {
 .update-profil-sub-line {
     display: flex;
     justify-content: space-between;
+}
+
+.surnom-match {
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.surnom-match-big {
+    font-size: 26px;
+}
+
+.surnom-match:hover {
+    color: #FFF;
+}
+
+.playoff-title {
+    padding: 0 120px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.playoff-title-home {
+    border-bottom: solid 1px;
+    background: #ffffff4a;
+ }
+
+.playoff-item:last-child {
+    border: none;
+  }
+
+.playoff-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 30px 60px 30px;
+    border-radius: 20px;
+    background: #f0f8ff61;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.playoff-content-pronos {
+    margin: -40px 30px 20px 30px;
+}
+
+
+.playoff-item {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    border-bottom: solid 2px #FFF;
+}
+
+.playoff-item-big {    
+    height: 200px;
+    font-size: 19px;
+    line-height: 31px;
+}
+
+.playoff-item-pronos {    
+    height: 100%;
+    font-size: 19px;
+    line-height: 31px;
+}
+
+.playoff-match>a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+
+.playoff-match {
+    position: absolute;
+    margin-top: 25px;
+    padding: 8px;
+    border: solid;
+    border-radius: 40px;
+    font-size: 20px;
+    line-height: 24px;
+    width: 25px;
+    height: 25px;
+    background: #e1ecff;
+    cursor: pointer;
+    
+}
+
+.playoff-match-big {
+    margin-top: 75px;
+    font-size: 25px;
+    line-height: 27px;
+    width: 30px;
+    height: 30px;
+}
+
+.playoff-item-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playoff-item-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playoff-background {
+    background: #ffffff45;
+}
+
+.playoff-item-left-title-match {
+    font-size: 16px;
+    line-height: 24px;
+    width: 25px;
+    height: 25px;
+    border: solid 1px;
+    border-radius: 40px;
+    padding: 5px;
+}
+
+.playoff-item-left-joueur {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-right: 20px;
+    flex-wrap: wrap;
+}
+
+
+.playoff-item-right-joueur {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-left: 20px;
+}
+
+
+.playoff-item-left-joueur-title {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.playoff-item-left-joueur-pancarte {
+    width: 50px;
+    line-height: 30px;
+    margin: auto 0;
+}
+
+.playoff-item-joueur-img-content {
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    border: 2px solid #FFF;
+    object-fit: cover;
+}
+
+.playoff-item-joueur-img-content-big {
+    width: 100px;
+    height: 100px;
+}
+
+.playoff-item-left-pronos {
+    line-height: normal;
+    display: block;
+}
+
+.total {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    border-top: solid 1px #FFF;
+    justify-content: end;
+    padding: 10px 10px;
+}
+
+.total-right {
+    display: flex;
+    justify-content: start;
+    padding: 10px 10px;
+}
+
+.total-profil {
+    display: flex;
+    justify-content: start;
+    padding: 10px 25px;
+}
+
+
+.playoff-total {
+    text-align: right;
+    padding-right: 20px;
+    line-height: 40px;
+}
+
+.playoff-total-right {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.playoff-total-pancarte {
+    text-align: center;
+}
+
+.pancarte-total {
+    background: rgba(0, 0, 0, 0.68);
+    border: solid 2px #757575;
+    padding: 3px;
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 50px;
+}
+
+.playoff-home {
+    width: 100%;
+    background: #ffffff30;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+}
+
+.playoff-home-second {
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+}
+
+.mdl-card__title.mdl-card--expand {
+    flex-direction: column;
+}
+
+.playoff-no-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.playoff-no-content-titre {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3f3f3f;
+}
+
+.home-classement {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 5px 10px;
+    
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.home-classement-item {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.background-red-gradient {
+    background: linear-gradient(90deg, #ed1e2570 0%, rgba(2, 0, 36, 0) 50%);
+}
+
+.background-red {
+    background: #ed1e2570;
+}
+
+.background-yellow-gradient {
+    background: linear-gradient(90deg, #feee1770 0%, rgba(2, 0, 36, 0) 50%);
+}
+
+.background-yellow {
+    background: #feee1770;
+}
+
+.background-green-gradient {
+    background: linear-gradient(90deg, #2bdf7770 0%, rgba(2, 0, 36, 0) 50%);
+}
+
+.background-green {
+    background: #2bdf7770;
+}
+
+.background-green-plus-gradient {
+    background: linear-gradient(90deg, #00ff037a  0%, rgba(2, 0, 36, 0) 50%);
+}
+
+.background-green-plus {
+    background: #00ff037a;
+}
+
+.background-bleu-gradient {
+    background: linear-gradient(90deg, #00dbff7d 0%, rgba(2, 0, 36, 0) 50%);
+}
+
+.background-bleu {
+    background: #00dbff7d;
+}
+
+.admin-joueurs-list {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.admin-joueurs-item {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: solid 1px;
+    padding: 10px;
+    align-items: center;
+}
+
+.admin-joueurs-surnom {
+    width: 300px;
 }

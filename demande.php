@@ -6,8 +6,7 @@ session_start();
 <head>
     <title>Demande</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <?php include("include/style.php");?>
+        <?php include("include/style.php");?>
     <link rel="stylesheet" type="text/css" href="css/form.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
     <script src="javascript/jquery-2.2.3.min.js"></script>
@@ -23,13 +22,13 @@ session_start();
         <div class="loginform-in">
             <img src="images/OdetteLigue-V3.0.png" style="width: 140px;margin: 10px;" />
             <h3 style="margin-top: 0;color:#FFF">Formulaire d'inscription</h1>
-                <div class="Retour">
+            <span class="RetourSpanContainer" style="padding-top: 20px;    margin: 0px 20px 0px 20px;">
                     <button
-                        class="Retour  mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-                        id="RetourButtonRouge">
+                        class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                        id="RetourButtonBlanc">
                         Retour
                     </button>
-                </div>
+                </span>
 
                 <form action="addDemande.php" method="post">
                     <table class="tableauPronosForm"

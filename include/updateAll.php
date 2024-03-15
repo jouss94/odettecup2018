@@ -2,9 +2,12 @@
 
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
 
 	require_once 'config.php';
 	require_once 'functions.php';
+
+	$playoff_days = getPlayoffDays($con, $competition);
 
 	$qry = "SELECT * FROM joueurs;";
 	$result = mysqli_query($con, $qry);
@@ -35,15 +38,23 @@
 			$pronos_away = intval($row2["prono_away"]);
 			$score_home = intval($row2["score_home"]);
 			$score_away = intval($row2["score_away"]);
+			$day = intval($row2["day"]);
 			$id_pronostic = $row2["id_pronostic"];
 			$pointMacht = 0;
 			$total++;
 
+			$isPlayoff = false;
+			if (in_array($day,  $playoff_days)) {
+				$isPlayoff = true;
+			}
+
 			if ($score_home == $pronos_home && $score_away == $pronos_away) // PERFECT
 			{
 				$pointMacht = 7;
-				$nb_perf++;
-				$points += $pointMacht;
+				if (!$isPlayoff) {
+					$nb_perf++;
+					$points += $pointMacht;
+				}
 			}
 			else if (
 						(($pronos_away - $pronos_home) > 0 && ($score_away - $score_home) > 0) 
@@ -53,38 +64,39 @@
 			{
 				if ($pronos_home - $pronos_away == $score_home - $score_away) // CORRECT+
 				{
-					$pointMacht = 4;
-					$nb_correctPlus++;
-					$points += $pointMacht;
+					$pointMacht = 4;	
+					if (!$isPlayoff) {
+						$nb_correctPlus++;
+						$points += $pointMacht;
+					}
 				}
 				else
 				{
 					$pointMacht = 3;
-					$nb_correct++;
-					$points += $pointMacht;					
+					
+					if (!$isPlayoff) {
+						$nb_correct++;
+						$points += $pointMacht;
+					}					
 				}
 			}
-			else // ECHEC
+			else
 			{
 				$pointMacht = 0;
-				$nb_echec++;
-				$points += $pointMacht;									
+				
+				if (!$isPlayoff) {
+					$nb_echec++;
+					$points += $pointMacht;
+				}									
 			}
 
-			// if ($id_match == 51) // TODO : VARIABILISE
-			// {
-			// 	$pointMacht = $pointMacht * 2;
-			// }
-
-
-			$update = "UPDATE pronostics SET point   = $pointMacht WHERE id_pronostic = $id_pronostic";
+			$update = "UPDATE pronostics SET point = $pointMacht WHERE id_pronostic = $id_pronostic";
 			$result3 = mysqli_query($con, $update);
 			if (!$result3) {
 				echo 'ERROR REQUETE : ', $update, '</br>';
 			}
 		}
 
-		// BONUS
 		$updatejoueur = "UPDATE classements 
 					SET
 						 points   = $points, 
@@ -107,25 +119,16 @@
 		$competitionId = $rowCompetition["id"];
 
 		$qry = "SELECT * from joueurs 
-				LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'general' 
+				LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur
 				WHERE joueurs.competition = $competitionId
 				ORDER BY points DESC, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, surnom;";
 		$result = mysqli_query($con, $qry);
 		$i = 1;
 		$oldPoint = -1;
-		$oldRang = 0;
 		while ($row = mysqli_fetch_array($result )) 
 		{
 			$id_joueur = $row["id_joueur"];
-			if ($row["points"] == $oldPoint)
-			{
-				$rang = $oldRang;
-			}
-			else
-			{
-				$oldRang = $i;
-				$rang = $i;
-			}
+			$rang = $i;
 	
 			$i++;
 			$oldPoint = $row["points"];
@@ -141,4 +144,68 @@
 		}
 	}
 
+	foreach ($playoff_days as $playoff) 
+	{
+		$qry = "SELECT playoffs.id, sum(pronos_home.point) as score_home
+		FROM playoffs
+		
+		LEFT JOIN joueurs joueurs_home on playoffs.id_equipe_home = joueurs_home.id_joueur
+		LEFT JOIN pronostics pronos_home on playoffs.id_equipe_home = pronos_home.id_joueur
+		LEFT JOIN matches matches_home on matches_home.id_match = pronos_home.id_match  
+		
+		WHERE playoffs.competition = $competition and playoffs.day = $playoff AND matches_home.day = $playoff AND matches_home.played = 1 AND matches_home.reporte = 0
+		GROUP BY playoffs.id";
+		$result = mysqli_query($con, $qry);
+
+		while ($row = mysqli_fetch_array($result )) 
+		{
+			$id = $row["id"];
+			$score_home = $row["score_home"];
+
+			$qry2 = " UPDATE `playoffs` 
+			SET 
+				score_home=$score_home
+				WHERE id=$id
+				;";
+
+			$subResult = mysqli_query($con, $qry2);
+
+			echo $qry . '<br>';
+
+			if (!$subResult) {
+				echo 'Error SQL';
+			}
+		}
+
+		$qry = "SELECT playoffs.id, sum(pronos_ext.point) as score_ext
+		FROM playoffs
+		
+		LEFT JOIN joueurs joueurs_ext on playoffs.id_equipe_ext = joueurs_ext.id_joueur
+		LEFT JOIN pronostics pronos_ext on playoffs.id_equipe_ext = pronos_ext.id_joueur
+		LEFT JOIN matches matches_ext on matches_ext.id_match = pronos_ext.id_match 
+		
+		WHERE playoffs.competition = $competition and playoffs.day = $playoff AND matches_ext.day = $playoff AND matches_ext.played = 1 AND matches_ext.reporte = 0
+		GROUP BY playoffs.id";
+		$result = mysqli_query($con, $qry);
+
+		while ($row = mysqli_fetch_array($result )) 
+		{
+			$id = $row["id"];
+			$score_ext = $row["score_ext"];
+
+			$qry2 = " UPDATE `playoffs` 
+			SET 
+				score_away=$score_ext
+				WHERE id=$id
+				;";
+
+			$subResult = mysqli_query($con, $qry2);
+
+			echo $qry . '<br>';
+
+			if (!$subResult) {
+				echo 'Error SQL';
+			}
+		}
+	}
 ?>

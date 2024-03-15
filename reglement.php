@@ -11,8 +11,7 @@ if ($id == 0) { header('Location: index.php'); }
 <head>
     <title>Règlement</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <?php include("include/style.php");?>
+        <?php include("include/style.php");?>
     <link rel="stylesheet" type="text/css" href="css/bandeau.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
     <script src="javascript/jquery-2.2.3.min.js"></script>
@@ -39,43 +38,75 @@ if ($id == 0) { header('Location: index.php'); }
                     </button>
                 </span>
                 <div class="reglementDiv">
-                    <p>
-                    <h3>Règles sur chaque match</h3>
-                    <div class="sousTitre perfectTitre">Perfect</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">7 points</li>
-                        <li class="pointRegle regleDetail">Trouver le score exact du match.</li>
-                        <li class="pointRegle regleExemple">Exemple : <span class="regleExempleCorp">Pronostic 2-1 -
-                                Score 2-1 : + 7 points</span></li>
-                    </ul>
-                    <div class="sousTitre perfectCorrectPlus">Correct +</div>
-							<ul class="ulperso">
-								<li class="pointRegle reglePoint" >4 points</li>
-								<li class="pointRegle regleDetail" >Trouver le vainqueur du match et la différence de but entre les 2 équipes.</li>
-								<li class="pointRegle regleExemple" >Exemple : <span class="regleExempleCorp">Pronostic 2-1 - Score 1-0 : + 4 points</span></li>
-								<div style="margin-left: 145px;"><span class="regleExempleCorp">Pronostic 1-1 - Score 0-0 : + 4 points</span></div>
-                                <div style="margin-left: 145px;"><span class="regleExempleCorp">Pronostic 2-0 - Score 3-1 : + 4 points</span></div>
-							</ul>
-                    <div class="sousTitre perfectCorrect">Correct</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">3 points</li>
-                        <li class="pointRegle regleDetail">Trouver le résultat du match.</li>
-                        <li class="pointRegle regleExemple">Exemple : <span class="regleExempleCorp">Pronostic 2-1 -
-                                Score 3-0 : + 3 points</span></li>
-                        <div style="margin-left: 145px;"><span class="regleExempleCorp">Pronostic 1-0 - Score 2-0 : + 3
-                                points</span></div>
-                    </ul>
-                    <div class="sousTitre perfectEchec">Echec</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">0 point</li>
-                        <li class="pointRegle regleDetail">Tout autre résultat.</li>
-                        <li class="pointRegle regleExemple">Exemple : <span class="regleExempleCorp">Pronostic 2-1 -
-                                Score 0-2 : + 0 point</span></li>
-                        <div style="margin-left: 145px;"><span class="regleExempleCorp">Pronostic 1-1 - Score 1-0 : + 0
-                                point</span></div>
-                    </ul>
+                    <div class="reglement-titre-centre">La Odette Ligue</div>
+                        <div class="reglement-text">La Odette Ligue se joue avec <b>Ligue 1 Uber Eats</b>.</div> 
+                        <div class="reglement-text"><b>Deux</b> compétitions par an. Une sur la phase <b>aller</b>, une sur la phase <b>retour.</b> </div>
+                        <div class="reglement-text"><b>17</b> journées de championnat réparties de la manière suivante :</div>
+                        <div class="reglement-sous-text"><b>12</b> journées de saison régulière</div>
+                        <div class="reglement-sous-text"><b>5</b> journées de playoffs</div>
+                        <div class="reglement-text"></div>
+                        <div class="reglement-text">Un <b>classement</b> final est établi à la fin de la <b>12ème</b> journée. </div>
+                        <div class="reglement-text">Les <b>playoffs</b> pourront alors démarer jusqu'à la grande finale lors de la <b>17ème</b> journée.</div>
+                    
+                    <div class="reglement-titre">Les points</div>
+                        <div class="reglement-text">Des points sont attribués à chaque match de la manière suivante :</div> 
+                        <div class="reglement-point">
+                            <div class="reglement-point-item">
+                                <div class="reglement-point-item-text perfectTitre">Perfect</div>
+                                <div class="reglement-point-item-point perfectTitre">+7</div>
+                                <div class="reglement-point-item-def">Le score exact du match.</div>
+                            </div>
+                            <div class="reglement-point-item">
+                                <div class="reglement-point-item-text perfectCorrectPlus">Correct +</div>
+                                <div class="reglement-point-item-point perfectCorrectPlus">+4</div>
+                                <div class="reglement-point-item-def">Le resultat du match et la différence de but entre les 2 équipes.</div>
+                            </div>
+                            <div class="reglement-point-item">
+                                <div class="reglement-point-item-text perfectCorrect">Correct</div>
+                                <div class="reglement-point-item-point perfectCorrect">+3</div>
+                                <div class="reglement-point-item-def">Le résultat du match.</div>
+                            </div>
+                            <div class="reglement-point-item">
+                                <div class="reglement-point-item-text perfectEchec">Echec</div>
+                                <div class="reglement-point-item-point perfectEchec">0</div>
+                                <div class="reglement-point-item-def">Tout autre résultat.</div>
+                            </div>
+                        </div>
+                        
+                    <div class="reglement-titre">Playoffs</div>
+                        <div class="reglement-text">Un playoff est un face à face entre <b>deux</b> joueurs.</div>
+                        <div class="reglement-text">Celui qui a fait le plus de <b>points</b> sur les <b>9</b> matches du week-end est le <b>gagnant</b>.</div>
+                        <div class="reglement-text">En cas d'<b>égalité</b> celui qui a le <b>meilleur classement</b> gagne.</div>
+                        <div class="reglement-text"></div>
+                        <div class="reglement-text">Les playoffs démarrent après la <b>12ème journée</b> quand le <b>classement</b> est définitif.</div> 
+                        <div class="reglement-text">Le tirage au sort du tableau est fait lors de la <b>première journée</b>.</div>
+                        <div class="reglement-text">Quand tous les participants sont connus, le tableau est disponible dans <b><a class="reglement-link" href="playoffs.php"> playoffs</a></b>.</div> 
+                        <div class="reglement-text">Le tableau est différent selon le nombre de <b>participants</b> afin d'avoir le plus de monde qualifié.</div> 
+                        <div class="reglement-text">Le <b>premier</b> du classement est directement qualifié pour les <b>demi-finales</b>.</div>
 
-                
+                    <div class="reglement-titre">Paiement</div>
+                        <div class="reglement-text">Une participation de <b>25€</b> est demandée.</div>
+                        <div class="reglement-text">Règlement par <b>chèque</b>, <b>espèce</b> ou <b>virement</b>.</div>
+                    <div class="reglement-titre">Gains</div>
+                        <div class="reglement-text">4 places sont payées selon la règle suivante :</div>
+                        <div class="reglement-sous-text">Les <b>2 perdants</b> des demi-finales (12%)</div>
+                        <div class="reglement-sous-text">Le <b>finaliste</b> (25%)</div>
+                        <div class="reglement-sous-text">Le <b>grand vainqueur</b> (50%)</div>
+                        <div class="reglement-text">20€ de la cagnotte finale seront utilisés pour les frais du site.</div>
+
+                    <div class="reglement-titre">FAQ</div>
+                        <div class="reglement-text">En cas de match <b>reporté</b> ?</div>
+                        <div class="reglement-reponse-text">Si le match est pendant la saison régulière et qu'il est rejoué avant la 12ème journée les points seront compatibilisés. Dans tout autres cas, le match est annulé et exempté pour la journée de classement ou de playoff</div>
+                        <div class="reglement-text">Un exemple de <b>perfect</b> ?</div>
+                        <div class="reglement-reponse-text">Bien sûr : Pronostic 2-1 /  Score 2-1 - Pronostic 3-0 /  Score 3-0 </div>
+                        <div class="reglement-text">Un exemple de <b>correct +</b> ?</div>
+                        <div class="reglement-reponse-text">Et voilà : Pronostic 2-1 /  Score 1-0 - Pronostic 1-1 /  Score 0-0 - Pronostic 2-0 /  Score 3-1</div>
+                        <div class="reglement-text">Un exemple <b>correct</b> alors ?</div>
+                        <div class="reglement-reponse-text">Simple : Pronostic 1-0 /  Score 2-0 - Pronostic 3-0 /  Score 2-1</div>
+                        <div class="reglement-text">Un match <b>nul</b> c'est 4pts minimum ?</div>
+                        <div class="reglement-reponse-text">Basique : Seulement si le match nul est trouvé. Oui. Le match nul est le score le plus risqué à trouver normal qu'il soit récompensé.</div>
+                        <div class="reglement-text">Et les <b>bonus</b> ?</div>
+                        <div class="reglement-reponse-text">Ici c'est le football qui parle ! Le vainqueur sera celui qui sera le plus régulier.</div>
 
                     <!-- <h3>Dates</h3>
                     <ul class="ulperso">

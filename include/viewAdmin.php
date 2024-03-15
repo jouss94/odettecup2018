@@ -11,6 +11,11 @@
 
 <div class="admin-buttons">
 	<div class="admin-button">
+		<button class="PlayoffAdminSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="ButtonBonus">
+			Playoff
+		</button>
+	</div>
+	<div class="admin-button">
 		<button class="CalendrierAdminSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="ButtonBonus">
 			Calendrier
 		</button>
@@ -18,6 +23,11 @@
 	<div class="admin-button">
 		<button class="MoulinetteSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="ButtonMoulinette">
 			RUN
+		</button>
+	</div>
+	<div class="admin-button">
+		<button class="JoueursAdminSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="ButtonBonus">
+			Joueurs
 		</button>
 	</div>
 	<div class="admin-button">

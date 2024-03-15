@@ -7,16 +7,15 @@
 	require_once 'config.php';
 	require_once 'functions.php';
 
-	echo '<table style="
-    border-collapse: collapse;
-    width: 100%;">';
+	echo '<div class="home-classement">';
 	
-
 	$qry = "SELECT *,
-	equipe_winner.logo as logo
+	equipe_winner.logo as logo,
+    playoffs.name as playoffs_name
 	from joueurs 
-	LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur AND type = 'general' 
+	LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur
 	LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe 
+    LEFT JOIN playoffs  ON (playoffs.equipe_home = classements.rang || playoffs.equipe_ext = classements.rang)
 	WHERE joueurs.competition = $competition
 	ORDER BY rang, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, surnom;";
 	$result = mysqli_query($con, $qry);
@@ -31,19 +30,38 @@
 		$surnom = utf8_encode_function($row["surnom"]);
 		$id_joueur = $row["id_joueur"];
 		$points = $row["points"];
+		$playoffs_name = $row["playoffs_name"];
+
+		$half = round(intval($nbtotal) / 2);
+
+		if ($half%2 == 0 && $i == $half + 1) {
+			$i++;
+		}
+		if ($i% 2 == 0) {
+			echo '	<div class="home-classement-item backgroundTab2">';
+		}
+		else {
+			echo '	<div class="home-classement-item backgroundTab1">';
+		}
+
+	$background_rang = "";
+	$background_surnom = "";
+
+	if ($playoffs_name != "") {
+		$letter = $playoffs_name[0];
+		$value =  $playoff_classement[$letter];
+		$background_rang = $value;
+		$background_surnom = $value . "-gradient";	
+	}
 	
-	if ($i% 2 == 0) {
-		echo '	<tr class="backgroundTab2">';
-	}
-	else {
-		echo '	<tr class="backgroundTab1">';
-	}
-	echo '<td class="homeClassementRang">';
+
+
+	echo '<div class="homeClassementRang '.$background_rang.'">';
 			echo '<div>';
 				echo $rang; 
 			echo '</div>';
-		echo '</td>';
-		echo '<td class="homeClassementSurnom">';
+		echo '</div>';
+		echo '<div class="homeClassementSurnom '.$background_surnom.'">';
 			echo '<div id="lienSurnom', $id_joueur,'" class="surnomClassementDiv clickJoueur">';
 			echo $surnom;	
 			if ($row["logo"] != null) {
@@ -52,15 +70,24 @@
 				echo '" />';
 			}
 			echo '</div>';
-		echo '</td>';
-		echo '<td class="homeClassementPoint">';
+		echo '</div>';
+		echo '<div class="homeClassementPoint">';
 		echo $points;
 		echo '<span style="padding-left: 2px;" class="petitPoint">pts</span>';
-		echo '</td>';
-echo '	</tr>';		
+		echo '</div>';
+echo '	</div>';		
 	}
 	
-echo '</table>';
+echo '</div>';
+
+
+$height = round(intval($nbtotal) / 2) * 60;
+
+echo '
+<style>
+.home-classement{
+	height: '.$height.'px;
+ }</style>';
 
 	if (!$find)
 	echo 'Pas encore de joueur dans ce classement.';

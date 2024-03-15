@@ -130,8 +130,8 @@ if ($canDisplayPronos)
 		<table class="percentBar">
 		<tr> 
 			<td class="colorEresult barpronos barresulte "></td>
-			<td class="colorCresult barpronos barresultc "></td>
 			<td class="colorIresult barpronos barresultcp "></td>
+			<td class="colorCresult barpronos barresultc "></td>
 			<td class="colorPresult barpronos barresultp "></td>
 		</tr>
 		</table></div>  ';
@@ -173,7 +173,7 @@ echo '
 
 
 
-<div style="height: 430px;overflow-y: auto;width:100%">
+<div style="width:100%">
 <table style="
     border-collapse: collapse;
     width: 100%;color:#000;">';
@@ -214,6 +214,7 @@ echo '
 		$pronos_away = intval($row["prono_away"]);
 		$point = $row["point"];
 		$played = $row["played"];
+		$id_joueur = $row["id_joueur"];
 		
 
 		if ($pronos_home > $pronos_away) {
@@ -269,7 +270,7 @@ echo '
 		}
 
 		echo '<td class="rangMatch">', $rang ,' </td>';
-		echo '<td class="surnomMatch">', $nom ,' </td>';
+		echo '<td class="surnomMatch"><a class="surnom-match" href="profil.php?id='.$id_joueur.'"> ', $nom ,'</a> </td>';
 		echo '<td class="homeEquipeDroiteMatch">';
 		echo $home_name;	
 		echo '</td>';

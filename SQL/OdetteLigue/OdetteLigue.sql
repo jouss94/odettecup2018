@@ -288,6 +288,24 @@ CREATE TABLE IF NOT EXISTS `messages` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+
+DROP TABLE IF EXISTS `playoffs`;
+CREATE TABLE IF NOT EXISTS `playoffs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NULL,
+  `equipe_home` varchar(255) COLLATE utf8mb4_unicode_ci NULL,
+  `equipe_ext` varchar(255) COLLATE utf8mb4_unicode_ci NULL,
+  `id_equipe_home` int(11) NULL,
+  `id_equipe_ext` int(11) NULL,
+  `day` int(11) NULL,
+  `competition` int(11) NULL,
+  `score_home` int(11) NULL,
+  `score_away` int(11) NULL,
+  `parent` int(11) NULL,
+  `vainqueur` int(11) NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 
 --

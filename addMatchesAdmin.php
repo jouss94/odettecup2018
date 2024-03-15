@@ -19,7 +19,6 @@ require_once 'config.php';
 		$idHome = "numberMatch_" . $firstID . "_home";
 		$idAway = "numberMatch_" . $firstID . "_away";
 		$idPlayed = "numberMatch_" . $firstID . "_played";
-		echo'pas la';
 
 		$home = 0;
 		$away = 0;
@@ -43,8 +42,9 @@ require_once 'config.php';
 	}
 
 	if ($return) {
-		header("Location:admin.php");
+		header("Location:admin.php");	
+		exit();
 	}
 
-exit();
+	exit();
 ?>

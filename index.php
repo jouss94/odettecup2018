@@ -5,8 +5,7 @@ session_start();
 	<head>
 		<title>Accueil</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<?php include("include/style.php");?>
+				<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 		<script src="javascript/jquery-2.2.3.min.js"></script>
 		<script src="javascript/jquery-ui.min.js"></script>

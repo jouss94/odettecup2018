@@ -111,7 +111,7 @@ function getMessages(timeoutScroll){
       return `
         <div class="${classMessage}">
           <div class="message-photo">
-              <img src=${message.image} style="width: 45px;height: 45px;border-radius: 30px; border: 2px solid ${bgColor};" />
+              <img src=${message.image} style="width: 45px;height: 45px;border-radius: 30px; border: 2px solid ${bgColor};object-fit: cover;" />
               
                 ${images}
           </div>

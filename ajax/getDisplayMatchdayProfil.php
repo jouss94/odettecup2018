@@ -48,8 +48,9 @@
 	date_default_timezone_set('Europe/Paris');
 	$now = new \DateTime(date("Y-m-d H:i:s"), new DateTimeZone("Europe/Paris"));
 
-	
 	$current_date = "";
+
+	$total = 0;
 
 	while ($row = mysqli_fetch_array($result )) 
 	{	
@@ -152,6 +153,8 @@
 				$point = $row["point"];
 			}
 
+			$total += $point;
+
 			$html .='<div class="ProfilPoint '. $classTR .'" >';
 			if ($row["played"] == 1)
 				{
@@ -248,13 +251,27 @@
 				$html .='</div>';
 		}
 		$html .='</div>';
+
+		
 	}
 	if ($find == false)
 	{
 		$html .='<span class="emptyTableau"> Aucun pronostic</span>';
 	}
 			// Entrez les données
-
+			if ($display_score) {
+				$html .='
+				<div class="total total-profil">
+				
+				<div class="playoff-total-pancarte">
+				<span class="  pancarte-total classTRNeutre">';
+				$html .= $total;
+				$html .= '</span>
+				</div>
+				<div class="playoff-total playoff-total-right">TOTAL</div>
+				</div>
+				';
+			}
 
 	$returnObj = new \stdClass();
 	$returnObj->html = $html;

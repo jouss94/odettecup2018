@@ -4,6 +4,9 @@
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
 
+	$playoff_days = getPlayoffDays($con, $competition);
+	$payoff_day_array_js = '["' . implode('", "', $playoff_days) . '"]';
+
 	require_once 'config.php';
 	require_once 'functions.php';
 	 ?>
@@ -30,6 +33,7 @@ echo
 		'viewNextMatchTitlePrevDay', 
 		'viewNextMatchTitleNextDay', 
 		'viewNextMatchTitleDay',
+		'$payoff_day_array_js',
 		'profilNext');",
  '</script>';
 ?>

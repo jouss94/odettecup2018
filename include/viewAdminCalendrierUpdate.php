@@ -26,7 +26,7 @@
 	$file_name = basename($url); 
 
 	$calendarContent = file_get_contents($url);
-	include("IcsReader\IcsReader.php");
+	include("IcsReader/IcsReader.php");
 
 	$reader = new IcsReader();
 	$ics    = $reader->parse($calendarContent);
