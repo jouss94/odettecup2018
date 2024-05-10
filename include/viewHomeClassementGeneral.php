@@ -71,7 +71,7 @@
 			}
 			echo '</div>';
 		echo '</div>';
-		echo '<div class="homeClassementPoint">';
+		echo '<div class="homeClassementPoint '.$background_surnom.'-inverse ">';
 		echo $points;
 		echo '<span style="padding-left: 2px;" class="petitPoint">pts</span>';
 		echo '</div>';

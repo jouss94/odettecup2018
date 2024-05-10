@@ -81,7 +81,7 @@ if ($id == 0) { header('Location: index.php'); }
                         <div class="reglement-text">Les playoffs démarrent après la <b>12ème journée</b> quand le <b>classement</b> est définitif.</div> 
                         <div class="reglement-text">Le tirage au sort du tableau est fait lors de la <b>première journée</b>.</div>
                         <div class="reglement-text">Quand tous les participants sont connus, le tableau est disponible dans <b><a class="reglement-link" href="playoffs.php"> playoffs</a></b>.</div> 
-                        <div class="reglement-text">Le tableau est différent selon le nombre de <b>participants</b> afin d'avoir le plus de monde qualifié.</div> 
+                        <div class="reglement-text">Le tableau est différent selon le nombre de <b>participants</b> afin d'avoir le plus de participants qualifiés.</div> 
                         <div class="reglement-text">Le <b>premier</b> du classement est directement qualifié pour les <b>demi-finales</b>.</div>
 
                     <div class="reglement-titre">Paiement</div>
@@ -96,17 +96,21 @@ if ($id == 0) { header('Location: index.php'); }
 
                     <div class="reglement-titre">FAQ</div>
                         <div class="reglement-text">En cas de match <b>reporté</b> ?</div>
-                        <div class="reglement-reponse-text">Si le match est pendant la saison régulière et qu'il est rejoué avant la 12ème journée les points seront compatibilisés. Dans tout autres cas, le match est annulé et exempté pour la journée de classement ou de playoff</div>
+                        <div class="reglement-reponse-text">Si le match est pendant la saison régulière et qu'il est rejoué avant la 12ème journée les points seront compatibilisés. Dans tout autres cas, le match est annulé et exempté pour la journée de classement ou de playoff.</div>
                         <div class="reglement-text">Un exemple de <b>perfect</b> ?</div>
                         <div class="reglement-reponse-text">Bien sûr : Pronostic 2-1 /  Score 2-1 - Pronostic 3-0 /  Score 3-0 </div>
                         <div class="reglement-text">Un exemple de <b>correct +</b> ?</div>
                         <div class="reglement-reponse-text">Et voilà : Pronostic 2-1 /  Score 1-0 - Pronostic 1-1 /  Score 0-0 - Pronostic 2-0 /  Score 3-1</div>
-                        <div class="reglement-text">Un exemple <b>correct</b> alors ?</div>
+                        <div class="reglement-text">Un exemple de <b>correct</b> alors ?</div>
                         <div class="reglement-reponse-text">Simple : Pronostic 1-0 /  Score 2-0 - Pronostic 3-0 /  Score 2-1</div>
                         <div class="reglement-text">Un match <b>nul</b> c'est 4pts minimum ?</div>
                         <div class="reglement-reponse-text">Basique : Seulement si le match nul est trouvé. Oui. Le match nul est le score le plus risqué à trouver normal qu'il soit récompensé.</div>
                         <div class="reglement-text">Et les <b>bonus</b> ?</div>
-                        <div class="reglement-reponse-text">Ici c'est le football qui parle ! Le vainqueur sera celui qui sera le plus régulier.</div>
+                        <div class="reglement-reponse-text">Ici c'est le football qui parle ! Le vainqueur sera le plus régulier.</div>
+                        <div class="reglement-text">Que se passe en cas d'<b>égalité</b> au classement ?</div>
+                        <div class="reglement-reponse-text">Le classement est calculé de la manière suivante : Le nombre de point, puis le moins d'echec, puis le plus perfect, puis enfin le plus de correct+.</div>
+                        <div class="reglement-text">Que se passe en cas d'<b>égalité parfaite</b> au classement ?</div>
+                        <div class="reglement-reponse-text">Si deux personne ont le même nombre de point, d'echec, de perfect, de correct+ et donc de correct, alors plus rien ne peuvent les départager autre que ... le hasard.</div>
 
                     <!-- <h3>Dates</h3>
                     <ul class="ulperso">

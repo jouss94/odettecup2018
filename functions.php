@@ -70,7 +70,7 @@ function getCurrentDayInProgress($con, $day) {
 function getCurrentDay($con) {
     if ($GLOBALS['current_day'] == null) {
 
-        $qry = "SELECT day FROM matches where date > NOW() ORDER BY date LIMIT 1";
+        $qry = "SELECT day FROM matches where date > NOW() AND matches.reporte = 0 ORDER BY date LIMIT 1";
         $result = mysqli_query($con, $qry);
         $num_row = mysqli_num_rows($result);
 
@@ -88,7 +88,7 @@ function getCurrentDay($con) {
 function getCurrentDayPlus2($con) {
     if ($GLOBALS['current_day_plus_2'] == null) {
 
-        $qry = "SELECT day FROM matches where date > DATE_ADD(NOW(), INTERVAL -2 DAY) ORDER BY date LIMIT 1";
+        $qry = "SELECT day FROM matches where date > DATE_ADD(NOW(), INTERVAL -2 DAY) AND matches.reporte = 0 ORDER BY date LIMIT 1";
         $result = mysqli_query($con, $qry);
         $num_row = mysqli_num_rows($result);
 

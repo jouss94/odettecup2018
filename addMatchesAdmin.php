@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 $id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
@@ -42,9 +43,9 @@ require_once 'config.php';
 	}
 
 	if ($return) {
-		header("Location:admin.php");	
-		exit();
+		header("Location:admin.php");
 	}
+
 
 	exit();
 ?>

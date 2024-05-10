@@ -121,7 +121,7 @@
 		$qry = "SELECT * from joueurs 
 				LEFT JOIN classements ON classements.owner_id = joueurs.id_joueur
 				WHERE joueurs.competition = $competitionId
-				ORDER BY points DESC, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, surnom;";
+				ORDER BY points DESC, (nb_perf + nb_correct_plus + nb_correct) DESC, nb_perf DESC, nb_correct_plus DESC, nb_correct DESC, surnom;";
 		$result = mysqli_query($con, $qry);
 		$i = 1;
 		$oldPoint = -1;

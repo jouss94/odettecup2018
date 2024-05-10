@@ -209,7 +209,7 @@
 			LEFT JOIN equipes equipes_home ON equipes_home.id_equipe = matches.id_team_home 
 			LEFT JOIN equipes equipes_away ON equipes_away.id_equipe = matches.id_team_away 
 			LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match AND pronos.id_joueur = $id_equipe_home
-			WHERE day=$day and competition=$competition AND $id_equipe_home != 0 ORDER BY date, id;";
+			WHERE day=$day and competition=$competition AND $id_equipe_home != 0 AND reporte=0 ORDER BY date, id;";
 
 		$result = mysqli_query($con, $qry);
 		$find = false;
@@ -413,7 +413,7 @@
 			LEFT JOIN equipes equipes_home ON equipes_home.id_equipe = matches.id_team_home 
 			LEFT JOIN equipes equipes_away ON equipes_away.id_equipe = matches.id_team_away 
 			LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match AND pronos.id_joueur = $id_equipe_ext
-			WHERE day=$day and competition=$competition AND $id_equipe_ext != 0 ORDER BY date, id;";
+			WHERE day=$day and competition=$competition AND $id_equipe_ext != 0 AND reporte=0 ORDER BY date, id;";
 
 		$result = mysqli_query($con, $qry);
 		$find = false;

@@ -102,7 +102,7 @@
 				<td class="ClassementEchec">',
 					$nb_echec,
 				'</td>
-				<td class="ClassementPoints">',
+				<td class="ClassementPoints '.$background_surnom.'-inverse">',
 					$points,
 				'</td>
 			</tr>';

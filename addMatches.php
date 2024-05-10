@@ -23,12 +23,12 @@ function addMatches($con)
 		return false;
 	}
 
-	$qry = " DELETE FROM pronostics WHERE id_joueur = $id and id_match >= $firstID AND id_match <= $lastID;";
-	$result = mysqli_query($con, $qry);
-	if (!$result) 
-	{
-		return false;
-	}
+	// $qry = " DELETE FROM pronostics WHERE id_joueur = $id and id_match >= $firstID AND id_match <= $lastID;";
+	// $result = mysqli_query($con, $qry);
+	// if (!$result) 
+	// {
+	// 	return false;
+	// }
 
 
 	$return = false;
@@ -46,6 +46,13 @@ function addMatches($con)
 
 				if( is_numeric($home) && is_numeric($away) )
 				{
+					$qry = " DELETE FROM pronostics WHERE id_joueur = $id and id_match = $idMatch;";
+					$result = mysqli_query($con, $qry);
+					if (!$result) 
+					{
+						return false;
+					}		
+
 					$qry = " INSERT INTO pronostics (id_joueur, id_match, prono_home, prono_away) VALUES ($id, $idMatch, $home, $away);";
 					$result = mysqli_query($con, $qry);
 						if (!$result) {

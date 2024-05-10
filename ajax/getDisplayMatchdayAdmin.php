@@ -84,6 +84,9 @@
 			$firstValue = false;
 		}
 
+		if ($firstID > $id_match)
+			$firstID = $id_match;
+
 		if ($lastID < $id_match)
 			$lastID = $id_match;
 
