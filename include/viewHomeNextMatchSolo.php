@@ -22,7 +22,9 @@
 	FROM (SELECT * from matches WHERE (modif=1 OR modif=2) and played = 0 ORDER BY date, id_match LIMIT 1) as matches
 	LEFT JOIN equipes equipes_home ON equipes_home.id_equipe = matches.id_team_home 
 	LEFT JOIN equipes equipes_away ON equipes_away.id_equipe = matches.id_team_away 
-	LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match ;";
+	LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match 
+	LEFT JOIN joueurs j ON pronos.id_joueur = j.id_joueur 
+	WHERE competition = $competition;";
 
 	$result = mysqli_query($con, $qry);
 	$find = false;
@@ -63,23 +65,24 @@
 				</div>
 				<div class="nextmatchsoloteams">
 					<div class="nextmatchsoloteamshome">
-						<div class="nextmatchsoloteamshomeflag">
-							<img class="logoEquipebigbig" src="'.$home_logo.'" />
-						</div>
 						<div class="nextmatchsoloteamshomename">
 							<span>'.$home_name.'</span>
 						</div>
+						<div class="nextmatchsoloteamshomeflag">
+							<img class="logoEquipebigbig" src="'.$home_logo.'" />
+						</div>
 					</div>
 					<div class="nextmatchsoloteamsmiddle">
-						<span></span>
+						<span>VS</span>
 					</div>
 					<div class="nextmatchsoloteamsaway">
-						<div class="nextmatchsoloteamsawayflag">
-							<img class="logoEquipebigbig" src="'.$away_logo.'" />
-						</div>
 						<div class="nextmatchsoloteamsawayname">
 							<span>'.$away_name.'</span>
 						</div>
+						<div class="nextmatchsoloteamsawayflag">
+							<img class="logoEquipebigbig" src="'.$away_logo.'" />
+						</div>
+
 					</div>			
 				</div>
 			';
@@ -101,7 +104,7 @@
 					<span class="pancarteBigBig">'.$pronos_home.'</span>
 				</div>
 				<div class="nextmatchsolopronosmiddle">
-					<span></span>
+					<span>-</span>
 				</div>
 				<div class="nextmatchsolopronosaway">
 					<span class="pancarteBigBig">'.$pronos_away.'</span>

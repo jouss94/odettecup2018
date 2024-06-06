@@ -57,6 +57,7 @@
 		$score_away = $row["score_away"];
 		$colorHome = $row["colorHome"];
 		$colorAway = $row["colorAway"];
+		
 
 		echo '<table style="margin:auto;width: 85%;border-collapse: collapse;text-align: center;    font-weight: bold;">
 			<tr>
@@ -132,10 +133,11 @@
 		<span class="textmatch">Résultats :</span>
 		<table class="percentBar">
 		<tr> 
-			<td class="colorEresult barpronos barresulte "></td>
-			<td class="colorIresult barpronos barresulti "></td>
-			<td class="colorCresult barpronos barresultc "></td>
-			<td class="colorPresult barpronos barresultp "></td>
+			<td class="colorEresult barpronos borderNone barresulte "></td>
+			<td class="colorIresult barpronos borderNone barresulti "></td>
+			<td class="colorCresult barpronos borderNone barresultc "></td>
+			<td class="colorCpresult barpronos borderNone barresultcp "></td>
+			<td class="colorPresult barpronos borderNone barresultp "></td>
 		</tr>
 		</table></div>  ';
 		
@@ -190,6 +192,7 @@ echo '
 		
 	$ResultP = 0;
 	$ResultC = 0;
+	$ResultCp = 0;
 	$ResultI = 0;
 	$ResultE = 0;
 
@@ -216,6 +219,7 @@ echo '
 		$pronos_away = intval($row["prono_away"]);
 		$point = $row["point"];
 		$played = $row["played"];
+		$id_joueur = $row["id_joueur"];
 		
 		$modif = $row["modif"];
 
@@ -231,23 +235,40 @@ echo '
 			$ResultP++;
 		} else if ($point == 3 || $point == 6) {
 			$ResultC++;
+		}  else if ($point == 4 || $point == 8) {
+			$ResultCp++;
 		} else if ($point == 1 || $point == 2) {
 			$ResultI++;
 		} else {
 			$ResultE++;
 		}
 
+		$classPancarte = "";
 		$classTR = "classTRNeutre";
-			if ($point == 0)
+		if ($played == 1) {
+			if ($point == 0) {
 				$classTR = "classTREchecHome";
-			if ($point == 1 || $point == 2)
+				$classPancarte = "pancarte-echec";
+			}
+			if ($point == 1 || $point == 2) {
 				$classTR = "classTRInverseHome";
-			if ($point == 3 || $point == 6)
+				$classPancarte = "pancarte-inverse";
+			}
+			if ($point == 3 || $point == 6) {
 				$classTR = "classTRCorrectHome";
-			if ($point == 4 || $point == 8)
+				$classPancarte = "pancarte-correct";
+			}
+			if ($point == 4 || $point == 8) {
 				$classTR = "classTRCorrectPlusHome";
-			if ($point == 7 || $point == 14)
+				$classPancarte = "pancarte-correct-plus";
+			}
+			if ($point == 7 || $point == 14) {
 				$classTR = "classTRPerfectHome";
+				$classPancarte = "pancarte-perfect";
+				
+			}
+		}
+
 
 					$date_array = date_parse($row["date"]);
 
@@ -260,13 +281,13 @@ echo '
 		}
 
 		echo '<td class="rangMatch">', $rang ,' </td>';
-		echo '<td class="surnomMatch">', $nom ,' </td>';
+		echo '<td class="surnomMatch"><a class="surnom-match" href="profil.php?id='.$id_joueur.'"> ', $nom ,'</a> </td>';
 		echo '<td class="homeEquipeDroiteMatch">';
 		echo $home_name;	
 		echo '</td>';
-		echo '<td class="pronosMatch">', $pronos_home ,' </td>';
+		echo '<td class="pronosMatch"><span class="pancarteBig '.$classPancarte.'">', $pronos_home ,' </span> </td>';
 		echo '<td class="homeEquipeMilieuMatch"> - </td>';
-		echo '<td class="pronosMatch">', $pronos_away ,' </td>';
+		echo '<td class="pronosMatch"><span class="pancarteBig '.$classPancarte.'">', $pronos_away ,' </span> </td>';
 		echo '<td class="homeEquipeGaucheMatch">';
 		echo $away_name;	
 		echo '</td>';
@@ -317,15 +338,17 @@ $px_b1 = $Result1 * 600 / $total;
 $px_b2 = $Result2 * 600 / $total;
 $px_bN = $ResultN * 600 / $total;
 
-$total2 = $ResultP + $ResultC + $ResultI + $ResultE;
+$total2 = $ResultP + $ResultC + $ResultCp + $ResultI + $ResultE;
 $px_bP = $ResultP * 600 / $total2;
 $px_bC = $ResultC * 600 / $total2;
+$px_bCp = $ResultCp * 600 / $total2;
 $px_bI = $ResultI * 600 / $total2;
 $px_bE = $ResultE * 600 / $total2;
 
 
 $class_bP = "0px 5px 5px 0px";
 $class_bC = "0px";
+$class_bCp = "0px";
 $class_bI = "0px";
 $class_bE = "5px 0px 0px 5px";
 
@@ -333,15 +356,20 @@ if ($px_bP == 600) {
 	$class_bP = "5px";
 } else if ($px_bC == 600) {
 	$class_bC = "5px";
+} else if ($px_bCp == 600) {
+	$class_bCp = "5px";
 } else if ($px_bI == 600) {
 	$class_bI = "5px";
 }  else if ($px_bE == 600) {
 	$class_bE = "5px";
 }	else {
 	if ($px_bP == 0) {
-		$class_bC = "0px 5px 5px 0px";
-		if ($px_bC == 0) {
-			$class_bI = "0px 5px 5px 0px";
+		$class_bCp = "0px 5px 5px 0px";
+		if ($px_bCp == 0) {
+			$class_bC = "0px 5px 5px 0px";
+			if ($px_bC == 0) {
+				$class_bI = "0px 5px 5px 0px";
+			}
 		}
 	} 
 
@@ -408,6 +436,10 @@ if ($played == 1) {
 		border-radius: '.$class_bC.';
 		width: '. $px_bC .'px;
 	}
+	.barresultcp{
+		border-radius: '.$class_bCp.';
+		width: '. $px_bCp .'px;
+	}
 	.barresulti{
 		border-radius: '.$class_bI.';
 		width: '. $px_bI .'px;
@@ -418,16 +450,25 @@ if ($played == 1) {
 }
 
 .colorPresult{
-	background-color: #18beff;
+    background: #00b7ff;
+    border: solid 2px #c0f4fa;
 }
 .colorCresult{
-	background-color: #29cd35;
+    background: #2bdf6e;
+    border: solid 2px #b1f7c0;
+}
+
+.colorCpresult{
+    background: #2bdfaa;
+    border: solid 2px #b1f7ff;
 }
 .colorIresult{
-	background-color: #757575;
+    background: #757575;
+    border: solid 2px #cdcdcd;
 }
 .colorEresult{
-	background-color: #ff3b3b;
+	background-color: #ed1e25;	
+    border: solid 2px #ed9d9d;
 }
 </style>
 ';

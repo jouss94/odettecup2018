@@ -69,6 +69,7 @@
 			$nb_correct = intval($row["nb_correct"]);
 			$nb_inverse = intval($row["nb_inverse"]);
 			$nb_echec = intval($row["nb_echec"]);
+			$nb_correct_plus = intval($row["nb_correct_plus"]);
 			$bonus = intval($row["bonus"]);
 		}
 	}
@@ -98,6 +99,10 @@
             class="profilPage-info-citation-content-cite"><?php echo $prenom;?> <?php echo $nom;?></cite>
     </div>
     <div class="profilPage-info-about">
+		<div class="profilPage-info-about-rang">
+			<div class="profilPage-info-about-profil-classement"><?php echo $generalpoints;?> points</div>
+			<div class="profilPage-info-about-profil-points"><?php echo $generalrang; if ($generalrang == 1) echo 'er'; else echo 'ème'; ?> </div>
+		</div>
         <div class="profilPage-info-about-profil">
             <div class="profilPage-info-about-title-petit">Profil à jour</div>
             <div class="checkbox-wrapper-22">
@@ -154,14 +159,14 @@
 		</span>
     <div class="profilPage-content-pronos">
         <div class="profilPage-content-pronos-list">
-            <div class="profilPage-info-perso-modif">
             <?php if($idProfil == $id && $modifMatch == 1): ?>
+            <div class="profilPage-info-perso-modif">
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
                     id="modifierMatch">
                     Modifier matches
                 </button>
-				<?php endif ;?>
             </div>
+			<?php endif ;?>
             <?php
 	echo '
 	<div class="displaymatch-card-event mdl-card mdl-shadow--2dp rougedefault">
@@ -243,7 +248,7 @@
 						if ($point == 3 || $point == 6)
 							$classPancarte = "pancarte-padding pancarte-correct";
 						if ($point == 4 || $point == 8)
-							$classPancarte = "pancarte-padding pancarte-correct";
+							$classPancarte = "pancarte-padding pancarte-correct-plus";
 						if ($point == 7 || $point == 14)
 							$classPancarte = "pancarte-padding pancarte-perfect";
 					}
@@ -352,14 +357,14 @@
         </div>
 
         <div class="profilPage-content-pronos-bonus">
+			<?php if($idProfil == $id && $modifBonus == 1): ?>
             <div class="profilPage-info-perso-modif">
-            	<?php if($idProfil == $id && $modifBonus == 1): ?>
 					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
 						id="modifierBonus">
 						Modifier Bonus
 					</button>
+				</div>
 				<?php endif ;?>
-            </div>
 
             <?php
 	echo '
@@ -369,22 +374,31 @@
 	echo '
 	<div class="cadreTableau cadreTableauBonus">
 	';
-	$team_winner_id = "";
-	$min_first = "";
-	$min_last = "";
-	$total_but = "";
-	$best_scorer = "";
+	// $team_winner_id = "";
+	// $min_first = "";
+	// $min_last = "";
+	// $total_but = "";
+	// $best_scorer = "";
 	
-	$team_winner_id_point = -1;
-	$min_first_point = -1;
-	$min_last_point = -1;
-	$total_but_point = -1;
-	$best_scorer_point = -1;
+	// $team_winner_id_point = -1;
+	// $min_first_point = -1;
+	// $min_last_point = -1;
+	// $total_but_point = -1;
+	// $best_scorer_point = -1;
+
+	// $min_first_point = -1;
+	// $min_last_point = -1;
+	// $total_but_point = -1;
+	// $fairplay_point = -1;
+	// $but_edf_point = -1;
+	// $penalty_point = $rowBonus[ 'penalty_point' ];
+	// $team_final_1_point = $rowBonus[ 'team_final_1_point' ];
+	// $team_final_2_point = $rowBonus[ 'team_final_2_point' ];
 	
-	$qryBonus = "SELECT *, equipe_winner.name as equipe_w, joueurs.surnom as joueur, equipe_winner.logo as logo
+	$qryBonus = "SELECT *, team_final_1.name as team_final_1_name, team_final_2.name as team_final_2_name, team_final_1.logo as team_final_1_logo, team_final_2.logo as team_final_2_logo
 			FROM pronostics_bonus
-			LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = pronostics_bonus.team_winner_id
-			LEFT JOIN joueurs joueurs ON joueurs.id_joueur = pronostics_bonus.player_winner_id
+			LEFT JOIN equipes team_final_1 ON team_final_1.id_equipe = pronostics_bonus.team_final_1_id
+			LEFT JOIN equipes team_final_2 ON team_final_2.id_equipe = pronostics_bonus.team_final_2_id
 			WHERE pronostics_bonus.id_joueur='".$idProfil."' ;";
 	$resultBonus = mysqli_query($con, $qryBonus);
 	$findBonus = false;
@@ -392,27 +406,40 @@
 	while ($rowBonus = mysqli_fetch_array($resultBonus )) 
 	{	
 		$findBonus = true;
-		$team_winner_id = utf8_encode_function($rowBonus["equipe_w"]);
-		$player_winner_id = utf8_encode_function($rowBonus["joueur"]);
-		$min_first = $rowBonus["min_first"];
-		$min_last = $rowBonus["min_last"];
-		$total_but = $rowBonus["total_but"];
-		$best_scorer = utf8_encode_function($rowBonus["best_scorer"]);
 
-		$team_winner_id_point_value = $rowBonus["team_winner_id_point"];
-		$team_winner_id_point = intval ($rowBonus["team_winner_id_point"]);
-		$player_winner_point_value = $rowBonus["player_winner_point"];
-		$player_winner_point = intval ($rowBonus["player_winner_point"]);
-		$min_first_point_value = $rowBonus["min_first_point"];
-		$min_first_point = intval ($rowBonus["min_first_point"]);
-		$min_last_point_value = $rowBonus["min_last_point"];
-		$min_last_point = intval ($rowBonus["min_last_point"]);
-		$total_but_point_value = $rowBonus["total_but_point"];
-		$total_but_point = intval ($rowBonus["total_but_point"]);
-		$best_scorer_point_value = $rowBonus["best_scorer_point"];	
-		$best_scorer_point = intval ($rowBonus["best_scorer_point"]);	 
+		$min_first = intval($rowBonus[ 'min_first' ]);
+		$min_last = intval($rowBonus[ 'min_last' ]);
+		$total_but = intval($rowBonus[ 'total_but' ]);
+		$fairplay = intval($rowBonus[ 'fairplay' ]);
+		$but_edf = intval($rowBonus[ 'but_edf' ]);
+		$penalty = intval($rowBonus[ 'penalty' ]);
+		$team_final_1_name = $rowBonus[ 'team_final_1_name' ];
+		$team_final_2_name = $rowBonus[ 'team_final_2_name' ];
+		$team_final_1_logo = $rowBonus["team_final_1_logo"];
+		$team_final_2_logo = $rowBonus["team_final_2_logo"];
+
+		$min_first_point = $rowBonus[ 'min_first_point' ];
+		$min_last_point = $rowBonus[ 'min_last_point' ];
+		$total_but_point = $rowBonus[ 'total_but_point' ];
+		$fairplay_point = $rowBonus[ 'fairplay_point' ];
+		$but_edf_point = $rowBonus[ 'but_edf_point' ];
+		$penalty_point = $rowBonus[ 'penalty_point' ];
+		$team_final_1_point = $rowBonus[ 'team_final_1_point' ];
+		$team_final_2_point = $rowBonus[ 'team_final_2_point' ];
+
+		// $team_winner_id_point_value = $rowBonus["team_winner_id_point"];
+		// $team_winner_id_point = intval ($rowBonus["team_winner_id_point"]);
+		// $player_winner_point_value = $rowBonus["player_winner_point"];
+		// $player_winner_point = intval ($rowBonus["player_winner_point"]);
+		// $min_first_point_value = $rowBonus["min_first_point"];
+		// $min_first_point = intval ($rowBonus["min_first_point"]);
+		// $min_last_point_value = $rowBonus["min_last_point"];
+		// $min_last_point = intval ($rowBonus["min_last_point"]);
+		// $total_but_point_value = $rowBonus["total_but_point"];
+		// $total_but_point = intval ($rowBonus["total_but_point"]);
+		// $best_scorer_point_value = $rowBonus["best_scorer_point"];	
+		// $best_scorer_point = intval ($rowBonus["best_scorer_point"]);	 
 	
-	 	$logo = $rowBonus["logo"];
 	}
 
 	
@@ -421,93 +448,18 @@
 
 	echo '<table class="affPronosTableau">';
 
-	echo '<tr class="affPronosLigne backgroundTab1" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Equipe favorite</td>';
-
-	echo '<td >';
-		echo '<span class="pancarteAuto ';
-		if ($team_winner_id_point_value != null)
-		{
-			if ($team_winner_id_point == 0 || $team_winner_id_point == -3)
-				echo ' pancarte-padding pancarte-echec ';
-			else
-				echo ' pancarte-padding pancarte-correct ';
-		}
-		echo ' "  > ';
-		echo $team_winner_id;
-		
-
-		
-		echo '</span> ';
-		// echo '<img class="logoEquipeSmall" src="';
-		// echo $logo;	
-		// echo '" />';
-	echo '</td>';
-	echo '<td class="pointBonus ';
-	if ($team_winner_id_point_value != null)
-	{
-		if ($team_winner_id_point > 0)
-		{
-			echo 'classTRCorrectHome"> +';
-		}
-		else {
-			echo 'classTREchecHome">';
-		}
-		echo $team_winner_id_point;
-	}
-	else {
-		echo '">';
-	}
-	echo '</td>';
-
-	echo '</tr>';
-
-	echo '<tr class="affPronosLigne backgroundTab2" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Nombre total de but</td>';
-
-	echo '<td style="width:50%">';
-		echo '<span class="pancarteAuto ';
-		if ($total_but_point_value != null)
-		{
-			if ($total_but_point == 0)
-				echo ' pancarte-padding pancarte-echec ';
-			else
-				echo ' pancarte-padding pancarte-correct ';
-		}
-
-		echo ' " > ';
-		echo $total_but;
-		echo '</span> Buts';
-	echo '</td>';
-	echo '<td class="pointBonus ';
-	if ($total_but_point_value != null)
-	{
-		if ($total_but_point > 0)
-		{
-			echo 'classTRCorrectHome">';
-		}
-		else {
-			echo 'classTREchecHome">';
-		}
-		echo '+'. $total_but_point;
-	}
-	else {
-		echo '">';
-	}
-	echo '</td>';
-	echo '</tr>';
 
 	echo '<tr class="affPronosLigne backgroundTab1" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Minute du premier but</td>';
+	echo '<td class="affPronosLigneTitre tdBonusLeft">Minute premier but</td>';
 
-	echo '<td style="width:50%">';
-		echo '<span class="pancarteAuto ';
-		if ($min_first_point_value != null)
+	echo '<td class="affPronosLigneResult" >';
+		echo '<span class="pancarteAuto pancarte-padding pancarte-bonus';
+		if ($min_first_point != null)
 		{
-			if ($min_first_point == 0)
-				echo ' pancarte-padding pancarte-echec ';
+			if (intval($min_first_point) == 0)
+				echo ' pancarte-echec ';
 			else
-				echo ' pancarte-padding pancarte-correct ';
+				echo ' pancarte-correct ';
 		}
 
 		echo ' " > ';
@@ -515,16 +467,16 @@
 		echo '</span> Minutes';
 	echo '</td>';
 	echo '<td class="pointBonus ';
-	if ($min_first_point_value != null)
+	if ($min_first_point != null)
 	{
-		if ($min_first_point > 0)
+		if (intval($min_first_point) > 0)
 		{
 			echo 'classTRCorrectHome">';
 		}
 		else {
 			echo 'classTREchecHome">';
 		}
-			echo '+'. $min_first_point;
+			echo '+'. intval($min_first_point);
 	}
 	else {
 		echo '">';
@@ -532,27 +484,28 @@
 	echo '</td>';
 	echo '</tr>';
 
-	echo '<tr class="affPronosLigne backgroundTab2" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Minute dernier but</td>';
 
-	echo '<td style="width:50%">';
-		echo '<span class="pancarteAuto ';
-		if ($min_last_point_value != null)
+	echo '<tr class="affPronosLigne backgroundTab2" >';
+	echo '<td class="affPronosLigneTitre tdBonusLeft">Minute dernier but</td>';
+
+	echo '<td class="affPronosLigneResult">';
+		echo '<span class="pancarteAuto pancarte-padding pancarte-bonus';
+		if ($min_last_point != null)
 		{
-			if ($min_last_point == 0)
-				echo ' pancarte-padding pancarte-echec ';
+			if (intval($min_last_point) == 0)
+				echo ' pancarte-echec ';
 			else
-				echo ' pancarte-padding pancarte-correct ';
+				echo ' pancarte-correct ';
 		}
 
 		echo ' " > ';
 		echo $min_last;
 		echo '</span> Minutes';
 	echo '</td>';
-	echo '<td class="pointBonus ';
-	if ($min_last_point_value != null)
+	echo '<td class="affPronosLignePoint pointBonus ';
+	if ($min_last_point != null)
 	{
-		if ($min_last_point > 0)
+		if (intval($min_last_point) > 0)
 		{
 			echo 'classTRCorrectHome">';
 		}
@@ -568,71 +521,108 @@
 	echo '</tr>';
 
 
-
 	echo '<tr class="affPronosLigne backgroundTab1" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Meilleur buteur</td>';
+	echo '<td class="affPronosLigneTitre tdBonusLeft">Nombre total de but</td>';
 
-	echo '<td style="width:50%">';
-		echo '<span class="pancarteAuto ';
-		if ($best_scorer_point_value != null)
+	echo '<td class="affPronosLigneResult" >';
+		echo '<span class="pancarteAuto pancarte-padding pancarte-bonus';
+		if ($total_but_point != null)
 		{
-			if ($best_scorer_point == 0)
-				echo ' pancarte-padding pancarte-echec ';
+			if (intval($total_but_point) == 0)
+				echo '  pancarte-echec ';
 			else
-				echo ' pancarte-padding pancarte-correct ';
+				echo ' pancarte-correct ';
 		}
 
 		echo ' " > ';
-		echo $best_scorer;
-		echo '</span> ';
+		echo $total_but;
+		echo '</span> Buts';
 	echo '</td>';
 	echo '<td class="pointBonus ';
-	if ($best_scorer_point_value != null)
+	if ($total_but_point != null)
 	{
-		if ($best_scorer_point > 0)
+		if (intval($total_but_point) > 0)
 		{
 			echo 'classTRCorrectHome">';
 		}
 		else {
 			echo 'classTREchecHome">';
 		}
-			echo '+'. $best_scorer_point;
+		echo '+'. $total_but_point;
 	}
 	else {
 		echo '">';
 	}
-
 	echo '</td>';
 	echo '</tr>';
+
+
 
 
 	echo '<tr class="affPronosLigne backgroundTab2" >';
-	echo '<td style="width:50%" class="tdBonusLeft">Joueur vainqueur</td>';
+	echo '<td class="affPronosLigneTitre tdBonusLeft">Fairplay</td>';
 
-	echo '<td >';
-		echo '<span class=pancarteAuto "';
-		if ($player_winner_point_value != null)
+	echo '<td class="affPronosLigneResult" >';
+		echo '<span class="pancarteAuto pancarte-padding pancarte-bonus';
+		if ($fairplay_point != null)
 		{
-			if ($player_winner_point == 0)
-				echo ' pancarte-padding pancarte-echec ';
+			if (intval($fairplay_point) == 0)
+				echo ' pancarte-echec ';
 			else
-				echo ' pancarte-padding pancarte-correct ';
+				echo ' pancarte-correct ';
 		}
-		echo ' "  > ';
-		echo $player_winner_id;
-		echo '</span> ';
+
+		echo ' " > ';
+		echo $fairplay;
+		echo '</span> Cartons';
 	echo '</td>';
 	echo '<td class="pointBonus ';
-	if ($player_winner_point_value != null)
+	if ($fairplay_point != null)
 	{
-		if ($player_winner_point > 0)
+		if (intval($fairplay_point) > 0)
 		{
 			echo 'classTRCorrectHome">';
 		}
 		else {
 			echo 'classTREchecHome">';
 		}
-			echo '+'. $player_winner_point;
+			echo '+'. $fairplay_point;
+	}
+	else {
+		echo '">';
+	}
+
+	echo '</td>';
+	echo '</tr>';
+
+
+	echo '<tr class="affPronosLigne backgroundTab1" >';
+	echo '<td class="affPronosLigneTitre tdBonusLeft">Penalty</td>';
+
+	echo '<td >';
+		echo '<span class="pancarteAuto pancarte-padding pancarte-bonus';
+		if ($penalty_point != null)
+		{
+			if (intval($penalty_point) == 0)
+				echo ' pancarte-echec ';
+			else
+				echo ' pancarte-correct ';
+		}
+		echo ' "  > ';
+		echo $penalty;
+		echo '</span> Penalty';
+	echo '</td>';
+	echo '<td class="pointBonus ';
+	if ($penalty_point != null)
+	{
+		if (intval($penalty_point) > 0)
+		{
+			echo 'classTRCorrectHome">';
+		}
+		else {
+			echo 'classTREchecHome">';
+		}
+			echo '+'. $penalty_point;
 	}
 	else {
 		echo '">';
@@ -640,6 +630,116 @@
 	echo '</td>';
 
 	echo '</tr>';
+
+	echo '<tr class="affPronosLigne backgroundTab2" >';
+	echo '<td class="affPronosLigneTitre tdBonusLeft">But Equipe de France</td>';
+
+	echo '<td >';
+		echo '<span class="pancarteAuto pancarte-padding pancarte-bonus';
+		if ($but_edf_point != null)
+		{
+			if (intval($but_edf_point) == 0)
+				echo ' pancarte-echec ';
+			else
+				echo ' pancarte-correct ';
+		}
+		echo ' "  > ';
+		echo $but_edf;
+		echo '</span> Buts';
+	echo '</td>';
+	echo '<td class="pointBonus ';
+	if ($but_edf_point != null)
+	{
+		if (intval($but_edf_point) > 0)
+		{
+			echo 'classTRCorrectHome">';
+		}
+		else {
+			echo 'classTREchecHome">';
+		}
+			echo '+'. $but_edf_point;
+	}
+	else {
+		echo '">';
+	}
+	echo '</td>';
+
+	echo '</tr>';
+
+	echo '<tr class="affPronosLigne backgroundTab1" >';
+	echo '<td class="affPronosLigneTitre tdBonusLeft">Finalistes</td>';
+
+	$team_final_point = 0;
+	if ($team_final_1_point != null)
+	{
+		$team_final_point += intval($team_final_1_point);
+	}
+	if ($team_final_2_point != null)
+	{
+		$team_final_point += intval($team_final_2_point);
+	}
+
+	echo '<td >';
+		echo '<div>';
+
+		echo '<img class="logoEquipeSmall" src="';
+		echo $team_final_1_logo;	
+		echo '" />';
+
+		echo '
+		
+		<span class="pancarteAuto pancarte-padding ';
+		if ($team_final_1_point != null)
+		{
+			if (intval($team_final_1_point) == 0)
+				echo '  pancarte-echec ';
+			else
+				echo ' pancarte-correct ';
+		}
+		echo ' "  > ';
+		echo $team_final_1_name;
+		echo '</span>
+		</div>
+		';
+
+		echo '<div>';
+
+		echo '<img class="logoEquipeSmall" src="';
+		echo $team_final_2_logo;	
+		echo '" />';
+
+		echo '<span class="pancarteAuto pancarte-padding ';
+		if ($team_final_2_point != null)
+		{
+			if (intval($team_final_2_point) == 0)
+				echo '  pancarte-echec ';
+			else
+				echo ' pancarte-correct ';
+		}
+		echo ' "  > ';
+		echo $team_final_2_name;
+		echo '</span></div>';
+	echo '</td>';
+	echo '<td class="pointBonus ';
+	if ($team_final_1_point != null || $team_final_2_point != null)
+	{
+		if (intval($team_final_point) > 0)
+		{
+			echo 'classTRCorrectHome">';
+		}
+		else {
+			echo 'classTREchecHome">';
+		}
+			echo '+'. $team_final_point;
+	}
+	else {
+		echo '">';
+	}
+	echo '</td>';
+
+	echo '</tr>';
+
+
 
 	echo '</table>';
 	}
@@ -681,29 +781,40 @@
 		// $bonus = 10;
 		$nb_perf_point = $nb_perf * 7;
 		$nb_correct_point = $nb_correct * 3;
+		$nb_correct_plus_point = $nb_correct_plus * 4;
 		$nb_inverse_point = $nb_inverse;
 		$nb_echec;
 		
-		$nb_total_point = $nb_perf_point + $nb_correct_point + $nb_inverse_point + $bonus;
+		$nb_total_point = $nb_perf_point + $nb_correct_point + $nb_inverse_point + $bonus + $nb_correct_plus_point;
 		$nb_total = $nb_perf + $nb_correct + $nb_inverse + $nb_echec;
 
-		$nb_total_point = max($nb_perf_point, $nb_correct_point, $nb_inverse_point, $bonus);
-		$nb_total = max($nb_perf, $nb_correct, $nb_inverse, $nb_echec);
+		$nb_total_point = max($nb_perf_point, $nb_correct_point, $nb_inverse_point, $bonus, $nb_correct_plus_point);
+		$nb_total = max($nb_perf, $nb_correct, $nb_inverse, $nb_echec, $nb_correct_plus);
 
-
-		$pc_perf_match = ($nb_perf * 93 / $nb_total) + 7;
-		$pc_correct_match = ($nb_correct * 93 / $nb_total) + 7;
-		$pc_inverse_match = ($nb_inverse * 93 / $nb_total) + 7;
-		$pc_echec_match = ($nb_echec * 93 / $nb_total) + 7;
-		$pc_bonus_match = 7;
-
-		$pc_perf_point = ($nb_perf_point * 93 / $nb_total_point) + 7;
-		$pc_correct_point = ($nb_correct_point * 93 / $nb_total_point) + 7;
-		$pc_inverse_point = ($nb_inverse_point * 93 / $nb_total_point) + 7;
 		
-		$pc_bonus_point = ($bonus * 93 / $nb_total_point) + 7;
-		$pc_echec_point = 7;
+		if ($nb_total != 0) {
+			$pc_perf_match = ($nb_perf * 93 / $nb_total) + 7;
+			$pc_correct_match = ($nb_correct * 93 / $nb_total) + 7;
+			$pc_inverse_match = ($nb_inverse * 93 / $nb_total) + 7;
+			$pc_echec_match = ($nb_echec * 93 / $nb_total) + 7;
+			$pc_bonus_match = 7;
+		}
 
+		$pc_perf_point = 8;
+		$pc_correct_point = 8;
+		$pc_correct_plus_point = 8;
+		$pc_echec_point = 8;
+		$pc_inverse_point = 8;
+		$pc_bonus_point = 8;
+
+		if ($nb_total_point != 0) {
+			$pc_perf_point = ($nb_perf_point * 93 / $nb_total_point) + 7;
+			$pc_correct_point = ($nb_correct_point * 93 / $nb_total_point) + 7;
+			$pc_inverse_point = ($nb_inverse_point * 93 / $nb_total_point) + 7;
+			$pc_correct_plus_point = ($nb_correct_plus_point * 92 / $nb_total_point) + 8;
+			$pc_bonus_point = ($bonus * 93 / $nb_total_point) + 7;
+			$pc_echec_point = 7;
+		}
 		?>
 
 

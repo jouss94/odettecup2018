@@ -9,8 +9,7 @@
 
     background-color: #ffffff99;
     display: flex;
-    justify-content: center;
-    border: #002c90 3px solid;    
+    justify-content: center; 
     border-bottom: 1px solid #e6e6e6;
     height: 60px;
 }
@@ -113,7 +112,6 @@
     background-color: #FFFFFF;
     display: flex;
     justify-content: center;
-    border: #002c90 3px solid;
     border-top: none;
     height: calc(100% - 60px);
 }
@@ -200,7 +198,7 @@
     width: 20%;
     border: 1px solid #ffffff;
     border-radius: 10px;
-    background: #002c90;
+    background: #000;
     color: #FFF;
     font-weight: bold;
     cursor: pointer;

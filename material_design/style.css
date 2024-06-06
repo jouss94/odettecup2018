@@ -37,13 +37,12 @@ padding-right: 10px;
 .demo-card-event > .mdl-card__title,
 .demo-card-event > .mdl-card__actions,
 .demo-card-event > .mdl-card__actions > .mdl-button {
-color: #002c90;
+color: #000;
 }
 
 
 .classement-card-event.mdl-card {
   width: 100%;
-  height: 412px;
 }
 .classement-general {
   /* background: #fbe835; */
@@ -92,7 +91,7 @@ color: #002c90;
 .classement-card-event > .mdl-card__title,
 .classement-card-event > .mdl-card__actions,
 .classement-card-event > .mdl-card__actions > .mdl-button {
-  color: #002c90;
+  color: #000;
 }
 
 
@@ -124,7 +123,7 @@ color: #002c90;
 .information-card-event > .mdl-card__title,
 .information-card-event > .mdl-card__actions,
 .information-card-event > .mdl-card__actions > .mdl-button {
-  color: #002c90;
+  color: #000;
 }
 
 
@@ -156,7 +155,7 @@ color: #002c90;
 .statistics-card-event > .mdl-card__title,
 .statistics-card-event > .mdl-card__actions,
 .statistics-card-event > .mdl-card__actions > .mdl-button {
-  color: #002c90;
+  color: #000;
 }
 
 .bonus-favotire-card-event.mdl-card {
@@ -168,13 +167,12 @@ color: #002c90;
 
 .bonus-small-card-event.mdl-card {
   width: 270px;
-  height: 405px;
+  height: 570px;
   background: #ffffff91;
 }
 
 .small-card-event.mdl-card {
   width: 200px;
-  height: 120px;
   min-height: 120px;
   background: #ffffff91;
 }
@@ -206,7 +204,7 @@ color: #002c90;
 .bonus-card-event > .mdl-card__title,
 .bonus-card-event > .mdl-card__actions,
 .bonus-card-event > .mdl-card__actions > .mdl-button {
-  color: #002c90;
+  color: #000;
 }
 
 .bonus-card-event-small-padding > .mdl-card__title {
@@ -272,14 +270,15 @@ color: #002c90;
 
 .displaymatch-card-event.mdl-card {
   margin: auto;
-  width: 750px;
-  height: 655px;
+  width: 100%;
   margin-top: 20px;
+  min-height: 0px;
 }
 
 .displaymatch-card-event.stats {
-  height: 250px;
   width: 100%;
+  
+  min-height: 0;
 }
 
 
@@ -304,7 +303,7 @@ color: #002c90;
 .displaymatch-card-event > .mdl-card__title,
 .displaymatch-card-event > .mdl-card__actions,
 .displaymatch-card-event > .mdl-card__actions > .mdl-button {
-  color: #002c90;
+  color: #000;
 }  
 
 
@@ -325,17 +324,17 @@ min-height: 190px !important;
 
 #RetourProfil {
 background: #ffffff;
-color: #002c90; 
+color: #000; 
 }
 
 #RetourAcceuil {
 background: #ffffff;
-color: #002c90;
+color: #000;
 }
 
 
 .match-card-event.mdl-card {
-width: 480px;
+width: 650px;
 height: 500px;
 background: #00000014;
 margin: auto;

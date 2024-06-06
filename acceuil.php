@@ -14,8 +14,7 @@ $showMatch = 0;
 	<head>
 		<title>Accueil</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 		<script src="javascript/jquery-2.2.3.min.js"></script>
@@ -23,11 +22,6 @@ $showMatch = 0;
 		<script src="javascript/login.js"></script>
 		<script src="javascript/bandeau.js"></script>
 		<script src="javascript/acceuil.js"></script>
-
-		
-		<link rel="stylesheet" href="./material_design/material.css">
-		<link rel="stylesheet" href="./material_design/style.css">
-		<link rel="stylesheet" href="./material_design/font.css">
 	</head>
 	
 	<body>
@@ -49,52 +43,55 @@ $showMatch = 0;
 						<tr >
 							<td>
 								<div class="tableAcceuilResultat">
+									<!-- <div class="tableAcceuilResultat-"></div> -->
+
 									<div class="small-card-event bonus-card-event bonus-card-event-small-padding mdl-card mdl-shadow--2dp">
-									<div class="mdl-card__actions mdl-card--border">
-											<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-												Total but
-											</a>
-										</div>
+
 										<div class="mdl-card__title mdl-card--expand">
 											<div class="cadreTableauAcceuilNoHeight cadreTableauAcceuilBg">
 												<?php include("include/viewTotalBut.php");?>
 											</div>
 										</div>
-									</div>
-									<div class="small-card-event bonus-card-event mdl-card mdl-shadow--2dp">
 										<div class="mdl-card__actions mdl-card--border">
 											<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-												Minutages
+												Total buts
 											</a>
-										</div>
-										<div class="mdl-card__title mdl-card--expand">
-											<div class="cadreTableauAcceuilNoHeight cadreTableauAcceuilBg">
-											<?php include("include/viewMinutage.php");?>
-											</div>
-										</div>
-									</div>
-									<div class="small-card-event bonus-card-event mdl-card bonus-card-event-small-padding mdl-shadow--2dp">
-										<div class="mdl-card__actions mdl-card--border">
-											<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-												Buteurs
-											</a>
-										</div>
-										<div class="mdl-card__title mdl-card--expand">
-											<div class="cadreTableauAcceuilNoHeight cadreTableauAcceuilBg">
-												<?php include("include/viewBestScorer.php");?>
-											</div>
 										</div>
 									</div>
 									<div class="small-card-event bonus-card-event bonus-card-event-small-padding mdl-card mdl-shadow--2dp">
-										<div class="mdl-card__actions mdl-card--border">
-											<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >
-												Gains
-											</a>
-										</div>
 										<div class="mdl-card__title mdl-card--expand">
 											<div class="cadreTableauAcceuilNoHeight cadreTableauAcceuilBg">
-												<?php include("include/viewGains.php");?>
+												<?php include("include/viewFairplay.php");?>
 											</div>
+										</div>
+										<div class="mdl-card__actions mdl-card--border">
+											<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+												Fairplay
+											</a>
+										</div>
+									</div>
+									<div class="small-card-event bonus-card-event mdl-card bonus-card-event-small-padding mdl-shadow--2dp">
+										<div class="mdl-card__title mdl-card--expand">
+											<div class="cadreTableauAcceuilNoHeight cadreTableauAcceuilBg">
+												<?php include("include/viewPenalty.php");?>
+											</div>
+										</div>
+										<div class="mdl-card__actions mdl-card--border">
+											<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+												Penalty
+											</a>
+										</div>
+									</div>
+									<div class="small-card-event bonus-card-event bonus-card-event-small-padding mdl-card mdl-shadow--2dp">
+										<div class="mdl-card__title mdl-card--expand">
+											<div class="cadreTableauAcceuilNoHeight cadreTableauAcceuilBg">
+												<?php include("include/viewButEDF.php");?>
+											</div>
+										</div>
+										<div class="mdl-card__actions mdl-card--border">
+											<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >
+												But EDF
+											</a>
 										</div>
 									</div>
 								</div>
@@ -132,12 +129,13 @@ $showMatch = 0;
 										<div class="statistics-card-event mdl-card mdl-shadow--2dp">
 											<div class="mdl-card__title mdl-card--expand">
 												<span class="TitreTableauBas">
-												⚠️🚨 Nouvelle page - Bonus 🚨⚠️
+												<!-- ⚠️🚨 Nouvelle page - Bonus 🚨⚠️ -->
+												🚨 Tous les bonus sur une seule page
 												</span>
 											</div>
 											<div class="mdl-card__actions mdl-card--border">
 												<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="bonus.php" >
-													Voir tous les bonus sur une seule page
+												Bonus
 												</a>
 											</div>
 										</div>

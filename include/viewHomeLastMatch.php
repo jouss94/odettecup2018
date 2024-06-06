@@ -54,7 +54,7 @@
 			}
 			if ($point == 4 || $point == 8) {
 				$classTR = "classTRCorrectPlusHome";
-				$classPancarte = "pancarte-correct";
+				$classPancarte = "pancarte-correct-plus";
 			}
 			if ($point == 7 || $point == 14) {
 				$classTR = "classTRPerfectHome";

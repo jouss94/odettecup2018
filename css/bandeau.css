@@ -17,7 +17,7 @@ body {
     background: #ffffffcc;
     position: fixed;
     z-index: 999;
-    color: #002c90;
+    color: #000;
     border-bottom: 1px solid #fff;
     font-weight: bold;
 }
@@ -34,7 +34,7 @@ body {
 }
 
 #bandeauMenuBurger {
-    color: #002c9080;
+    color: #00000063;
 }
 
 #bandeauAcceuil {
@@ -45,7 +45,7 @@ body {
 }
 
 #bandeauAcceuil:hover {
-    color: #002c9080;
+    color: #00000063;
 }
 
 #bandeauNom {
@@ -62,7 +62,7 @@ body {
 }
 
 #bandeauAdmin:hover {
-    color: #002c9080;
+    color: #00000063;
 }
 
 
@@ -79,7 +79,7 @@ body {
 }
 
 #bandeauProfil:hover {
-    color: #002c9080;
+    color: #00000063;
 }
 
 
@@ -89,7 +89,7 @@ body {
 }
 
 #bandeauDeconnect:hover {
-    color: #002c9080;
+    color: #00000063;
 }
 
 .flex {
@@ -131,7 +131,7 @@ body {
 
 
 .topnav a:hover {
-  color: #013b95;
+  color: #6e6e6e;
 }
 
 .topnav-content-item {
@@ -177,7 +177,7 @@ body {
   }
   
   .sidenav a:hover {
-    color: #013b95;
+    color: #6e6e6e;
   }
   
   .sidenav ul {

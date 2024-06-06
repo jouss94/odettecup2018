@@ -96,6 +96,9 @@ function getMessages(timeoutScroll){
 
       var day = message.created_at.substring(8, 10) + " " + monthNames[message.created_at.substring(5, 7) - 1];
       var bgColor = message.color;
+      if (message.id_joueur != userId) {
+        bgColor = "#57b285";
+      }
       var color = pickTextColorBasedOnBgColorSimple(message.color, "#FFF", "#000");
 
       var images = "";

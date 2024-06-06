@@ -11,9 +11,8 @@ if ($id == 0) { header('Location: index.php'); }
 	<head>
 		<title>Classements</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/favicon.png" />
+		<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/tabs.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 		<script src="javascript/jquery-2.2.3.min.js"></script>
@@ -23,9 +22,7 @@ if ($id == 0) { header('Location: index.php'); }
 		<script src="javascript/calendrier.js"></script>
 		<script src="javascript/sorttable.js"></script>
 		<script src="javascript/classement.js"></script>
-		<link rel="stylesheet" href="./material_design/material.css">
 		<link rel="stylesheet" href="./material_design/style.css">
-		<link rel="stylesheet" href="./material_design/font.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Libre+Barcode+128+Text&family=Orbitron:wght@400..900&family=Special+Elite&display=swap" rel="stylesheet">
@@ -36,7 +33,7 @@ if ($id == 0) { header('Location: index.php'); }
 		<?php include("include/bandeau.php");?>
 		<div class="padding20">
 			<div class="loginform-in blackougedefault">
-				<div style="width:100%;height:800px;">
+				<div style="width:100%;">
 					<span class="listeJoueurTitre">Classement</span>
 					<span class="RetourSpanContainer">
 						<button class="RetourSpan mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="RetourButtonBlanc">

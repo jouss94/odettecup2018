@@ -101,14 +101,14 @@
 										'</td>
 										<td style="width: 5%;">'; 
 											if ($played == 1)
-												echo '<span class="pancarte ',$classPancarte,'">',  $score_home,'</span>';
+												echo '<span class="pancarte-profil  ',$classPancarte,'">',  $score_home,'</span>';
 
 										echo '</td>
 										<td style="width: 2%;"> - ', 
 										'</td>
 										<td style="width: 5%;">'; 
 											if ($played == 1)
-												echo '<span class="pancarte ',$classPancarte,'">',  $score_away,'</span>';
+												echo '<span class="pancarte-profil  ',$classPancarte,'">',  $score_away,'</span>';
 
 										echo '</td>
 										<td style="width: 24%;text-align: left;padding-left: 25px;">', 

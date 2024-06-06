@@ -31,8 +31,7 @@ if ($id == 0) { header('Location: index.php'); }
 <head>
     <title>Bonus</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <?php include("include/style.php");?>
     <link rel="stylesheet" type="text/css" href="css/bandeau.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
     <script src="javascript/jquery-2.2.3.min.js"></script>
@@ -41,10 +40,6 @@ if ($id == 0) { header('Location: index.php'); }
     <script src="javascript/bandeau.js"></script>
     <script src="javascript/acceuil.js"></script>
     <script src="javascript/reglement.js"></script>
-
-    <link rel="stylesheet" href="./material_design/material.css">
-    <link rel="stylesheet" href="./material_design/style.css">
-    <link rel="stylesheet" href="./material_design/font.css">
 </head>
 
 <body>
@@ -70,13 +65,13 @@ if ($id == 0) { header('Location: index.php'); }
                             <div class="tableAcceuilBas">
                                 <div class="bonus-favotire-card-event bonus-card-event mdl-card mdl-shadow--2dp">
                                     <div class="mdl-card__title mdl-card--expand">
-                                        <div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+                                        <div class="cadreTableauAcceuil">
                                             <?php include("include/viewBonusFavorite.php");?>
                                         </div>
                                     </div>
                                     <div class="mdl-card__actions mdl-card--border">
                                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                            Equipe favorite
+                                            Equipes finalistes
                                         </a>
                                     </div>
                                 </div>
@@ -91,37 +86,37 @@ if ($id == 0) { header('Location: index.php'); }
                             <div class="tableAcceuilResultat">
                                 <div class="bonus-small-card-event bonus-card-event  mdl-card mdl-shadow--2dp">
                                     <div class="mdl-card__title mdl-card--expand">
-                                        <div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+                                        <div class="cadreTableauAcceuil cadreTableauAcceuilBig">
                                             <?php include("include/viewBonusFirstBut.php");?>
                                         </div>
                                     </div>
                                     <div class="mdl-card__actions mdl-card--border">
                                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                            Minute du premier but
+                                            Premier but
                                         </a>
                                     </div>
                                 </div>
                                 <div class="bonus-small-card-event bonus-card-event mdl-card mdl-shadow--2dp">
                                     <div class="mdl-card__title mdl-card--expand">
-                                        <div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+                                        <div class="cadreTableauAcceuil cadreTableauAcceuilBig">
                                             <?php include("include/viewBonusLastBut.php");?>
                                         </div>
                                     </div>
                                     <div class="mdl-card__actions mdl-card--border">
                                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                            Minute dernier but
+                                            Dernier but
                                         </a>
                                     </div>
                                 </div>
                                 <div class="bonus-small-card-event bonus-card-event mdl-card mdl-shadow--2dp">
                                     <div class="mdl-card__title mdl-card--expand">
-                                        <div class="cadreTableauAcceuil cadreTableauAcceuilBg">
+                                        <div class="cadreTableauAcceuil cadreTableauAcceuilBig">
                                             <?php include("include/viewBonusTotalBut.php");?>
                                         </div>
                                     </div>
                                     <div class="mdl-card__actions mdl-card--border">
                                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                            Nombre total de but
+                                            Total buts
                                         </a>
                                     </div>
                                 </div>
@@ -134,27 +129,39 @@ if ($id == 0) { header('Location: index.php'); }
                     <tr>
                         <td>
                             <div class="tableAcceuilResultat">
-                                <div class="bonus-medium-card-event bonus-card-event  mdl-card mdl-shadow--2dp">
+                                <div class="bonus-small-card-event bonus-card-event  mdl-card mdl-shadow--2dp">
                                     <div class="mdl-card__title mdl-card--expand">
-                                        <div class="cadreTableauAcceuil cadreTableauAcceuilBg">
-                                            <?php include("include/viewBonusScorer.php");?>
+                                        <div class="cadreTableauAcceuil cadreTableauAcceuilBig">
+                                            <?php include("include/viewBonusPenalty.php");?>
                                         </div>
                                     </div>
                                     <div class="mdl-card__actions mdl-card--border">
                                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                            Meilleur buteur
+                                            Penalty
                                         </a>
                                     </div>
                                 </div>
-                                <div class="bonus-medium-card-event bonus-card-event mdl-card mdl-shadow--2dp">
+                                <div class="bonus-small-card-event bonus-card-event mdl-card mdl-shadow--2dp">
                                     <div class="mdl-card__title mdl-card--expand">
-                                        <div class="cadreTableauAcceuil cadreTableauAcceuilBg">
-                                            <?php include("include/viewBonusPlayer.php");?>
+                                        <div class="cadreTableauAcceuil cadreTableauAcceuilBig">
+                                            <?php include("include/viewBonusFairplay.php");?>
                                         </div>
                                     </div>
                                     <div class="mdl-card__actions mdl-card--border">
                                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                            Joueur vainqueur
+                                            Fairplay
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="bonus-small-card-event bonus-card-event  mdl-card mdl-shadow--2dp">
+                                    <div class="mdl-card__title mdl-card--expand">
+                                        <div class="cadreTableauAcceuil cadreTableauAcceuilBig">
+                                            <?php include("include/viewBonusButEdf.php");?>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-card__actions mdl-card--border">
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                            Buts EdF
                                         </a>
                                     </div>
                                 </div>

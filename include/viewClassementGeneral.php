@@ -28,6 +28,7 @@
 <th >Surnom</th>
 <th class="titleSmallTexte">Ponos</th>
 <th class="titleSmallTexte">Perfect</th>
+<th class="titleSmallTexte">Correct+</th>
 <th class="titleSmallTexte">Correct</th>
 <th class="titleSmallTexte">Inverse</th>
 <th class="titleSmallTexte">Echec</th>
@@ -83,7 +84,10 @@
 					$nb_perf,
 				'</td>
 				<td class="ClassementCorrect">',
-					$nb_correct,
+					$nb_correct_plus,
+				'</td>
+				<td class="ClassementCorrect">',
+				$nb_correct,
 				'</td>
 				<td class="ClassementInverse">',
 					$nb_inverse,

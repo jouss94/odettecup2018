@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 include('config.php');
@@ -40,6 +41,12 @@ if (isset($postData['name']) && isset($postData['password']))
 		// echo "YES";
 		header("Location: acceuil.php");
 	}
+} else {
+	echo '2';
+	header("Location:index.php");
 }
+
+
+exit();
 
 ?>

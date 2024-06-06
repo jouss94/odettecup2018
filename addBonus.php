@@ -9,7 +9,7 @@ if ($id == 0) { header('Location: index.php'); }
 require_once 'config.php';
 include("functions.php");
 
-function changeEtat($con, $team_winner_id)
+function changeEtat($con)
 {
 	$colors = array(
 	1 => '65112d',
@@ -48,8 +48,6 @@ function changeEtat($con, $team_winner_id)
 
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 
-	$color = '#' . $colors[$team_winner_id];
-
 //	$qry = "UPDATE  joueurs SET modif_bonus = 1, equipe = $team_winner_id, color = '$color' WHERE id_joueur = $id";
 	$qry = "UPDATE  joueurs SET modif_bonus = 1 WHERE id_joueur = $id";
 	
@@ -74,16 +72,17 @@ function addBonus($con)
 	}
 
 	$return = false;
-	$team_winner_id = intval($_POST[ 'equipeWin' ]);
 	$min_first = intval($_POST[ 'MinPronosFirst' ]);
 	$min_last = intval($_POST[ 'MinPronosLast' ]);
 	$total_but = intval($_POST[ 'totalBut' ]);
-	$best_scorer = addslashes(utf8_decode_function ($_POST[ 'InputTextBestScorer' ]));
+	$fairplay = intval($_POST[ 'fairplay' ]);
+	$but_edf = intval($_POST[ 'but_edf' ]);
+	$penalty = intval($_POST[ 'penalty' ]);
+	$team_final_1 = intval($_POST[ 'team_final_1' ]);
+	$team_final_2 = intval($_POST[ 'team_final_2' ]);
 
-	$player_winner_id = intval($_POST[ 'joueurWin' ]);
-
-	$qry = " INSERT INTO pronostics_bonus (id_joueur, team_winner_id, total_but, min_first, min_last, player_winner_id, best_scorer) 
-										VALUES ($id, $team_winner_id, $total_but, $min_first, $min_last, $player_winner_id, '$best_scorer');";
+	$qry = " INSERT INTO pronostics_bonus (id_joueur, total_but, min_first, min_last, fairplay, penalty, but_edf, team_final_1_id, team_final_2_id) 
+										VALUES ($id, $total_but, $min_first, $min_last, $fairplay, '$penalty', '$but_edf', $team_final_1, $team_final_2);";
 
 	$result = mysqli_query($con, $qry);
 
@@ -94,7 +93,7 @@ function addBonus($con)
 	else
 	{
 		$return = true;
-		changeEtat($con, $team_winner_id);
+		changeEtat($con);
 	}
 	return $return;
 }
@@ -105,8 +104,7 @@ function addBonus($con)
 	<head>
 		<title>Modifier bonus</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/png" href="images/favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+<?php include("include/style.php");?>
 		<link rel="stylesheet" type="text/css" href="css/formMatch.css">
 		<link rel="stylesheet" type="text/css" href="css/bandeau.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -118,9 +116,6 @@ function addBonus($con)
 		<script src="javascript/profil.js"></script>
 		<script src="javascript/pronosForm.js"></script>
 		<script src="javascript/jquery.validVal.min.js"></script>
-		<link rel="stylesheet" href="./material_design/material.css">
-		<link rel="stylesheet" href="./material_design/style.css">
-		<link rel="stylesheet" href="./material_design/font.css">
 	</head>	
 	<body>
 		<div style="display:none" id="idPhp" name='<?php echo $id ?>'> </div>

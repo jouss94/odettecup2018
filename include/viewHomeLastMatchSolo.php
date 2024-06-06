@@ -2,6 +2,7 @@
 	
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+	$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
 
 	require_once 'config.php';
 	require_once 'functions.php';
@@ -22,7 +23,9 @@
 	FROM (SELECT * from matches WHERE (modif=1 OR modif=2) and played = 1 ORDER BY date DESC, id_match LIMIT 1) as matches
 	LEFT JOIN equipes equipes_home ON equipes_home.id_equipe = matches.id_team_home 
 	LEFT JOIN equipes equipes_away ON equipes_away.id_equipe = matches.id_team_away 
-	LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match ;";
+	LEFT JOIN pronostics pronos ON pronos.id_match = matches.id_match 
+	LEFT JOIN joueurs j ON pronos.id_joueur = j.id_joueur 
+	WHERE competition = $competition;";
 
 	$result = mysqli_query($con, $qry);
 	$find = false;
@@ -30,6 +33,7 @@
 
 	$ResultP = 0;
 	$ResultC = 0;
+	$ResultCp = 0;
 	$ResultI = 0;
 	$ResultE = 0;
 
@@ -70,23 +74,26 @@
 				</div>
 				<div class="nextmatchsoloteams">
 					<div class="nextmatchsoloteamshome">
-						<div class="nextmatchsoloteamshomeflag">
-							<img class="logoEquipebigbig" src="'.$home_logo.'" />
-						</div>
+						
 						<div class="nextmatchsoloteamshomename">
 							<span>'.$home_name.'</span>
 						</div>
+						<div class="nextmatchsoloteamshomeflag">
+								<img class="logoEquipebigbig" src="'.$home_logo.'" />
+						</div>
+
 					</div>
 					<div class="nextmatchsoloteamsmiddle">
-						<span></span>
+						<span>VS</span>
 					</div>
 					<div class="nextmatchsoloteamsaway">
-						<div class="nextmatchsoloteamsawayflag">
+					<div class="nextmatchsoloteamsawayname">
+					<span>'.$away_name.'</span>
+				</div>
+										<div class="nextmatchsoloteamsawayflag">
 						<img class="logoEquipebigbig" src="'.$away_logo.'" />
 						</div>
-						<div class="nextmatchsoloteamsawayname">
-							<span>'.$away_name.'</span>
-						</div>
+
 					</div>			
 				</div>
 			';
@@ -105,7 +112,13 @@
 			$resultText = "Correct";
 			$resultTextCss = "perfectCorrect";
 			$resultPancarteCss = "colorCresult";
-		} else if ($point == 1 || $point == 2) {
+		} else if ($point == 4 || $point == 8) {
+			$ResultCp++;
+			$resultText = "Correct+";
+			$resultTextCss = "perfectCorrectPlus";
+			$resultPancarteCss = "colorCpresult";
+		}
+		else if ($point == 1 || $point == 2) {
 			$ResultI++;
 			$resultText = "Inverse";
 			$resultTextCss = "perfectInverse";
@@ -154,16 +167,18 @@
 		}
 	}
 
-	$total = $ResultP + $ResultC + $ResultI + $ResultE;
+	$total = $ResultP + $ResultC + $ResultI + $ResultE + $ResultCp;
 
 	if ($total != 0) {
 		$px_bP = $ResultP * 315 / $total;
 		$px_bC = $ResultC * 315 / $total;
+		$px_bCp = $ResultCp * 315 / $total;
 		$px_bI = $ResultI * 315 / $total;
 		$px_bE = $ResultE * 315 / $total;
 
 		$class_bP = "lastbar";
 		$class_bC = "";
+		$class_bCp = "";
 		$class_bI = "";
 		$class_bE = "firstbar";
 
@@ -171,6 +186,8 @@
 			$class_bP = "onebar";
 		} else if ($px_bC == 315) {
 			$class_bC = "onebar";
+		} else if ($px_bCp == 315) {
+			$class_bCp = "onebar";
 		} else if ($px_bI == 315) {
 			$class_bI = "onebar";
 		}  else if ($px_bE == 315) {
@@ -202,10 +219,11 @@ echo '<div class="nextmatchsolobar">';
 		echo '
 		<table class="percentBarresult">
 		<tr> 
-			<td class="colorEresult barpronos barresulte '. $class_bE.'"></td>
-			<td class="colorIresult barpronos barresulti '. $class_bI.'"></td>
-			<td class="colorCresult barpronos barresultc '. $class_bC.'"></td>
-			<td class="colorPresult barpronos barresultp '. $class_bP.'"></td>
+			<td class="colorEresult barpronos borderNone barresulte '. $class_bE.'"></td>
+			<td class="colorIresult barpronos borderNone barresulti '. $class_bI.'"></td>
+			<td class="colorCresult barpronos borderNone barresultc '. $class_bC.'"></td>
+			<td class="colorCpresult barpronos borderNone barresultcp '. $class_bCp.'"></td>
+			<td class="colorPresult barpronos borderNone barresultp '. $class_bP.'"></td>
 		</tr>
 		</table>    
 			
@@ -216,6 +234,9 @@ echo '<div class="nextmatchsolobar">';
 			.barresultc{
 				width: '. $px_bC .'px;
 			}
+			.barresultcp{
+				width: '. $px_bCp .'px;
+			}
 			.barresulti{
 				width: '. $px_bI .'px;
 			}
@@ -224,16 +245,25 @@ echo '<div class="nextmatchsolobar">';
 			}
 
 			.colorPresult{
-				background-color: #18beff;
+				background: #00b7ff;
+				border: solid 2px #c0f4fa;
 			}
 			.colorCresult{
-				background-color: #29cd35;
+				background: #2bdf6e;
+				border: solid 2px #b1f7c0;
+			}
+			
+			.colorCpresult{
+				background: #2bdfaa;
+				border: solid 2px #b1f7ff;
 			}
 			.colorIresult{
-				background-color: #757575;
+				background: #757575;
+				border: solid 2px #cdcdcd;
 			}
 			.colorEresult{
-				background-color: #ff3b3b;
+				background-color: #ed1e25;	
+				border: solid 2px #ed9d9d;
 			}
 			</style>
 			';

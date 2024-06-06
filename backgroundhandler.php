@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 /**
  * Connexion simple à la base de données via PDO !
  */
@@ -27,7 +30,8 @@ if($task == "write"){
  * Si on veut récupérer, il faut envoyer du JSON
  */
 function getMessages(){
-
+  session_start();
+  $competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
   // 1. On requête la base de données pour sortir les 20 derniers messages
   // $resultats = $db->query("SELECT * FROM messages ORDER BY created_at DESC LIMIT 200");
   global $db;
@@ -42,6 +46,7 @@ function getMessages(){
   FROM messages 
   LEFT JOIN joueurs ON messages.author_id = joueurs.id_joueur
   LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = joueurs.equipe 
+  WHERE joueurs.competition = $competition
   ORDER BY created_at DESC LIMIT 200");
 
   // 2. On traite les résultats

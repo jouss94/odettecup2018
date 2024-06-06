@@ -1,5 +1,5 @@
-CREATE DATABASE Allemagne2024 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE Allemagne2024;
+-- CREATE DATABASE Allemagne2024 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- USE Allemagne2024;
 
 --
 -- Table `competition`
@@ -137,7 +137,7 @@ INSERT INTO `equipes` (`id_equipe`, `name`, `group`, `image`, `logo`, `color`) V
 (11, 'Serbie', 'C', '', 'images\\\Euro\\SRB.png', '#005aab'),
 (12, 'Angleterre', 'C', '', 'images\\\Euro\\ENG.png', '#005aab'),
 
-(13, 'Barrage A', 'D', '', 'images\\\Euro\\KAZ.png', '#65112d'),	 
+(13, 'Pologne', 'D', '', 'images\\\Euro\\POL.png', '#65112d'),	 
 (14, 'Pays-Bas', 'D', '', 'images\\\Euro\\NED.png', '#ff6c00'),	 
 (15, 'Autriche', 'D', '', 'images\\\Euro\\AUT.png', '#ed1c24'),	 
 (16, 'France', 'D', '', 'images\\\Euro\\FRA.png', '#005aab'),	 
@@ -145,10 +145,10 @@ INSERT INTO `equipes` (`id_equipe`, `name`, `group`, `image`, `logo`, `color`) V
 (17, 'Belgique', 'E', '', 'images\\\Euro\\BEL.png', '#ffd503'),	 	 
 (18, 'Slovaquie', 'E', '', 'images\\\Euro\\SVK.png', '#ffffff'),
 (19, 'Roumanie', 'E', '', 'images\\\Euro\\ROU.png', '#ffde00'),
-(20, 'Barrage B', 'E', '', 'images\\\Euro\\KAZ.png', '#65112d'),	
+(20, 'Ukraine', 'E', '', 'images\\\Euro\\UKR.png', '#65112d'),	
 
 (21, 'Turquie', 'F', '', 'images\\\Euro\\TUR.png', '#ed1c24'),
-(22, 'Barrage C', 'F', '', 'images\\\Euro\\KAZ.png', '#65112d'), 
+(22, 'Géorgie', 'F', '', 'images\\\Euro\\GEO.png', '#65112d'), 
 (23, 'Portugal', 'F', '', 'images\\\Euro\\POR.png', '#006940'),
 (24, 'Tchéquie', 'F', '', 'images\\\Euro\\CZE.png', '#ffffff');
 
@@ -164,7 +164,6 @@ CREATE TABLE IF NOT EXISTS `etat` (
   `attribut` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
   `value` int(1) NOT NULL,
   `competition` int(11) NOT NULL DEFAULT '0',
-  FOREIGN KEY (competition) REFERENCES competition(id),
   PRIMARY KEY (`id`)
 )  AUTO_INCREMENT=0 DEFAULT  COLLATE=utf8mb4_unicode_ci;
 --
@@ -205,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `joueurs` (
   `equipe` int(11) DEFAULT NULL,
   `oauth` enum('Yes','No') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'No',
   `status` enum('active','inactive') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active',
-  `color` varchar(100) NOT NULL DEFAULT '#9c2950',
+  `color` varchar(100) NOT NULL DEFAULT '#1473e6',
   `competition` int(11) NOT NULL DEFAULT '0',
   FOREIGN KEY (competition) REFERENCES competition(id),
   PRIMARY KEY (`id_joueur`)
@@ -242,7 +241,6 @@ CREATE TABLE IF NOT EXISTS `matches` (
   PRIMARY KEY (`id_match`)
 ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT  COLLATE=utf8mb4_unicode_ci;
 
--- DATA `Matchs` --  NO MORE MONTAGNE Last value
 
 INSERT INTO `matches` (`id_team_home`, `id_team_away`, `score_home`, `score_away`, `date`, `stadium`, `diff`, `played`, `modif`, `groupe`, `dayOfstage`) VALUES
 
@@ -295,8 +293,6 @@ INSERT INTO `matches` (`id_team_home`, `id_team_away`, `score_home`, `score_away
 (22, 23 , 0, 0, '2024-06-26 21:00:00', 'Cologne', 'TF1 ou M6', 0, 1, 'F', 3),
 (24, 21, 0, 0, '2024-06-26 21:00:00', 'Munich', 'TF1 ou M6', 0, 1, 'F', 3),
 
----
-
 (1, 1, 0, 0, '2024-06-29 18:00:00', 'Berlin', 'TF1 ou M6', 0, 0, '', 0),
 (1, 1, 0, 0, '2024-06-29 21:00:00', 'Dortmund', 'TF1 ou M6', 0, 0, '', 0),
 
@@ -309,7 +305,6 @@ INSERT INTO `matches` (`id_team_home`, `id_team_away`, `score_home`, `score_away
 (1, 1, 0, 0, '2024-07-02 18:00:00', 'Munich', 'TF1 ou M6', 0, 0, '', 0),
 (1, 1, 0, 0, '2024-07-02 21:00:00', 'Leipzig', 'TF1 ou M6', 0, 0, '', 0),
 
----
 
 (1, 1, 0, 0, '2024-07-05 18:00:00', 'Hambourg', 'TF1 ou M6', 0, 0, '', 0),
 (1, 1, 0, 0, '2024-07-05 21:00:00', 'Stuttgart', 'TF1 ou M6', 0, 0, '', 0),
@@ -317,12 +312,10 @@ INSERT INTO `matches` (`id_team_home`, `id_team_away`, `score_home`, `score_away
 (1, 1, 0, 0, '2024-07-06 18:00:00', 'Düsseldorf', 'TF1 ou M6', 0, 0, '', 0),
 (1, 1, 0, 0, '2024-07-06 21:00:00', 'Berlin', 'TF1 ou M6', 0, 0, '', 0),
 
-----
 (1, 1, 0, 0, '2024-07-09 21:00:00', 'Munich', 'TF1 ou M6', 0, 0, '', 0),
 
 (1, 1, 0, 0, '2024-07-10 21:00:00', 'Dortmund', 'TF1 ou M6', 0, 0, '', 0),
 
----
 
 (1, 1, 0, 0, '2024-07-14 21:00:00', 'Berlin', 'TF1 ou M6', 0, 0, '', 0);
 
@@ -437,8 +430,8 @@ CREATE TABLE IF NOT EXISTS `pronostics` (
 
 DROP TABLE IF EXISTS `pronostics_bonus`;
 CREATE TABLE IF NOT EXISTS `pronostics_bonus` (
-  `id_joueur` int(11) NOT NULL,
-  `team_winner_id` int(11) NOT NULL,
+  `id_joueur` int(11)  NULL,
+  `team_winner_id` int(11) NULL DEFAULT NULL,
   `team_winner_id_point` int(4) NULL DEFAULT NULL,
   `min_first` int(11) NULL,
   `min_first_point` int(4) NULL DEFAULT NULL,
@@ -446,11 +439,24 @@ CREATE TABLE IF NOT EXISTS `pronostics_bonus` (
   `min_last_point` int(4) NULL DEFAULT NULL,
   `total_but` int(11) NULL,
   `total_but_point` int(4) NULL DEFAULT NULL,
+
   `best_scorer` varchar(255) COLLATE utf8mb4_unicode_ci NULL,
   `best_scorer_point` int(4) NULL DEFAULT NULL,
-  `player_winner_id` int(11) NOT NULL,  
+  `player_winner_id` int(11) NULL DEFAULT NULL,  
   `player_winner` varchar(255) COLLATE utf8mb4_unicode_ci NULL,
   `player_winner_point` int(4) NULL DEFAULT NULL,
+
+  `fairplay` int(11) NULL,
+  `fairplay_point` int(4) NULL DEFAULT NULL,
+  `penalty` int(11) NULL,
+  `penalty_point` int(4) NULL DEFAULT NULL,
+  `but_edf` int(11) NULL,
+  `but_edf_point` int(4) NULL DEFAULT NULL,
+  `team_final_1_id` int(11) NULL DEFAULT NULL,
+  `team_final_1_point` int(4) NULL DEFAULT NULL,
+  `team_final_2_id` int(11) NULL DEFAULT NULL,
+  `team_final_2_point` int(4) NULL DEFAULT NULL,
+  
   `modif` int(11) NULL DEFAULT '1',
   UNIQUE KEY `id_joueur` (`id_joueur`)
 ) ENGINE=MyISAM DEFAULT  COLLATE=utf8mb4_unicode_ci;
@@ -475,6 +481,17 @@ CREATE TABLE IF NOT EXISTS `pronostics_bonus_result` (
   `best_scorer_activated` tinyint(1) NOT NULL DEFAULT '0',
   `player_winner_id` int(11) NULL,  
   `player_winner_id_activated` tinyint(1) NOT NULL DEFAULT '0',
+  `fairplay_score` int(11) NULL,
+  `fairplay_activated` tinyint(1) NOT NULL DEFAULT '0',
+  `penalty_score` int(11) NULL,
+  `penalty_activated` tinyint(1) NOT NULL DEFAULT '0',
+  `but_edf_score` int(11) NULL,
+  `but_edf_activated` tinyint(1) NOT NULL DEFAULT '0',
+  `team_final_1_id` int(11) NULL,
+  `team_final_1_activated` tinyint(1) NOT NULL DEFAULT '0',
+  `team_final_2_id` int(11) NULL,
+  `team_final_2_activated` tinyint(1) NOT NULL DEFAULT '0',
+
   UNIQUE KEY `id_pronostics_bonus_result` (`id_pronostics_bonus_result`)
 ) ENGINE=MyISAM DEFAULT  COLLATE=utf8mb4_unicode_ci;
 COMMIT;

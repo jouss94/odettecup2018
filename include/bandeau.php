@@ -10,7 +10,7 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
     rel="stylesheet">
 
 <div id="mySidenav" class="sidenav">
-    <img src="images/Logo_UEFA_OCUP_2024.png" class="sidenav-logo" />
+    <img src="images/Logo_UEFA_OCUP_2024_black.png" class="sidenav-logo" />
     <div class="sidebar-content">
         <div class="sidebar-content-item">
             <a href="acceuil.php">Accueil</a>
@@ -48,9 +48,9 @@ $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
             </div>
         </div>
         <?php endif ;?>
-        <div class="topnav-content-item">
+        <!-- <div class="topnav-content-item">
             <a href="options.php">Options</a>
-        </div>
+        </div> -->
         <div class="topnav-content-item topnav-content-item-last">
             <a href="deconnect.php">Déconnexion</a>
         </div>

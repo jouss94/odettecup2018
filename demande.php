@@ -6,8 +6,7 @@ session_start();
 <head>
     <title>Demande</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <?php include("include/style.php");?>
     <link rel="stylesheet" type="text/css" href="css/form.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
     <script src="javascript/jquery-2.2.3.min.js"></script>
@@ -16,15 +15,12 @@ session_start();
     <script src="javascript/demande.js"></script>
     <link rel="stylesheet" type="text/css" href="css/formProfil.css">
     <script src="javascript/jquery.validVal.min.js"></script>
-    <link rel="stylesheet" href="./material_design/material.css">
-    <link rel="stylesheet" href="./material_design/style.css">
-    <link rel="stylesheet" href="./material_design/font.css">
 </head>
 
 <body>
     <div class="padding20">
         <div class="loginform-in">
-            <img src="images/Logo_UEFA_OCUP_2024.png" style="width: 140px;margin: 10px;" />
+            <img src="images/Logo_UEFA_OCUP_2024_black.png" style="width: 140px;margin: 10px;" />
             <h3 style="margin-top: 0;color:#FFF">Formulaire d'inscription</h1>
                 <div class="Retour">
                     <button

@@ -5,14 +5,15 @@ $id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 $pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 if ($id == 0) { header('Location: index.php'); }
 
+$competition=(isset($_SESSION['competition']))?$_SESSION['competition']:'';
+
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 
 <head>
     <title>Règlement</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <?php include("include/style.php");?>
     <link rel="stylesheet" type="text/css" href="css/bandeau.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
     <script src="javascript/jquery-2.2.3.min.js"></script>
@@ -21,9 +22,6 @@ if ($id == 0) { header('Location: index.php'); }
     <script src="javascript/bandeau.js"></script>
     <script src="javascript/acceuil.js"></script>
     <script src="javascript/reglement.js"></script>
-    <link rel="stylesheet" href="./material_design/material.css">
-    <link rel="stylesheet" href="./material_design/style.css">
-    <link rel="stylesheet" href="./material_design/font.css">
 </head>
 
 <body>
@@ -42,239 +40,142 @@ if ($id == 0) { header('Location: index.php'); }
                     </button>
                 </span>
                 <div class="reglementDiv">
-                    <p>
-                    <h3>Règles sur chaque match</h3>
-                    <div class="sousTitre perfectTitre">Perfect</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">7 points</li>
-                        <li class="pointRegle regleDetail">Trouver le score exact du match.</li>
-                        <li class="pointRegle regleExemple">Exemple : <span class="regleExempleCorp">Pronostic 2-1 -
-                                Score 2-1 : + 7 points</span></li>
-                    </ul>
-                    <!-- <div class="sousTitre perfectCorrectPlus">Correct +</div>
-							<ul class="ulperso">
-								<li class="pointRegle reglePoint" >4 points</li>
-								<li class="pointRegle regleDetail" >Trouver le vainqueur du match et le nombre de but de l'une des deux équipes.</li>
-								<li class="pointRegle regleExemple" >Exemple : <span class="regleExempleCorp">Pronostic 2-1 - Score 2-0 : + 4 points</span></li>
-								<div style="margin-left: 161px;"><span class="regleExempleCorp">Pronostic 2-1 - Score 3-1 : + 4 points</span></div>
-							</ul> -->
-                    <div class="sousTitre perfectCorrect">Correct</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">3 points</li>
-                        <li class="pointRegle regleDetail">Trouver le résultat du match.</li>
-                        <li class="pointRegle regleExemple">Exemple : <span class="regleExempleCorp">Pronostic 2-1 -
-                                Score 3-0 : + 3 points</span></li>
-                        <div style="margin-left: 161px;"><span class="regleExempleCorp">Pronostic 1-1 - Score 0-0 : + 3
-                                points</span></div>
-                    </ul>
-                    <div class="sousTitre perfectInverse">Inverse</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">1 point</li>
-                        <li class="pointRegle regleDetail">Trouver le résultat inverse du match.</li>
-                        <li class="pointRegle regleExemple">Exemple : <span class="regleExempleCorp">Pronostic 2-1 -
-                                Score 1-2 : + 1 point</span></li>
-                    </ul>
-                    <div class="sousTitre perfectEchec">Echec</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">0 point</li>
-                        <li class="pointRegle regleDetail">Tout autre résultat.</li>
-                        <li class="pointRegle regleExemple">Exemple : <span class="regleExempleCorp">Pronostic 2-1 -
-                                Score 0-2 : + 0 point</span></li>
-                        <div style="margin-left: 161px;"><span class="regleExempleCorp">Pronostic 1-1 - Score 1-0 : + 0
-                                point</span></div>
-                        <div style="margin-left: 161px;"><span class="regleExempleCorp">Pronostic 0-1 - Score 0-0 : + 0
-                                point</span></div>
-                    </ul>
+                    <div class="reglement-titre-centre">La Odette Cup 2024</div>
+                        <div class="reglement-text">La Odette Cup 2024 se joue sur l'<b>Euro 2024</b> en Allemagne.</div> 
+                        
+                        <div class="reglement-text">La Odette Cup est basée sur un <b>classement</b> à points sur <b>51 matches</b>.</div> 
+                        <div class="reglement-text">Il existe deux manières de gagner des points :</div>      
+                        <div class="reglement-sous-text">Le <b>pronostic</b> de chaque match de la compétition</div>
+                        <div class="reglement-sous-text">Les <b>bonus</b> pendant ou en fin de compétition</div>
+                    
+                    <div class="reglement-titre">Pronostics</div>
+                        <div class="reglement-text">Des points sont attribués à chaque match de la manière suivante :</div> 
+                        <div class="reglement-point">
+                            <div class="reglement-point-item">
+                                <div class="reglement-point-item-text perfectTitre">Perfect</div>
+                                <div class="reglement-point-item-point perfectTitre">+7</div>
+                                <div class="reglement-point-item-def">Le score exact du match.</div>
+                            </div>
+                            <div class="reglement-point-item">
+                                <div class="reglement-point-item-text perfectCorrectPlus">Correct+</div>
+                                <div class="reglement-point-item-point perfectCorrectPlus">+4</div>
+                                <div class="reglement-point-item-def">Le resultat du match et la différence de but entre les 2 équipes.</div>
+                            </div>
+                            <div class="reglement-point-item">
+                                <div class="reglement-point-item-text perfectCorrect">Correct</div>
+                                <div class="reglement-point-item-point perfectCorrect">+3</div>
+                                <div class="reglement-point-item-def">Le résultat du match.</div>
+                            </div>
+                            <div class="reglement-point-item">
+                                <div class="reglement-point-item-text perfectInverse">Inverse</div>
+                                <div class="reglement-point-item-point perfectInverse">+1</div>
+                                <div class="reglement-point-item-def">Le résultat inverse.</div>
+                            </div>
+                            <div class="reglement-point-item">
+                                <div class="reglement-point-item-text perfectEchec">Echec</div>
+                                <div class="reglement-point-item-point perfectEchec">0</div>
+                                <div class="reglement-point-item-def">Tout autre résultat.</div>
+                            </div>
+                        </div>
+                        
+                    <div class="reglement-titre">Bonus</div>
+                        <div class="reglement-sub-titre">Minute du premier but :</div> 
+                        <div class="reglement-sub-text">Trouver la minute du premier but de la coupe du monde. Minutage officiel UEFA.</div>
+                        <div class="reglement-sub-text">Seul le ou les plus proches marquent des points</div>
+                        <div class="reglement-sub-text">Le plus proche marque <b>4 points</b></div>
+                        <div class="reglement-sub-text">Si le minutage exact est trouvé <b>7 points</b></div>
 
-                    <h3>Règles bonus</h3>
-                    <div class="sousTitre titreBonus">Equipe favorite</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">Nouvelle règle - Votre équipe favorite va vous suivre pendant
-                            toute la coupe du monde</li>
-                        <li class="pointRegle regleDetail">Vous êtes associé à cette équipe sur le site avec une couleur
-                            et le drapeau</li>
-                        <li class="pointRegle regleDetail">Elle vous fera gagner ou perdre des points selon les règles
-                            suivantes :</li>
-                        <ul>
-                            <li class="pointRegle regleDetail">Eliminé en poule :&nbsp;&nbsp;&nbsp;&nbsp; <strong>-3
-                                    points</strong></li>
-                            <li class="pointRegle regleDetail">Eliminé en 8eme :&nbsp;&nbsp;&nbsp; &nbsp;<strong>0
-                                    point</strong></li>
-                            <li class="pointRegle regleDetail">Passe les 8emes :&nbsp;&nbsp;&nbsp; <strong>+1
-                                    point</strong></li>
-                            <li class="pointRegle regleDetail">Passe les quarts :&nbsp;&nbsp;&nbsp;&nbsp; <strong>+2
-                                    points</strong></li>
-                            <li class="pointRegle regleDetail">Passe les demies :&nbsp;&nbsp; <strong>+3 points</strong>
-                            </li>
-                            <li class="pointRegle regleDetail">Gagne le tournoi :&nbsp;&nbsp;&nbsp;&nbsp; <strong>+5
-                                    points</strong></li>
-                        </ul>
-                        <li class="pointRegle regleDetail">Les points sont cumulables</li>
-                    </ul>
-                    <!-- <div class="sousTitre titreBonus">Meilleure attaque</div>
-							<ul class="ulperso">
-								<li class="pointRegle reglePoint" >7 points</li>
-								<li class="pointRegle regleDetail" >Trouvez la meilleure attaque du tournoi RUSSIE 2018.</li>
-							</ul>
-							<div class="sousTitre titreBonus">Meilleure défense</div>
-							<ul class="ulperso">
-								<li class="pointRegle reglePoint" >7 points</li>
-								<li class="pointRegle regleDetail" >Trouvez la meilleure défense du tournoi RUSSIE 2018.</li>
-							</ul> -->
-                    <div class="sousTitre titreBonus">Nombre total de buts</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">Attention la règle change sur l'attribution des points</li>
-                        <li class="pointRegle regleDetail">Trouver le nombre de buts total de la coupe du monde</li>
-                        <li class="pointRegle regleDetail">Rapporte <strong>5 points</strong></li>
-                        <li class="pointRegle regleDetail">La reponse se trouve dans les <strong>3</strong> buts de
-                            battement avant ou après le résultat.</li>
-                        <li class="pointRegle regleDetail">Soit une plage de but de <strong>7</strong> buts. Exemple :
-                        </li>
-                        <ul>
-                            <li class="pointRegle regleDetail">Le nombre de but total final est de 85 buts.</li>
-                            <li class="pointRegle regleDetail">Toutes les reponses entre 82 buts et 88 buts inclus
-                                gagnent <strong>5 points</strong></li>
-                        </ul>
-                        <!-- <li class="pointRegle reglePoint" >10 points [tout-pil'] 5 points [approchant] </li>
-								<li class="pointRegle regleDetail" >[Tout-pil'] : Trouver le nombre exact de buts.</li>
-								<li class="pointRegle regleDetail" >[Approchant] : Le nombre de buts se trouve dans les <strong>3</strong> buts de battement avant ou après votre pronostic.</li> -->
-                        <!-- <li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li> -->
-                    </ul>
-                    <div class="sousTitre titreBonus">Minute du premier but</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">Attention la règle change sur l'attribution des points</li>
-                        <li class="pointRegle regleDetail">Trouver la minute du premier but de la coupe du monde</li>
-                        <li class="pointRegle regleDetail">Rapporte <strong>5 points</strong></li>
-                        <li class="pointRegle regleDetail">Minutage officiel donné par la FIFA.</li>
-                        <li class="pointRegle regleDetail">La reponse se trouve dans les <strong>2</strong> minutes de
-                            battement avant ou après le résultat.</li>
-                        <li class="pointRegle regleDetail">Soit une plage de but de <strong>5</strong> minutes. Exemple
-                            :</li>
-                        <ul>
-                            <li class="pointRegle regleDetail">Le but est marqué à la 32ème minute</li>
-                            <li class="pointRegle regleDetail">Toutes les reponses entre la 30ème et la 34ème minute
-                                inclus gagnent <strong>5 points</strong></li>
-                        </ul>
-                        <!-- <li class="pointRegle reglePoint" >7 points [tout-pil'] 3 points [approchant] </li>
-								<li class="pointRegle regleDetail" >Trouver la minute du premier but du tournoi Euro 2020.</li>
-								<li class="pointRegle regleDetail" >[Tout-pil'] : trouver la minute exacte.</li>
-								<li class="pointRegle regleDetail" >[Approchant] : La minute se trouve dans les <strong>2</strong> minutes de battement avant ou après votre pronostic.</li>
-								<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li> -->
+                        <div class="reglement-sub-titre">Minute du dernier but :</div> 
+                        <div class="reglement-sub-text">Trouver la minute du dernier but de la coupe du monde. Minutage officiel UEFA.</div>
+                        <div class="reglement-sub-text">Seul le ou les plus proches marquent des points</div>
+                        <div class="reglement-sub-text">Le plus proche marque <b>4 points</b></div>
+                        <div class="reglement-sub-text">Si le minutage exact est trouvé <b>7 points</b></div>
 
-                    </ul>
-                    <div class="sousTitre titreBonus">Minute du dernier but</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">Attention la règle change sur l'attribution des points</li>
-                        <li class="pointRegle regleDetail">Trouver la minute du dernier but de la coupe du monde</li>
-                        <li class="pointRegle regleDetail">Rapporte <strong>5 points</strong></li>
-                        <li class="pointRegle regleDetail">Minutage officiel donné par la FIFA.</li>
-                        <li class="pointRegle regleDetail">La reponse se trouve dans les <strong>2</strong> minutes de
-                            battement avant ou après le résultat.</li>
-                        <li class="pointRegle regleDetail">Soit une plage de but de <strong>5</strong> minutes. Exemple
-                            :</li>
-                        <ul>
-                            <li class="pointRegle regleDetail">Le but est marqué à la 79ème minute</li>
-                            <li class="pointRegle regleDetail">Toutes les reponses entre la 77ème et la 81ème minute
-                                inclus gagnent <strong>5 points</strong></li>
-                        </ul>
+                        <div class="reglement-sub-titre">Nombre total de buts :</div> 
+                        <div class="reglement-sub-text">Trouve le nombre total de buts de la competition Euro 2024.</div>
+                        <div class="reglement-sub-text">Seul le ou les plus proches marquent des points</div>
+                        <div class="reglement-sub-text">Le plus proche marque <b>4 points</b></div>
+                        <div class="reglement-sub-text">Si le nombre de buts exact est trouvé <b>7 points</b></div>
 
-                        <!-- <li class="pointRegle reglePoint" >7 points [tout-pil'] 3 points [approchant] </li>
-								<li class="pointRegle regleDetail" >Trouver la minute du dernier but du tournoi Euro 2020.</li>
-								<li class="pointRegle regleDetail" >[Tout-pil'] : trouver la minute exacte.</li>
-								<li class="pointRegle regleDetail" >[Approchant] : La minute se trouve dans les <strong>2</strong> minutes de battement avant ou après votre pronostic.</li>
-								<li class="pointRegle regleDetail" >Seul le ou les plus proches égalités prennent des points.</li>
-								<li class="pointRegle regleDetail" >Minutage officiel donné par l'UEFA.</li> -->
-                    </ul>
+                        <div class="reglement-sub-titre">Fairplay :</div> 
+                        <div class="reglement-sub-text">Trouve le nombre de cartons de la competition Euro 2024.</div>
+                        <div class="reglement-sub-text">Un score qui comptabilise les cartons de la façon suivante :</div>
+                        <div class="reglement-sub-text">+1 pour un carton jaune.</div>
+                        <div class="reglement-sub-text">+2 pour un carton rouge.</div>
+                        <div class="reglement-sub-text">Seul le ou les plus proches marquent des points</div>
+                        <div class="reglement-sub-text">Le plus proche marque <b>4 points</b></div>
+                        <div class="reglement-sub-text">Si le score exact est trouvé <b>7 points</b></div>
 
+                        <div class="reglement-sub-titre">Pénalty :</div> 
+                        <div class="reglement-sub-text">Trouve le nombre de pénalty sifflés pendant la competition Euro 2024.</div>
+                        <div class="reglement-sub-text">Un penalty non converti est comptabilisé.</div>
+                        <div class="reglement-sub-text">Seul le ou les plus proches marquent des points</div>
+                        <div class="reglement-sub-text">Le plus proche marque <b>4 points</b></div>
+                        <div class="reglement-sub-text">Si le score exact est trouvé <b>7 points</b></div>
 
-                    <div class="sousTitre titreBonus">Meilleur buteur</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle regleDetail">Trouver le meilleur buteur de la coupe du monde</li>
-                        <li class="pointRegle regleDetail">Rapporte <strong>5 points</strong></li>
-                        <li class="pointRegle regleDetail">Si plusieurs meilleurs buteurs égalités toutes les reponses
-                            sont correctes</strong></li>
-                    </ul>
+                        <div class="reglement-sub-titre">Nombre de buts de l'Equipe de France :</div> 
+                        <div class="reglement-sub-text">Trouve le nombre de buts marqués au total par l'Equipe de France.</div>
+                        <div class="reglement-sub-text">Seul le nombre de buts exact marque des points.</div>
+                        <div class="reglement-sub-text">Si le score exact est trouvé <b>5 points</b></div>
+                        
+                        <div class="reglement-sub-titre">Finalistes :</div> 
+                        <div class="reglement-sub-text">Trouve les deux finalistes de la competition Euro 2024.</div>
+                        <div class="reglement-sub-text">Si <b>1 finaliste</b> est trouvé <b>4 points</b></div>
+                        <div class="reglement-sub-text">Si les <b>2 finalistes</b> sont trouvés <b>10 points</b></div>
 
-                    <div class="sousTitre titreBonus">Joueur gagnant</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">Le retour d'un bonus pour encore plus de fun</li>
-                        <li class="pointRegle regleDetail">Trouver le gagnant du tournoi Odette Cup 2022</li>
-                        <li class="pointRegle regleDetail">Rapporte <strong>5 points</strong></li>
-                        <li class="pointRegle regleDetail">On parle bien ici d'un joueur, un concurrent</li>
-                        <li class="pointRegle regleDetail">Ce bonus sera le tout dernier bonus attribué</li>
-                        <li class="pointRegle regleDetail">Le classement est arrété à la fin de la finale tous les bonus
-                            compris sauf celui-ci</li>
-                        <li class="pointRegle regleDetail">Le gagnant sera donc le premier à la fin de la finale bonus
-                            compris sauf celui-ci</li>
-                        <li class="pointRegle regleDetail">Si ce bonus redistribu les cartes et change le gagnant, c'est
-                            normal et c'est le but</li>
-                        <li class="pointRegle regleDetail">Bien sur si tu es très confiant tu mets ton propre nom</li>
-                    </ul>
+                    <div class="reglement-titre">Paiement</div>
+                        <div class="reglement-text">Une participation de <b>20€</b> est demandée. 10€ pour les mineurs</div>
+                        <div class="reglement-text">Règlement par <b>chèque</b>, <b>espèce</b> ou <b>virement</b>.</div>
+                    <div class="reglement-titre">Gains</div>
+                    <?php if ($competition == 1) : ?>
+                        <div class="reglement-text">4 places sont payées selon la règle suivante :</div>
+                        
+                        <div class="reglement-text">20€ de la cagnotte finale seront utilisés pour les frais du site.</div>
+                        <div class="reglement-sous-text"><b>4ème</b> =  Remboursé</div>
+                        
+                        
+                        <div class="reglement-sous-text">Avec le restant de la cagnotte :</div>
+                        <div class="reglement-sous-text"><b>3ème</b> =  10% de la cagnotte</div>
+                        <div class="reglement-sous-text"><b>2ème</b> =  30% de la cagnotte</div>
 
-                    <!-- <div class="sousTitre titreBonus">Meilleur passeur</div>
-							<ul class="ulperso">
-								<li class="pointRegle reglePoint" >7 points</li>
-								<li class="pointRegle regleDetail" >Trouver le meilleur passeur du tournoi RUSSIE 2018.</li>
-							</ul>
+                        <div class="reglement-sous-text"><b>1er</b> =  60% de la cagnotte</div>
+                        
+                        
+                    <?php endif; ?>
 
-							<div class="sousTitre titreBonus">Nombre buts du meilleur buteur</div>
-							<ul class="ulperso">
-								<li class="pointRegle reglePoint" >7 points</li>
-								<li class="pointRegle regleDetail" >Trouver le nombre de buts du meilleur buteur du tournoi RUSSIE 2018.</li>
-							</ul>
-							<div class="sousTitre titreBonus">Premier buteur français</div>
-							<ul class="ulperso">
-								<li class="pointRegle reglePoint" >7 points</li>
-								<li class="pointRegle regleDetail" >Trouver le premier buteur français du tournoi RUSSIE 2018.</li>
-							</ul>
-							<div class="sousTitre titreBonus">Nombre de buts de la France</div>
-							<ul class="ulperso">
-								<li class="pointRegle reglePoint" >7 points</li>
-								<li class="pointRegle regleDetail" >Trouver le nombre de buts de la France lors du tournoi RUSSIE 2018.</li>
-							</ul> -->
-                    <div class="sousTitre titreBonus">Bonus de la Finale</div>
-                    <ul class="ulperso">
-                        <li class="pointRegle reglePoint">Le nombre de points gagnés sur le match de la finale est
-                            doublé</li>
-                        <li class="pointRegle regleDetail">Rapporte 14 points ou 6 points ou 2 points ou 0 point</li>
-                    </ul>
-                    </p>
+                    <?php if ($competition == 2) : ?>
+                        <div class="reglement-text">3 places sont payées selon la règle suivante :</div>
+                        <div class="reglement-sous-text"><b>1er</b> =  60% de la cagnotte</div>
+                        
+                        <div class="reglement-sous-text"><b>2ème</b> =  30% de la cagnotte</div>
+                        
+                        <div class="reglement-sous-text"><b>3ème</b> =  10% de la cagnotte</div>
 
-                    <h3>Dates</h3>
-                    <ul class="ulperso">
-                        <li class="pointRegle">17 octobre 2022 : ouverture aux inscriptions.</li>
-                        <li class="pointRegle">18 novembre 2022 : fermeture des inscriptions et des pronostics.
-                            Ouverture de tous les pronostics à tout le monde.</li>
-                        <li class="pointRegle">20 novembre 2022 : match d'ouverture de la coupe du monde 2022</li>
-                        <li class="pointRegle">Les matches de phase finale : pour les 8èmes, quarts, demies et finale
-                            tous les pronostics seront à rentrer en ligne.</li>
-                    </ul>
+                        <div class="reglement-text">20€ de la cagnotte finale seront utilisés pour les frais du site.</div>
+                    <?php endif; ?>
 
-                    <h3>Engagement dans le concours</h3>
-                    <p>
-                        <li class="pointRegle">20€ par joueur adulte</li>
-                        <li class="pointRegle">10€ par joueur mineur</li>
-                        <li class="pointRegle">A payer avant le 17 novembre 2022 par virement</li>
-                    </p>
-
-                    <h3>Tableau des gains</h3>
-                    <p>
-                        <span class="pointRegle">Le tableau des gains sera calculé selon le nombre de participants avec
-                            la base de calcul suivante.</span>
-                        <!--Total des gains 345 € (21 adultes x 15 € = 315 € + 3 mineurs x 10 = 30 €)</br></br>--->
-                    <ul class="ulperso">
-                        <li class="pointRegle">1er = 65 %
-                        <li class="pointRegle">2ème = 25 %
-                        <li class="pointRegle">3ème = 10 %
-                        <li class="pointRegle">4ème = Remboursé
-                    </ul>
-                    <!-- Lot restant 330 €</br>
-
-							1er  = 214,50 €</br>
-							2em  = 82,50 €</br>
-							3em  = 33 €</br> -->
-                    </p>
-                </div>
+                    <div class="reglement-titre">FAQ</div>
+                        <div class="reglement-text">Que se passe-t-il en cas d'<b>égalité</b> au classement ?</div>
+                        <div class="reglement-reponse-text">Le classement est calculé de la manière suivante : Le nombre de points, puis le moins de bonus, puis le moins d'echecs, puis le plus perfects, puis enfin le plus de correct+.</div>
+                        <div class="reglement-text">Un exemple de <b>perfect</b> ?</div>
+                        <div class="reglement-reponse-text">Bien sûr : Pronostic 2-1 /  Score 2-1 - Pronostic 3-0 /  Score 3-0 </div>
+                        <div class="reglement-text">Un exemple de <b>correct +</b> ?</div>
+                        <div class="reglement-reponse-text">Et voilà : Pronostic 2-1 /  Score 1-0 - Pronostic 1-1 /  Score 0-0 - Pronostic 2-0 /  Score 3-1</div>
+                        <div class="reglement-text">Un exemple de <b>correct</b> alors ?</div>
+                        <div class="reglement-reponse-text">Comme ça : Pronostic 1-0 /  Score 2-0 - Pronostic 3-0 /  Score 2-1</div>
+                        <div class="reglement-text">Un exemple de <b>inverse</b> maintenant ?</div>
+                        <div class="reglement-reponse-text">Simple : Pronostic 1-0 /  Score 0-1 - Pronostic 1-2 /  Score 2-1</div>
+                        <div class="reglement-text">Un match <b>nul</b> c'est 4 points minimum ?</div>
+                        <div class="reglement-reponse-text">Basique : Seulement si le match nul est trouvé. Oui. Le match nul est le score le plus risqué à trouver normal qu'il soit récompensé.</div>
+                        <div class="reglement-text">Et les <b>bonus</b> ?</div>
+                        <div class="reglement-reponse-text">Tout est expliqué dans le chapitre sur les bonus. Prenez le temps de bien le lire.</div>
+                        <div class="reglement-text">Tu peux expliquer quand même le "<b>Un gagnant le plus proche</b>" ?</div>
+                        <div class="reglement-reponse-text">C'est assez simple. Il y a aura toujours un vainqueur. Il n'y a plus de battements. Un seul vainqueur, le plus proche de la réponse ! Pour les minutes, les buts, les cartons et les pénalty. Si plusieurs joueurs sont premiers égalités tout le monde marquent des points.    </div>
+                        <div class="reglement-text">Pour le fairplay ça marche comment <b>1 carton rouge</b> obtenu par <b>2 cartons jaunes</b> ?</div>
+                        <div class="reglement-reponse-text">Dans ce cas, 2 points seulement sont ajoutés au score Fairplay. Le carton rouge "remplace" les cartons jaunes</div>
+                        <div class="reglement-text">La <b>Finale</b> n'est plus <b>doublée</b> cette année ?</div>
+                        <div class="reglement-reponse-text">Non ! Cette année la finale est un match comme les autres en terme de points.</div>
+                
             </div>
         </div>
     </div>

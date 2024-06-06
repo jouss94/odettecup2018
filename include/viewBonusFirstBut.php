@@ -23,6 +23,7 @@ $qryBonus = "SELECT *, equipe_winner.name as equipe_w, joueurs.surnom as joueur,
 		LEFT JOIN equipes equipe_winner ON equipe_winner.id_equipe = pronostics_bonus.team_winner_id
 		LEFT JOIN joueurs joueurs ON joueurs.id_joueur = pronostics_bonus.id_joueur
 		LEFT JOIN joueurs joueurs_w ON joueurs_w.id_joueur = pronostics_bonus.player_winner_id
+		WHERE joueurs.competition = $competition
 		ORDER BY pronostics_bonus.min_first;";
 $resultBonus = mysqli_query($con, $qryBonus);
 $findBonus = false;
@@ -66,12 +67,9 @@ while ($rowBonus = mysqli_fetch_array($resultBonus ))
 
 		echo '<td style="" class="tdBonusCenterSmall">';
 		echo $surnom;
-		echo '<img class="logoEquipeSmaller" src="';
-		echo $logo;	
-		echo '" />';
 		echo '</td>';
 
-		echo '<td >';
+		echo '<td style="text-align: end;">';
 			echo '<span class="pancarteAuto ';
 			if ($min_first_point_value != null)
 			{
